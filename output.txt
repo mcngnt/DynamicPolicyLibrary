@@ -1,0 +1,83 @@
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Museum of Art'], 'is_atomic': False, 'description': 'Search for a location in the search bar.'}
+Trying to choose a policy fitting for the search policy call : {'comparison': 'There are no available subroutines to compare with the proposed subroutine call.', 'answer': 'Since there are no available subroutines, the original subroutine call is the only option.', 'new': 'True', 'name': 'search', 'arguments': ['Carnegie Museum of Art']}
+Just writing guidance for the new policy search : {'explain': 'The agent is on the OpenStreetMap website and has a focused search bar. The next step is to type the query into the search bar and click "Go".', 'plan': '1) Type the query into the search bar.\n2) Click the "Go" button.', 'guidance': 'Please follow these general instructions:\n* To search for a location, type the location in the "Search" textbox.\n* Then click the "Go" button.'}
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': ''}
+Trying to choose a policy fitting for the search policy call : {'comparison': 'The available subroutine `search [query]` can be used to search for a location in the search bar, which matches the functionality of the proposed subroutine call.', 'answer': 'Yes, the available subroutine `search [query]` can replace the proposed subroutine call.', 'new': 'False', 'name': 'search', 'arguments': ['Carnegie Art Museum']}
+Just writing guidance for the new policy search : {'explain': 'The agent is on the OpenStreetMap website and needs to search for "Carnegie Art Museum". The observation shows a search box with the label "Search". The agent needs to be guided to input the query into this search box and then click the "Go" button to initiate the search.', 'plan': '1. Focus on the search textbox.\n2. Input the query into the textbox.\n3. Click the "Go" button.', 'guidance': 'Please follow these general instructions:\n* Input the query into the search textbox.\n* Click the "Go" button to initiate the search.'}
+
+
+
+
+
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': 'This action allows the user to search for a specific place in OpenStreetMap.'}
+Trying to choose a policy fitting for the search policy call : {'comparison': 'There are no available subroutines to compare with.', 'answer': 'Since there are no available subroutines, I cannot replace the given subroutine call.', 'new': '1', 'name': 'search', 'arguments': ['Carnegie Art Museum']}
+Just writing guidance for the new policy search : {'explain': 'The agent has not been given any guidance yet, so there are no failures to address. The agent needs instructions on how to use the search functionality in OpenStreetMap.', 'plan': '1. Instruct the agent to use the textbox labeled "Search".\n2. Instruct the agent to type the query into the search box.\n3. Instruct the agent to click the "Go" button.\n4. The agent has succesfully completed the task if the observation changes after you click on the Go button.', 'guidance': 'Please follow these general instructions:\n* The objective is to search for a specific place in OpenStreetMap.\n* To search for a place, first locate the textbox labeled "Search". It is usually located at the top left of the screen.\n* Type your search query into the search box.\n* Click the "Go" button next to the search box to initiate the search.\n* The agent has succesfully completed the task if the observation changes after you click on the Go button.'}
+Just got the action : {'name': 'insert_textCarnegie Art Museum', 'arguments': [], 'is_atomic': False, 'description': 'This action inserts text into the search box.'}
+Traceback (most recent call last):
+  File "C:\Users\marti\Desktop\internship\code\test.py", line 58, in <module>
+    choosen_policy_feedback = choose_policy(action["name"], action["arguments"], action["description"], relevant_polices)
+  File "C:\Users\marti\Desktop\internship\code\choose_policy.py", line 34, in choose_policy
+    SUBROUTINE CALL: {policy_name} [{policy_args[0]}]
+IndexError: list index out of range
+
+
+
+
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': 'This action is used to search for a location in OpenStreetMap.'}
+
+Trying to choose a policy fitting for the search policy call : {'comparison': 'There are no available subroutines to compare with.', 'answer': 'Since there are no available subroutines, I cannot replace the proposed subroutine call.', 'new': '1', 'name': 'search', 'arguments': ['Carnegie Art Museum']}
+
+Just writing guidance for the new policy search : {'explain': 'The agent has opened the OpenStreetMap website but needs guidance on how to use the search functionality to find the location specified in the query. The current observation shows the basic layout of the website, including the search box. The agent needs to be instructed to input the query into the search box and then click the "Go" button.', 'plan': '1. Instruct the agent to locate the search box on the OpenStreetMap webpage.\n2. Instruct the agent to input the query into the search box.\n3. Instruct the agent to click the "Go" button to initiate the search.', 'guidance': 'Please follow these general instructions:\n* Locate the search box on the OpenStreetMap webpage. It is usually labeled "Search".\n* Input the query into the search box.\n* Click the "Go" button to initiate the search.'}
+
+Just got the action : {'name': 'input_text', 'arguments': ['Carnegie Art Museum', 'Search'], 'is_atomic': False, 'description': 'This action fills the search box with the query.'}
+
+Trying to choose a policy fitting for the input_text policy call : {'comparison': '- search [query]: This subroutine is used for searching locations in OpenStreetMap, which is different from filling a search box with a query. Therefore, it is not relevant.', 'answer': 'No, none of the available subroutines can replace the proposed subroutine.', 'new': '1', 'name': 'input_text', 'arguments': ['Carnegie Art Museum']}
+
+Just writing guidance for the new policy input_text : {'explain': 'The agent is at the OpenStreetMap website. The task is to input the text "Carnegie Art Museum" into the search box. This seems straightforward, and no specific guidance is needed.', 'plan': '1) Provide a general instruction to input the query text into the search box.', 'guidance': 'Please input the query text into the search box.'}
+
+Just got the action : {'name': 'input_text', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': ''}
+
+Trying to choose a policy fitting for the input_text policy call : {'comparison': 'input_text [query]: This subroutine fills a search box with the provided query. This aligns perfectly with the given subroutine description.\nsearch [query]: This subroutine initiates a search using the provided query. While related, it performs a search action, which is a distinct step from simply filling the search box.', 'answer': 'Yes, the available subroutine input_text [query] can replace the proposed subroutine call.', 'new': '0', 'name': 'input_text', 'arguments': ['Carnegie Art Museum']}
+
+Just got the action : {'name': 'input_text', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': ''}
+
+Trying to choose a policy fitting for the input_text policy call : {'comparison': 'input_text [query]: This subroutine fills a search box with the given query. This aligns perfectly with the SUBROUTINE DESCRIPTION.\nsearch [query]: This subroutine initiates a search in OpenStreetMap with the given query. This does not align with the SUBROUTINE DESCRIPTION.', 'answer': 'Yes, input_text [query] can replace the proposed subroutine.', 'new': '0', 'name': 'input_text', 'arguments': ['Carnegie Art Museum']}
+
+Just got the action : {'name': 'input_text', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': 'This action inputs text into a text box.'}
+Trying to choose a policy fitting for the input_text policy call : {'comparison': 'input_text [query]: This subroutine is designed to input text into a text box, and the provided description indicates the same functionality.\nsearch [query]: This subroutine is designed to search for a location in OpenStreetMap, which is different from simply inputting text into a text box.', 'answer': 'Yes, input_text [query] can replace the proposed subroutine call, as they both perform the same action of inputting text.', 'new': '0', 'name': 'input_text', 'arguments': ['Carnegie Art Museum']}
+Just got the action : {'name': 'input_text', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': ''}
+Trying to choose a policy fitting for the input_text policy call : {'comparison': 'input_text [query]: This subroutine is designed to input text into a search box, which aligns perfectly with the given subroutine description.\nsearch [query]: This subroutine is for searching locations in OpenStreetMap, which is unrelated to the given subroutine description.', 'answer': 'Yes, the available subroutine `input_text [query]` can replace the proposed subroutine without changes.', 'new': '0', 'name': 'input_text', 'arguments': ['Carnegie Art Museum']}
+
+
+
+
+
+
+
+
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Art Museum'], 'is_atomic': False, 'description': 'This action uses the search function to find a specific location on the map.'}
+Trying to choose a policy fitting for the search policy call : {'comparison': 'There are no available subroutines to compare with the proposed subroutine call.', 'answer': 'Since there are no available subroutines, the original subroutine call cannot be replaced.', 'new': '1', 'name': 'search', 'arguments': ['Carnegie Art Museum']}
+Just writing guidance for the new policy search : {'explain': 'The web agent needs guidance on how to use the search bar to find a specific location on the map within OpenStreetMap. It\'s currently on the OpenStreetMap homepage, but hasn\'t interacted with the search bar yet. The guidance should tell the agent to use the "Search" textbox, type in the desired location, and click the "Go" button.', 'plan': '1. Focus on the search functionality in the OpenStreetMap interface.\n2. Instruct the agent to use the "Search" textbox, type the query, and click the "Go" button.', 'guidance': 'Please follow these general instructions:\n* To find a specific location on the map, first locate the "Search" textbox.\n* Type your desired location in the "Search" textbox.\n* After typing the location, click the "Go" button to initiate the search.'}
+Just got the action : {'name': 'type', 'arguments': ['Carnegie Art Museum'], 'is_atomic': True, 'description': 'This action types the query into the search box.'}
+Just got the action : {'name': 'click', 'arguments': ['Go'], 'is_atomic': True, 'description': 'This action clicks the "Go" button, initiating the search for the previously entered location.'}
+Just got the action : {'name': 'type', 'arguments': ['Carnegie Art Museum'], 'is_atomic': True, 'description': ''}
+Just got the action : {'name': 'type', 'arguments': ['Carnegie Art Museum'], 'is_atomic': True, 'description': 'Typing in the search query again.'}
+Just got the action : {'name': 'click', 'arguments': ['Go'], 'is_atomic': True, 'description': 'This action clicks the "Go" button to initiate the search query.'}
+Just got the action : {'name': 'click', 'arguments': ['Go'], 'is_atomic': True, 'description': 'This action clicks the "Go" button, triggering the search for the specified location.'}
+Just got the action : {'name': 'type', 'arguments': ['Carnegie Art Museum'], 'is_atomic': True, 'description': 'Entering the query in the search box.'}
+
+
+
+
+
+Just got the action : {'name': 'search', 'arguments': ['Carnegie Art Museum address'], 'is_atomic': False, 'description': ''}
+
+Trying to choose a policy fitting for the search policy call : {'comparison': 'There are no available subroutines to compare with the proposed subroutine call.', 'answer': 'Since there are no available subroutines, I cannot replace the proposed subroutine call.', 'new': '1', 'name': 'search', 'arguments': ['Carnegie Art Museum address']}
+
+Just writing guidance for the new policy search : {'explain': 'There was no previous interaction to critique and provide guidance for. This is the first turn.', 'plan': '1) Provide general guidance for a web agent to perform a search query.', 'guidance': 'Please follow these general instructions:\n* The objective is to use a search engine to find information related to the query.\n* Start by entering the query into the search bar.\n* Analyze the search results provided.\n* Look for relevant websites or snippets of information that directly address the query.\n* If the initial search results are not satisfactory, consider refining the query with more specific keywords.\n* Once you have found the answer to the query, return it using the stop action.'}
+
+Just got the action : {'name': 'stopN/A', 'arguments': [], 'is_atomic': False, 'description': ''}
+
+
+
+If you see that you are stuck in an infinite loop based on PREVIOUS ACTIONS, it is better up to give and use stop [N/A]. Issue the same action twice ONLY if you deem that necessary. It is better to give rather than doing the same action again and again.
