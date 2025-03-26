@@ -31,7 +31,6 @@ def print_action_call(name, arguments):
     return name + " ".join([f"[{arg}]" for arg in arguments])
 
 def parse_action_call(action_call):
-    # return [a.replace("[", "").replace("]", "") for a in action_call.split(" [")]
     action_call = re.sub(r'\s*\[', '[', action_call)
     match = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)\[(.*?)\](.*)', action_call)
     return [match.group(1)] + [match.group(2)] + re.findall(r'\[(.*?)\]', match.group(3)) if match else []

@@ -90,16 +90,6 @@ DECSRIPTION: ...
 """ 
 
 
-# TYPE
-# ACTION
-# ARGUMENT(S)
-# FUNCTION DESCRIPTION
-
-
-# Make plans
-# Ask it to decompose into subtasks if possible
-
-
 def get_action(objective, observation, url, previous_actions, guidance_text):
     get_action_prompt = f"""
     {get_action_system_prompt}
@@ -127,6 +117,9 @@ def get_action(objective, observation, url, previous_actions, guidance_text):
     action = {"name":arguments[0], "arguments":arguments[1:], "is_atomic":is_atomic, "description":result["description"]}
 
     return action
+
+
+# ==== Prompt testing ===
 
 
 my_objective = """

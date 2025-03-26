@@ -62,7 +62,7 @@ def get_critique(objective, observation, url, previous_actions):
 
 
 
-
+# ==== Prompt testing ===
 
 my_objective = """
 Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum

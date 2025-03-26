@@ -84,6 +84,9 @@ def write_policy(task_name, task_description, arguments, trajectory, critique, p
     return result
 
 
+# ==== Prompt testing ===
+
+
 my_task_name = """
 search_nearest_place
 """
