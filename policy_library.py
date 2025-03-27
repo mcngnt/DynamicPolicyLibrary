@@ -4,10 +4,14 @@ import os
 from datetime import datetime
 from utils import *
 
+# def get_embedding(text):
+#     return np.random.rand(128)  # Example: Returns a random 128-dim vector
+
 
 class PolicyLibrary:
-    def __init__(self):
+    def __init__(self, testing=True):
         self.policies = {}
+        self.testing = testing
 
     def update(self, name, description, content=""):
         embedding = get_embedding(description)
@@ -16,8 +20,10 @@ class PolicyLibrary:
                 self.policies[key] = (name, description, content)
                 return
         self.policies[tuple(embedding)] = (name, description, content)
+        if self.testing:
+            self.save("policies/testing.json")
 
-    def retrieve(self, description, k=5):
+    def retrieve(self, description, k=5, exclude_policy=None):
         query_embedding = get_embedding(description)
         
         sorted_policies = sorted(
@@ -25,7 +31,14 @@ class PolicyLibrary:
             key=lambda item: np.linalg.norm(np.array(item[0]) - query_embedding)
         )
         
-        return [(name, desc) for _, (name, desc, _) in sorted_policies[:k]]
+        result = []
+        for _, (name, desc, _) in sorted_policies:
+            if exclude_policy is None or name != exclude_policy:
+                result.append((name, desc))
+            if len(result) == k:
+                break
+        
+        return result
     
     def get(self, name):
         for _, (policy_name, desc, content) in self.policies.items():

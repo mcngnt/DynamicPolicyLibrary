@@ -5,88 +5,66 @@ from policy_library import PolicyLibrary
 from writing_policy import write_policy
 from get_action import get_action
 from critique import get_critique
-from choose_policy import choose_policy
-
-# Functions to quickly test the prompts of the different components :
-# from writing_policy import get_my_writing_answer
-# from get_action import get_my_action
-# from critique import get_my_critique
-# from choose_policy import choose_my_policy
+from get_policy import get_policy
 
 
 
-
-
-tasks = [("Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum", "")]
+tasks = [
+("Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum",
+"""Tab 0 (current): OpenStreetMap\n\n[1] RootWebArea 'OpenStreetMap' focused: True\n\t[36] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[41] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[44] img 'OpenStreetMap logo'\n\t[402] link 'Edit'\n\t[403] button ''\n\t[373] link 'History'\n\t[374] link 'Export'\n\t[407] link 'GPS Traces'\n\t[408] link 'User Diaries'\n\t[409] link 'Communities'\n\t[410] link 'Copyright'\n\t[411] link 'Help'\n\t[412] link 'About'\n\t[382] link 'Log In'\n\t[383] link 'Sign Up'\n\t[515] link 'Where is this?'\n\t[12] textbox 'Search' focused: True required: False\n\t[516] button 'Go'\n\t[503] link 'Find directions between two points'\n\t[466] heading 'Welcome to OpenStreetMap!'\n\t[469] button 'Close'\n\t[473] StaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[474] StaticText 'Hosting is supported by '\n\t[475] link 'UCL'\n\t[477] link 'Fastly'\n\t[478] StaticText ', '\n\t[479] link 'Bytemark Hosting'\n\t[480] StaticText ', and other '\n\t[481] link 'partners'\n\t[482] StaticText '.'\n\t[485] link 'Learn More'\n\t[486] link 'Start Mapping'\n\t[23] generic 'Zoom In Zoom Out Show My Location Layers Share 50 km 50 mi \u00a9 OpenStreetMap contributors \u2665 Make a Donation. Website and API terms'\n\t\t[27] link 'Zoom In'\n\t\t[28] link 'Zoom Out'\n\t\t[30] button 'Show My Location'\n\t\t[32] link 'Layers'\n\t\t[296] link ''\n\t\t[34] link 'Share'\n\t\t[298] link ''\n\t\t[300] link ''\n\t\t[305] StaticText '50 km'\n\t\t[306] StaticText '50 mi'\n\t\t[308] StaticText '\u00a9 '\n\t\t[309] link 'OpenStreetMap contributors'\n\t\t[310] StaticText ' \u2665 '\n\t\t[311] link 'Make a Donation'\n\t\t[312] StaticText '. '\n\t\t[313] link 'Website and API terms'",
+"""),
+("How many commits did kilian make to a11yproject on 3/1/2023?",
+"""Tab 0 (current): Projects \u00b7 Dashboard \u00b7 GitLab\n\n[1] RootWebArea 'Projects \u00b7 Dashboard \u00b7 GitLab' focused: True\n\t[211] link 'Skip to content'\n\t[332] link 'Dashboard'\n\t[407] button '' hasPopup: menu expanded: False\n\t[1573] textbox 'Search GitLab' required: False\n\t[1534] generic 'Use the shortcut key <kbd>/</kbd> to start a search'\n\t[414] link 'Create new...'\n\t[416] link 'Issues'\n\t\t[1149] generic '13 assigned issues'\n\t[417] link 'Merge requests'\n\t\t[1151] generic '8 merge requests'\n\t[419] link 'To-Do List'\n\t\t[1167] generic 'Todos count'\n\t[420] link 'Help'\n\t[422] link 'Byte Blaze'\n\t\t[1201] img 'Byte Blaze'\n\t[7] main ''\n\t\t[314] heading 'Projects'\n\t\t[317] link 'New project'\n\t\t[424] link 'Yours 15'\n\t\t[425] link 'Starred 3'\n\t\t[426] link 'Explore'\n\t\t[427] link 'Topics'\n\t\t[324] searchbox 'Filter by name'\n\t\t[386] button 'Name'\n\t\t[471] link 'All'\n\t\t[472] link 'Personal'\n\t\t[473] link 'A'\n\t\t[476] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t[479] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t[477] generic 'Public - The project can be accessed without any authentication.'\n\t\t[485] StaticText 'Owner'\n\t\t[1257] generic 'lipstick'\n\t\t\t[1565] StaticText '\ud83d\udc84'\n\t\t[1258] StaticText ' Accessible light and dark syntax highlighting themes'\n\t\t[497] link '1'\n\t\t[498] link '0'\n\t\t[499] link '0'\n\t\t[500] link '1'\n\t\t[509] StaticText 'Updated '\n\t\t[21] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[510] StaticText '10 months ago'\n\t\t[511] link 'A'\n\t\t[514] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t[517] link 'Byte Blaze / a11y-webring.club'\n\t\t[515] generic 'Public - The project can be accessed without any authentication.'\n\t\t[523] StaticText 'Owner'\n\t\t[1276] generic 'globe with meridians'\n\t\t\t[1566] StaticText '\ud83c\udf10'\n\t\t[1277] StaticText ' A webring for digital accessibility practitioners.'\n\t\t[535] link '2'\n\t\t[536] link '0'\n\t\t[537] link '1'\n\t\t[538] link '4'\n\t\t[547] StaticText 'Updated '\n\t\t[33] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[548] StaticText '10 months ago'\n\t\t[549] link 'A'\n\t\t[552] heading 'The A11Y Project / a11yproject.com'\n\t\t\t[555] link 'The A11Y Project / a11yproject.com'\n\t\t[553] generic 'Public - The project can be accessed without any authentication.'\n\t\t[561] StaticText 'Maintainer'\n\t\t[1295] StaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t[573] link '21'\n\t\t[574] link '0'\n\t\t[575] link '10'\n\t\t[576] link '40'\n\t\t[585] StaticText 'Updated '\n\t\t[45] time 'Mar 27, 2023 4:15pm EDT'\n\t\t\t[586] StaticText '10 months ago'\n\t\t[587] link 'A'\n\t\t[590] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t[593] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t[591] generic 'Private - Project access must be granted explicitly to each user. If this project is part of a group, access is granted to members of the group.'\n\t\t[599] StaticText 'Owner'\n\t\t[1313] generic 'wheelchair symbol'\n\t\t\t[1567] StaticText '\u267f'\n\t\t[1314] StaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t[611] link '1'\n\t\t[612] link '0'\n\t\t[613] link '0'\n\t\t[614] link '0'\n\t\t[623] StaticText 'Updated '\n\t\t[57] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[624] StaticText '10 months ago'\n\t\t[625] link ''\n\t\t[628] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t[631] link 'Byte Blaze / cloud-to-butt'\n\t\t[629] generic 'Public - The project can be accessed without any authentication.'\n\t\t[637] StaticText 'Owner'\n\t\t[1331] StaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t[649] link '0'\n\t\t[650] link '0'\n\t\t[651] link '0'\n\t\t[652] link '0'\n\t\t[661] StaticText 'Updated '\n\t\t[69] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[662] StaticText '10 months ago'\n\t\t[663] link 'D'\n\t\t[666] heading 'Primer / design'\n\t\t\t[669] link 'Primer / design'\n\t\t[667] generic 'Public - The project can be accessed without any authentication.'\n\t\t[675] StaticText 'Developer'\n\t\t[1349] StaticText 'Primer Design Guidelines'\n\t\t[687] link '21'\n\t\t[688] link '0'\n\t\t[689] link '16'\n\t\t[690] link '21'\n\t\t[699] StaticText 'Updated '\n\t\t[81] time 'Mar 27, 2023 5:04pm EDT'\n\t\t\t[700] StaticText '10 months ago'\n\t\t[701] link 'D'\n\t\t[704] heading 'Byte Blaze / dotfiles'\n\t\t\t[707] link 'Byte Blaze / dotfiles'\n\t\t[705] generic 'Public - The project can be accessed without any authentication.'\n\t\t[713] StaticText 'Owner'\n\t\t[1367] generic 'robot face'\n\t\t\t[1568] StaticText '\ud83e\udd16'\n\t\t[1368] StaticText ' Computer setup'\n\t\t[725] link '0'\n\t\t[726] link '0'\n\t\t[727] link '0'\n\t\t[728] link '0'\n\t\t[737] StaticText 'Updated '\n\t\t[93] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[738] StaticText '10 months ago'\n\t\t[739] link 'E'\n\t\t[742] heading 'Byte Blaze / empathy-prompts'\n\t\t\t[745] link 'Byte Blaze / empathy-prompts'\n\t\t[743] generic 'Public - The project can be accessed without any authentication.'\n\t\t[751] StaticText 'Owner'\n\t\t[1386] generic 'electric light bulb'\n\t\t\t[1569] StaticText '\ud83d\udca1'\n\t\t[1387] StaticText ' Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t[763] link '6'\n\t\t[764] link '1'\n\t\t[765] link '2'\n\t\t[766] link '6'\n\t\t[775] StaticText 'Updated '\n\t\t[105] time 'Mar 27, 2023 7:22pm EDT'\n\t\t\t[776] StaticText '10 months ago'\n\t\t[777] link 'E'\n\t\t[780] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t[783] link 'Byte Blaze / ericwbailey.website'\n\t\t[781] generic 'Public - The project can be accessed without any authentication.'\n\t\t[789] StaticText 'Owner'\n\t\t[1405] generic 'triangular ruler'\n\t\t\t[1570] StaticText '\ud83d\udcd0'
+"""),
+("Edit my post on Star Trek Starfleet Academy series by adding a line to the body that says \"Every watch makes me feel like a kid again\"",
+"""
+Tab 0 (current): Postmill\n\n[1] RootWebArea 'Postmill' focused: True\n\t[207] HeaderAsNonLandmark ''\n\t\t[208] link 'Home'\n\t[232] link 'Forums'\n\t[233] link 'Wiki'\n\t[241] searchbox 'Search query'\n\t[242] link 'Notifications (0)'\n\t[243] link 'Submit'\n\t[12] button 'MarvelsGrantMan136' hasPopup: menu expanded: False\n\t[14] main ''\n\t\t[624] link 'Submissions'\n\t\t[625] link 'Comments'\n\t\t[18] button 'Filter on: Subscribed' hasPopup: menu expanded: False\n\t\t[20] button 'Sort by: Hot' hasPopup: menu expanded: False\n\t\t[21] article ''\n\t\t\t[24] HeaderAsNonLandmark ''\n\t\t\t\t[250] heading 'Nvidia RTX 4090'\n\t\t\t\t\t[628] link 'Nvidia RTX 4090'\n\t\t\t\t[630] StaticText 'Submitted by '\n\t\t\t\t[27] link 'MarvelsGrantMan136' expanded: False\n\t\t\t\t[632] time 'June 12, 2023 at 12:55:45 PM EDT'\n\t\t\t\t\t[1140] StaticText '11 months ago'\n\t\t\t\t[633] StaticText ' in '\n\t\t\t\t[634] link 'MachineLearning'\n\t\t\t\t[637] StaticText '(edited '\n\t\t\t\t[638] time 'May 5, 2024 at 6:02:18 PM EDT'\n\t\t\t\t\t[1143] StaticText '11 months later'\n\t\t\t\t[639] StaticText ')'\n\t\t\t[1144] link 'No comments'\n\t\t\t[1146] link 'Edit'\n\t\t\t[1743] button 'Delete'\n\t\t\t[254] button 'Upvote'\n\t\t\t[644] StaticText '\u22121'\n\t\t\t[257] button 'Retract downvote'\n\t\t[28] article ''\n\t\t\t[31] HeaderAsNonLandmark ''\n\t\t\t\t[261] heading 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\t\t\t[654] link 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\t\t[263] link 'tseliot.com'\n\t\t\t\t[657] StaticText 'Submitted by '\n\t\t\t\t[34] link 'RunDNA' expanded: False\n\t\t\t\t[1163] StaticText 't3_10p83br'\n\t\t\t\t[661] time 'January 30, 2023 at 12:11:46 PM EST'\n\t\t\t\t\t[1167] StaticText '1 year ago'\n\t\t\t\t[662] StaticText ' in '\n\t\t\t\t[663] link 'books'\n\t\t\t[1170] link '184 comments'\n\t\t\t[267] button 'Upvote'\n\t\t\t[666] StaticText '\u22121'\n\t\t\t[270] button 'Retract downvote'\n\t\t[35] article ''\n\t\t\t[38] HeaderAsNonLandmark ''\n\t\t\t\t[274] heading 'Friendly reminder bookshop.org exists.'\n\t\t\t\t\t[676] link 'Friendly reminder bookshop.org exists.'\n\t\t\t\t[678] StaticText 'Submitted by '\n\t\t\t\t[41] link 'smita16' expanded: False\n\t\t\t\t[1187] StaticText 't3_zzvi0q'\n\t\t\t\t[682] time 'December 31, 2022 at 9:40:19 AM EST'\n\t\t\t\t\t[1191] StaticText '1 year ago'\n\t\t\t\t[683] StaticText ' in '\n\t\t\t\t[684] link 'books'\n\t\t\t[1194] link '126 comments'\n\t\t\t[278] button 'Upvote'\n\t\t\t[687] StaticText '\u22121'\n\t\t\t[281] button 'Retract downvote'\n\t\t[42] article ''\n\t\t\t[45] HeaderAsNonLandmark ''\n\t\t\t\t[285] heading 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\t\t\t[697] link 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\t\t[287] link 'timeswv.com'\n\t\t\t\t[700] StaticText 'Submitted by '\n\t\t\t\t[48] link 'SAT0725' expanded: False\n\t\t\t\t[1211] StaticText 't3_zd6cxz'\n\t\t\t\t[704] time 'December 5, 2022 at 8:08:47 AM EST'\n\t\t\t\t\t[1215] StaticText '1 year ago'\n\t\t\t\t[705] StaticText ' in '\n\t\t\t\t[706] link 'books'\n\t\t\t[1218] link '33 comments'\n\t\t\t[291] button 'Upvote'\n\t\t\t[709] StaticText '\u22121'\n\t\t\t[294] button 'Retract downvote'\n\t\t[49] article ''\n\t\t\t[52] HeaderAsNonLandmark ''\n\t\t\t\t[298] heading 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t\t\t[719] link 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t\t[721] StaticText 'Submitted by '\n\t\t\t\t[55] link 'Shaosil' expanded: False\n\t\t\t\t[1235] StaticText 't3_ydeu5t'\n\t\t\t\t[725] time 'October 25, 2022 at 4:27:33 PM EDT'\n\t\t\t\t\t[1239] StaticText '2 years ago'\n\t\t\t\t[726] StaticText ' in '\n\t\t\t\t[727] link 'books'\n\t\t\t[1242] link '138 comments'\n\t\t\t[302] button 'Upvote'\n\t\t\t[730] StaticText '\u22121'\n\t\t\t[305] button 'Retract downvote'\n\t\t[56] article ''\n\t\t\t[59] HeaderAsNonLandmark ''\n\t\t\t\t[741] heading '[P] I made a command-line tool that explains your errors using ChatGPT (link in comments)'\n\t\t\t\t\t[1256] link '[P] I made a command-line tool that explains your errors using ChatGPT (link in comments)'\n\t\t\t\t[1259] StaticText 'Submitted by '\n\t\t\t\t[62] link 'jsonathan' expanded: False\n\t\t\t\t[1755] StaticText 't3_zhrgln'\n\t\t\t\t[1263] time 'December 10, 2022 at 7:32:57 AM EST'\n\t\t\t\t\t[1759] StaticText '1 year ago'\n\t\t\t\t[1264] StaticText ' in '\n\t\t\t\t[1265] link 'MachineLearning'\n\t\t\t[1762] link '116 comments'\n\t\t\t[310] button 'Upvote'\n\t\t\t[744] StaticText '2655'\n\t\t\t[313] button 'Downvote'\n\t\t[63] article ''\n\t\t\t[66] HeaderAsNonLandmark ''\n\t\t\t\t[753] heading '[D] Types of Machine Learning Papers'\n\t\t\t\t\t[1279] link '[D] Types of Machine Learning Papers'\n\t\t\t\t[1282] StaticText 'Submitted by '\n\t\t\t\t[69] link 'Lost-Parfait568' expanded: False\n\t\t\t\t[1767] StaticText 't3_xtxe6f'\n\t\t\t\t[1286] time 'October 2, 2022 at 3:25:49 PM EDT'\n\t\t\t\t\t[1771] StaticText '2 years ago'\n\t\t\t\t[1287] StaticText ' in '\n\t\t\t\t[1288] link 'MachineLearning'\n\t\t\t[1774] link '96 comments'\n\t\t\t[318] button 'Upvote'\n\t\t\t[756] StaticText '2476'\n\t\t\t[321] button 'Downvote'\n\t\t[70] article ''\n\t\t\t[73] HeaderAsNonLandmark ''\n\t\t\t\t[325] heading 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\t\t\t[764] link 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\t\t[327] link 'forbes.com'\n\t\t\t\t[767] StaticText 'Submitted by '\n\t\t\t\t[76] link 'drak0bsidian' expanded: False\n\t\t\t\t[1305] StaticText 't3_11dewje'\n\t\t\t\t[771] time 'February 27, 2023 at 10:43:55 AM EST'\n\t\t\t\t\t[1309] StaticText '1 year ago'\n\t\t\t\t[772] StaticText ' in '\n\t\t\t\t[773] link 'books'\n\t\t\t[1312] link '27 comments'\n\t\t\t[331] button 'Upvote'\n\t\t\t[776] StaticText '1695'\n\t\t\t[334] button 'Downvote'\n\t\t[77] article ''\n\t\t\t[80] HeaderAsNonLandmark ''\n\t\t\t\t[785] heading '[P] I built Adrenaline, a debugger that fixes errors and explains them with GPT-3'\n\t\t\t\t\t[1326] link '[P] I built Adrenaline, a debugger that fixes errors and explains them with GPT-3'\n\t\t\t\t[1329] StaticText 'Submitted by '\n\t\t\t\t[83] link 'jsonathan' expanded: False\n\t\t\t\t[1781] StaticText 't3_106q6m9'\n\t\t\t\t[1333] time 'January 8, 2023 at 1:23:03 PM EST'\n\t\t\t\t\t[1785] StaticText '1 year ago'\n\t\t\t\t[1334] StaticText ' in '\n\t\t\t\t[1335] link 'MachineLearning'\n\t\t\t[1788] link '94 comments'\n\t\t\t[339] button 'Upvote'\n\t\t\t[788] StaticText '1542'\n\t\t\t[342] button 'Downvote'\n\t\t[84] article ''\n\t\t\t[87] HeaderAsNonLandmark ''\n\t\t\t\t[346] heading 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\t\t\t[796] link 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\t[352] button 'Upvote'\n\t\t\t[808] StaticText '1539'\n\t[201] complementary ''\n\t\t[223] heading 'Subscribed forums'\n\t\t[1085] link 'books'\n\t\t[1086] link 'MachineLearning'
+"""),
+]
 
 env = WebEnvironment()
 policy_library = PolicyLibrary()
-for (objective, url) in tasks:
-    env.load(url)
+for (objective, init_observation) in [tasks[0]]:
+    env.load(init_observation)
     trajectory = []
     policy_stack = []
     # Capping maximum number of prompt iteration
-    for i in range(100):
+    for i in range(15):
         observation = env.observe()
-        guidance_text = ""
-        stack_objective = None
-        if len(policy_stack) > 0:
-            current_policy_name, current_query, _ = policy_stack[-1]
+        action = {}
+        if len(policy_stack) == 0:
+            relevant_policies = policy_library.retrieve(objective)
+            policy_feedback = get_policy(objective, observation, "", [print_action_call(a["name"], a["arguments"]) for (a,o) in trajectory], relevant_policies)
+            print(f"get_policy feedback : {policy_feedback}\n")
+            if int(policy_feedback["new"]):
+                policy_writing_feedback = write_policy(policy_feedback["name"], policy_feedback["description"], policy_feedback["query"], observation, "", "")
+                print(f"write_policy feedback : {policy_writing_feedback}\n")
+                policy_library.update(policy_feedback["name"], policy_feedback["description"], policy_writing_feedback["guidance"])
+            action = {"name":policy_feedback["name"], "arguments":[policy_feedback["query"]] ,"description":policy_feedback["description"], "is_atomic":0}
+        else:
+            current_policy_name, current_query, current_start_id = policy_stack[-1]
             guidance_text = policy_library.get(current_policy_name)[-1]
             stack_objective = f"{current_policy_name} [{current_query}]"
-        action = get_action(objective if stack_objective is None else stack_objective, observation, url, [print_action_call(a["name"], a["arguments"]) for (a,o) in trajectory], guidance_text)
-        print(f"Just got the action : {action}\n")
+            relevant_policies = policy_library.retrieve(stack_objective, exclude_policy="current_policy_name")
+            action = get_action(stack_objective, observation, "", [print_action_call(a["name"], a["arguments"]) for (a,o) in trajectory[current_start_id:]], guidance_text, relevant_policies)
         trajectory += [(action, observation)]
         if action["name"] == "stop":
             if len(policy_stack) == 0:
                 break
             else:
-                prev_policy_name, prev_policy_args, prev_policy_iter_start_id = policy_stack.pop()
+                prev_policy_name, prev_query, prev_start_id = policy_stack.pop()
                 critique_feedback = get_critique(objective, observation, url, [print_action_call(a["name"], a["arguments"]) for (a,o) in trajectory])
-                print(f"Feedback from the critique after completing the policy {prev_policy_name} : {critique_feedback}\n")
+                print(f"get_critique feedback : {critique_feedback}\n")
                 if not int(critique_feedback["success"]):
                     prev_policy_descr, prev_policy_content = policy_library.get(prev_policy_name)
-                    policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_policy_args, trajectory[prev_policy_iter_start_id:], critique_feedback["critique"], prev_policy_content)
-                    print(f"Just writing guidance for the new policy {action['name']} : {policy_writing_feedback}\n")
+                    policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, trajectory[prev_start_id:], critique_feedback["critique"], prev_policy_content)
+                    print(f"write_policy feedback : {policy_writing_feedback}\n")
                     policy_library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
             continue
         if action["is_atomic"]:
             env.interact(action["name"], action["arguments"])
             continue
         # A this point, the action is not "stop" nor any other atomic action. It is then a policy call
-        relevant_polices = policy_library.retrieve(action["description"])
-        choosen_policy_feedback = choose_policy(action["name"], action["arguments"], action["description"], relevant_polices)
-        print(f"Trying to choose a policy fitting for the {action['name']} policy call : {choosen_policy_feedback}\n")
-        if int(choosen_policy_feedback["new"]):
-            policy_writing_feedback = write_policy(action["name"], action["description"], action["arguments"], env.observe(), "", "")
-            print(f"Just writing guidance for the new policy {action['name']} : {policy_writing_feedback}\n")
-            policy_library.update(action["name"], action["description"], policy_writing_feedback["guidance"])
-            policy_stack += [(action["name"], action["arguments"][0], i)]
-        else:
-            policy_stack += [(choosen_policy_feedback["name"], choosen_policy_feedback["arguments"], i)]
+        policy_stack += [(action["name"], action["arguments"], i+1)]
 
 
-
-# Testing the components prompts :
-# print(get_my_writing_answer())
-# print(get_my_action())
-# print(get_my_critique())
-# print(choose_my_policy())
-
-
-# Testing policy library :
-# policy_library = PolicyLibrary()
-# policy_library.load("policies/test_policies.json")
-# print(policy_library.retrieve("""CMS""", k=2)
-# policy_library.add("find_commits", """Given you are in a project page, this Gitlab subroutine searches for commits made to the project and retrieves information about a commit. This function returns the answer to the query.""")
-# policy_library.add("search_issues", """Given you are in my issue page, this Gitlab subroutine searches issues that match the query. Any objective that says "open my latest issue" or "open issue with <keyword> in the title" must be passed through this subroutine.""")
-# policy_library.add("find_subreddit", """This Reddit subroutine finds a subreddit corresponding to the query. The query can either be the name of the subreddit or a vague description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit.""")
-# policy_library.add("find_user", """This Reddit subroutine navigates to the page of a user with user_name. The page contains all the posts made by the user.""")
-# policy_library.add("find_order", """This CMS subroutine finds an order corresponding to a particular customer or order number.""")
-# policy_library.add("find_customer_review", """This CMS subroutine finds customer reviews for a particular product using the query to specify the kind of review.""")
-# policy_library.update("find_subreddit", "FIND SUBREDDIT TEST")
-# print(policy_library.get("find_user"))
-# print(policy_library.retrieve("""This Reddit subroutine navigates to the page of a user with user_name. The page contains all the posts made by the user.""", k=1))
-# print(policy_library.retrieve("""This Reddit subroutine navigates to the page of a user with user_name. The page contains all the posts made by the user.""", k=2))
-# print(policy_library.retrieve("""CMS""", k=2))
-# policy_library.save("policies/test_policies.json")
