@@ -5,6 +5,20 @@ from critique import get_my_critique
 from get_policy import get_my_policy
 from policy_library import PolicyLibrary
 from utils import *
+from web_environment import WebEnvironment, AvailableURL, print_gym_call
+
+
+# print(AvailableURL.REDDIT.value)
+
+# print(print_gym_call("go_back", ['42', "Carnegie"]))
+
+env = WebEnvironment()
+env.load(AvailableURL.REDDIT.value)
+print(env.observe())
+env.interact("click", ["310"])
+print(env.observe())
+env.interact("go_home", [])
+print(env.observe())
 
 # print(get_my_action())
 # print(get_my_policy())

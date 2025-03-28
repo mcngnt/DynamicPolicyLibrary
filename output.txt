@@ -24,3 +24,36 @@ get_action feedback : {'reason': 'I need to find the address of the Carnegie Art
 get_action feedback : {'reason': "I need to find the address of the Carnegie Art Museum. Since I'm starting from a blank page, I should first use the search bar to find the museum's website.", 'action': 'type [0] [Carnegie Art Museum] [1]', 'description': ''}
 
 get_action feedback : {'reason': "The previous actions attempted to search for the museum but failed to produce any results. Since there's no visible content on the page, I will start by navigating to a search engine to find the museum. I will start by going home.", 'action': 'go_home', 'description': ''}
+
+
+
+
+
+
+Here are the current actions performed in the root [Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum] subroutine : []
+
+get_policy feedback : {'plan': '1. Search for "Carnegie Art Museum".\n2. Find all international airports within 30 km of Carnegie Art Museum.\n3. Get the full address of those airports.\n4. Return the full addresses.', 'subtask': 'Search for "Carnegie Art Museum".', 'name': 'Search', 'description': 'Searches the map for a given location.', 'query': 'Carnegie Art Museum', 'new': '1'}
+
+write_policy feedback : {'explain': "The agent has focused on the search textbox, which is correct. The next step is to type the query and press the 'Go' button.", 'plan': '1) Add guidance on how to enter the query in the textbox and press the go button.', 'guidance': 'Please follow these general instructions:\n* To search for a location, first type the location in the textbox labeled "Search".\n* After typing the location, click the "Go" button to initiate the search.\n* Consult PREVIOUS ACTIONS to see if you have typed and selected the names.\nPlease, use ONLY page operation and no subroutine actions.'}
+
+Here are the current actions performed in the Search [Carnegie Art Museum] subroutine : []
+
+get_action feedback : {'reason': 'The objective is to search for "Carnegie Art Museum". The page has a search textbox with id 145. I will type the name of the place there.', 'action': 'type [145] [Carnegie Art Museum] [0]', 'description': ''}
+
+Just issued action fill('145','Carnegie Art Museum')
+Here are the current actions performed in the Search [Carnegie Art Museum] subroutine : ['type [145] [Carnegie Art Museum] [0]']
+
+get_action feedback : {'reason': 'The location name is already in the search box. Now I need to click the "Go" button to start the search.', 'action': 'click [147]', 'description': ''}
+
+Just issued action click('147')
+Here are the current actions performed in the Search [Carnegie Art Museum] subroutine : ['type [145] [Carnegie Art Museum] [0]', 'click [147]']
+
+get_action feedback : {'reason': 'The webpage already displays the search results for "Carnegie Art Museum" based on the previous actions. There is nothing more to do.', 'action': 'stop [N/A]', 'description': ''}
+
+get_critique feedback : {'review': 'The user typed "Carnegie Art Museum" into the search box and then clicked the "Go" button to initiate the search. The page now displays a map with search results.', 'explain': 'The objective was to search for "Carnegie Art Museum". The map is displayed with the search results for the query. I consider this to be a successful attempt.', 'success': '1', 'critique': 'N/A'}
+
+Here are the current actions performed in the root [Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum] subroutine : ['Search [Carnegie Art Museum]', 'stop [N/A]']
+
+get_policy feedback : {'plan': '1. Find the coordinates of Carnegie Art Museum.\n2. Search for international airports within 30 km of those coordinates.\n3. Extract and provide the full addresses of the found airports.', 'subtask': 'Find the coordinates of Carnegie Art Museum. The current page seems to be showing the location already. I will try to use the "find_poi" subroutine to see if it can extract the coordinate.', 'name': 'find_poi', 'description': 'Finds the coordinates of a point of interest given the current map view.', 'query': 'Carnegie Art Museum', 'new': '0'}
+
+Here are the current actions performed in the find_poi [Carnegie Art Museum] subroutine : []

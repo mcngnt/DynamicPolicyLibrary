@@ -1,5 +1,8 @@
 from utils import *
 from enum import Enum
+import gymnasium as gym
+import browsergym.core
+from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
 
 base_actions = """
 Page Operation Actions:
@@ -11,19 +14,81 @@ Page Operation Actions:
 - go_home: To return to the homepage where you can find other websites.
 """
 
+# goto(url: str)
+#     Examples:
+#         goto('http://www.example.com')
+
+# go_back()
+#     Examples:
+#         go_back()
+
+# fill(bid: str, value: str)
+#     Examples:
+#         fill('237', 'example value')
+
+#         fill('45', 'multi-line\nexample')
+
+#         fill('a12', 'example with "quotes"')
+
+# click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+#     Examples:
+#         click('a51')
+
+#         click('b22', button='right')
+
+#         click('48', button='middle', modifiers=['Shift'])
+
+
+def print_gym_call(name, arguments):
+	return f"""{name}({','.join([f"\'{arg}\'" for arg in arguments])})"""
+
+
+class AvailableURL(Enum):
+    HOME = "http://metis.lti.cs.cmu.edu:4399/"
+    MAP = "http://miniserver1875.asuscomm.com:3000/#map=7/42.896/-75.108"
+    REDDIT = "http://metis.lti.cs.cmu.edu:9999/forums/all"
+    GITLAB = "http://metis.lti.cs.cmu.edu:8023/explore"
+    SHOPPING = "http://metis.lti.cs.cmu.edu:7770/"
+
 
 class WebEnvironment:
 	def __init__(self):
-		self.current_url = ""
-		self.current_observation = ""
+		self.start_url = None
+		self.current_observation = None
+		self.env = None
 
 	def observe(self):
-		return 
+		return flatten_axtree_to_str(self.current_observation["axtree_object"])
 
 	def interact(self, action_name, arguments=[]):
-		pass
-
-	def load(self,obs):
-		self.current_url = ""
-		# Temporary only used for basic testing
+		real_action_name = None
+		real_arguments = None
+		match action_name:
+			case "click":
+				real_action_name = "click"
+				real_arguments = arguments
+			case "type":
+				real_action_name = "fill"
+				real_arguments = arguments[:2]
+			case "go_back":
+				real_action_name = "go_back"
+				real_arguments = []
+			case "go_home":
+				real_action_name = "goto"
+				real_arguments = [self.start_url]
+		action = print_gym_call(real_action_name, real_arguments)
+		print(f"Just issued action {action}")
+		obs, reward, terminated, truncated, info = self.env.step(action)
 		self.current_observation = obs
+
+
+
+	def load(self, url):
+		self.env = gym.make(
+		    "browsergym/openended",
+		    task_kwargs={"start_url": url},
+		    wait_for_user_message=False,
+		)
+		obs, info = self.env.reset()
+		self.current_observation = obs
+		self.start_url = url
