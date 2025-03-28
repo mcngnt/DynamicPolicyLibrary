@@ -29,7 +29,7 @@ def parse_elements(text, key_list):
         return element_dict
 
 def print_action_call(name, arguments):
-    return name + " ".join([f"[{arg}]" for arg in arguments])
+    return name + " " + " ".join([f"[{arg}]" for arg in arguments])
 
 def parse_action_call(call):
     call = re.sub(r'\s*\[', '[', call)

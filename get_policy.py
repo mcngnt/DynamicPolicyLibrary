@@ -59,11 +59,11 @@ If none of the availble subroutines fit the subtask, you can create and call a n
 
  
 You should then respond to me with :
-Plan : Divide the objective into clear subtasks.
-First Subtask : Clearly identify the first subtask of your plan and how to tackle it.
-Name : The name of the subroutine you want to call
-Description : The description of the subroutine you want to call
-Query : The argument with which the subroutine will be called.
+Plan : Divide the objective into clear subtasks starting from the observation.
+First Subtask : Clearly identify the first subtask of your plan and how to tackle it. If you think that the objective is completed, detail the answer to the objective if applicable.
+Name : The name of the subroutine you want to call. Call stop if you think the objective is completed.
+Description : The description of the subroutine you want to call.
+Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and nothing otherwise.
 
 Here are some general guidelines to keep in mind :
 1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
@@ -88,7 +88,7 @@ def get_policy(objective, observation, url, previous_actions, relevant_policies)
     OBSERVATION: {observation}
     URL: {url}
     PREVIOUS ACTIONS: {previous_actions}
-    SUBROUTINES: {[f"{name} [query] : {description}" for (name, description) in relevant_policies]}
+    SUBROUTINES: {[f"{name} [query] : {description}" for (name, description) in relevant_policies] + ["stop [answer]"]}
     """
 
 

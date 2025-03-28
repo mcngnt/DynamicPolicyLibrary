@@ -1,4 +1,5 @@
 from utils import *
+from enum import Enum
 
 base_actions = """
 Page Operation Actions:
@@ -10,6 +11,7 @@ Page Operation Actions:
 - go_home: To return to the homepage where you can find other websites.
 """
 
+
 class WebEnvironment:
 	def __init__(self):
 		self.current_url = ""
@@ -19,24 +21,7 @@ class WebEnvironment:
 		return 
 
 	def interact(self, action_name, arguments=[]):
-		action_call = print_action_call(action_name, arguments)
-
-		prompt = f"""
-		You are an AI web navigator. Based on the current state of the website and on an action performed on the page, you have to predict the new state of the webpage.
-
-		Here are the available page actions :
-		{base_actions}
-
-		Here is the current state of the page :
-		{self.current_observation}
-
-		Here is the action performed :
-		{action_call}
-
-		Answer by giving the new state of the web page.
-		"""
-
-		self.current_observation = generate_content(prompt)
+		pass
 
 	def load(self,obs):
 		self.current_url = ""

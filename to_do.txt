@@ -1,22 +1,5 @@
-dont authorize  calling policy inside policy
-change prompt depend if in policy or not
-retrieve relevant policies depending of obj especially in policy
-incremental tasks
-make more plans
-integrate agent lab
-
-
-If policy stack empty :
-- Retrieve polcies related to the objective
-- Incentive to call a policy (either a new or existing one)
-
-If policy stack not empty :
-- Retrieve polcicies related to current policy
-- Disable calling new policies
-- Can only call retrieved policies / atomic actions
-
-
-Problems encountered :
-- Answered "create_subroutine find_nearby_loaction" instead of "find_nearby_location [Airport]"
-- Does not respect the atomic_action [id] format (instead atomic_action [name])
-- 
+- Actually implement the web-env
+- Give relevant part of the trajectory to the diverse components:
+	- No need for get_policy to have access to the individual steps composing a policy (only policy_call and stop)
+	- No need for get_action to have access to steps outside of the policy
+	- 
