@@ -14,7 +14,8 @@ The current webpage URL
 PREVIOUS ACTIONS:
 A list of the past actions with an optional response, e.g. 1 find_commits [query]
 
-Adhere to the following output format :
+
+Adhere strictly to the following output format :
 REVIEW:
 Make a brief summary of all the actions taken as well as the final state of the webpage afterwards.
 EXPLAIN:

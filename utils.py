@@ -2,6 +2,9 @@ from google import genai
 import numpy as np
 import re
 
+# client = genai.Client(api_key="")
+# client = genai.Client(api_key="***REMOVED***")
+# client = genai.Client(api_key="***REMOVED***")
 # client = genai.Client(api_key="***REMOVED***")
 client = genai.Client(api_key="***REMOVED***")
 

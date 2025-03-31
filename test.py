@@ -7,6 +7,17 @@ from policy_library import PolicyLibrary
 from utils import *
 from web_environment import WebEnvironment, AvailableURL, print_gym_call
 
+from browsergym.core.action.highlevel import HighLevelActionSet
+
+actions = HighLevelActionSet(
+            subsets=["chat", "tab", "nav", "bid", "infeas"],  # define a subset of the action space
+            # subsets=["chat", "bid", "coord", "infeas"] # allow the agent to also use x,y coordinates
+            strict=False,  # less strict on the parsing of the actions
+            multiaction=False,  # does not enable the agent to take multiple actions at once
+            demo_mode=False,  # add visual effects
+        )
+
+# print(actions.__dict__)
 
 # print(AvailableURL.REDDIT.value)
 
@@ -14,11 +25,21 @@ from web_environment import WebEnvironment, AvailableURL, print_gym_call
 
 env = WebEnvironment()
 env.load(AvailableURL.REDDIT.value)
+env.interact("type", ["48", "wall", "1"])
 print(env.observe())
-env.interact("click", ["310"])
-print(env.observe())
-env.interact("go_home", [])
-print(env.observe())
+# print(env.observe())
+# env.interact("go_home", [])
+# print(env.observe())
+
+# env.load(AvailableURL.GITLAB.value)
+
+# print(env.observe())
+
+# env.interact("type", ["97", "a11yproject", "1"])
+
+# print(env.observe())
+
+# env.interact("type", [])
 
 # print(get_my_action())
 # print(get_my_policy())

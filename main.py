@@ -16,17 +16,20 @@ AvailableURL.MAP.value, 9, "Pittsburgh International Airport, Southern Beltway, 
 AvailableURL.GITLAB.value, 134, "0"),
 ("List out reviewers, if exist, who mention about ear cups being small", 
 AvailableURL.SHOPPING.value + "6s-wireless-headphones-over-ear-noise-canceling-hi-fi-bass-foldable-stereo-wireless-kid-headsets-earbuds-with-built-in-mic-micro-sd-tf-fm-for-iphone-samsung-ipad-pc-black-gold.html", 
-21, "unknown")
+21, "unknown"),
+("I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all 31 cards",
+AvailableURL.SHOPPING.value, 159, "Unknown")
 ]
 
 env = WebEnvironment()
 policy_library = PolicyLibrary()
-for (objective, url, _, _) in [tasks[0]]:
+for (objective, url, _, _) in [tasks[1]]:
     env.load(url)
-    trajectory = []
+    trajectory = [] 
     policy_stack = [{"name":"root", "query":objective, "actions":[]}]
+    final_answer = None
     # Capping maximum number of prompt iteration
-    for i in range(15):
+    for i in range(100):
         observation = env.observe()
         action = {}
         print(f"Here are the current actions performed in the {print_action_call(policy_stack[-1]["name"], [policy_stack[-1]["query"]])} subroutine : {policy_stack[-1]["actions"]}\n")
@@ -34,7 +37,7 @@ for (objective, url, _, _) in [tasks[0]]:
             relevant_policies = policy_library.retrieve(objective)
             policy_feedback = get_policy(objective, observation, "", policy_stack[-1]["actions"], relevant_policies)
             print(f"get_policy feedback : {policy_feedback}\n")
-            if policy_library.is_new(policy_feedback["name"]):
+            if policy_feedback["name"].lower() != "stop" and policy_library.is_new(policy_feedback["name"]):
                 policy_writing_feedback = write_policy(policy_feedback["name"], policy_feedback["description"], policy_feedback["query"], observation, "", "")
                 print(f"write_policy feedback : {policy_writing_feedback}\n")
                 policy_library.update(policy_feedback["name"], policy_feedback["description"], policy_writing_feedback["guidance"])
@@ -49,9 +52,10 @@ for (objective, url, _, _) in [tasks[0]]:
         policy_stack[-1]["actions"] += [print_action_call(action["name"], action["arguments"])]
         trajectory += [(print_action_call(action["name"], action["arguments"]), observation)]
 
-        if action["name"] == "stop":
+        if action["name"].lower() == "stop":
             if len(policy_stack) == 1:
                 # We just stopped on the root policy
+                final_answer = action["arguments"][0]
                 break
             prev_policy_name, prev_query, prev_actions = policy_stack.pop().values()
             policy_stack[-1]["actions"] += [print_action_call("stop", action["arguments"])]
@@ -68,5 +72,8 @@ for (objective, url, _, _) in [tasks[0]]:
             continue
         # A this point, the action is not "stop" nor any other atomic action. It is then a policy call
         policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[]}]
+
+
+    print(f"{'-'*10}\nFor the task :\n{objective}\nMy final answer is : {final_answer}\n{'-'*10}\n")
 
 

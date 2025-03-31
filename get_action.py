@@ -15,12 +15,11 @@ go_back
 
 page_operations = """
 Page Operation Actions:
-- click [ id ]: To click on an element with its numerical ID on the webpage. E.g. , ‘click [7] ’ If clicking on a specific element doesn ’ t trigger the transition to your desired web state , this is due to the element’s lack of interactivity or GUI visibility . In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
-- type [ id ] [ content ] : To type content into a field with a specific ID. If you can ’ t find what you’re looking for on your first attempt , consider refining your search keywords by breaking them down or trying related terms.
-- go_back : To return to the previously viewed page.
-- note [ content ]: To take note of all important info w.r.t. completing the task to enable reviewing it later . E.g. , ‘note [Spent $10 on 4/1/2024] ’
-- stop [ answer ]: To stop interaction and return response. Present your answer within the brackets . If the task doesn’t require a textual answer or appears insurmountable, indicate ‘N/A’ and additional reasons and all relevant information you gather as the answer . E.g. , ‘stop [5h 47min]’
-- go_home: To return to the homepage where you can find other websites.
+- `click [ id ]`: To click on an element with its numerical ID on the webpage. E.g. , ‘click [7] ’ If clicking on a specific element doesn ’ t trigger the transition to your desired web state , this is due to the element’s lack of interactivity or GUI visibility . In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
+- `type [id] [content] [press enter after = 0|1]`: To type content into a field with a specific ID. By default , the ‘ Enter ’ key is pressed after typing unless ‘press enter after ’ is set to 0. E.g. , ‘type [15] [Carnegie Mellon University ] [1] ’ If you can ’ t find what you’re looking for on your first attempt , consider refining your search keywords by breaking them down or trying related terms.
+- `note [ content ]`: To take note of all important info w.r.t. completing the task to enable reviewing it later . E.g. , ‘note [Spent $10 on 4/1/2024] ’
+- `stop [ answer ]`: To stop interaction and return response. Present your answer within the brackets . If the task doesn’t require a textual answer or appears insurmountable, indicate ‘N/A’ and additional reasons and all relevant information you gather as the answer . E.g. , ‘stop [5h 47min]’
+- `go_home`: To return to the homepage where you can find other websites.
 """
 
 get_action_system_prompt = """
@@ -48,8 +47,8 @@ Here are some general guidelines to keep in mind :
 4. Always refer to specific elements in the page by their ID and not by their name when using page operation actions.
 5. You can't reuse the objective subroutine.
 
-You need to generate a response in the following format.
 Please issue only a single action at a time.
+Adhere strictly to the following output format :
 RESPONSE FORMAT :
 REASON: ...
 ACTION: ...

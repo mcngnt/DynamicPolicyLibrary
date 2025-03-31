@@ -36,7 +36,7 @@ You will divide your objective into subtasks and call specific functions or subr
 Here some example of subroutines actions along with their descriptions :
 {policies}
 
-Here are some example actions, either page operation or subroutine call :
+Here are the afromentionned example subroutines called with their associated queries :
 {example_actions}
 
 You will be provided with the following,
@@ -47,29 +47,30 @@ A simplified text description of the current browser content, without formatting
 URL:
 The current webpage URL
 PREVIOUS ACTIONS:
-A list of your past actions with an optional response
+A list of your past subroutine calls followed by their output in the form 'stop [answer]'
 SUBROUTINES:
 The available subroutines at your disposal.
 
 
-You should call one of the avilable subroutines along with the right argument to solve the subtask (see example subroutines for how to call them).
-If none of the availble subroutines fit the subtask, you can create and call a new subroutine by simply providing its name and description.
+You should call one of the available subroutines along with the right query to solve the subtask (see example subroutines for how to call them).
+If none of the available subroutines fit the current subtask, you can create and call a new subroutine by simply providing its name and description.
 
  
 You should then respond to me with :
-Plan : Divide the objective into clear subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website.
-Current Subtask : Clearly identify the current subtask of your plan where you are and how to tackle it. If you think that the objective is completed, detail the answer to the objective if applicable.
+Plan : Divide the objective into at most 3 clear and equally complex subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website. The less subtasks your plan contains, the better it is.
+Current Subtask : Clearly identify the current subtask of your plan where you are. If you think that the objective is completed, detail the answer to the objective if applicable.
 Name : The name of the subroutine you want to call to solve current subtask. Call stop if you think the objective is completed.
 Description : The description of the subroutine you want to call.
 Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and N/A otherwise.
 
 Here are some general guidelines to keep in mind :
-1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
-2. You do not have access to external ressources. Limit yourself to the content of the current webpage.
-3. Subroutines should be generic and only depends on the type of website your in and not the website itself.
+1. You do not have access to external ressources. Limit yourself to the content of the current webpage.
+2. Subroutines should be generic and only depends on the type of website your in and not the website itself.
+3. Your plan should be simple and not very detailed. For instance, it is better to have '1. Go to project X' rather than '1. Find X 2. Click on project X'. Your plan should not depend on the actual website architecture, which is handled by the subroutines themselves.
+4. If you create a subroutine, the name of the newly created subroutine should match the current subtask.
 
-You need to generate a response in the following format.
 Please issue only a single action at a time.
+Adhere strictly to the following output format :
 RESPONSE FORMAT :
 PLAN: ...
 SUBTASK: ...
@@ -94,6 +95,10 @@ def get_policy(objective, observation, url, previous_actions, relevant_policies)
 
     result = parse_elements(answer, ["plan", "subtask", "name", "description", "query"])
 
+    if len(result["name"]) == 0:
+        print(f"Just got an empty name on get_policy, trying again : {result}\n")
+        return get_policy(objective, observation, url, previous_actions, relevant_policies)
+ 
 
     return result
 
