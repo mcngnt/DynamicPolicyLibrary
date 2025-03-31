@@ -11,16 +11,17 @@ from get_policy import get_policy
 
 tasks = [
 ("Tell me the full address of all international airports that are within a driving distance of 30 km to Carnegie Art Museum",
-AvailableURL.MAP.value),
+AvailableURL.MAP.value, 9, "Pittsburgh International Airport, Southern Beltway, Findlay Township, Allegheny County, 15231, United States"),
 ("How many commits did kilian make to a11yproject on 3/1/2023?",
-AvailableURL.GITLAB.value),
-("Edit my post on Star Trek Starfleet Academy series by adding a line to the body that says \"Every watch makes me feel like a kid again\"",
-AvailableURL.REDDIT.value),
+AvailableURL.GITLAB.value, 134, "0"),
+("List out reviewers, if exist, who mention about ear cups being small", 
+AvailableURL.SHOPPING.value + "6s-wireless-headphones-over-ear-noise-canceling-hi-fi-bass-foldable-stereo-wireless-kid-headsets-earbuds-with-built-in-mic-micro-sd-tf-fm-for-iphone-samsung-ipad-pc-black-gold.html", 
+21, "unknown")
 ]
 
 env = WebEnvironment()
 policy_library = PolicyLibrary()
-for (objective, url) in [tasks[0]]:
+for (objective, url, _, _) in [tasks[0]]:
     env.load(url)
     trajectory = []
     policy_stack = [{"name":"root", "query":objective, "actions":[]}]
@@ -33,7 +34,7 @@ for (objective, url) in [tasks[0]]:
             relevant_policies = policy_library.retrieve(objective)
             policy_feedback = get_policy(objective, observation, "", policy_stack[-1]["actions"], relevant_policies)
             print(f"get_policy feedback : {policy_feedback}\n")
-            if int(policy_feedback["new"]):
+            if policy_library.is_new(policy_feedback["name"]):
                 policy_writing_feedback = write_policy(policy_feedback["name"], policy_feedback["description"], policy_feedback["query"], observation, "", "")
                 print(f"write_policy feedback : {policy_writing_feedback}\n")
                 policy_library.update(policy_feedback["name"], policy_feedback["description"], policy_writing_feedback["guidance"])
@@ -56,7 +57,7 @@ for (objective, url) in [tasks[0]]:
             policy_stack[-1]["actions"] += [print_action_call("stop", action["arguments"])]
             critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, "", prev_actions)
             print(f"get_critique feedback : {critique_feedback}\n")
-            if not int(critique_feedback["success"]):
+            if not int(critique_feedback["perfect"]):
                 prev_policy_descr, prev_policy_content = policy_library.get(prev_policy_name)
                 policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
                 print(f"write_policy feedback : {policy_writing_feedback}\n")

@@ -1,24 +1,5 @@
 from utils import *
 
-
-
- # Plan progress assessment : Review critically why the plans have not been fulfilled or the objective achieved .
- # J ustify your assessment with detailed evidence drawn from the objective , observations , and actions taken
- # .
- # I temize the assessment using this format : ‘− plan [{plan id}]\n\t[{step
- # [{ concrete proof from
- # observation }] [{why milestone a
- # i ds taken
- # not successful}]\n\t[{
- # s t ep
- # i ds taken
- # f or this milestone }] [{concrete proof from
- # f or this milestone }]
- # observation }] [{why milestone b
- # not successful
- # }]\n\t . . . ’ .
- 
-
 critique_system_prompt = f"""
 You are a seasoned web navigator. You now assess the success or failure of a web navigation objective based on the previous interaction history and the web’s current state.
 Then you make a clear feedback about the fullfiment of the task and if you deem the objective to be a failure, give clear reasons why.
@@ -37,11 +18,13 @@ Adhere to the following output format :
 REVIEW:
 Make a brief summary of all the actions taken as well as the final state of the webpage afterwards.
 EXPLAIN:
-Explain whether or not the actions taken were enough to fullfill the objective. Explain why it is a success or why is it a failure.
+Explain whether or not the actions taken were enough to fullfill the objective. Explain why it is a success or why is it a failure. If the actions taken resulted in a success, explain if it could have been done in fewer steps.
 SUCCESS:
-Output 1 if it is a succes (objective fullfilled), 0 if it is a failure (objective not fullfilled)
+Output 1 if it is a success (objective fullfilled), 0 if it is a failure (objective not fullfilled)
+PERFECT:
+Output 1 if the task-solving is perfect (shortest amount of steps and accomplishes the objective) and 0 otherwise (is a failure or could be shortened)
 CRITIQUE:
-If the task is a failure, explain what needs to be changed to become a success.
+If the task-solving process could be improved, explain what needs to be changed to accomplish the objective or to reduce the number of setps taken.
 """
 
 
@@ -56,7 +39,7 @@ def get_critique(objective, observation, url, previous_actions):
 
     answer = generate_content(critique_prompt)
 
-    result = parse_elements(answer, ["review", "explain", "success", "critique"])
+    result = parse_elements(answer, ["review", "explain", "success", "perfect", "critique"])
 
     return result
 

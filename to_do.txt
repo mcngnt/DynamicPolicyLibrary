@@ -1,9 +1,27 @@
-- type / fill press enter afterwards
-
-- remove "new" and instead check manually if policy existed before
-
-- step of the plan in the get_policy : actually adavnce
+To-do :
+- step of the plan in the get_policy : actually advance
 
 - abort task if critique deems failure and restart the task: max 3 restarts ?
 
+- implement Occam selective past observations
+
 - general guidelines for each website (root policy guidance text)
+	- How can the model know OpenStreetMap work beforehand ? Especially useful when making plan
+		- Other solution : make more specific policy that can actually handle the plan + actually have feedback on the task as a whole (without that, get_policy module can't improve). But does it work for very long trajectories ? No. Simply give some higher order policies example.
+Solution : incentivize get_policy to make very high level function so that the innerworkings of the website does not affect the relevance of thr planning step.
+Eg. is you need to find closest airports to a place, call subroutine closest_element_to_place. If the task is clearly seperated into two subtasks, (by "and" for intsnace), use two subtasks.
+Need to provide examples in the context for this solution to know what is the boundaries of a subtask.
+
+
+
+What was done :
+new policy code-based detection
+cohesive naming convention
+unifying type and fill actions (don't press enter afterwards)
+
+get_policy prompt
+	- Current subtasks
+	- General policy
+	- Abstract away inner working of the website
+
+Call critique even if successful trajectory : see output.txt, the trajectory is very long for search_osm

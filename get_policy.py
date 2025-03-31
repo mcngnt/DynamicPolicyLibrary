@@ -2,28 +2,28 @@ from utils import *
 
 
 policies = """
-`findCommits [query]`: Given you are in a project page, this Gitlab subroutine searches for commits made to the project and retrieves information about a commit. This function returns the answer to the query.
-`findSubreddit [query]`: This Reddit subroutine finds a subreddit corresponding to the query. The query can either be the name of the subreddit or a vague description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit.
-`searchCustomer [query]`: This CMS subroutine finds a customer given some details about them such as their phone number.
-`searchReviews [query]`: This Shopping subroutine searches reviews to answer a question about reviews.
-`findDirections [query]`: This Maps subroutine finds directions between two locations to answer the query.
-"""
+ `find_commits [query]`: Given you are in a project page, this Gitlab subroutine searches for commits made to the project and retrieves information about a commit. This function returns the answer to the query.
+ `find_subreddit [query]`: This Reddit subroutine finds a subreddit corresponding to the query. The query can either be the name of the subreddit or a vague description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit.
+ `search_customer [query]`: This CMS subroutine finds a customer given some details about them such as their phone number.
+ `search_reviews [query]`: This Shopping subroutine searches reviews to answer a question about reviews.
+ `find_directions [query]`: This Maps subroutine finds directions between two locations to answer the query.
+ """
 
 example_actions = """
-findCommits [How many commits did user make to diffusionProject on 03/23/2023?]
-searchIssues [Open my latest updated issue that has keyword "better" in its title to check if it is closed]
-createProject [Create a new public project "awesome-llms" and add primer, convexegg, abishek as members]
-createGroup [Create a new group "coding_friends" with members qhduan, Agnes-U]
-findSubreddit [books]
-findUser [AdamCannon]
-findCustomer_review [Show me customer reviews for Zoe products]
-findOrder [Most recent pending order by Sarah Miller]
-searchCustomer [Search customer with phone number 8015551212]
-searchOrder [How much I spend on 4/19/2023 on shopping at One Stop Market?]
-listProducts [List products from PS4 accessories category by ascending price]
-searchReviews [List out reviewers, if exist, who mention about ear cups being small]
-findDirections [Check if the social security administration in Pittsburgh can be reached in one hour by car from Carnegie Mellon University]
-searchNearest_place [Tell me the closest cafe(s) to CMU Hunt library]
+find_commits [How many commits did user make to diffusionProject on 03/23/2023?]
+search_issues [Open my latest updated issue that has keyword "better" in its title to check if it is closed]
+create_project [Create a new public project "awesome-llms" and add primer, convexegg, abishek as members]
+create_group [Create a new group "coding_friends" with members qhduan, Agnes-U]
+find_subreddit [books]
+find_user [AdamCannon]
+find_customer_review [Show me customer reviews for Zoe products]
+find_order [Most recent pending order by Sarah Miller]
+search_customer [Search customer with phone number 8015551212]
+search_order [How much I spend on 4/19/2023 on shopping at One Stop Market?]
+list_products [List products from PS4 accessories category by ascending price]
+search_reviews [List out reviewers, if exist, who mention about ear cups being small]
+find_directions [Check if the social security administration in Pittsburgh can be reached in one hour by car from Carnegie Mellon University]
+search_nearest_place [Tell me the closest cafe(s) to CMU Hunt library]
 """
 
 
@@ -50,8 +50,6 @@ PREVIOUS ACTIONS:
 A list of your past actions with an optional response
 SUBROUTINES:
 The available subroutines at your disposal.
-NEW:
-Output 0 if you used one of the avilable subroutines at your disposal and 1 if you created the subroutine.
 
 
 You should call one of the avilable subroutines along with the right argument to solve the subtask (see example subroutines for how to call them).
@@ -59,15 +57,16 @@ If none of the availble subroutines fit the subtask, you can create and call a n
 
  
 You should then respond to me with :
-Plan : Divide the objective into clear subtasks starting from the observation.
-First Subtask : Clearly identify the first subtask of your plan and how to tackle it. If you think that the objective is completed, detail the answer to the objective if applicable.
-Name : The name of the subroutine you want to call. Call stop if you think the objective is completed.
+Plan : Divide the objective into clear subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website.
+Current Subtask : Clearly identify the current subtask of your plan where you are and how to tackle it. If you think that the objective is completed, detail the answer to the objective if applicable.
+Name : The name of the subroutine you want to call to solve current subtask. Call stop if you think the objective is completed.
 Description : The description of the subroutine you want to call.
-Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and nothing otherwise.
+Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and N/A otherwise.
 
 Here are some general guidelines to keep in mind :
 1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
 2. You do not have access to external ressources. Limit yourself to the content of the current webpage.
+3. Subroutines should be generic and only depends on the type of website your in and not the website itself.
 
 You need to generate a response in the following format.
 Please issue only a single action at a time.
@@ -77,7 +76,6 @@ SUBTASK: ...
 NAME: ...
 DESCRIPTION: ...
 QUERY: ...
-NEW: ...
 """
 
 
@@ -94,7 +92,7 @@ def get_policy(objective, observation, url, previous_actions, relevant_policies)
 
     answer = generate_content(get_policy_prompt)
 
-    result = parse_elements(answer, ["plan", "subtask", "name", "description", "query", "new"])
+    result = parse_elements(answer, ["plan", "subtask", "name", "description", "query"])
 
 
     return result

@@ -46,6 +46,9 @@ class PolicyLibrary:
                 return desc, content
         return None
 
+    def is_new(self, name):
+        return self.get(name) is None
+
     def save(self, path):
         num_policies = len(self.policies)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
