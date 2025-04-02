@@ -57,8 +57,8 @@ If none of the available subroutines fit the current subtask, you can create and
 
  
 You should then respond to me with :
-Plan : Divide the objective into at most 3 clear and equally complex subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website. The less subtasks your plan contains, the better it is.
-Current Subtask : Clearly identify the current subtask of your plan where you are. If you think that the objective is completed, detail the answer to the objective if applicable.
+Plan : Describe the current situation in regards to the objective.
+Current Subtask : Clearly identify the current subtask you have to tackle to complete the objective. The subtask should be as large as possible to complete the objective. If you think that the objective is completed, detail the answer to the objective if applicable.
 Name : The name of the subroutine you want to call to solve current subtask. Call stop if you think the objective is completed.
 Description : The description of the subroutine you want to call.
 Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and N/A otherwise.
@@ -66,8 +66,7 @@ Query : The argument with which the subroutine will be called. If the subroutine
 Here are some general guidelines to keep in mind :
 1. You do not have access to external ressources. Limit yourself to the content of the current webpage.
 2. Subroutines should be generic and only depends on the type of website your in and not the website itself.
-3. Your plan should be simple and not very detailed. For instance, it is better to have '1. Go to project X' rather than '1. Find X 2. Click on project X'. Your plan should not depend on the actual website architecture, which is handled by the subroutines themselves.
-4. If you create a subroutine, the name of the newly created subroutine should match the current subtask.
+3. If you create a subroutine, the name of the newly created subroutine should match the current subtask.
 
 Please issue only a single action at a time.
 Adhere strictly to the following output format :

@@ -80,9 +80,9 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
     GUIDANCE TEXT : {guidance_text}
     """
 
-    atomic_actions = ["click", "type", "go_back", "note", "stop", "go_home"]
+    page_op = ["click", "type", "go_back", "note", "go_home"]
     subroutine_actions = [name for (name, description) in relevant_policies]
-    possible_actions = atomic_actions + subroutine_actions
+    possible_actions = page_op + subroutine_actions + ["stop"]
 
 
     answer = generate_content(get_action_prompt)
@@ -94,11 +94,13 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
     arguments = parse_action_call(result["action"])
 
     if not (arguments[0] in possible_actions):
-        print("Impossible action\n")
+        print(f"Impossible action : {arguments[0]}\n")
 
-    is_atomic = arguments[0] in atomic_actions
+    is_page_op = arguments[0].lower() in page_op
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_atomic":is_atomic, "description":result["description"]}
+    is_stop = arguments[0].lower() == "stop"
+
+    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "description":result["description"]}
 
     return action
 

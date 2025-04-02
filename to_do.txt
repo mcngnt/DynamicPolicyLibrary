@@ -1,21 +1,15 @@
-To-do :
+TO-DO :
 
-- abort task if critique deems failure and restart the task: max 3 restarts ?
+- Simplify architecture : do I really need the additional component ?
+	- Instead : only use get_action but change the prompt depending if the policy stack is empty or not : ONLY FOR THE DISCOVERY PHASE
+	Can just be removed during exploration
 
-- implement Occam selective past observations
+- Test first the core ideas and the baseline
 
-- general guidelines for each website (root policy guidance text)
-	- How can the model know OpenStreetMap work beforehand ? Especially useful when making plan
-		- Other solution : make more specific policy that can actually handle the plan + actually have feedback on the task as a whole (without that, get_policy module can't improve). But does it work for very long trajectories ? No. Simply give some higher order policies example.
-Solution : incentivize get_policy to make very high level function so that the innerworkings of the website does not affect the relevance of thr planning step.
-Eg. is you need to find closest airports to a place, call subroutine closest_element_to_place. If the task is clearly seperated into two subtasks, (by "and" for intsnace), use two subtasks.
-Need to provide examples in the context for this solution to know what are the boundaries of a subtask.
+- Implement Occam improvements
 
+- 
 
 
-What was done :
-Removed writing policy for final stop
+WHATS WAS DONE :
 
-Improve get_policy plans
-
-Press enter after fill when using type (when no 'gO' button avalable)
