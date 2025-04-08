@@ -1,15 +1,13 @@
 TO-DO :
 
-- Simplify architecture : do I really need the additional component ?
-	- Instead : only use get_action but change the prompt depending if the policy stack is empty or not : ONLY FOR THE DISCOVERY PHASE
-	Can just be removed during exploration
+- Implement Occam improvements : selective observation
 
-- Test first the core ideas and the baseline
-
-- Implement Occam improvements
-
-- 
+- Better logs for analysis
 
 
 WHATS WAS DONE :
 
+- Provide url in context
+- Percentage of tasks with complex trajectories (23.41%)
+- Simplify architecture : only one agent to take all decisions
+	During exploration phase : curriculum at the start of the task to create useful policies (generate at most 2 policies to avoid useless simplistic policies and take advantage of incremental discorvery)

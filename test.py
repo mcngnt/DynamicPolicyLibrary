@@ -1,21 +1,28 @@
 # Functions to quickly test the prompts of the different components :
-from writing_policy import get_my_writing_answer
-from get_action import get_my_action
-from critique import get_my_critique
-from get_policy import get_my_policy
-from policy_library import PolicyLibrary
+# from writing_policy import get_my_writing_answer
+# from get_action import get_my_action
+# from critique import get_my_critique
+# from get_policy import get_my_policy
+# from policy_library import PolicyLibrary
 from utils import *
 from web_environment import WebEnvironment, AvailableURL, print_gym_call
 
 from browsergym.core.action.highlevel import HighLevelActionSet
+import json
 
-actions = HighLevelActionSet(
-            subsets=["chat", "tab", "nav", "bid", "infeas"],  # define a subset of the action space
-            # subsets=["chat", "bid", "coord", "infeas"] # allow the agent to also use x,y coordinates
-            strict=False,  # less strict on the parsing of the actions
-            multiaction=False,  # does not enable the agent to take multiple actions at once
-            demo_mode=False,  # add visual effects
-        )
+import gymnasium as gym
+import browsergym.webarena
+
+
+page_op = ["click", "type", "go_back", "go_home", "stop"]
+
+# actions = HighLevelActionSet(
+#             subsets=["chat", "tab", "nav", "bid", "infeas"],  # define a subset of the action space
+#             # subsets=["chat", "bid", "coord", "infeas"] # allow the agent to also use x,y coordinates
+#             strict=False,  # less strict on the parsing of the actions
+#             multiaction=False,  # does not enable the agent to take multiple actions at once
+#             demo_mode=False,  # add visual effects
+#         )
 
 # print(actions.__dict__)
 
@@ -23,10 +30,10 @@ actions = HighLevelActionSet(
 
 # print(print_gym_call("go_back", ['42', "Carnegie"]))
 
-env = WebEnvironment()
-env.load(AvailableURL.REDDIT.value)
-env.interact("type", ["48", "wall", "1"])
-print(env.observe())
+# env = WebEnvironment()
+# env.load(AvailableURL.REDDIT.value)
+# env.interact("type", ["48", "wall", "1"])
+# print(env.observe())
 # print(env.observe())
 # env.interact("go_home", [])
 # print(env.observe())
@@ -81,3 +88,60 @@ print(env.observe())
 # print(parse_action_call("function_name"))  # ['function_name']
 # print(parse_action_call("function_name[arg1] [arg2][arg3]"))  # ['function_name', 'arg1', 'arg2', 'arg3']
 # print(parse_action_call("function_name [arg1]   [arg2][arg3]"))  # ['function_name', 'arg1', 'arg2', 'arg3']
+
+
+
+
+
+
+
+
+
+
+
+# def nb_policies(id):
+#     with open(f"../../step_trajectories/{id}.json", "r") as f:
+#         data = json.load(f)
+
+
+#     actions = [parse_action_call(step["action"])[0] for step in data.get("trajectory", []) if "action" in step]
+
+#     return sum([not (action in page_op) for action in actions])
+
+
+# multiple_actions_tasks_nb = 0
+# tasks_nb = 0
+
+# for i in range(811):
+#     try:
+#         n = nb_policies(i)
+#         tasks_nb += 1
+#         if n > 1:
+#             print(f"{i} : {n}")
+#             multiple_actions_tasks_nb += 1
+#     except:
+#         print(f"Error with file {i}")
+
+
+# print((multiple_actions_tasks_nb / tasks_nb)*100)
+
+# 23.41 % of tasks use multiple subtasks
+
+
+
+
+
+
+
+
+
+
+
+
+# # start a webarena task
+# env = gym.make("browsergym/webarena.servicenow.order-ipad-pro")
+...
+
+# list all the available webarena tasks
+env_ids = [id for id in gym.envs.registry.keys() if id.startswith("browsergym/webarena")]
+print("\n".join(env_ids))

@@ -2,6 +2,7 @@ from utils import *
 from enum import Enum
 import gymnasium as gym
 import browsergym.core
+
 from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
 
 
@@ -42,11 +43,11 @@ def print_gym_call(name, arguments):
 
 
 class AvailableURL(Enum):
-    HOME = "http://metis.lti.cs.cmu.edu:4399/"
-    MAP = "http://miniserver1875.asuscomm.com:3000/#map=7/42.896/-75.108/"
-    REDDIT = "http://metis.lti.cs.cmu.edu:9999/forums/all"
-    GITLAB = "http://metis.lti.cs.cmu.edu:8023/explore/"
-    SHOPPING = "http://metis.lti.cs.cmu.edu:7770/"
+    HOME = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:4399/"
+    MAP = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108/"
+    REDDIT = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums/all"
+    GITLAB = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/explore/"
+    SHOPPING = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7770/"
 
 
 class WebEnvironment:
@@ -56,7 +57,7 @@ class WebEnvironment:
 		self.env = None
 
 	def observe(self):
-		return flatten_axtree_to_str(self.current_observation["axtree_object"])
+		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"]
 
 	def interact(self, action_name, arguments=[]):
 		real_action_name = None

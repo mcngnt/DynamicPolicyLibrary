@@ -33,7 +33,7 @@ You are an AI assistant calling subroutine to perform tasks on a web browser.
 You will divide your objective into subtasks and call specific functions or subroutines to solve these subtasks.
 
 
-Here some example of subroutines actions along with their descriptions :
+Here some example of subroutines along with their descriptions :
 {policies}
 
 Here are the afromentionned example subroutines called with their associated queries :
@@ -46,60 +46,61 @@ OBSERVATION:
 A simplified text description of the current browser content, without formatting elements.
 URL:
 The current webpage URL
-PREVIOUS ACTIONS:
-A list of your past subroutine calls followed by their output in the form 'stop [answer]'
 SUBROUTINES:
 The available subroutines at your disposal.
 
 
-You should call one of the available subroutines along with the right query to solve the subtask (see example subroutines for how to call them).
-If none of the available subroutines fit the current subtask, you can create and call a new subroutine by simply providing its name and description.
+You should call one of the available subroutines along with the right query to solve the subtasks (see example subroutines for how to call them).
+If none of the available subroutines fit the subtask, you can create and call a new subroutine by simply providing its name and description.
 
- 
+
 You should then respond to me with :
-Plan : Describe the current situation in regards to the objective.
-Current Subtask : Clearly identify the current subtask you have to tackle to complete the objective. The subtask should be as large as possible to complete the objective. If you think that the objective is completed, detail the answer to the objective if applicable.
-Name : The name of the subroutine you want to call to solve current subtask. Call stop if you think the objective is completed.
-Description : The description of the subroutine you want to call.
-Query : The argument with which the subroutine will be called. If the subroutine is stop, put here the answer to the objective here if applicable and N/A otherwise.
+Plan: Divide the objective into at most 2 clear and equally complex subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website. Your plan should contain the smallest possible number of subtasks.
+For each of the following categories, you need to provide an answer for each corresponding subtask in your plan separated by |
+Name: The names of the subroutines you want to call to solve each subtask (subtroutine_name_1 | subtroutine_name_1 | ...)
+Description: The descriptions of the subroutines you want to call. (description_1 | description_2 | ...)
+Query: The argument with which each subroutine will be called. (query_1 | query_2 | ...)
 
 Here are some general guidelines to keep in mind :
 1. You do not have access to external ressources. Limit yourself to the content of the current webpage.
 2. Subroutines should be generic and only depends on the type of website your in and not the website itself.
 3. If you create a subroutine, the name of the newly created subroutine should match the current subtask.
+4. Subroutines shouldn't be too simple : they should be an abstraction of at least two page operations.
 
 Please issue only a single action at a time.
 Adhere strictly to the following output format :
 RESPONSE FORMAT :
 PLAN: ...
-SUBTASK: ...
 NAME: ...
 DESCRIPTION: ...
 QUERY: ...
 """
 
 
-def get_policy(objective, observation, url, previous_actions, relevant_policies):
+def get_policy(objective, observation, url, relevant_policies):
     get_policy_prompt = f"""
     {get_policy_system_prompt}
+
     OBJECTIVE: {objective}
     OBSERVATION: {observation}
     URL: {url}
-    PREVIOUS ACTIONS: {previous_actions}
-    SUBROUTINES: {[f"{name} [query] : {description}" for (name, description) in relevant_policies] + ["stop [answer]"]}
+    SUBROUTINES: {[f"{name} [query] : {description}" for (name, description) in relevant_policies]}
     """
 
 
     answer = generate_content(get_policy_prompt)
 
-    result = parse_elements(answer, ["plan", "subtask", "name", "description", "query"])
+    result = parse_elements(answer, ["plan", "name", "description", "query"])
 
-    if len(result["name"]) == 0:
-        print(f"Just got an empty name on get_policy, trying again : {result}\n")
-        return get_policy(objective, observation, url, previous_actions, relevant_policies)
+            
+    names = result["name"].split(" | ")
+    descriptions = result["description"].split(" | ")
+    queries = result["query"].split(" | ")
+
+    policies = [{"name": name, "description": desc, "query": query} for name, desc, query in zip(names, descriptions, queries)]
  
 
-    return result
+    return {"plan" : result["plan"], "policies" : policies}
 
 
 # ==== Prompt testing ===

@@ -12,32 +12,38 @@ class Agent:
 		self.library = PolicyLibrary()
 		self.objective = None
 		self.trajectory = None
-		selfpolicy_stack = None
+		self.policy_stack = None
+		self.steps_nb = 0
 
 	def load(self, objective):
 		self.objective = objective
 		self.trajectory = [] 
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[]}]
+		self.steps_nb = 0
 
-	def get_action(self, observation):
+	def get_action(self, observation, url):
 		action = {}
 		is_final = False
+		is_root = len(self.policy_stack) == 1
 		top_policy = self.policy_stack[-1]
 		print(f"Here are the current actions performed in the {print_action_call(top_policy["name"], [top_policy["query"]])} subroutine : {top_policy["actions"]}\n")
-		if len(self.policy_stack) <= 1:
+		
+
+		if self.steps_nb == 0:
 			relevant_policies = self.library.retrieve(self.objective)
-			policy_feedback = get_policy(self.objective, observation, "", top_policy["actions"], relevant_policies)
+			policy_feedback = get_policy(self.objective, observation, url, relevant_policies)
 			print(f"get_policy feedback : {policy_feedback}\n")
-			if policy_feedback["name"].lower() != "stop" and self.library.is_new(policy_feedback["name"]):
-				policy_writing_feedback = write_policy(policy_feedback["name"], policy_feedback["description"], policy_feedback["query"], observation, "", "")
-				print(f"write_policy feedback : {policy_writing_feedback}\n")
-				self.library.update(policy_feedback["name"], policy_feedback["description"], policy_writing_feedback["guidance"])
-			action = {"name":policy_feedback["name"], "arguments":[policy_feedback["query"]] ,"description":policy_feedback["description"], "is_page_op":False, "is_stop":policy_feedback["name"].lower() == "stop"}
-		else:
-			guidance_text = self.library.get(top_policy["name"])[-1]
-			policy_objective = print_action_call(top_policy["name"], [top_policy["query"]])
-			relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"])
-			action = get_action(policy_objective, observation, "", top_policy["actions"], guidance_text, relevant_policies)
+			for policy in policy_feedback["policies"]:
+				if self.library.is_new(policy["name"]):
+					# policy_writing_feedback = write_policy(policy["name"], policy["description"], policy["query"], observation, "", "")
+					# print(f"write_policy feedback : {policy_writing_feedback}\n")
+					self.library.update(policy["name"], policy["description"], "")
+
+
+		guidance_text = self.library.get(top_policy["name"])[-1] if not is_root else ""
+		policy_objective = print_action_call(top_policy["name"], [top_policy["query"]]) if not is_root else self.objective
+		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"])
+		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, relevant_policies)
 
 		top_policy["actions"] += [print_action_call(action["name"], action["arguments"])]
 		self.trajectory += [(print_action_call(action["name"], action["arguments"]), observation)]
@@ -49,7 +55,7 @@ class Agent:
 			prev_policy_name, prev_query, prev_actions = self.policy_stack.pop().values()
 			self.policy_stack[-1]["actions"] += [print_action_call("stop", action["arguments"])]
 			if self.exploration_mode:
-				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, "", prev_actions)
+				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				if not int(critique_feedback["perfect"]):
 					prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
@@ -63,4 +69,5 @@ class Agent:
 			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[]}]
 
 
+		self.steps_nb += 1
 		return action["name"], action["arguments"], action["is_page_op"], is_final

@@ -22,8 +22,8 @@ for (objective, url, _, _) in [tasks[1]]:
     final_answer = None
     # Capping maximum number of prompt iteration
     for i in range(100):
-        observation = env.observe()
-        name, args, is_page_op, is_final = agent.get_action(observation)
+        observation, url = env.observe()
+        name, args, is_page_op, is_final = agent.get_action(observation, url)
         if is_page_op:
             env.interact(name, args)
         if is_final:

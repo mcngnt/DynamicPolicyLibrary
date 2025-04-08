@@ -62,13 +62,13 @@ At each round of conversation, I will give you
 #     return match.group(1) if match else None
 
 
-def write_policy(task_name, task_description, arguments, trajectory, critique, previous_guidance):
+def write_policy(task_name, task_description, arguments, observation, critique, previous_guidance):
     writing_prompt = f"""
     {writing_system_prompt}
     Task name : {task_name}
     Task description : "{task_description}"
     Query with which the task was performed : {arguments}
-    All the actions and observations from the last round : {trajectory}
+    Example website on which the task could be completed : {observation}
     Critique : {critique}
     Guidance text from the last round : {previous_guidance}
     """

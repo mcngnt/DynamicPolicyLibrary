@@ -5,8 +5,8 @@ import re
 # client = genai.Client(api_key="")
 # client = genai.Client(api_key="***REMOVED***")
 # client = genai.Client(api_key="***REMOVED***")
-# client = genai.Client(api_key="***REMOVED***")
 client = genai.Client(api_key="***REMOVED***")
+# client = genai.Client(api_key="***REMOVED***")
 
 
 def generate_content(prompt):
