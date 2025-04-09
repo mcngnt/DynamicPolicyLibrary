@@ -1,8 +1,8 @@
 from utils import *
-from enum import Enum
+# from enum import Enum
 import gymnasium as gym
 import browsergym.core
-
+import browsergym.webarena
 from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
 
 
@@ -42,12 +42,12 @@ def print_gym_call(name, arguments):
 	return f"""{name}({','.join([f"\'{arg}\'" for arg in arguments])})"""
 
 
-class AvailableURL(Enum):
-    HOME = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:4399/"
-    MAP = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108/"
-    REDDIT = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums/all"
-    GITLAB = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/explore/"
-    SHOPPING = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7770/"
+# class AvailableURL(Enum):
+#     HOME = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:4399/"
+#     MAP = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108/"
+#     REDDIT = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums/all"
+#     GITLAB = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/explore/"
+#     SHOPPING = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7770/"
 
 
 class WebEnvironment:
@@ -84,12 +84,9 @@ class WebEnvironment:
 
 
 
-	def load(self, url):
-		self.env = gym.make(
-		    "browsergym/openended",
-		    task_kwargs={"start_url": url},
-		    wait_for_user_message=False,
-		)
+	def load(self, task_id):
+		self.env = gym.make(f"browsergym/webarena.{task_id}", wait_for_user_message=False)
 		obs, info = self.env.reset()
 		self.current_observation = obs
-		self.start_url = url
+		self.start_url = obs["url"]
+		return obs["goal"]

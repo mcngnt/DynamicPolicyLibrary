@@ -4,15 +4,15 @@
 # from critique import get_my_critique
 # from get_policy import get_my_policy
 # from policy_library import PolicyLibrary
-from utils import *
-from web_environment import WebEnvironment, AvailableURL, print_gym_call
+# from utils import *
+# from web_environment import WebEnvironment, print_gym_call
 
-from browsergym.core.action.highlevel import HighLevelActionSet
+# from browsergym.core.action.highlevel import HighLevelActionSet
 import json
 
 import gymnasium as gym
 import browsergym.webarena
-
+from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
 
 page_op = ["click", "type", "go_back", "go_home", "stop"]
 
@@ -116,7 +116,7 @@ page_op = ["click", "type", "go_back", "go_home", "stop"]
 #     try:
 #         n = nb_policies(i)
 #         tasks_nb += 1
-#         if n > 1:
+#         if n >= 1:
 #             print(f"{i} : {n}")
 #             multiple_actions_tasks_nb += 1
 #     except:
@@ -125,7 +125,9 @@ page_op = ["click", "type", "go_back", "go_home", "stop"]
 
 # print((multiple_actions_tasks_nb / tasks_nb)*100)
 
-# 23.41 % of tasks use multiple subtasks
+# # 53.67% of tasks use at least one policy
+# # 23.41% of tasks use more than 1 policy
+
 
 
 
@@ -139,9 +141,54 @@ page_op = ["click", "type", "go_back", "go_home", "stop"]
 
 
 # # start a webarena task
-# env = gym.make("browsergym/webarena.servicenow.order-ipad-pro")
-...
+# env = gym.make("browsergym/webarena.7")
 
-# list all the available webarena tasks
-env_ids = [id for id in gym.envs.registry.keys() if id.startswith("browsergym/webarena")]
-print("\n".join(env_ids))
+# obs, info = env.reset()
+
+
+# print(obs.keys())
+
+# print(obs["goal"])
+# print(flatten_axtree_to_str(obs["axtree_object"]))
+# # list all the available webarena tasks
+# env_ids = [id for id in gym.envs.registry.keys() if id.startswith("browsergym/webarena")]
+# print("\n".join(env_ids))
+
+
+
+
+
+
+
+from logger import dump_log
+
+# actions = [
+#     {"objective":"find X", "observation":"observation", "guidance":"no","relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
+#     {"name": "start root logic", "description": "start root logic", "is_page_op": True, "is_stop": False, "commentary": None},
+#     {"name": "foo", "description": "Foo does intermediate stuff", "is_page_op": False, "is_stop": False, "commentary": None},
+#     {"name": "doing something in foo", "description": "doing something in foo", "is_page_op": True, "is_stop": False, "commentary": None},
+#     {"name": "baz", "description": "Baz is low-level", "is_page_op": False, "is_stop": False, "commentary": None},
+#     {"name": "inside baz", "description": "inside baz", "is_page_op": True, "is_stop": False, "commentary": None},
+#     {"name": "baz", "description": "", "is_page_op": False, "is_stop": True, "commentary": "bye world"},
+#     {"name": "foo", "description": "", "is_page_op": False, "is_stop": True, "commentary": "bye world"},
+#     {"name": "bar", "description": "Bar does a thing", "is_page_op": False, "is_stop": False, "commentary": None},
+#     {"name": "doing something in bar", "description": "doing something in bar", "is_page_op": True, "is_stop": False, "commentary": None},
+#     {"name": "bar", "description": "", "is_page_op": False, "is_stop": True, "commentary": "bye world"},
+#     {"name": "end root logic", "description": "end root logic", "is_page_op": True, "is_stop": False, "commentary": None},
+#     {"name": "root", "description": "", "is_page_op": False, "is_stop": True, "commentary": "bye world"},
+# ]
+
+
+
+actions = [
+    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [328]', 'is_page_op': True, 'is_stop': False, 'reason': 'To check out the most recent open issues, I need to navigate to the "Issues" page. Looking at the current page, there are two "Issues" links. One under "Project navigation" [328] and the other on the top right of the page [183]. Since the objective is to check the project\'s issues, I will use the "Issues" link under "Project navigation".', 'description': None, 'critique': None, 'plan': 'Navigate to the issues page. |  Then, filter and sort the issues to display the most recent open ones.', 'created_policies': [{'name': 'ClickLink', 'description': 'Clicks a link with the specified text.', 'query': 'Issues'}, {'name': 'FilterAndSortIssues', 'description': 'Filters and sorts the issues on the issues page based on given criteria.', 'query': 'open; sort by: created date'}]},
+    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [668]', 'is_page_op': True, 'is_stop': False, 'reason': 'The issues are currently sorted by "Created date" in descending order. To find the most recent issues, I need to sort them by "Created date" in ascending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check the most recent open issues. The issues are currently sorted by "Created date". To find the most recent, I need to change the sorting order to ascending. This can be done by clicking the \'Sort direction: Descending\' button.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check out the most recent open issues. The issues are currently sorted by created date, ascending, meaning the oldest issues are shown first. To see the newest issues, I need to sort the issues by created date in descending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'stop [N/A]', 'is_page_op': False, 'is_stop': True, 'reason': 'The page is already displaying the open issues sorted by created date, descending. I can now examine the issues.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+]
+
+
+
+
+dump_log(actions)

@@ -9,9 +9,10 @@ from utils import *
 
 
 class PolicyLibrary:
-    def __init__(self, testing=True):
+    def __init__(self, path=None):
         self.policies = {}
-        self.testing = testing
+        if not (path is None):
+            self.load(path)
 
     def update(self, name, description, content=""):
         embedding = get_embedding(description)
@@ -20,8 +21,6 @@ class PolicyLibrary:
                 self.policies[key] = (name, description, content)
                 return
         self.policies[tuple(embedding)] = (name, description, content)
-        if self.testing:
-            self.save("policies/testing.json")
 
     def retrieve(self, description, k=5, exclude_policy=None):
         query_embedding = get_embedding(description)

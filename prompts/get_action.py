@@ -86,9 +86,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
 
     answer = generate_content(get_action_prompt)
 
-    result = parse_elements(answer, ["reason", "action", "description"])
-
-    print(f"get_action feedback : {result}\n")
+    result = parse_elements(answer, ["reason", "action"])
 
     arguments = parse_action_call(result["action"])
 
@@ -99,7 +97,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
 
     is_stop = arguments[0].lower() == "stop"
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "description":result["description"]}
+    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
 
     return action
 

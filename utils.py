@@ -2,18 +2,32 @@ from google import genai
 import numpy as np
 import re
 
-# client = genai.Client(api_key="")
-# client = genai.Client(api_key="***REMOVED***")
-# client = genai.Client(api_key="***REMOVED***")
-client = genai.Client(api_key="***REMOVED***")
-# client = genai.Client(api_key="***REMOVED***")
+api_keys = [
+"***REMOVED***",
+"***REMOVED***",
+"***REMOVED***",
+"***REMOVED***",
+]
+
+current_key_id = 0
+
+client = genai.Client(api_key=api_keys[0])
+
+def switch_api_key():
+    print("Switching API key.")
+    current_key_id += 1
+    client = genai.Client(api_key=api_keys[current_key_id % len(api_keys)])
 
 
 def generate_content(prompt):
-    response = client.models.generate_content(
-    model="gemini-2.0-flash", contents=prompt
-    )
-    return response.text
+    try:
+        response = client.models.generate_content(
+        model="gemini-2.0-flash", contents=prompt
+        )
+        return response.text
+    except:
+        switch_api_key()
+        return generate_content(prompt)
 
 def get_embedding(prompt):
     result = client.models.embed_content(
