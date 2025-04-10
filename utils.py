@@ -14,6 +14,7 @@ current_key_id = 0
 client = genai.Client(api_key=api_keys[0])
 
 def switch_api_key():
+    global current_key_id, client
     print("Switching API key.")
     current_key_id += 1
     client = genai.Client(api_key=api_keys[current_key_id % len(api_keys)])
@@ -30,11 +31,17 @@ def generate_content(prompt):
         return generate_content(prompt)
 
 def get_embedding(prompt):
-    result = client.models.embed_content(
+
+    try:
+        result = client.models.embed_content(
         model="text-embedding-004",
         contents=prompt
-    )
-    return np.asarray(result.embeddings[0].values)
+        )
+        return np.asarray(result.embeddings[0].values)
+    except:
+        switch_api_key()
+        return get_embedding(prompt)
+
 
 def parse_elements(text, key_list):
         element_dict = {}

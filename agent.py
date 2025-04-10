@@ -28,15 +28,18 @@ class Agent:
 		is_root = len(self.policy_stack) == 1
 		top_policy = self.policy_stack[-1]
 
+		print(f"Here are the current actions performed in the {print_action_call(top_policy["name"], [top_policy["query"]])} subroutine : {top_policy["actions"]}\n")
+
 		policy_objective = print_action_call(top_policy["name"], [top_policy["query"]]) if not is_root else self.objective
 		guidance_text = self.library.get(top_policy["name"])[-1] if not is_root else ""
 
-		log_info = {"objective":policy_objective, "observation":None, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
+		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
 
 
 		if self.steps_nb == 0 and self.exploration_mode:
 			relevant_policies = self.library.retrieve(self.objective, k=5)
 			policy_feedback = get_policy(self.objective, observation, url, relevant_policies)
+			print(f"get_policy feedback : {policy_feedback}\n")
 			log_info["created_policies"] = policy_feedback["policies"]
 			log_info["plan"] = policy_feedback["plan"]
 			for policy in policy_feedback["policies"]:
@@ -46,26 +49,32 @@ class Agent:
 
 		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"])
 		log_info["relevant_policies"] = relevant_policies
-		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, relevant_policies)
+		if len(top_policy["actions"]) > 30:
+			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
+		else:
+			action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, relevant_policies)
+		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]
 		log_info["reason"] = action["reason"]
 		log_info["is_page_op"] = action["is_page_op"]
 		log_info["is_stop"] = action["is_stop"]
 
-		top_policy["actions"] += [print_action_call(action["name"], action["arguments"])]
+		top_policy["actions"] += [(print_action_call(action["name"], action["arguments"]), action["reason"])]
 		self.trajectory += [(print_action_call(action["name"], action["arguments"]), observation)]
 
 		is_final = action["is_stop"] and len(self.policy_stack) == 1
 
 		if action["is_stop"] and len(self.policy_stack) > 1:
 			prev_policy_name, prev_query, prev_actions = self.policy_stack.pop().values()
-			self.policy_stack[-1]["actions"] += [print_action_call("stop", action["arguments"])]
+			self.policy_stack[-1]["actions"] += [(print_action_call("stop", action["arguments"]), action["reason"])]
 			if self.exploration_mode:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions)
+				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["critique"] = critique_feedback["critique"]
 				if not int(critique_feedback["perfect"]):
 					prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
 					policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
+					print(f"write_policy feedback : {policy_writing_feedback}\n")
 					self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
 		
 		if (not action["is_stop"]) and (not action["is_page_op"]): 

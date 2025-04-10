@@ -180,15 +180,36 @@ from logger import dump_log
 
 
 
-actions = [
-    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [328]', 'is_page_op': True, 'is_stop': False, 'reason': 'To check out the most recent open issues, I need to navigate to the "Issues" page. Looking at the current page, there are two "Issues" links. One under "Project navigation" [328] and the other on the top right of the page [183]. Since the objective is to check the project\'s issues, I will use the "Issues" link under "Project navigation".', 'description': None, 'critique': None, 'plan': 'Navigate to the issues page. |  Then, filter and sort the issues to display the most recent open ones.', 'created_policies': [{'name': 'ClickLink', 'description': 'Clicks a link with the specified text.', 'query': 'Issues'}, {'name': 'FilterAndSortIssues', 'description': 'Filters and sorts the issues on the issues page based on given criteria.', 'query': 'open; sort by: created date'}]},
-    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [668]', 'is_page_op': True, 'is_stop': False, 'reason': 'The issues are currently sorted by "Created date" in descending order. To find the most recent issues, I need to sort them by "Created date" in ascending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
-    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check the most recent open issues. The issues are currently sorted by "Created date". To find the most recent, I need to change the sorting order to ascending. This can be done by clicking the \'Sort direction: Descending\' button.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
-    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check out the most recent open issues. The issues are currently sorted by created date, ascending, meaning the oldest issues are shown first. To see the newest issues, I need to sort the issues by created date in descending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
-    {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'stop [N/A]', 'is_page_op': False, 'is_stop': True, 'reason': 'The page is already displaying the open issues sorted by created date, descending. I can now examine the issues.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
-]
+# actions = [
+#     {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [328]', 'is_page_op': True, 'is_stop': False, 'reason': 'To check out the most recent open issues, I need to navigate to the "Issues" page. Looking at the current page, there are two "Issues" links. One under "Project navigation" [328] and the other on the top right of the page [183]. Since the objective is to check the project\'s issues, I will use the "Issues" link under "Project navigation".', 'description': None, 'critique': None, 'plan': 'Navigate to the issues page. |  Then, filter and sort the issues to display the most recent open ones.', 'created_policies': [{'name': 'ClickLink', 'description': 'Clicks a link with the specified text.', 'query': 'Issues'}, {'name': 'FilterAndSortIssues', 'description': 'Filters and sorts the issues on the issues page based on given criteria.', 'query': 'open; sort by: created date'}]},
+#     {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [668]', 'is_page_op': True, 'is_stop': False, 'reason': 'The issues are currently sorted by "Created date" in descending order. To find the most recent issues, I need to sort them by "Created date" in ascending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+#     {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check the most recent open issues. The issues are currently sorted by "Created date". To find the most recent, I need to change the sorting order to ascending. This can be done by clicking the \'Sort direction: Descending\' button.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+#     {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'click [724]', 'is_page_op': True, 'is_stop': False, 'reason': 'The objective is to check out the most recent open issues. The issues are currently sorted by created date, ascending, meaning the oldest issues are shown first. To see the newest issues, I need to sort the issues by created date in descending order.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+#     {'objective': 'Check out the most recent open issues', 'observation': None, 'guidance': '', 'relevant_policies': [('FilterAndSortIssues', 'Filters and sorts the issues on the issues page based on given criteria.'), ('ClickLink', 'Clicks a link with the specified text.')], 'action': 'stop [N/A]', 'is_page_op': False, 'is_stop': True, 'reason': 'The page is already displaying the open issues sorted by created date, descending. I can now examine the issues.', 'description': None, 'critique': None, 'plan': None, 'created_policies': None},
+# ]
 
 
 
 
-dump_log(actions)
+# dump_log(actions)
+
+
+
+
+
+from openai import OpenAI
+# Modify OpenAI's API key and API base to use vLLM's API server.
+openai_api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXRsYXMiLCJzYXR1cm4tYXV0aC1wcm94eSJdLCJpc3MiOiJhdGxhcyIsInN1YiI6IjhkMGVjMzMyODg4NTRlMTQ5NWNiMTg0NDYzM2U3YmExIiwiaXNfcmVmcmVzaCI6ZmFsc2UsInVzZXJfaWQiOiJlNjNkNzExNTU0NGQ0MzY2OGQ3Mjk0NGY0M2U3OTY1YyJ9.KTZqy_7jprNOjQ1xKmBiOHmXJi8PhZNB9_TULJmY3Yo-AeWj5JORuZMAOSWb7RbLw6TcxPNsOtZDjNJ0wAKvPRFjMiuuh3OekGrjR0jsdSpHyAguWUEyISq6oSDgNUN-Kb5A_nUUNeZsUyatkQDurxmTAVQ7CVQqxrcJ6tXViDKytAgZj-YtkKW3XQ77fcfMOObw8NuOLeodivQQXXkW1VJIvap5f2ogyO15ZYijEdixAoBxBK5_YAeb8OyutD6rpDR0983siNhHoj_r65c0RlVnhC-li6t4sxp-LNcLk-iVBrH0eNAlU9O2-PTgeJk4JPGiDXhFzS_MjoeeIbdJQY4nCZ0x3CZN6WNaKp-jKN-IKxVCej5Wk-nkLTLZEwRST16icKohVRjCLP4SHczwI64ksoRrhTN2apXeAPlrrhm3uUHFKCUN842AhSpVYY3EDIvHArXd4sQHoph0X76D7bXPnZKVmYPS3FL88NRdYOKqNmeaQBTXqtJ9Vzy8Q2MWBk90RoU83e0zNdKPLJOpuApOcfQ01OXYiPjqfKAMFJcM70bnLdnm5SAtdzZDnRLZ8aU-S2qomVoEFGBYvZ7XuiLtZKHmr1k4HWyFApD2EUKsFqI2Cgm_lf_moMCS0DWgOWrX4N3Lo56Djm0LVEDbyieMvluxOB9YmfaAMVBN7Q8"
+openai_api_base = "https://pd-jerom-llama-31-8f1c2f4f76304a54aa1e7b98c596ee59.nvidia-oci.saturnenterprise.io/v1"
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+chat_response = client.chat.completions.create(
+    model="meta-llama/Llama-3.1-70B-Instruct",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Tell me a joke."},
+    ]
+)
+print("Chat response:", chat_response)

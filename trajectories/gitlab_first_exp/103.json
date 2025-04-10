@@ -1,0 +1,942 @@
+{
+	"created_policies": [
+		{
+			"name": "Navigate",
+			"description": "Navigates to a specific URL.",
+			"query": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python"
+		},
+		{
+			"name": "Filter_issues_by_label",
+			"description": "Filters the issues on the current page to show only those with specified labels.",
+			"query": "question"
+		}
+	],
+	"plan": "Find the kkroening/ffmpeg-python repository | Navigate to the issues page and filter by labels related to questions.",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "type [130] [kkroening/ffmpeg-python] [1]",
+				"reason": "Need to find the project kkroening/ffmpeg-python to access its issues.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "type [898] [kkroening/ffmpeg-python] [1]",
+				"reason": "First, I need to navigate to the issues page of the specified repository.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "click [289]",
+				"reason": "The previous actions resulted in a search page that did not return any projects. To access the issues for the specified project, I need to navigate to the issues section. I will first navigate to the issues page and then filter the issues by the \"question\" label. However, since the current page does not display issues for the project, I need to first find the project page or a page that lists the issues for this project. Looking at the elements on the page, I see a link called 'Issues' [289] that might lead to the issues page, and I'll click on that first.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+				"reason": "The previous actions resulted in \"We couldn't find any issues matching kkroening/ffmpeg-python\". The current URL is a search page for issues with the search term \"kkroening/ffmpeg-python\". There are zero issues found. It's highly likely that the repository is not correctly specified within the search or that there genuinely are no issues in that repository. Since my objective is to filter by labels related to questions, I first need to find issues. I will try searching for issues directly within the ffmpeg-python repository by navigating to its issues page.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Navigates to a specific URL.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "click [227]",
+						"reason": "The current page displays a search result for issues related to \"kkroening/ffmpeg-python\", but it indicates that no issues were found. To navigate to the issues page for the specified repository, I need to modify the search query. I'll click the search box to clear the existing search query.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "go_home",
+						"reason": "The current page shows that no issues were found with the search term \"kkroening/ffmpeg-python\". The objective is to navigate to the issues page for the project. Looking at the page content, there is no direct link to the project's issues page. I will try going to the home page and then navigating to the project.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "type [130] [ffmpeg-python] [1]",
+						"reason": "The current page is the dashboard. I need to navigate to the issues page for the ffmpeg-python project, which is not directly accessible from this page. Since I can't directly type a URL, I will use the search bar to find the ffmpeg-python project and then navigate to its issues page.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "type [269] [ffmpeg-python] [1]",
+						"reason": "The previous actions led to the current page, which is not the target. The objective URL is a project's issue page. The current page shows a list of projects. I need to find the ffmpeg-python project in the list and click its \"Issues\" link. However, I don't see the ffmpeg-python project listed. I will try searching for it.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "go_home",
+						"reason": "The previous search for the project resulted in a dead end, and I need to find a way to navigate to the project's page and then its issues. I will go back to the home page and search for the project again.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "type [130] [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues] [1]",
+						"reason": "The current page shows the user's projects, not the issues for ffmpeg-python. I need to navigate to the provided URL. Since I can't directly type a URL, I need to go home and use the search bar again.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "type [898] [ffmpeg-python] [1]",
+						"reason": "I am on the homepage and need to navigate to the issues page for the ffmpeg-python project. The previous attempts to directly type the URL into the search box failed. I will try to search for the project first, and then navigate to the issues page from there.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "click [319]",
+						"reason": "The current page is a search results page. I need to navigate to the issues page for the ffmpeg-python project. The search results list the ffmpeg-python project with links to various sections. I should click the link with 'Karl Kroening / ffmpeg-python' and then click the link to the issues page.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "click [322]",
+						"reason": "Now that I'm on the project page, I need to navigate to the issues page. I can find the \"Issues\" link within the project navigation.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"observation": null,
+						"objective": "Navigate [http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/kkroening/ffmpeg-python/issues]",
+						"guidance": "",
+						"action": "stop [N/A]",
+						"reason": "The page has loaded successfully and the objective has been met. I can stop here."
+					}
+				],
+				"critique": "The most efficient way to achieve the objective would have been to directly navigate to the provided URL, instead of trying to search for it. The initial actions are a waste of computational resources. The action 'click [319]' eventually led to the correct URL. The sequence of action could have been greatly shortened by directly navigating to the url, assuming the browser has the go_to_url() command."
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "type [551] [question] [1]",
+				"reason": "To filter the issues based on labels, I need to use the \"Search or filter results...\" textbox and type the labels related to questions.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "Examine_issues [question]",
+				"reason": "The issues page is already filtered by the word 'question', which is a good starting point for identifying questions. No further filtering is necessary with labels. Therefore, I will examine the issues already listed.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Examines the list of issues and identifies the most recent ones.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Examine_issues [question]",
+						"guidance": "Please follow these general instructions:\n\n*   The objective Examine\\_issues asks you to examine the list of issues and identifies the most recent ones.\n*   First, locate the search box or filter input field. Enter your search query (e.g., \"help wanted\") in the search box.\n*   After entering the query, explicitly click the \"Search\" button or press Enter to initiate the search.\n*   Carefully observe the initial ordering of the issues. Check if they are already sorted by \"most recently updated\" or a similar criterion.\n*   If the issues are NOT already sorted from most recent to least recent: Click the \"Sort\" button or a similar button/dropdown menu that allows you to sort the issues.\n*   Select the option to sort by \"Most recently updated\", \"Last updated\", \"Recent activity\" or a similar option. If the options include sorting direction (ascending/descending), choose the option that displays the most recent issues first.\n*   Once the issues are sorted from most recent to least recent, examine the list to identify the most recent issues based on their update timestamps or activity indicators.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [551] [question] [0]",
+						"reason": "The instructions ask to examine the most recent issues. The issues are currently sorted by \"Updated date\" in descending order. To search the issues based on the question I need to type the question to the search box and click the search button.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Examine_issues [question]",
+						"guidance": "Please follow these general instructions:\n\n*   The objective Examine\\_issues asks you to examine the list of issues and identifies the most recent ones.\n*   First, locate the search box or filter input field. Enter your search query (e.g., \"help wanted\") in the search box.\n*   After entering the query, explicitly click the \"Search\" button or press Enter to initiate the search.\n*   Carefully observe the initial ordering of the issues. Check if they are already sorted by \"most recently updated\" or a similar criterion.\n*   If the issues are NOT already sorted from most recent to least recent: Click the \"Sort\" button or a similar button/dropdown menu that allows you to sort the issues.\n*   Select the option to sort by \"Most recently updated\", \"Last updated\", \"Recent activity\" or a similar option. If the options include sorting direction (ascending/descending), choose the option that displays the most recent issues first.\n*   Once the issues are sorted from most recent to least recent, examine the list to identify the most recent issues based on their update timestamps or activity indicators.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The previous action was to type \"question\" into the search box. Now I need to click the search button to initiate the search.",
+						"relevant_policies": [
+							[
+								"Filter_issues_by_label",
+								"Filters the issues on the current page to show only those with specified labels."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"observation": null,
+						"objective": "Examine_issues [question]",
+						"guidance": "Please follow these general instructions:\n\n*   The objective Examine\\_issues asks you to examine the list of issues and identifies the most recent ones.\n*   First, locate the search box or filter input field. Enter your search query (e.g., \"help wanted\") in the search box.\n*   After entering the query, explicitly click the \"Search\" button or press Enter to initiate the search.\n*   Carefully observe the initial ordering of the issues. Check if they are already sorted by \"most recently updated\" or a similar criterion.\n*   If the issues are NOT already sorted from most recent to least recent: Click the \"Sort\" button or a similar button/dropdown menu that allows you to sort the issues.\n*   Select the option to sort by \"Most recently updated\", \"Last updated\", \"Recent activity\" or a similar option. If the options include sorting direction (ascending/descending), choose the option that displays the most recent issues first.\n*   Once the issues are sorted from most recent to least recent, examine the list to identify the most recent issues based on their update timestamps or activity indicators.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "stop [N/A - Unable to determine the question. The list of issues sorted by last updated date is provided in the reasoning.]",
+						"reason": "The page already displays the issues, sorted by \"Updated date\". The objective is to examine these issues to find those that match the question. Since a search query \"question\" was already entered in the previous turn, I'll examine the displayed issues to answer the question. However, due to the limitations of this AI, I can only report on the information available on the current page, which shows the title of the issue, the issue number, creation date and the last update date. I cannot determine what the question is, so I'll report the most recently updated issues that are currently displayed.\n\nThe issues displayed on the page, sorted by updated date, are as follows:\n\n*   How to get the newest frame in live pipe? (#381) - updated 2 years ago\n*   How to add \"anullsrc\" to a video stream prior to concatenation. (#303) - updated 2 years ago\n*   how to achieve playback speed of audio and video using ffmpeg-python (#715) - updated 2 years ago\n*   Question: Global Attributes (#388) - updated 2 years ago\n*   Impossible to add metadata with an ffmetadata file (#463) - updated 2 years ago\n*   multiple values 'map' (#420) - updated 2 years ago\n*   ValueError: Expected at least 1 input stream(s); got 0 (FFMPEG) (#476) - updated 2 years ago\n*   Correct Parameters to Record Screen On Linux With Audio? (#473) - updated 2 years ago\n*   File not found. (#454) - updated 2 years ago\n*   error during building on python 3.10 (#636) - updated 2 years ago\n*   Headers args (#354) - updated 2 years ago\n*   How to convert RTSP to RTMP using ffmpeg-python (#557) - updated 2 years ago\n*   broken pipe when I use stdin.write, it broke (#744) - updated 2 years ago\n*   Trying to Fix the no audio track problem after filters (#561) - updated 2 years ago\n*   error when i run your example .global_args('-re') (#601) - updated 2 years ago\n*   Poor use of syntax (#520) - updated 2 years ago\n*   replicate filter_complex and split audio channel (#630) - updated 2 years ago\n*   Help with concat diffrent media types together (#551) - updated 2 years ago\n*   i want to write this command ---- ffmpeg -i eee.mp4 -i anim.gif -filter_complex \"[1]loop=150:1:60[bgheld5];[0][bgheld5]overlay=eof_action=pass\" out__.mp4 (#466) - updated 2 years ago\n*   Order of arguments in the resulting command (#461) - updated 2 years ago"
+					}
+				],
+				"critique": "The bot needs to be able to correctly parse the question in order to filter the issues list correctly. If it cannot parse the question, it should not attempt to perform the search."
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "Filter_issues_by_label [question]",
+				"reason": "The previous attempt to filter using the search bar did not yield the desired results. Now, I will use the 'Filter_issues_by_label' subroutine to filter the issues based on the label 'question'.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Filters the issues on the current page to show only those with specified labels.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1237]",
+						"reason": "The page contains a \"Search or filter results...\" textbox, which likely allows filtering by label. I will click on it to activate the filter.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1256]",
+						"reason": "The current page shows a search box with menu items for filtering issues, including one for 'Label'. I will click on the 'Label' menu item to filter by label.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [1291] [question] [0]",
+						"reason": "I need to filter the issues by label. I can see a search box with id 1291 that says \"Search\". I will type in this search box.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The objective is to filter the issues by label. There is a search box with the value 'question' already typed in it. I will click the search button to filter the issues.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [1319] [question] [0]",
+						"reason": "I need to identify a specific filter or sort options related to labels for issues. I see a textbox labeled 'Search or filter results...' [1319], which I should use to filter the issues by label.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1319]",
+						"reason": "The objective is to filter issues by label, and the textbox '[1319] textbox 'Search or filter results...' value='question', focused' seems like a good place to start, even though it already has 'question' in it. I'll try clicking it to see if a dropdown menu with labels appears.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1818]",
+						"reason": "I need to filter the issues by label. The page contains a search box and a filter menu. I will try to use the filter menu to filter by label.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [1852] [question] [0]",
+						"reason": "I need to type the label into the textbox to filter the issues. The textbox id is 1852.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. If you type the label, make sure to select it from the suggestions provided.\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "stop [N/A]",
+						"reason": "I have already typed \"question\" into the textbox with id 1852 and clicked the search button with id 553 in the previous actions. Now, I need to examine the list of issues to see if they are filtered by the label \"question\". If they are, I should stop and return the answer. If they are not filtered or no issues are displayed, I should stop and return N/A.\n\nThe current page shows a list of issues, but I don't see any indication that they are specifically filtered by the label \"question\". I need to examine the issue titles and descriptions to determine if they are related to the question label. Since I can't verify the filtering, I will assume the filtering is not working as expected."
+					}
+				],
+				"critique": "To successfully filter the issues by label, after typing the label in the search box, the bot needs to select one of the suggested labels in the dropdown list. Without selecting a specific label, the search will not apply the filter correctly."
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "click [553]",
+				"reason": "The previous attempt to use Filter_issues_by_label failed. The page already has a search box with the term \"question\" already entered. I will try clicking the search button to see if that filters the list.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "type [1880] [question] [1]",
+				"reason": "I need to filter the issues based on labels related to questions. The textbox [1880] seems like the correct place to type in the label.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "Filter_issues_by_label [question]",
+				"reason": "Since the previous attempts to filter by labels directly have failed, I will use the `Filter_issues_by_label` subroutine to filter the issues.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Filters the issues on the current page to show only those with specified labels.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [1880] [question] [1]",
+						"reason": "The objective is to filter issues by label. The textbox with id 1880 allows searching and filtering results.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1880]",
+						"reason": "The objective is to filter issues by label. The page contains a \"Search or filter results...\" textbox [1880] which seems like a general search box, but it is possible that it allows filtering by label. I'll try clicking it to see if it provides label suggestions or filtering options.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1899]",
+						"reason": "I need to filter the issues by label. Based on the observation, there is a search box [1880] that can be used to filter by Assignee, Author, Confidential, Label, Milestone, My-Reaction, Release, Search Within, Type. I need to choose \"Label\" from the options and then type the label to filter the issues.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [1933] [question] [1]",
+						"reason": "The current page has a textbox with id 1933 labeled \"Search\" which can be used to search for labels.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The objective is to filter issues by a given label which is \"question\" in this case. The page has a search box labelled \"Search\" which is intended for filtering issues by labels. I have already typed \"question\" in the search box, and now I need to click the \"Search\" button to apply the filter.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1961]",
+						"reason": "The page contains a \"Search or filter results...\" textbox which seems to be the intended element to filter the issues by label. I will click on it to activate it.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [1980]",
+						"reason": "I need to filter the issues by label. I can see a search box [1961] and list items [1964]-[2008] that allow me to filter by assignee, author, label etc. I should click on the Label menu item [1980].",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2014] [question] [0]",
+						"reason": "I am looking for a label search box. I see a textbox with id [2014] and the label \"Label\". I will type \"question\" into it and then click the search button.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The objective is to filter issues by label. The page has a textbox labeled \"Search\" [2014] specifically designed for labels. The previous actions already typed \"question\" into the textbox and the current state displays the dropdown menu.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2042] [question] [0]",
+						"reason": "I should look for a label filter and type the question into it. The textbox with id 2042 seems like a good candidate.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2042] [question] [0]",
+						"reason": "The objective is to filter the issues by a label derived from the word \"question\". The page has a textbox 'Search or filter results...' [2042] which is being used to filter the issues. However, it seems that this textbox is performing a general search rather than filtering by a specific label. I will type \"question\" into the textbox [2042] again and click the search button [553] to see if it filters the results.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2042] [question] [0]",
+						"reason": "The task requires filtering issues by label. I can see a textbox with the placeholder 'Search or filter results...'. I will type the question into the textbox and click the search button.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "stop [N/A]",
+						"reason": "I have tried to filter by typing into the search box, but it does not seem to filter by label. I cannot find any specific filter by label option on the page. Therefore, the task is not possible."
+					}
+				],
+				"critique": "The user should look for a specific \"filter\" button or dropdown that allows filtering by labels. If such an element exists, it needs to be clicked and the desired label selected. If there is no built-in filter by label functionality, the objective cannot be accomplished using the available tools on the current page."
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Display the list of issues in the kkroening/ffmpeg-python repository that have labels related to questions",
+				"guidance": "",
+				"action": "Filter_issues_by_label [question]",
+				"reason": "The previous attempt to filter by label failed. The current page displays issues related to the word \"question\" because it was entered in the search box. Since the goal is to filter issues by the label \"question,\" I will try to clear the search box and then use the \"Filter_issues_by_label\" subroutine with the argument \"question\". However, since I cannot clear the search box directly using the available actions, I will try to filter using the subroutine again.",
+				"relevant_policies": [
+					[
+						"Filter_issues_by_label",
+						"Filters the issues on the current page to show only those with specified labels."
+					],
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Filters the issues on the current page to show only those with specified labels.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm that ONLY issues with the selected label are being shown.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2042] [question] [0]",
+						"reason": "The objective is to filter issues by the provided label. I can use the search or filter results textbox [2042] to filter the issues.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm that ONLY issues with the selected label are being shown.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The textbox with id 2042 is already populated with \"question\", so I will click the search button [553].",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm that ONLY issues with the selected label are being shown.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "type [2042] [question] [1]",
+						"reason": "The objective is to filter issues by label, and the current page has a \"Search or filter results...\" textbox [2042] which is currently displaying the word \"question\". I will type the word \"question\" into the textbox and press enter.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Filter_issues_by_label [question]",
+						"guidance": "Please follow these general instructions:\n* First, examine the page carefully for any *specific* filter or sort options related to *labels* for issues. Look for elements like dropdown menus labeled \"Labels\", a dedicated search box specifically for labels (often with a label icon), or a list of clickable labels directly displayed. Do not confuse a general search box (which searches across all fields) with a label filter.\n* If you *cannot* find a specific filter by label option, the task is not possible. Return stop [N/A].\n* If you find a specific filter by label option (e.g., a \"Search or filter results...\" textbox or a dropdown menu), click on it.\n* After clicking the filter option, you can either type the label you are looking for or click on the label from the dropdown menu that appears. **If you type the label, it is crucial that you select the correct label from the suggestions provided in the dropdown menu. The filter will not work if you only type the label and do not select it.**\n* If, after typing the label, no suggestions appear in the dropdown menu, it means that the label does not exist. In that case return stop [N/A].\n* If multiple label options are available, select the one that best matches your query. If there are slight variations (e.g., \"help wanted\" vs. \"Help Wanted\"), choose the one that is most common or seems most relevant.\n* Once the label is selected, *verify* that the issues displayed are indeed filtered to show *only* those with the selected label. Check the labels associated with each issue to confirm that ONLY issues with the selected label are being shown.\n* If, after selecting the label, no issues are displayed, return stop [N/A].\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.\nPlease, use ONLY page operation and no subroutine actions.",
+						"action": "click [553]",
+						"reason": "The page contains a textbox labeled \"Search or filter results...\" which can be used to filter the issues based on the label. The previous action already typed 'question' in that field. Now I need to click search.",
+						"relevant_policies": [
+							[
+								"Examine_issues",
+								"Examines the list of issues and identifies the most recent ones."
+							],
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					}
+				]
+			}
+		]
+	}
+}

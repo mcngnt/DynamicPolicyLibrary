@@ -1,0 +1,104 @@
+{
+	"created_policies": [
+		{
+			"name": "Navigate",
+			"description": "Navigates to a specific URL.",
+			"query": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/a11yproject/a11yproject.com/-/issues"
+		},
+		{
+			"name": "Examine_issues",
+			"description": "Examines the list of issues and identifies the most recent ones.",
+			"query": "Examine the issue list to identify the most recent issues. I will need to look for date information associated with the issues to make the determination."
+		}
+	],
+	"plan": "First, navigate to the issues page. Then, examine the issues to determine the most recent.",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "click [328]",
+				"reason": "To check the most recent open issues, I need to navigate to the \"Issues\" link within the project navigation.",
+				"relevant_policies": [
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "Examine_issues [most recent open issues]",
+				"reason": "I am already on the issues page and the \"Open\" tab is selected, so I will use the Examine_issues subroutine to check the most recent issues.",
+				"relevant_policies": [
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				],
+				"description": "Examines the list of issues and identifies the most recent ones.",
+				"trace": [
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Examine_issues [most recent open issues]",
+						"guidance": "",
+						"action": "click [611]",
+						"reason": "The objective is to examine the most recent open issues. The page is currently displaying the open issues. The issues are loading, so I need to wait for them to load before I can examine them. Once they are loaded, I will need to find a way to sort them by most recent. The current sort order is \"Updated date\". So, I will click on the \"Updated date\" button to see what options are available.",
+						"relevant_policies": [
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"observation": null,
+						"objective": "Examine_issues [most recent open issues]",
+						"guidance": "",
+						"action": "click [623]",
+						"reason": "The objective is to examine the most recent open issues. Currently, the issues are sorted by 'Updated date'. To view the most recent issues, I need to change the sort order to 'Created date'.",
+						"relevant_policies": [
+							[
+								"Navigate",
+								"Navigates to a specific URL."
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"observation": null,
+						"objective": "Examine_issues [most recent open issues]",
+						"guidance": "",
+						"action": "stop [N/A]",
+						"reason": "I have examined the most recent open issues and no further action is needed."
+					}
+				],
+				"critique": "The navigation could have been perfect. The initial page load after clicking issues had the correct sorting already applied. The steps to click the sorting buttons were unnecessary."
+			},
+			{
+				"type": "stop",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "stop [[Post] HOWTO: Ajax with ARIA-LIVE, [Post]: What is Semantic HTML?, [Post] Don't Wait Until Launch: Why Accessibility Testing Early On Can Save You Time and Money, [Post] HOWTO: Use JAWS on Windows, [Feature] Add a broken link checker to the CI/CD pipeline, `npm start` does not run `gulp-watch` (Windows), [Post] Getting Started with TalkBack, [Post] Article; Accessibility in Web; Content creation and ux writing., [Bug] 404s, bad host, timeouts, bad urls for URLs linked from website, Link to WCAG 2.1 instead of 2.0?, [Post] What is WAI? The Web Accessibility Initiative, [Post] Bake accessibility into your design and development process, [Post] New Post: Text color contrasts on dynamic backgrounds, Investigate if <details>/<summary> is a good choice for our Checklist, In error state, focused controls take on purple or red-and-purple focus indicator, The process for writing for us is both scattered and buried, Our non-GitHub editorial process is opaque, Article: Starting a design with accessibility, We should provide syntactic sugar for creating figures in Markdown, We should provide a callout card component for emphasizing content]",
+				"reason": "The page is already sorted by creation date, showing the most recent issues at the top. Therefore, I will stop and list the most recent open issues."
+			}
+		],
+		"critique": null
+	}
+}

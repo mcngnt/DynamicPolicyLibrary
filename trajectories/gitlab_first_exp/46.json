@@ -1,0 +1,82 @@
+{
+	"created_policies": [
+		{
+			"name": "Navigate",
+			"description": "Navigates to a specific URL.",
+			"query": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/issues"
+		},
+		{
+			"name": "Examine_issues",
+			"description": "Examines the list of issues and identifies the most recent ones.",
+			"query": "issues"
+		}
+	],
+	"plan": "Navigate to the issues page for the current project, then examine the issues on that page.",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "click [326]",
+				"reason": "To check the most recent open issues, I need to navigate to the Issues page for this project. The link for Issues is available under the \"Project navigation\" section.",
+				"relevant_policies": [
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "click [619]",
+				"reason": "The issues listed on the page are sorted by \"Created date\". To see the most recent issues, I need to change the sort order. I will click the \"Created date\" button [619] to open the sorting options.",
+				"relevant_policies": [
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "click [636]",
+				"reason": "The issues are currently sorted by \"Created date\". To find the most recent issues, I need to sort by \"Updated date\". I will click on the \"Updated date\" menu item.",
+				"relevant_policies": [
+					[
+						"Examine_issues",
+						"Examines the list of issues and identifies the most recent ones."
+					],
+					[
+						"Navigate",
+						"Navigates to a specific URL."
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"observation": null,
+				"objective": "Check out the most recent open issues",
+				"guidance": "",
+				"action": "stop [The most recent open issues are: \"ActionList: Needs better guidelines on not using single select items\" (#260), \"Add guidelines for loading patterns \ud83d\udd04\" (#300), \"Add documentation on using Flash alerts in dialog components\" (#104), \"Add dialogs to Messaging section\" (#105), \"Path alias doesn't work\" (#33), \"Incorrect path (URL) to `css-utilities` under `../design/foundations`\" (#385), \"Spinners: Create guidelines for using the correct size in it's context\" (#372), \"Truncation page has been removed, but not from navigation menu\" (#334), \"Add clearing guidelines for SelectPanel/SelectMenu with single/multi selections\" (#229), \"Alert dialog guidelines\" (#295), \"Clarify usage of flash alert\" (#316), \"Link to Primer Mobile Figma library is broken\" (#310), \"Improve cancel button guidelines\" (#290), \"Add guidelines for inputs requiring numbers \ud83d\udd22\" (#288), \"Add lint rule to ensure `<img>` is self closing\" (#240), \"ActionList: Add guidelines for disabled items and how to hint why they are disabled\" (#259), \"Filters & Clearing Filters\" (#29), \"Links w/ Octicons\" (#30), \"Add info about font usage in Figma\" (#44), \"Guidelines should document our take on link targets\" (#85).]",
+				"reason": "The current page displays a list of issues sorted by updated date in descending order. To check out the most recent issues, I will simply examine the list presented on the page."
+			}
+		],
+		"critique": null
+	}
+}

@@ -36,7 +36,8 @@ A short text to guide you through the task-solving process.
 
  
 You should then respond to me with :
-Reason: Your reason for selecting the action
+Plan: Analyse the current situation, give the main steps to achieve it and the next action should be.
+Reason: A very short explanation of what the action is doing.
 Action: The action you choose to perform in the format action_name [argument_1] ... [argument_n]
 
 Here are some general guidelines to keep in mind :
@@ -49,6 +50,7 @@ Here are some general guidelines to keep in mind :
 Please issue only a single action at a time.
 Adhere strictly to the following output format :
 RESPONSE FORMAT :
+PLAN: ...
 REASON: ...
 ACTION: ...
 """
@@ -86,7 +88,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
 
     answer = generate_content(get_action_prompt)
 
-    result = parse_elements(answer, ["reason", "action"])
+    result = parse_elements(answer, ["plan", "reason", "action"])
 
     arguments = parse_action_call(result["action"])
 
@@ -97,7 +99,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
 
     is_stop = arguments[0].lower() == "stop"
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
+    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"], "plan":result["plan"]}
 
     return action
 
