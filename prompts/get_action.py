@@ -25,6 +25,8 @@ get_action_system_prompt = """
 You will be provided with the following,
 OBJECTIVE:
 The current subroutine you need to complete.
+DESCRIPTION:
+The description of the subroutine you have to complete.
 OBSERVATION:
 A simplified text description of the current browser content, without formatting elements.
 URL:
@@ -56,7 +58,7 @@ ACTION: ...
 """
 
 
-def get_action(objective, observation, url, previous_actions, guidance_text, relevant_policies):
+def get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies):
     get_action_prompt = f"""
     You are an AI assistant performing tasks on a web browser.
     To solve these tasks, you will issue specific actions.
@@ -75,6 +77,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
     {get_action_system_prompt}
 
     OBJECTIVE: {objective}
+    DESCRIPTION: {description}
     OBSERVATION: {observation}
     URL: {url}
     PREVIOUS ACTIONS: {previous_actions}
@@ -102,45 +105,3 @@ def get_action(objective, observation, url, previous_actions, guidance_text, rel
     action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"], "plan":result["plan"]}
 
     return action
-
-
-# ==== Prompt testing ===
-
-
-my_objective = """
-search_nearest_place [Closest airports to the Carnegie Art Museum]
-"""
-
-my_observation = """
-Tab 0 (current): OpenStreetMap\n\n[1] RootWebArea 'OpenStreetMap' focused: True\n\t[36] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[41] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[44] img 'OpenStreetMap logo'\n\t[402] link 'Edit'\n\t[403] button ''\n\t[373] link 'History'\n\t[374] link 'Export'\n\t[407] link 'GPS Traces'\n\t[408] link 'User Diaries'\n\t[409] link 'Communities'\n\t[410] link 'Copyright'\n\t[411] link 'Help'\n\t[412] link 'About'\n\t[382] link 'Log In'\n\t[383] link 'Sign Up'\n\t[515] link 'Where is this?'\n\t[12] textbox 'Search' focused: True required: False\n\t[516] button 'Go'\n\t[503] link 'Find directions between two points'\n\t[466] heading 'Welcome to OpenStreetMap!'\n\t[469] button 'Close'\n\t[473] StaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[474] StaticText 'Hosting is supported by '\n\t[475] link 'UCL'\n\t[477] link 'Fastly'\n\t[478] StaticText ', '\n\t[479] link 'Bytemark Hosting'\n\t[480] StaticText ', and other '\n\t[481] link 'partners'\n\t[482] StaticText '.'\n\t[485] link 'Learn More'\n\t[486] link 'Start Mapping'\n\t[23] generic 'Zoom In Zoom Out Show My Location Layers Share 50 km 50 mi \u00a9 OpenStreetMap contributors \u2665 Make a Donation. Website and API terms'\n\t\t[27] link 'Zoom In'\n\t\t[28] link 'Zoom Out'\n\t\t[30] button 'Show My Location'\n\t\t[32] link 'Layers'\n\t\t[296] link ''\n\t\t[34] link 'Share'\n\t\t[298] link ''\n\t\t[300] link ''\n\t\t[305] StaticText '50 km'\n\t\t[306] StaticText '50 mi'\n\t\t[308] StaticText '\u00a9 '\n\t\t[309] link 'OpenStreetMap contributors'\n\t\t[310] StaticText ' \u2665 '\n\t\t[311] link 'Make a Donation'\n\t\t[312] StaticText '. '\n\t\t[313] link 'Website and API terms'
-"""
-
-my_url = """
-http://ec2-3-131-244-37.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108
-"""
-
-my_previous_actions = """
-"""
-
-my_guidance_text = """
-Please follow these instructions to solve the subtask:
-1. For searches that refer to CMU, e.g.  "find cafes near CMU Hunt Library"
-a. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]
-b. Now that your map is centered around Carnegie Mellon University, directly search for "cafes near Hunt Library". Do not include the word CMU in the search item.
-The word CMU cannot be parsed by maps and will result in an invalid search.
-c. When your search returns a list of elements, return them in a structured format like stop [A, B, C]
-2. For searches that don't refer to CMU
-a. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. "bars near Carnegie Music Hall"
-b. When your search returns a list of elements, return them in a structured format like stop [A, B, C]
-3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. 
-4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. 
-5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.
-"""
-
-my_relevant_policies = [
-("find_directions", "This Maps subroutine finds directions between two locations to answer the query.")
-]
-
-
-def get_my_action():
-    return get_action(my_objective, my_observation, my_url, my_previous_actions, my_guidance_text, my_relevant_policies)

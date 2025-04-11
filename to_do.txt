@@ -2,20 +2,30 @@ TO-DO :
 
 - Implement Occam improvements : selective observation
 
+- Add Screenshots
+
 
 - Guidance text : only contain information about choking point to shorten it
 
-- 
+- Website specific policies ?
+
+- Avoid programmed failure inside guidance
 
 
-WHATS WAS DONE :
+- Use expert trajectory or Learn By Interact / BAGEL technique to get that variety ?
 
-- If infinite loop : still call critique : for policies
+- Shorter reason : only what the action does (Sort in ascending order, Use the main search bar, Open issues, ...)
 
-- Prompt engineering after analysis : avoid infinite loop
+- Hierarchical planning : if the task is too hard, divide it into two subtasks (will it work if the policy maker has no special knowledge about the subtask ? -> Creating false subsubtask that I will be hard to get)
 
-- Better logging
+- Encourage agent to use subroutine as much as possible when needed
 
-- First experiment
 
-- Include reason inside history
+WHAT WAS DONE :
+
+- Using human-written policy that gives the goto procedure greatly improves performance
+
+- If policy fails too many times (3 times in a row ?) : reset its guidance text
+	(((-> Goal : encourage exploration so that the model can actually find something that works (using old trajectory or old guidance ?) : ability to learn from previous strategy)))
+
+- Provide policy description inside the objective (not clear what is the goal behind Examin_Issues [flacky_test] without description of what Examine_Issues is supposed to do)

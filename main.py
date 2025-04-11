@@ -7,13 +7,16 @@ import json
 
 tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
 
+# tasks_id = [102]
+
 env = WebEnvironment()
-agent = Agent(is_exploration=True, name="gitlab_2nd_exp", policy_library_path="policies/gitlab_2nd_exp.json")
+agent = Agent(is_exploration=True, name="gitlab_fresh_start_1")
 for task_id in tasks_id:
     objective = env.load(task_id)
     agent.load(objective)
     final_answer = None
     action_logs = []
+    print(f"\n----- TASK ID : {task_id} -----\n")
     # Capping maximum number of steps
     for i in range(100):
         observation, url = env.observe()

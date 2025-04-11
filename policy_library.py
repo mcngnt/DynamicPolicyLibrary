@@ -4,13 +4,10 @@ import os
 from datetime import datetime
 from utils import *
 
-# def get_embedding(text):
-#     return np.random.rand(128)  # Example: Returns a random 128-dim vector
-
-
 class PolicyLibrary:
     def __init__(self, path=None):
         self.policies = {}
+        self.usage_stats = {}  # Track usage and failure counts per policy
         if not (path is None):
             self.load(path)
 
@@ -21,6 +18,7 @@ class PolicyLibrary:
                 self.policies[key] = (name, description, content)
                 return
         self.policies[tuple(embedding)] = (name, description, content)
+        self.usage_stats.setdefault(name, {"used": 0, "failed": 0})  # Init usage stats if new
 
     def retrieve(self, description, k=5, exclude_policy=None):
         query_embedding = get_embedding(description)
@@ -38,7 +36,7 @@ class PolicyLibrary:
                 break
         
         return result
-    
+
     def get(self, name):
         for _, (policy_name, desc, content) in self.policies.items():
             if policy_name == name:
@@ -48,10 +46,18 @@ class PolicyLibrary:
     def is_new(self, name):
         return self.get(name) is None
 
+    def report_use(self, name, is_success):
+        if name not in self.usage_stats:
+            self.usage_stats[name] = {"used": 0, "failed": 0}
+        self.usage_stats[name]["used"] += 1
+        if not is_success:
+            self.usage_stats[name]["failed"] += 1
+        return self.usage_stats[name]["used"], self.usage_stats[name]["failed"]
+
     def save(self, path):
         num_policies = len(self.policies)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
+
         data = {
             "metadata": {
                 "num_policies": num_policies,
@@ -62,17 +68,37 @@ class PolicyLibrary:
                     "embedding": ", ".join(map(lambda coord: str(round(coord, 6)), key)),
                     "name": name,
                     "description": desc,
-                    "content": content
+                    "content": content,
+                    "used": self.usage_stats.get(name, {}).get("used", 0),
+                    "failed": self.usage_stats.get(name, {}).get("failed", 0)
                 }
                 for key, (name, desc, content) in self.policies.items()
             ]
         }
-        
+
         with open(path, "w") as f:
             json.dump(data, f, indent=4)
 
     def load(self, path):
         with open(path, "r") as f:
             data = json.load(f)
-        self.policies = {tuple(np.array(list(map(float, item["embedding"].split(", "))))): (item["name"], item["description"], item["content"]) 
-                         for item in data["policies"]}
+        self.policies = {
+            tuple(np.array(list(map(float, item["embedding"].split(", "))))): 
+            (item["name"], item["description"], item["content"]) 
+            for item in data["policies"]
+        }
+        self.usage_stats = {
+            item["name"]: {"used": item.get("used", 0), "failed": item.get("failed", 0)}
+            for item in data["policies"]
+        }
+
+    def reset(self, name):
+        if name in self.usage_stats:
+            self.usage_stats[name] = {"used": 0, "failed": 0}
+
+        for key in self.policies:
+            policy_name, description, _ = self.policies[key]
+            if policy_name == name:
+                self.policies[key] = (policy_name, description, "")
+                break
+

@@ -17,8 +17,6 @@ REM set WA_FULL_RESET=%BASE_URL%:7565
 REM Otherwise, leave it empty
 set WA_FULL_RESET=
 
-echo Environment variables set.
-
 
 rem HOME = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:4399/"
 rem #     MAP = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108/"

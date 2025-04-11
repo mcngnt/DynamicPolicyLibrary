@@ -31,7 +31,8 @@ class Agent:
 		print(f"Here are the current actions performed in the {print_action_call(top_policy["name"], [top_policy["query"]])} subroutine : {top_policy["actions"]}\n")
 
 		policy_objective = print_action_call(top_policy["name"], [top_policy["query"]]) if not is_root else self.objective
-		guidance_text = self.library.get(top_policy["name"])[-1] if not is_root else ""
+		guidance_text = self.library.get(top_policy["name"])[1] if not is_root else ""
+		policy_description = self.library.get(top_policy["name"])[0] if not is_root else ""
 
 		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
 
@@ -52,7 +53,7 @@ class Agent:
 		if len(top_policy["actions"]) > 30:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
 		else:
-			action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, relevant_policies)
+			action = get_action(policy_objective, policy_description, observation, url, top_policy["actions"], guidance_text, relevant_policies)
 		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]
 		log_info["reason"] = action["reason"]
@@ -71,11 +72,15 @@ class Agent:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["critique"] = critique_feedback["critique"]
-				if not int(critique_feedback["perfect"]):
-					prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
-					policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
-					print(f"write_policy feedback : {policy_writing_feedback}\n")
-					self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
+				nb_used, nb_failed = self.library.report_use(prev_policy_name, critique_feedback["success"])
+				if nb_used == nb_failed and nb_used >= 3:
+					self.library.reset(prev_policy_name)
+				else:
+					if not int(critique_feedback["perfect"]):
+						prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
+						policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
+						print(f"write_policy feedback : {policy_writing_feedback}\n")
+						self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
 		
 		if (not action["is_stop"]) and (not action["is_page_op"]): 
 			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[]}]
