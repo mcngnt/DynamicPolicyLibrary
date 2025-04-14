@@ -1,5 +1,6 @@
 import json
 import os
+from PIL import Image
 
 def build_trace_from_actions(actions):
 
@@ -53,13 +54,18 @@ def build_trace_from_actions(actions):
     return {
         "created_policies": global_created_policies,
         "plan": gloabl_plan,
-        "trace": root_trace
+        "trace": root_trace,
+        "end_screenshot" : action["end_screenshot"]
     }
 
 
-def dump_log(actions, name="log"):
+def dump_log(actions, path=".", name="log"):
     log = build_trace_from_actions(actions)
-    os.makedirs(os.path.dirname(name), exist_ok=True)
-    with open(f"{name}.json", "w") as f:
+    end_screenshot = log.pop("end_screenshot")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(f"{path}{name}.json", "w") as f:
         json.dump(log, f, indent="\t")
+    if not (end_screenshot is None):
+        end_screenshot = Image.fromarray(end_screenshot)
+        end_screenshot.save(f"{path}{name}.jpeg")
     return log

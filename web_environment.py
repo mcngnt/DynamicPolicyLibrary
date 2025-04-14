@@ -57,7 +57,7 @@ class WebEnvironment:
 		self.env = None
 
 	def observe(self):
-		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"]
+		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"], self.current_observation["screenshot"]
 
 	def interact(self, action_name, arguments=[]):
 		real_action_name = None
@@ -87,6 +87,7 @@ class WebEnvironment:
 	def load(self, task_id):
 		self.env = gym.make(f"browsergym/webarena.{task_id}", wait_for_user_message=False)
 		obs, info = self.env.reset()
+		print(obs.keys())
 		self.current_observation = obs
 		self.start_url = obs["url"]
 		return obs["goal"]

@@ -22,7 +22,7 @@ class Agent:
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[]}]
 		self.steps_nb = 0
 
-	def get_action(self, observation, url):
+	def get_action(self, observation, url, screenshot):
 		action = {}
 		is_final = False
 		is_root = len(self.policy_stack) == 1
@@ -34,7 +34,7 @@ class Agent:
 		guidance_text = self.library.get(top_policy["name"])[1] if not is_root else ""
 		policy_description = self.library.get(top_policy["name"])[0] if not is_root else ""
 
-		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
+		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None, "end_screenshot":None}
 
 
 		if self.steps_nb == 0 and self.exploration_mode:
@@ -72,7 +72,7 @@ class Agent:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["critique"] = critique_feedback["critique"]
-				nb_used, nb_failed = self.library.report_use(prev_policy_name, critique_feedback["success"])
+				nb_used, nb_failed = self.library.report_use(prev_policy_name, int(critique_feedback["success"]))
 				if nb_used == nb_failed and nb_used >= 3:
 					self.library.reset(prev_policy_name)
 				else:
@@ -86,6 +86,9 @@ class Agent:
 			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[]}]
 			descr,_ = self.library.get(action["name"])
 			log_info["description"] = descr
+
+		if is_final:
+			log_info["end_screenshot"] = screenshot
 
 
 		self.library.save(f"policies/{self.name}.json")
