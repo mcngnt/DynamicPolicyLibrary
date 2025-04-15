@@ -90,4 +90,5 @@ class WebEnvironment:
 		print(obs.keys())
 		self.current_observation = obs
 		self.start_url = obs["url"]
-		return obs["goal"]
+		observation, _, _ = self.observe()
+		return obs["goal"], observation

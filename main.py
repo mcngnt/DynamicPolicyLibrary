@@ -10,11 +10,11 @@ tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
 # tasks_id = [102]
 
 env = WebEnvironment()
-agent = Agent(is_exploration=True, name="gitlab_fresh_start_1")
+agent = Agent(is_exploration=True, name="gitlab_fresh_start_2")
 for iter_id in range(3):
     for task_id in tasks_id:
-        objective = env.load(task_id)
-        agent.load(objective)
+        objective, observation = env.load(task_id)
+        agent.load(objective, observation)
         final_answer = None
         action_logs = []
         print(f"\n----- TASK ID : {task_id} -----\n")
@@ -24,6 +24,7 @@ for iter_id in range(3):
             name, args, is_page_op, is_final, log_info = agent.get_action(observation, url, screenshot)
             action_logs += [log_info]
             dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}")
+            agent.library.save(f"policies/{agent.name}/", f"{iter_id}.{task_id}")
             if is_page_op:
                 env.interact(name, args)
             if is_final:

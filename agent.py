@@ -16,10 +16,10 @@ class Agent:
 		self.name = name
 		self.steps_nb = 0
 
-	def load(self, objective):
+	def load(self, objective, observation):
 		self.objective = objective
 		self.trajectory = [] 
-		self.policy_stack = [{"name":"root", "query":objective, "actions":[]}]
+		self.policy_stack = [{"name":"root", "query":objective, "actions":[], "inital_observation":observation}]
 		self.steps_nb = 0
 
 	def get_action(self, observation, url, screenshot):
@@ -66,24 +66,24 @@ class Agent:
 		is_final = action["is_stop"] and len(self.policy_stack) == 1
 
 		if action["is_stop"] and len(self.policy_stack) > 1:
-			prev_policy_name, prev_query, prev_actions = self.policy_stack.pop().values()
+			prev_policy_name, prev_query, prev_actions, prev_inital_observation = self.policy_stack.pop().values()
 			self.policy_stack[-1]["actions"] += [(print_action_call("stop", action["arguments"]), action["reason"])]
 			if self.exploration_mode:
-				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions)
+				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions, prev_inital_observation)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["critique"] = critique_feedback["critique"]
 				nb_used, nb_failed = self.library.report_use(prev_policy_name, int(critique_feedback["success"]))
 				if nb_used == nb_failed and nb_used >= 3:
 					self.library.reset(prev_policy_name)
 				else:
-					if not int(critique_feedback["perfect"]):
+					if (not int(critique_feedback["perfect"])) or (int(critique_feedback["success"]) and float(nb_failed)/float(nb_used) > 0.5):
 						prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
 						policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
 						print(f"write_policy feedback : {policy_writing_feedback}\n")
 						self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
 		
 		if (not action["is_stop"]) and (not action["is_page_op"]): 
-			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[]}]
+			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[], "inital_observation":observation}]
 			descr,_ = self.library.get(action["name"])
 			log_info["description"] = descr
 
@@ -91,6 +91,5 @@ class Agent:
 			log_info["end_screenshot"] = screenshot
 
 
-		self.library.save(f"policies/{self.name}.json")
 		self.steps_nb += 1
 		return action["name"], action["arguments"], action["is_page_op"], is_final, log_info

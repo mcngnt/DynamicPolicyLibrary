@@ -32,7 +32,7 @@ A simplified text description of the current browser content, without formatting
 URL:
 The current webpage URL
 PREVIOUS ACTIONS:
-A list of your past actions with an optional response
+A list of your past actions along with a quick description of what they were supposed to do.
 GUIDANCE TEXT:
 A short text to guide you through the task-solving process.
 
@@ -45,7 +45,7 @@ Action: The action you choose to perform in the format action_name [argument_1] 
 Here are some general guidelines to keep in mind :
 1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
 2. Only use a subroutine actions if needed. Page operations action are better for simple tasks.
-3. You do not have access to external ressources. Limit yourself to the content of the current webpage.
+3. You do not have access to external resources. Limit yourself to the content of the current webpage.
 4. Always refer to specific elements in the page by their ID and not by their name when using page operation actions.
 5. You can't reuse the objective subroutine.
 

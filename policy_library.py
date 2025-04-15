@@ -54,7 +54,7 @@ class PolicyLibrary:
             self.usage_stats[name]["failed"] += 1
         return self.usage_stats[name]["used"], self.usage_stats[name]["failed"]
 
-    def save(self, path):
+    def save(self, path=".", name="library"):
         num_policies = len(self.policies)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -75,9 +75,9 @@ class PolicyLibrary:
                 for key, (name, desc, content) in self.policies.items()
             ]
         }
-
-        with open(path, "w") as f:
-            json.dump(data, f, indent=4)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(f"{path}{name}.json", "w") as f:
+            json.dump(data, f, indent="\t")
 
     def load(self, path):
         with open(path, "r") as f:

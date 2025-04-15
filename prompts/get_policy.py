@@ -66,6 +66,8 @@ Here are some general guidelines to keep in mind :
 2. Subroutines should be generic and only depends on the type of website your in and not the website itself.
 3. If you create a subroutine, the name of the newly created subroutine should match the current subtask.
 4. Subroutines shouldn't be too simple : they should be an abstraction of at least two page operations.
+5. Do not create policies that directly interfere with the URL. You should only use the website UI.
+6. Don't be afraid to create new policies even if they overlap with existing policies.
 
 Please issue only a single action at a time.
 Adhere strictly to the following output format :

@@ -27,39 +27,39 @@ Here are some example guidance text for diverse tasks :
 "
 
 
-At each round of conversation, I will give you
- Task name : ...
- Task description : ...
- Query with which the task was performed : ...
- All the actions and observations from the last round : ...
- Critique of the previous interactions : ...
- Guidance text from the last round : ...
+You will be provided with the following,
+TASK NAME:
+The name of the task the agent had to solve.
+TASK DESCRIPTION:
+A textual description of the goal of the task.
+QUERY:
+The specific objective to which the task was applied.
+PREVIOUS ACTIONS:
+A list of your past actions along with a quick description of what they were supposed to do.
+CRITIQUE:
+A textual criticism of the previous actions to assess the fulfilment of the task.
+OLD GUIDANCE:
+Guidance text from the previous iteration.
 
 
- You should then respond to me with
- Explain (if applicable): What are the exact causes of failure and how to solve them ? Why is the guidance not enough to complete the task? What does the critique answer implies ?
- Plan: How to complete the task step by step. Do not be too specific, your guidance text should be able to handle multiple queries.
- Guidance text :
- 1) Write a guidance text to be used by a web agent to complete a specific tesk.
+You should then respond to me with:
+Explain: Highlight the main actions performed to try solving the tasks. Please refer to the critique to answer the following questions : If the task was fulfilled, what key actions were done to achieve it ? If the task was not fulfilled, what actions could have been done based on the current observation ? Are there any unnecessary steps ?
+Plan: Based on the explanation, provide a step-by-step plan of how to solve the task. If the previous actions lead to a failure, try to be creative and invent a new path to not make the same mistakes.
+Guidance: Based on your plan and explanation, write general directions for the web agent to solve the task. Your guidance should be ordered as bullet points and only include the key actions highlighted in your plan and explanation.
+
+Here are some general guidelines to keep in mind for the guidance text:
+ 1) Write a guidance text to be used by a web agent to achieve a specific task.
  2) Don't be too specific, your guidance text should generalize to multiple queries
- 3) Write the guidance text for the general task, not for the query associated with the task
- 4) Keep all the information in the previous guidance text. Only remove information from the previous guidance text if you think it is useless or nocive.
- 5) Do not mention any specific query in the guidance text. The guidance text should be applicable to a large range of queries
- 6) Do not make too drastic changes to the original guidance text. The improvement process should be gradual.
- 7) Be precise. Do not be afraid to give too many details.
+ 3) Do not mention any specific query in the guidance text. The guidance text should be applicable to a wide range of queries
+ 4) Only give information about the tricky steps of the task-solving process. The agent is capable and independent for simple actions.
+ 5) Change the granularity of your guidance depending on the importance of the action. The more important an action is, the more detailed it needs to be.
 
  RESPONSE FORMAT:
  EXPLAIN: ...
- PLAN:
- 1) ...
- 2) ...
- 3) ...
+ PLAN: ...
  GUIDANCE: ...
 """
 
-# def extract_guidance(text):
-#     match = re.search(r"'''(.*?)'''", text, re.DOTALL)
-#     return match.group(1) if match else None
 
 
 def write_policy(task_name, task_description, arguments, observation, critique, previous_guidance):
@@ -78,7 +78,5 @@ def write_policy(task_name, task_description, arguments, observation, critique, 
     # Return only generated policy from answer
 
     result = parse_elements(answer, ["explain", "plan", "guidance"])
-
-    result["guidance"] += "\nPlease, use ONLY page operation and no subroutine actions."
 
     return result
