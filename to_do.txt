@@ -21,16 +21,23 @@ TO-DO :
 
 - When resetting policy : include old guidance text and ask the model to expressively explore another path to succes ???
 
+- Discourage get_action to repeat the same action over and over
+
+- Provide information about previous action history (it is the intent of the model, not always what is really happening)
+	-> get_action
+	-> critique
+
+- WRITING POLICY : INPUT DOES NOT CORRESPOND TO WHAT ANNOUNCED + DOES NOT PROVIDE ACTION HISTORY
+
+- Provide policy description to critique
+
+- Be more precise in critique : actually highlight the actions
 
 
 WHAT WAS DONE :
 
-- provide initial observcation to critique
+- Change reset function : instead totally remove the policy from the library
 
-- Encourage policy creation even if overlap (for now prefer to use existing policy even if it doesn't match)
+- get_policy prompt : do not bring up query inside the task description
 
-- Positively reinforce guidance after success if too many failures
-
-- Only give information about key actions in guidance
-
-- Complete re-hauling of the rewriting agent
+- 

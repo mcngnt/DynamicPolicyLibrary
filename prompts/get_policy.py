@@ -58,7 +58,7 @@ You should then respond to me with :
 Plan: Divide the objective into at most 2 clear and equally complex subtasks starting from the observation. The subtasks should be general and abstract away the specifics of the website. Your plan should contain the smallest possible number of subtasks.
 For each of the following categories, you need to provide an answer for each corresponding subtask in your plan separated by |
 Name: The names of the subroutines you want to call to solve each subtask (subtroutine_name_1 | subtroutine_name_1 | ...)
-Description: The descriptions of the subroutines you want to call. (description_1 | description_2 | ...)
+Description: The descriptions of the subroutines you want to call. It should be general and not talk about the query. (description_1 | description_2 | ...)
 Query: The argument with which each subroutine will be called. (query_1 | query_2 | ...)
 
 Here are some general guidelines to keep in mind :

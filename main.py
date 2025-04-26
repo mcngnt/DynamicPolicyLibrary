@@ -10,7 +10,7 @@ tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
 # tasks_id = [102]
 
 env = WebEnvironment()
-agent = Agent(is_exploration=True, name="gitlab_fresh_start_2")
+agent = Agent(is_exploration=True, name="gitlab_fresh_start_3")
 for iter_id in range(3):
     for task_id in tasks_id:
         objective, observation = env.load(task_id)
