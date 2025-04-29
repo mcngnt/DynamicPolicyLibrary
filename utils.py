@@ -26,7 +26,8 @@ def generate_content(prompt):
         model="gemini-2.0-flash", contents=prompt
         )
         return response.text
-    except:
+    except Exception as e:
+        print("Error in generating content :", e)
         switch_api_key()
         return generate_content(prompt)
 

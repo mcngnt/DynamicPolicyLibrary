@@ -15,8 +15,12 @@ import browsergym.webarena
 from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
 
 from prompts.critique import get_critique
+from prompts.writing_policy import write_policy
 
 page_op = ["click", "type", "go_back", "go_home", "stop"]
+
+
+help(browsergym.webarena)
 
 # actions = HighLevelActionSet(
 #             subsets=["chat", "tab", "nav", "bid", "infeas"],  # define a subset of the action space
@@ -250,8 +254,71 @@ obj = """
 FilterAndSort [help wanted]
 """
 
+task_name = """
+FilterAndSort
+"""
+
+query = """
+help wanted
+"""
+
+description = """
+Filter and sort the issues on the issues page by a given criteria.
+"""
+
+
 url = """
 http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/byteblaze/a11y-webring.club/-/issues/?sort=title_asc&state=opened&label_name%5B%5D=help%20wanted&first_page_size=20
 """
 
-print(get_critique(obj, obs, url, previous_actions, init_obs))
+get_critique(obj, obs, url, previous_actions, init_obs)
+
+
+
+breakdown = """
+1. Type 'help wanted' in the textbox to filter the issues.
+2. Click the combobox.
+3. Click the "Priority" button (multiple redundant clicks).
+4. Click the "Sort direction" link.
+5. Click the "Toggle project select" button.
+6. Click the "Author" button (multiple redundant clicks).
+7. Click different project options in the combobox.
+8. Click "Created date" option in the listbox.
+9. Click "help wanted" link.
+10. Click "Created date" button.
+11. Click the "Title" sorting option to sort issues by title.
+12. Click the "Sort direction: Ascending" button to sort ascending.*
+"""
+
+# feedback = """
+# The task is a success because the issues are filtered by 'help wanted' and sorted by title ascending. The URL confirms that `sort=title_asc` and `label_name[]=help%20wanted` parameters are present. While several actions were redundant or unnecessary, the final state fulfills the objective.
+# """
+
+feedback = """
+The task is a success because the issues are filtered by 'help wanted' and sorted by title ascending. The URL confirms that `sort=title_asc` and `label_name[]=help%20wanted` parameters are present. Here are the main actions that lead to a success :
+1. Click on the link with the text "help wanted" to filter the issues.
+2. Click on the "Title" button to open the sorting options.
+3. Select the "Title" option to sort by title.
+4. Ensure that the sort direction is set to ascending by clicking the "Sort direction" button until it displays "Sort direction: Ascending".
+"""
+
+
+# old_guidance = """
+# Locate the column header (e.g., \"Updated date\") corresponding to the desired sorting criteria.\n*   Click the column header to sort by that criteria. The first click typically sorts in ascending order.\n*   If the desired sort direction is descending, click the *same* column header again to toggle the sort direction.\n*   Stop once the issues are sorted by the specified criteria and in the correct direction. Avoid unnecessary clicks after the desired sorting is achieved.
+# """
+
+# old_guidance = """
+
+# """
+
+
+# write_policy(task_name, description, query, obs, breakdown, feedback, old_guidance, init_obs)
+
+# REVIEW: The navigation started on the issues dashboard. Several attempts were made to open the sorting menu using the "Priority" button, "Sort direction" link, and other interactive elements, but without success. A combobox with project options was clicked. Finally, the issues are filtered by the label "help wanted" by clicking on the 'help wanted' link. After this, the "Title" sort was selected and the sort direction was set to ascending.
+# EXPLAIN: The objective was to filter issues by the "help wanted" label and sort them by title in ascending order. The current URL indicates that the issues are indeed filtered by "help wanted" (label_name%5B%5D=help%20wanted) and sorted by title in ascending order (sort=title_asc). Therefore, the objective has been successfully fulfilled.
+# SUCCESS: 1
+# FEEDBACK:
+# 1. Click on the link with the text "help wanted" to filter the issues.
+# 2. Click on the "Title" button to open the sorting options.
+# 3. Select the "Title" option to sort by title.
+# 4. Ensure that the sort direction is set to ascending by clicking the "Sort direction" button until it displays "Sort direction: Ascending".

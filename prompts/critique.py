@@ -2,7 +2,7 @@ from utils import *
 
 critique_system_prompt = f"""
 You are a seasoned web navigator. You now assess the success or failure of a web navigation objective based on the previous interaction history and the web’s current state.
-Then you make a clear feedback about the fulfilment of the task and if you deem the objective to be a failure, give clear reasons why.
+Then you make a clear feedback about the fulfilment of the task, giving the reasons of success of failures and possible new trajectories to explore.
 
 You will be provided with the following,
 OBJECTIVE:
@@ -14,20 +14,18 @@ A simplified text description of the browser content at the start of the task. Y
 URL:
 The current webpage URL
 PREVIOUS ACTIONS:
-A list of the past actions
+A list of the past actions, along with their intents during navigation. Be aware that it is only an intent and not always what really happened.
 
 
 Adhere strictly to the following output format :
-REVIEW:
-Make a brief summary of all the actions taken as well as the final state of the webpage afterwards.
 EXPLAIN:
-Explain whether the actions taken were enough to fulfil the objective. Explain why it is a success or why is it a failure, you can compare the current observation with the initial observation. Please be severe in your judgement, current observation needs to match perfectly the task. If the actions taken resulted in a success, explain if it could have been done in fewer steps.
+Make a brief summary of the current observation state and the initial observation state. Then, by comparing the current observation with the initial observation, explain why is the task a success or a failure related to the objective. Please be severe in your judgement, current observation needs to perfectly achieve the task.
 SUCCESS:
 Output 1 if it is a success (objective fulfilled), 0 if it is a failure (objective not fulfilled)
-PERFECT:
-Output 1 if the task-solving is perfect (shortest amount of steps and accomplishes the objective) and 0 otherwise (is a failure or could be shortened)
-CRITIQUE:
-If the task-solving process could be improved, explain what needs to be changed to accomplish the objective or to reduce the number of steps taken. If the task-solving succeeded, identify the key actions taken that lead to a success.
+BREAKDOWN:
+Make a long and detailed summary of all the actions taken as an ordered list with redundant actions removed and no page ID mentionned.
+FEEDBACK:
+Based on SUCCESS, explain if the task is a success or a failure and why it is a success or a failure. Then, describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be precise and given chronologically. Be aware that if two actions seem to achieve the same thing in the breakdown, the latter is probably a key action and the former a mistake. In case of failure, you can also suggest a new sequence of actions that the agent could try to solve the task.
 """
 
 
@@ -41,9 +39,24 @@ def get_critique(objective, observation, url, previous_actions, initial_observat
     PREVIOUS ACTIONS: {previous_actions}
     """
 
+    print(critique_prompt)
+
+    print(len(previous_actions))
+
     answer = generate_content(critique_prompt)
 
-    result = parse_elements(answer, ["review", "explain", "success", "perfect", "critique"])
+    print(answer)
+
+    # return answer
+    result = parse_elements(answer, ["explain", "success", "breakdown", "feedback"])
 
     return result
 
+
+
+# describe how to achieve the task in general
+
+
+# Describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be very precise and given chronologically. In case of failure, you can also suggest a new sequence of actions thta the agent could try to solve the task.
+
+# The later actions performed are probably the most important and you should spend more time detailing them.
