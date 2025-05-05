@@ -20,7 +20,7 @@ from prompts.writing_policy import write_policy
 page_op = ["click", "type", "go_back", "go_home", "stop"]
 
 
-help(browsergym.webarena)
+# help(browsergym.webarena)
 
 # actions = HighLevelActionSet(
 #             subsets=["chat", "tab", "nav", "bid", "infeas"],  # define a subset of the action space
@@ -271,7 +271,7 @@ url = """
 http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/byteblaze/a11y-webring.club/-/issues/?sort=title_asc&state=opened&label_name%5B%5D=help%20wanted&first_page_size=20
 """
 
-get_critique(obj, obs, url, previous_actions, init_obs)
+get_critique(obj, init_obs, "", previous_actions, init_obs)
 
 
 

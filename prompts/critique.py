@@ -25,8 +25,13 @@ Output 1 if it is a success (objective fulfilled), 0 if it is a failure (objecti
 BREAKDOWN:
 Make a long and detailed summary of all the actions taken as an ordered list with redundant actions removed and no page ID mentionned.
 FEEDBACK:
-Based on SUCCESS, explain if the task is a success or a failure and why it is a success or a failure. Then, describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be precise and given chronologically. Be aware that if two actions seem to achieve the same thing in the breakdown, the latter is probably a key action and the former a mistake. In case of failure, you can also suggest a new sequence of actions that the agent could try to solve the task.
+Based on SUCCESS, explain if the task is a success or a failure and why it is a success or a failure. 
+If it is a success : Describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be precise and given chronologically. Be aware that if two actions seem to achieve the same thing in the breakdown, the latter is probably a key action and the former a mistake.
+If it is a failure : Suggest possible actions the agent could try instead of the current trajectory to solve the task.
 """
+
+# Do not include breakdown if failure
+# actually differentiate success and failure
 
 
 def get_critique(objective, observation, url, previous_actions, initial_observation):
@@ -47,7 +52,7 @@ def get_critique(objective, observation, url, previous_actions, initial_observat
 
     print(answer)
 
-    # return answer
+    # return answer 
     result = parse_elements(answer, ["explain", "success", "breakdown", "feedback"])
 
     return result
