@@ -303,6 +303,7 @@ The task is a success because the issues are filtered by 'help wanted' and sorte
 """
 
 
+
 # old_guidance = """
 # Locate the column header (e.g., \"Updated date\") corresponding to the desired sorting criteria.\n*   Click the column header to sort by that criteria. The first click typically sorts in ascending order.\n*   If the desired sort direction is descending, click the *same* column header again to toggle the sort direction.\n*   Stop once the issues are sorted by the specified criteria and in the correct direction. Avoid unnecessary clicks after the desired sorting is achieved.
 # """

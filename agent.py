@@ -28,7 +28,7 @@ class Agent:
 		is_root = len(self.policy_stack) == 1
 		top_policy = self.policy_stack[-1]
 
-		print(f"Here are the current actions performed in the {print_action_call(top_policy["name"], [top_policy["query"]])} subroutine : {top_policy["actions"]}\n")
+		print(f'Here are the current actions performed in the {print_action_call(top_policy["name"], [top_policy["query"]])} subroutine : {top_policy["actions"]}\n')
 
 		policy_objective = print_action_call(top_policy["name"], [top_policy["query"]]) if not is_root else self.objective
 		guidance_text = self.library.get(top_policy["name"])[1] if not is_root else ""
@@ -71,14 +71,14 @@ class Agent:
 			if self.exploration_mode:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions, prev_inital_observation)
 				print(f"get_critique feedback : {critique_feedback}\n")
-				log_info["critique"] = critique_feedback["critique"]
+				log_info["feedback"] = critique_feedback["feedback"]
 				nb_used, nb_failed = self.library.report_use(prev_policy_name, int(critique_feedback["success"]))
 				if nb_used == nb_failed and nb_used >= 3:
 					self.library.reset(prev_policy_name)
 				else:
-					if (not int(critique_feedback["perfect"])) or (int(critique_feedback["success"]) and float(nb_failed)/float(nb_used) > 0.5):
+					if (nb_used == 1) or (float(nb_failed)/float(nb_used) > 0.5):
 						prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
-						policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, prev_actions, critique_feedback["critique"], prev_policy_content)
+						policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, observation, critique_feedback["breakdown"], critique_feedback["feedback"], prev_policy_content, prev_inital_observation)
 						print(f"write_policy feedback : {policy_writing_feedback}\n")
 						self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
 		

@@ -60,3 +60,6 @@ def parse_action_call(call):
     call = re.sub(r'\s*\[', '[', call)
     match = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)(\[(.*?)\])?(.*)', call)
     return [match.group(1)] + ([match.group(3)] if match.group(3) else []) + re.findall(r'\[(.*?)\]', match.group(4)) if match else []
+
+def print_gym_call(name, arguments):
+    return f"""{name}({','.join([f"'{arg}'" for arg in arguments])})"""

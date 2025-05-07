@@ -38,58 +38,62 @@ from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prun
 #         click('48', button='middle', modifiers=['Shift'])
 
 
-def print_gym_call(name, arguments):
-	return f"""{name}({','.join([f"\'{arg}\'" for arg in arguments])})"""
-
-
-# class AvailableURL(Enum):
-#     HOME = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:4399/"
-#     MAP = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108/"
-#     REDDIT = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums/all"
-#     GITLAB = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/explore/"
-#     SHOPPING = "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7770/"
-
 
 class WebEnvironment:
 	def __init__(self):
 		self.start_url = None
 		self.current_observation = None
+		self.current_url = ""
 		self.env = None
+
+		self.webarena_actions_history = []
+		self.obs_info_history = []
+		self.browserenv_env = None
 
 	def observe(self):
 		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"], self.current_observation["screenshot"]
 
 	def interact(self, action_name, arguments=[]):
-		real_action_name = None
-		real_arguments = None
+		gym_action_name = None
+		gym_arguments = None
 		match action_name:
 			case "click":
-				real_action_name = "click"
-				real_arguments = arguments
+				gym_action_name = "click"
+				gym_arguments = arguments
 			case "type":
-				real_action_name = "fill"
-				real_arguments = arguments[:2]
+				gym_action_name = "fill"
+				gym_arguments = arguments[:2]
 			case "go_back":
-				real_action_name = "go_back"
-				real_arguments = []
+				gym_action_name = "go_back"
+				gym_arguments = []
 			case "go_home":
-				real_action_name = "goto"
-				real_arguments = [self.start_url]
-		action = print_gym_call(real_action_name, real_arguments)
-		print(f"Just issued action {action}")
+				gym_action_name = "goto"
+				gym_arguments = [self.start_url]
+			case _:
+				return
+		action = print_gym_call(gym_action_name, gym_arguments)
+		self.webarena_actions_history += [print_action_call(action_name, gym_arguments)]
+		print(f"Just issued gym action {action}")
 		obs, reward, terminated, truncated, info = self.env.step(action)
+		self.obs_info_history += [(obs, info)]
 		if action_name == "type" and int(arguments[-1]) == 1:
+			self.webarena_actions_history += [print_action_call("press", [arguments[0], "Enter"])]
 			obs, reward, terminated, truncated, info = self.env.step(print_gym_call("press", [arguments[0], "Enter"]))
+			self.obs_info_history += [(obs, info)]
 		self.current_observation = obs
+		self.current_url = obs["url"]
+		self.browserenv_env = self.env.env.env
 
 
 
 	def load(self, task_id):
 		self.env = gym.make(f"browsergym/webarena.{task_id}", wait_for_user_message=False)
 		obs, info = self.env.reset()
-		print(obs.keys())
 		self.current_observation = obs
-		# print(obs.keys())
 		self.start_url = obs["url"]
+		self.current_url = obs["url"]
+		self.webarena_actions_history = []
+		self.obs_info_history = [(obs, info)]
 		observation, _, _ = self.observe()
+		self.browserenv_env = self.env.env.env
 		return obs["goal"], observation

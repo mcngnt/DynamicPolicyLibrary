@@ -44,13 +44,13 @@ def get_critique(objective, observation, url, previous_actions, initial_observat
     PREVIOUS ACTIONS: {previous_actions}
     """
 
-    print(critique_prompt)
+    # print(critique_prompt)
 
-    print(len(previous_actions))
+    # print(len(previous_actions))
 
     answer = generate_content(critique_prompt)
 
-    print(answer)
+    # print(answer)
 
     # return answer 
     result = parse_elements(answer, ["explain", "success", "breakdown", "feedback"])

@@ -59,6 +59,8 @@ ACTION: ...
 
 
 def get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies):
+    subroutine_actions_prompt = "\n".join([f"{name} [query] : {description}" for (name, description) in relevant_policies])
+
     get_action_prompt = f"""
     You are an AI assistant performing tasks on a web browser.
     To solve these tasks, you will issue specific actions.
@@ -69,7 +71,7 @@ def get_action(objective, description, observation, url, previous_actions, guida
     {page_operations}
 
     2. Subroutine Actions :
-    {"\n".join([f"{name} [query] : {description}" for (name, description) in relevant_policies])}
+    {subroutine_actions_prompt}
 
     Here are some example page operations :
     {example_page_operation}

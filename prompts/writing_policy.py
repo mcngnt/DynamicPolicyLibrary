@@ -81,7 +81,7 @@ def write_policy(task_name, task_description, query, observation, breakdown, fee
 
     answer = generate_content(writing_prompt)
 
-    print(answer)
+    # print(answer)
 
     # Return only generated policy from answer
 
