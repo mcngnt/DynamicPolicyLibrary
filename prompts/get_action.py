@@ -86,7 +86,7 @@ def get_action(objective, description, observation, url, previous_actions, guida
     GUIDANCE TEXT : {guidance_text}
     """
 
-    page_op = ["click", "type", "go_back", "go_home"]
+    page_op = ["click", "type", "go_back", "go_home", "scroll"]
     subroutine_actions = [name for (name, description) in relevant_policies]
     possible_actions = page_op + subroutine_actions + ["stop"]
 

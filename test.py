@@ -17,6 +17,10 @@ from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prun
 from prompts.critique import get_critique
 from prompts.writing_policy import write_policy
 
+from utils import *
+
+from logger import dump_log
+
 page_op = ["click", "type", "go_back", "go_home", "stop"]
 
 
@@ -33,6 +37,7 @@ page_op = ["click", "type", "go_back", "go_home", "stop"]
 # print(actions.__dict__)
 
 # print(AvailableURL.REDDIT.value)
+
 
 # print(print_gym_call("go_back", ['42', "Carnegie"]))
 
@@ -166,8 +171,6 @@ page_op = ["click", "type", "go_back", "go_home", "stop"]
 
 
 
-from logger import dump_log
-
 # actions = [
 #     {"objective":"find X", "observation":"observation", "guidance":"no","relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None}
 #     {"name": "start root logic", "description": "start root logic", "is_page_op": True, "is_stop": False, "commentary": None},
@@ -221,8 +224,6 @@ from logger import dump_log
 # print("Chat response:", chat_response)
 
 
-import json
-
 def extract_actions_and_reasons(json_file_path):
     with open(json_file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -239,7 +240,7 @@ def extract_actions_and_reasons(json_file_path):
 
 
 file_path = "test.json"  # Replace with your actual file path
-previous_actions = extract_actions_and_reasons(file_path)
+# previous_actions = extract_actions_and_reasons(file_path)
 
 
 obs = """
@@ -271,7 +272,7 @@ url = """
 http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/byteblaze/a11y-webring.club/-/issues/?sort=title_asc&state=opened&label_name%5B%5D=help%20wanted&first_page_size=20
 """
 
-get_critique(obj, init_obs, "", previous_actions, init_obs)
+# get_critique(obj, init_obs, "", previous_actions, init_obs)
 
 
 
@@ -303,7 +304,6 @@ The task is a success because the issues are filtered by 'help wanted' and sorte
 """
 
 
-
 # old_guidance = """
 # Locate the column header (e.g., \"Updated date\") corresponding to the desired sorting criteria.\n*   Click the column header to sort by that criteria. The first click typically sorts in ascending order.\n*   If the desired sort direction is descending, click the *same* column header again to toggle the sort direction.\n*   Stop once the issues are sorted by the specified criteria and in the correct direction. Avoid unnecessary clicks after the desired sorting is achieved.
 # """
@@ -323,3 +323,7 @@ The task is a success because the issues are filtered by 'help wanted' and sorte
 # 2. Click on the "Title" button to open the sorting options.
 # 3. Select the "Title" option to sort by title.
 # 4. Ensure that the sort direction is set to ascending by clicking the "Sort direction" button until it displays "Sort direction: Ascending".
+
+
+
+print(generate_content("Hello world"))

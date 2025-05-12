@@ -15,12 +15,14 @@ class Agent:
 		self.policy_stack = None
 		self.name = name
 		self.steps_nb = 0
+		self.task_id = None
 
-	def load(self, objective, observation):
+	def load(self, objective, observation, task_id):
 		self.objective = objective
 		self.trajectory = [] 
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[], "inital_observation":observation}]
 		self.steps_nb = 0
+		self.task_id = task_id
 
 	def get_action(self, observation, url, screenshot):
 		action = {}

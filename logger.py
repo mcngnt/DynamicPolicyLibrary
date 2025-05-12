@@ -2,7 +2,7 @@ import json
 import os
 from PIL import Image
 
-def build_trace_from_actions(actions):
+def build_trace_from_actions(actions, score):
 
 # "objective":, "observation":, "guidance":,"relevant_policies":, "action":, "is_page_op":, "reason":, "description":, "plan":, "created_policies":}
     root_trace = {"trace": []}
@@ -55,12 +55,13 @@ def build_trace_from_actions(actions):
         "created_policies": global_created_policies,
         "plan": gloabl_plan,
         "trace": root_trace,
-        "end_screenshot" : action["end_screenshot"]
+        "end_screenshot" : action["end_screenshot"],
+        "score" : score
     }
 
 
-def dump_log(actions, path=".", name="log"):
-    log = build_trace_from_actions(actions)
+def dump_log(actions, path=".", name="log", score=0):
+    log = build_trace_from_actions(actions, score)
     end_screenshot = log.pop("end_screenshot")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(f"{path}{name}.json", "w") as f:

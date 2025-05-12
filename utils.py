@@ -1,23 +1,18 @@
 from google import genai
 import numpy as np
 import re
+from api_keys import gemini_keys
 
-api_keys = [
-"***REMOVED***",
-"***REMOVED***",
-"***REMOVED***",
-"***REMOVED***",
-]
 
 current_key_id = 0
 
-client = genai.Client(api_key=api_keys[0])
+client = genai.Client(api_key=gemini_keys[0])
 
 def switch_api_key():
     global current_key_id, client
     print("Switching API key.")
     current_key_id += 1
-    client = genai.Client(api_key=api_keys[current_key_id % len(api_keys)])
+    client = genai.Client(api_key=gemini_keys[current_key_id % len(gemini_keys)])
 
 
 def generate_content(prompt):
@@ -57,9 +52,36 @@ def print_action_call(name, arguments):
     return name + " " + " ".join([f"[{arg}]" for arg in arguments])
 
 def parse_action_call(call):
-    call = re.sub(r'\s*\[', '[', call)
-    match = re.match(r'([a-zA-Z_][a-zA-Z0-9_]*)(\[(.*?)\])?(.*)', call)
-    return [match.group(1)] + ([match.group(3)] if match.group(3) else []) + re.findall(r'\[(.*?)\]', match.group(4)) if match else []
+    pattern = r'(\w+)|\[((?:[^\[\]]+|\[[^\[\]]*\])*)\]'
+    
+    matches = re.findall(pattern, call)
+    result = []
+
+    for match in matches:
+        if match[0]:  # function name or bare word
+            result.append(match[0])
+        else:
+            result.append(match[1])
+    
+    return result
 
 def print_gym_call(name, arguments):
     return f"""{name}({','.join([f"'{arg}'" for arg in arguments])})"""
+
+
+def step_dict_to_prompt(prompt_dict):
+    prompt = prompt_dict["instruction"]
+    prompt += "\nHere are a few examples:"
+
+    for example in prompt_dict["examples"]:
+            prompt += f"\n### Input:\n{example['input']}\n\n### Response:\n{example['response']}"
+
+    prompt += """Please issue only a single action at a time.
+    Adhere strictly to the following output format :
+    RESPONSE FORMAT :
+    REASON: ...
+    ACTION: ...
+    """
+    prompt += prompt_dict["input"]
+
+    return prompt
