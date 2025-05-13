@@ -7,33 +7,39 @@ import json
 
 from evaluator import evaluate_task
 
-tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
+import numpy as np
+
+
+# tasks_id = [79]
+# tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
+
 env = WebEnvironment()
 
-
-
-# agent = Agent(is_exploration=True, name="gitlab_fresh_start_3")
+# agent = Agent(is_exploration=True, name="agent_llama")
 # iter_nb = 3
 # save_library = True
+# tasks_id = np.random.choice(812, size=33, replace=False)
 
 
-agent = StepAgent(name="step_agent_1", policy_library_path="policies/step_policies.json")
+agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
 iter_nb = 1
 save_library = False
+tasks_id = np.random.choice(812, size=100, replace=False)
 
 
 for iter_id in range(iter_nb):
     for task_id in tasks_id:
+        print(f"\n----- TASK ID : {task_id} -----\n")
         objective, observation = env.load(task_id)
         agent.load(objective, observation, task_id)
         final_answer = ""
         action_logs = []
-        print(f"\n----- TASK ID : {task_id} -----\n")
         # Capping maximum number of steps
         for i in range(100):
             observation, url, screenshot = env.observe()
             name, args, is_page_op, is_final, log_info = agent.get_action(observation, url, screenshot)
             action_logs += [log_info]
+            dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}")
             if is_page_op:
                 env.interact(name, args)
             if is_final:

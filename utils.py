@@ -1,42 +1,71 @@
 from google import genai
+from openai import OpenAI
 import numpy as np
 import re
-from api_keys import gemini_keys
+
+from api_keys import gemini_keys, saturn_key, saturn_url
 
 
-current_key_id = 0
+current_key_id_gemini = 0
+gemini_client = genai.Client(api_key=gemini_keys[0])
 
-client = genai.Client(api_key=gemini_keys[0])
-
-def switch_api_key():
-    global current_key_id, client
-    print("Switching API key.")
-    current_key_id += 1
-    client = genai.Client(api_key=gemini_keys[current_key_id % len(gemini_keys)])
+def switch_api_key_gemini():
+    global current_key_id_gemini, gemini_client
+    print("Switching Gemini API key.")
+    current_key_id_gemini += 1
+    gemini_client = genai.Client(api_key=gemini_keys[current_key_id_gemini % len(gemini_keys)])
 
 
-def generate_content(prompt):
+def generate_content_gemini(prompt):
     try:
-        response = client.models.generate_content(
+        response = gemini_client.models.generate_content(
         model="gemini-2.0-flash", contents=prompt
         )
         return response.text
     except Exception as e:
         print("Error in generating content :", e)
-        switch_api_key()
-        return generate_content(prompt)
+        switch_api_key_gemini()
+        return generate_content_gemini(prompt)
 
-def get_embedding(prompt):
+
+
+saturn_client = OpenAI(
+    api_key=saturn_key,
+    base_url=saturn_url
+)
+
+
+def generate_content_saturn(prompt):
+    response = saturn_client.chat.completions.create(
+        model="meta-llama/Llama-3.3-70B-Instruct",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return response.choices[0].message.content
+
+
+def generate_content(prompt):
+    # return generate_content_gemini(prompt)
+    return generate_content_saturn(prompt)
+
+
+def get_embedding_gemini(prompt):
 
     try:
-        result = client.models.embed_content(
+        result = gemini_client.models.embed_content(
         model="text-embedding-004",
         contents=prompt
         )
         return np.asarray(result.embeddings[0].values)
     except:
-        switch_api_key()
-        return get_embedding(prompt)
+        switch_api_key_gemini()
+        return get_embedding_gemini(prompt)
+
+
+
+def get_embedding(prompt):
+    return get_embedding_gemini(prompt)
 
 
 def parse_elements(text, key_list):

@@ -304,7 +304,7 @@ Completion Action:
 
 Subroutine Actions:
 `search_order [question]`: Search orders to answer a question about my orders
-`find_products [query]`: Find products that match a query
+`list_products [query]`: Find products that match a query
 `search_reviews [query]`: Search reviews to answer a question about reviews
 
 Example actions:
@@ -455,11 +455,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, tas
         case "reddit":
             prompt_dict = reddit_agent
         case "map":
-            prompt_dict = map_agent
-        case "wikipedia":
-            prompt_dict = wikipedia_agent
-        case "homepage":
-            prompt_dict = homepage_agent
+            prompt_dict = maps_agent
         case _:
             prompt_dict = None
 
@@ -478,7 +474,7 @@ def get_action(objective, observation, url, previous_actions, guidance_text, tas
 
     # print(f"Prompt used : \n{prompt}\n")
 
-    page_op = ["click", "type", "go_back", "go_home", "scroll"]
+    page_op = ["click", "type", "go_back", "go_home", "scroll", "hover", "note", "goto"]
 
 
     answer = generate_content(prompt)

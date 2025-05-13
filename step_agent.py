@@ -44,16 +44,15 @@ class StepAgent:
 		log_info["is_page_op"] = action["is_page_op"]
 		log_info["is_stop"] = action["is_stop"]
 
-		top_policy["actions"] += [(print_action_call(action["name"], action["arguments"]), action["reason"])]
+		top_policy["actions"] += [print_action_call(action["name"], action["arguments"])]
 		self.trajectory += [(print_action_call(action["name"], action["arguments"]), observation)]
 
 		is_final = action["is_stop"] and len(self.policy_stack) == 1
 
 		if action["is_stop"] and len(self.policy_stack) > 1:
 			prev_policy_name, prev_query, prev_actions, prev_inital_observation = self.policy_stack.pop().values()
-			# self.policy_stack[-1]["actions"] += [(print_action_call("stop", action["arguments"]), action["reason"])]
-			policy_call, policy_reason = self.policy_stack[-1]["actions"][-1]
-			self.policy_stack[-1]["actions"][-1] = (f"{action['arguments'][0]} = {policy_call}", policy_reason)
+			policy_call = self.policy_stack[-1]["actions"][-1]
+			self.policy_stack[-1]["actions"][-1] = f"{action['arguments'][0]} = {policy_call}"
 		
 		if (not action["is_stop"]) and (not action["is_page_op"]): 
 			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[], "inital_observation":observation}]

@@ -54,8 +54,8 @@ class WebEnvironment:
 		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"], self.current_observation["screenshot"]
 
 	def interact(self, action_name, arguments=[]):
-		gym_action_name = None
-		gym_arguments = None
+		gym_action_name = action_name
+		gym_arguments = arguments
 		match action_name:
 			case "click":
 				gym_action_name = "click"
@@ -69,8 +69,10 @@ class WebEnvironment:
 			case "go_home":
 				gym_action_name = "goto"
 				gym_arguments = [self.start_url]
-			case _:
+			case "note":
 				return
+			case _:
+				pass
 		action = print_gym_call(gym_action_name, gym_arguments)
 		self.webarena_actions_history += [print_action_call(action_name, gym_arguments)]
 		print(f"Just issued gym action {action}")
