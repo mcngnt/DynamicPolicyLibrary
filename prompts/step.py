@@ -442,22 +442,26 @@ def get_action(objective, observation, url, previous_actions, guidance_text, tas
     config_file = f"custom_webarena/config_files/{task_id}.json"
     with open(config_file, 'r') as file:
         data = json.load(file)
-    site = data.get('sites', [])[0]
 
     prompt_dict = None
-    match site.lower():
-        case "gitlab":
-            prompt_dict = github_agent
-        case "shopping":
-            prompt_dict = shopping_agent
-        case "shopping_admin":
-            prompt_dict = shopping_admin_agent
-        case "reddit":
-            prompt_dict = reddit_agent
-        case "map":
-            prompt_dict = maps_agent
-        case _:
-            prompt_dict = None
+
+    for site in data.get('sites', []):
+        match site.lower():
+            case "gitlab":
+                prompt_dict = github_agent
+            case "shopping":
+                prompt_dict = shopping_agent
+            case "shopping_admin":
+                prompt_dict = shopping_admin_agent
+            case "reddit":
+                prompt_dict = reddit_agent
+            case "map":
+                prompt_dict = maps_agent
+            case _:
+                prompt_dict = None
+
+        if not (prompt_dict is None):
+            break
 
     prompt = step_dict_to_prompt(prompt_dict)
 
@@ -479,14 +483,17 @@ def get_action(objective, observation, url, previous_actions, guidance_text, tas
 
     answer = generate_content(prompt)
 
-    result = parse_elements(answer, ["reason", "action"])
+    try:
+        result = parse_elements(answer, ["reason", "action"])
 
-    arguments = parse_action_call(result["action"])
+        arguments = parse_action_call(result["action"])
 
-    is_page_op = arguments[0].lower() in page_op
+        is_page_op = arguments[0].lower() in page_op
 
-    is_stop = arguments[0].lower() == "stop"
+        is_stop = arguments[0].lower() == "stop"
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
+        action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
 
-    return action
+        return action
+    except:
+        return get_action(objective, observation, url, previous_actions, guidance_text, task_id)

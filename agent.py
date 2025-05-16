@@ -52,7 +52,7 @@ class Agent:
 
 		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"])
 		log_info["relevant_policies"] = relevant_policies
-		if len(top_policy["actions"]) > 30:
+		if len(top_policy["actions"]) > 20:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
 		else:
 			action = get_action(policy_objective, policy_description, observation, url, top_policy["actions"], guidance_text, relevant_policies)

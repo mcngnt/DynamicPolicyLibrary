@@ -93,17 +93,22 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
     answer = generate_content(get_action_prompt)
 
-    result = parse_elements(answer, ["plan", "reason", "action"])
+    try:
 
-    arguments = parse_action_call(result["action"])
+        result = parse_elements(answer, ["plan", "reason", "action"])
 
-    if not (arguments[0] in possible_actions):
-        print(f"Impossible action : {arguments[0]}\n")
+        arguments = parse_action_call(result["action"])
 
-    is_page_op = arguments[0].lower() in page_op
+        if not (arguments[0] in possible_actions):
+            print(f"Impossible action : {arguments[0]}\n")
 
-    is_stop = arguments[0].lower() == "stop"
+        is_page_op = arguments[0].lower() in page_op
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"], "plan":result["plan"]}
+        is_stop = arguments[0].lower() == "stop"
 
-    return action
+        action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"], "plan":result["plan"]}
+
+        return action
+
+    except:
+        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies)
