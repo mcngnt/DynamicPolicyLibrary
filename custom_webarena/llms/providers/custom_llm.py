@@ -2,12 +2,9 @@ from google import genai
 import numpy as np
 import re
 
-api_keys = [
-"***REMOVED***",
-"***REMOVED***",
-"***REMOVED***",
-"***REMOVED***",
-]
+from api_keys import gemini_keys
+
+api_keys = gemini_keys
 
 current_key_id = 0
 
