@@ -2,6 +2,7 @@ from google import genai
 from openai import OpenAI
 import numpy as np
 import re
+import json
 
 from api_keys import gemini_keys, saturn_key, saturn_url
 
@@ -46,8 +47,8 @@ def generate_content_saturn(prompt):
 
 
 def generate_content(prompt):
-    # return generate_content_gemini(prompt)
-    return generate_content_saturn(prompt)
+    return generate_content_gemini(prompt)
+    # return generate_content_saturn(prompt)
 
 
 def get_embedding_gemini(prompt):
@@ -96,6 +97,17 @@ def parse_action_call(call):
 
 def print_gym_call(name, arguments):
     return f"""{name}({','.join([f"'{arg}'" for arg in arguments])})"""
+
+
+def get_site_type(task_id):
+    config_file = f"custom_webarena/config_files/{task_id}.json"
+    with open(config_file, 'r') as file:
+        data = json.load(file)
+
+    sites = data.get('sites', [])
+    if "wikipedia" in sites:
+        sites.remove("wikipedia")
+    return sites[0]
 
 
 def step_dict_to_prompt(prompt_dict):

@@ -15,14 +15,15 @@ class Agent:
 		self.policy_stack = None
 		self.name = name
 		self.steps_nb = 0
-		self.task_id = None
+		self.site = None
 
-	def load(self, objective, observation, task_id):
+	def load(self, objective, observation, site):
 		self.objective = objective
 		self.trajectory = [] 
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[], "inital_observation":observation}]
 		self.steps_nb = 0
-		self.task_id = task_id
+		self.site = site
+
 
 	def get_action(self, observation, url, screenshot):
 		action = {}
@@ -36,21 +37,21 @@ class Agent:
 		guidance_text = self.library.get(top_policy["name"])[1] if not is_root else ""
 		policy_description = self.library.get(top_policy["name"])[0] if not is_root else ""
 
-		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None, "end_screenshot":None}
+		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"feedback":None,"success":None, "plan":None, "created_policies":None, "end_screenshot":None}
 
 
 		if self.steps_nb == 0 and self.exploration_mode:
-			relevant_policies = self.library.retrieve(self.objective, k=5)
+			relevant_policies = self.library.retrieve(self.objective, site=self.site)
 			policy_feedback = get_policy(self.objective, observation, url, relevant_policies)
 			print(f"get_policy feedback : {policy_feedback}\n")
 			log_info["created_policies"] = policy_feedback["policies"]
 			log_info["plan"] = policy_feedback["plan"]
 			for policy in policy_feedback["policies"]:
 				if self.library.is_new(policy["name"]):
-					self.library.update(policy["name"], policy["description"], "")
+					self.library.update(policy["name"], policy["description"], "", self.site)
 
 
-		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"])
+		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site)
 		log_info["relevant_policies"] = relevant_policies
 		if len(top_policy["actions"]) > 20:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
@@ -82,7 +83,7 @@ class Agent:
 						prev_policy_descr, prev_policy_content = self.library.get(prev_policy_name)
 						policy_writing_feedback = write_policy(prev_policy_name, prev_policy_descr, prev_query, observation, critique_feedback["breakdown"], critique_feedback["feedback"], prev_policy_content, prev_inital_observation)
 						print(f"write_policy feedback : {policy_writing_feedback}\n")
-						self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"])
+						self.library.update(prev_policy_name, prev_policy_descr, policy_writing_feedback["guidance"], self.site)
 		
 		if (not action["is_stop"]) and (not action["is_page_op"]): 
 			self.policy_stack += [{"name":action["name"], "query":action["arguments"][0], "actions":[], "inital_observation":observation}]

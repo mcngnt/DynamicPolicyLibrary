@@ -12,6 +12,7 @@ from utils import *
 
 
 
+
 policies = {
 
 "find_commits" : {
@@ -1058,4 +1059,4 @@ for policy in policies.keys():
     policy_library.update(policy, policy, prompt)
 
 
-policy_library.save(path="../policies/", name="step_policies")
+policy_library.save(path="policies/", name="step_policies")

@@ -6,6 +6,8 @@ from logger import dump_log
 import json
 import os
 
+from utils import *
+
 from evaluator import evaluate_task
 
 import numpy as np
@@ -26,7 +28,7 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        agent = Agent(is_exploration=True, name="agent_llama", policy_library_path="policies/agent_llama/0.195.json")
+        agent = Agent(is_exploration=True, name="agent_llama", policy_library_path=None)
         iter_nb = 3
         save_library = True
         total_nb = 33
@@ -46,11 +48,13 @@ def main(args):
 
     for iter_id in range(iter_nb):
         for task_id in tasks_id:
+            task_id = int(task_id)
             if os.path.exists(f"trajectories/{agent.name}/{task_id}/{iter_id}.{task_id}.json"):
                 continue
+            site = get_site_type(int(task_id))
             print(f"\n----- TASK ID : {task_id} -----\n")
             objective, observation = env.load(task_id)
-            agent.load(objective, observation, task_id)
+            agent.load(objective, observation, site)
             final_answer = ""
             action_logs = []
             for i in range(45):

@@ -12,14 +12,14 @@ class StepAgent:
 		self.policy_stack = None
 		self.name = name
 		self.steps_nb = 0
-		self.task_id = None
+		self.site = None
 
-	def load(self, objective, observation, task_id):
+	def load(self, objective, observation, site):
 		self.objective = objective
 		self.trajectory = [] 
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[], "inital_observation":observation}]
 		self.steps_nb = 0
-		self.task_id = task_id
+		self.site = site
 
 	def get_action(self, observation, url, screenshot):
 		action = {}
@@ -36,7 +36,7 @@ class StepAgent:
 		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None, "end_screenshot":None}
 
 		
-		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, self.task_id)
+		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text)
 
 		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]

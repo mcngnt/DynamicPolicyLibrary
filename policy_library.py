@@ -11,16 +11,16 @@ class PolicyLibrary:
         if not (path is None):
             self.load(path)
 
-    def update(self, name, description, content=""):
+    def update(self, name, description, content="", site=None):
         embedding = get_embedding(description)
-        for key, (policy_name, _, _) in self.policies.items():
-            if policy_name == name:
-                self.policies[key] = (name, description, content)
-                return
-        self.policies[tuple(embedding)] = (name, description, content)
-        self.usage_stats.setdefault(name, {"used": 0, "failed": 0})  # Init usage stats if new
+        # for key, (policy_name, _, _) in self.policies.items():
+        #     if policy_name == name:
+        #         self.policies[key] = (name, description, content, site)
+        #         return
+        self.policies[tuple(embedding)] = (name, description, content, site)
+        self.usage_stats.setdefault(name, {"used": 0, "failed": 0})
 
-    def retrieve(self, description, k=5, exclude_policy=None):
+    def retrieve(self, description, k=5, exclude_policy=None, site=None):
         query_embedding = get_embedding(description)
         
         sorted_policies = sorted(
@@ -29,8 +29,8 @@ class PolicyLibrary:
         )
         
         result = []
-        for _, (name, desc, _) in sorted_policies:
-            if exclude_policy is None or name != exclude_policy:
+        for _, (name, desc, _, s) in sorted_policies:
+            if (exclude_policy is None or name != exclude_policy) and (s is None or site is None or s == site):
                 result.append((name, desc))
             if len(result) == k:
                 break
@@ -38,7 +38,7 @@ class PolicyLibrary:
         return result
 
     def get(self, name):
-        for _, (policy_name, desc, content) in self.policies.items():
+        for _, (policy_name, desc, content, site) in self.policies.items():
             if policy_name == name:
                 return desc, content
         return None
@@ -69,10 +69,11 @@ class PolicyLibrary:
                     "name": name,
                     "description": desc,
                     "content": content,
+                    "site": site,
                     "used": self.usage_stats.get(name, {}).get("used", 0),
                     "failed": self.usage_stats.get(name, {}).get("failed", 0)
                 }
-                for key, (name, desc, content) in self.policies.items()
+                for key, (name, desc, content, site) in self.policies.items()
             ]
         }
         os.makedirs(os.path.dirname(path), exist_ok=True)

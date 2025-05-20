@@ -1,5 +1,6 @@
 import os
 import json
+from utils import *
 
 def is_map(task_id):
     config_file = f"custom_webarena/config_files/{task_id}.json"
@@ -33,3 +34,6 @@ print(len(scores))
 if scores:
     average = sum(scores) / len(scores)
     print("Average score:", average)
+
+
+print(get_site_type(557))
