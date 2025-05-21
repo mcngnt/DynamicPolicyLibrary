@@ -28,10 +28,10 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        agent = Agent(is_exploration=True, name="agent_llama", policy_library_path=None)
-        iter_nb = 3
+        agent = Agent(is_exploration=True, name="agent_llama_policies", policy_library_path="policies/agent_llama_policies/last.json", only_policy=True)
+        iter_nb = 1
         save_library = True
-        total_nb = 33
+        total_nb = 800
 
     else:
         agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
@@ -40,7 +40,7 @@ def main(args):
         total_nb = 100
 
 
-    mandatory_ids = [int(name) for name in os.listdir(f"trajectories/{agent.name}")]
+    mandatory_ids = [int(name) for name in os.listdir(f"trajectories/{agent.name}")] if os.path.exists(f"trajectories/{agent.name}") else []
     remaining_ids = np.setdiff1d(np.arange(812), mandatory_ids)
     random_ids = np.random.choice(remaining_ids, size=total_nb-len(mandatory_ids), replace=False)
     tasks_id = np.concatenate((mandatory_ids, random_ids))

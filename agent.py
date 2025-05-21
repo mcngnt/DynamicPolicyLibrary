@@ -7,7 +7,7 @@ from prompts.critique import get_critique
 from prompts.get_policy import get_policy
 
 class Agent:
-	def __init__(self, is_exploration,name="default", policy_library_path=None):
+	def __init__(self, is_exploration,name="default", policy_library_path=None, only_policy=False):
 		self.exploration_mode = is_exploration
 		self.library = PolicyLibrary(path=policy_library_path)
 		self.objective = None
@@ -16,6 +16,7 @@ class Agent:
 		self.name = name
 		self.steps_nb = 0
 		self.site = None
+		self.only_policy = only_policy
 
 	def load(self, objective, observation, site):
 		self.objective = objective
@@ -49,6 +50,9 @@ class Agent:
 			for policy in policy_feedback["policies"]:
 				if self.library.is_new(policy["name"]):
 					self.library.update(policy["name"], policy["description"], "", self.site)
+
+		if self.only_policy:
+			return "stop", ["Only creating policies"], False, True, log_info
 
 
 		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site)

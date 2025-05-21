@@ -3,6 +3,7 @@ from openai import OpenAI
 import numpy as np
 import re
 import json
+import os
 
 from api_keys import gemini_keys, saturn_key, saturn_url
 
@@ -101,8 +102,12 @@ def print_gym_call(name, arguments):
 
 def get_site_type(task_id):
     config_file = f"custom_webarena/config_files/{task_id}.json"
-    with open(config_file, 'r') as file:
-        data = json.load(file)
+    try:
+        with open(config_file, 'r') as file:
+            data = json.load(file)
+    except:
+        if os.path.exists(config_file):
+            return get_site_type(task_id)
 
     sites = data.get('sites', [])
     if "wikipedia" in sites:

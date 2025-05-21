@@ -8,8 +8,9 @@ class PolicyLibrary:
     def __init__(self, path=None):
         self.policies = {}
         self.usage_stats = {}  # Track usage and failure counts per policy
-        if not (path is None):
-            self.load(path)
+        if path is None or not (os.path.exists(path)):
+            return    
+        self.load(path)
 
     def update(self, name, description, content="", site=None):
         embedding = get_embedding(description)
@@ -85,7 +86,7 @@ class PolicyLibrary:
             data = json.load(f)
         self.policies = {
             tuple(np.array(list(map(float, item["embedding"].split(", "))))): 
-            (item["name"], item["description"], item["content"]) 
+            (item["name"], item["description"], item["content"], item["site"]) 
             for item in data["policies"]
         }
         self.usage_stats = {
