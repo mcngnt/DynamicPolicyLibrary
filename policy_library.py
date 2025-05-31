@@ -14,10 +14,6 @@ class PolicyLibrary:
 
     def update(self, name, description, content="", site=None):
         embedding = get_embedding(description)
-        # for key, (policy_name, _, _) in self.policies.items():
-        #     if policy_name == name:
-        #         self.policies[key] = (name, description, content, site)
-        #         return
         self.policies[tuple(embedding)] = (name, description, content, site)
         self.usage_stats.setdefault(name, {"used": 0, "failed": 0})
 

@@ -7,8 +7,7 @@ from prompts.critique import get_critique
 from prompts.get_policy import get_policy
 
 class Agent:
-	def __init__(self, is_exploration,name="default", policy_library_path=None, only_policy=False):
-		self.exploration_mode = is_exploration
+	def __init__(self,name="default", policy_library_path=None, only_policy=False, generate_new_policies=True, improve_policies=True):
 		self.library = PolicyLibrary(path=policy_library_path)
 		self.objective = None
 		self.trajectory = None
@@ -17,6 +16,8 @@ class Agent:
 		self.steps_nb = 0
 		self.site = None
 		self.only_policy = only_policy
+		self.generate_new_policies =  generate_new_policies
+		self.improve_policies = improve_policies
 
 	def load(self, objective, observation, site):
 		self.objective = objective
@@ -41,8 +42,8 @@ class Agent:
 		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"feedback":None,"success":None, "plan":None, "created_policies":None, "end_screenshot":None}
 
 
-		if self.steps_nb == 0 and self.exploration_mode:
-			relevant_policies = self.library.retrieve(self.objective, site=self.site)
+		if self.steps_nb == 0 and self.generate_new_policies:
+			relevant_policies = self.library.retrieve(self.objective, site=self.site, k=20)
 			policy_feedback = get_policy(self.objective, observation, url, relevant_policies)
 			print(f"get_policy feedback : {policy_feedback}\n")
 			log_info["created_policies"] = policy_feedback["policies"]
@@ -55,7 +56,7 @@ class Agent:
 			return "stop", ["Only creating policies"], False, True, log_info
 
 
-		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site)
+		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site,k=10)
 		log_info["relevant_policies"] = relevant_policies
 		if len(top_policy["actions"]) > 20:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
@@ -75,7 +76,7 @@ class Agent:
 		if action["is_stop"] and len(self.policy_stack) > 1:
 			prev_policy_name, prev_query, prev_actions, prev_inital_observation = self.policy_stack.pop().values()
 			self.policy_stack[-1]["actions"] += [(print_action_call("stop", action["arguments"]), action["reason"])]
-			if self.exploration_mode:
+			if self.improve_policies:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions, prev_inital_observation)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["feedback"] = critique_feedback["feedback"]

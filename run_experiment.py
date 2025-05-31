@@ -1,39 +1,58 @@
 import os
 import json
+from collections import defaultdict
 from utils import *
 
-def is_map(task_id):
-    config_file = f"custom_webarena/config_files/{task_id}.json"
-    with open(config_file, 'r') as file:
-        data = json.load(file)
-
-    return "map" in data.get('sites', [])
-
 parent_folder = "trajectories/step_agent_llama"
+output_folder = "experiments"
+output_file = os.path.join(output_folder, "step.json")
 
-scores = []
-
+# Dictionary to store scores per site
+site_scores = defaultdict(list)
 
 for subfolder in os.listdir(parent_folder):
     subfolder_path = os.path.join(parent_folder, subfolder)
-    task_id = int(subfolder)
-    if is_map(task_id):
+    if not os.path.isdir(subfolder_path):
         continue
-    if os.path.isdir(subfolder_path):
-        json_file = os.path.join(subfolder_path, f"0.{subfolder}.json")
+
+    try:
+        task_id = int(subfolder)
+    except ValueError:
+        continue  # skip folders that aren't task IDs
+
+    site = get_site_type(task_id)
+    if site == "map":
+        continue
+
+    json_file = os.path.join(subfolder_path, f"0.{subfolder}.json")
+    if os.path.exists(json_file):
         with open(json_file, 'r') as f:
             data = json.load(f)
             score = data.get("score")
             if score is not None:
-                scores.append(score)
+                site_scores[site].append(score)
 
+# Compute average scores per site
+result = {}
+all_scores = []
 
+for site, scores in site_scores.items():
+    all_scores.extend(scores)
+    result[site] = {
+        "average_score": sum(scores) / len(scores),
+        "num_trajectories": len(scores)
+    }
 
-print(len(scores))
+# Add overall score
+if all_scores:
+    result["overall"] = {
+        "average_score": sum(all_scores) / len(all_scores),
+        "num_trajectories": len(all_scores)
+    }
 
-if scores:
-    average = sum(scores) / len(scores)
-    print("Average score:", average)
+# Create output directory if it doesn't exist
+os.makedirs(output_folder, exist_ok=True)
 
-
-print(get_site_type(557))
+# Save to step.json
+with open(output_file, "w") as f:
+    json.dump(result, f, indent=4)

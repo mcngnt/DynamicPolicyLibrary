@@ -28,10 +28,12 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        agent = Agent(is_exploration=True, name="agent_llama_policies", policy_library_path="policies/agent_llama_policies/last.json", only_policy=True)
-        iter_nb = 1
+        name = "dynamic_llama_base_step"
+        # policies/{name}/last.json
+        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=False, improve_policies=True)
+        iter_nb = 3
         save_library = True
-        total_nb = 800
+        total_nb = 30
 
     else:
         agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
@@ -51,8 +53,8 @@ def main(args):
             task_id = int(task_id)
             if os.path.exists(f"trajectories/{agent.name}/{task_id}/{iter_id}.{task_id}.json"):
                 continue
-            site = get_site_type(int(task_id))
             print(f"\n----- TASK ID : {task_id} -----\n")
+            site = get_site_type(int(task_id))
             objective, observation = env.load(task_id)
             agent.load(objective, observation, site)
             final_answer = ""
