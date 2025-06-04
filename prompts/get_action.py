@@ -18,7 +18,8 @@ Page Operation Actions:
 - `click [id]`: To click on an element with its numerical ID on the webpage. E.g. , ‘click [7] ’ If clicking on a specific element doesn ’ t trigger the transition to your desired web state , this is due to the element’s lack of interactivity or GUI visibility . In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
 - `type [id] [content] [press enter after = 0|1]`: To type content into a field with a specific ID. By default , the ‘ Enter ’ key is pressed after typing unless ‘press enter after ’ is set to 0. E.g. , ‘type [15] [Carnegie Mellon University ] [1] ’ If you can ’ t find what you’re looking for on your first attempt , consider refining your search keywords by breaking them down or trying related terms.
 - `stop [answer]`: To stop interaction and return response. Present your answer within the brackets . If the task doesn’t require a textual answer or appears insurmountable, indicate ‘N/A’ and additional reasons and all relevant information you gather as the answer . E.g. , ‘stop [5h 47min]’
-- `go_home`: To return to the homepage where you can find other websites.
+- `go_home`: To return to the homepage.
+- `go_back`: Revert to the previous state of the page.
 """
 
 get_action_system_prompt = """
@@ -32,29 +33,30 @@ A simplified text description of the current browser content, without formatting
 URL:
 The current webpage URL
 PREVIOUS ACTIONS:
-A list of your past actions along with a quick description of what they were supposed to do.
+A list of the past actions, along with their intents during navigation. Be aware that it is only an intent and not always what really happened.
 GUIDANCE TEXT:
 A short text to guide you through the task-solving process.
 
- 
-You should then respond to me with :
-Plan: Analyse the current situation, give the main steps to achieve it and the next action should be.
-Reason: A very short explanation of what the action is doing.
-Action: The action you choose to perform in the format action_name [argument_1] ... [argument_n]
 
 Here are some general guidelines to keep in mind :
 1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
-2. Only use a subroutine actions if needed. Page operations action are better for simple tasks.
+2. Only use a subroutine action if needed. Page operations action are better for simple tasks.
 3. You do not have access to external resources. Limit yourself to the content of the current webpage.
 4. Always refer to specific elements in the page by their ID and not by their name when using page operation actions.
 5. You can't reuse the objective subroutine.
+6. Adhere strictly to your plan. If a part of the plan fails, use stop [N/A] instead of endlessly repeating the same sequence of actions (you can spot such a sequence by looking at PREVIOUS ACTIONS)
 
 Please issue only a single action at a time.
-Adhere strictly to the following output format :
-RESPONSE FORMAT :
-PLAN: ...
-REASON: ...
-ACTION: ...
+Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
+(Here is an example of what is expected :
+ACTION:
+type [832] [Cooking video empanadas]
+REASON:
+I search for the video to be able to leave a comment)
+ACTION:
+The action you choose to perform in the format action_name [argument_1] ... [argument_n] to make progress at completing the OBJECTIVE
+REASON:
+A very very short explanation of what your action is doing.
 """
 
 
@@ -78,12 +80,18 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
     {get_action_system_prompt}
 
-    OBJECTIVE: {objective}
-    DESCRIPTION: {description}
-    OBSERVATION: {observation}
-    URL: {url}
-    PREVIOUS ACTIONS: {previous_actions}
-    GUIDANCE TEXT : {guidance_text}
+    OBJECTIVE:
+    {objective}
+    DESCRIPTON:
+    {description}
+    OBSERVATION:
+    {observation}
+    URL:
+    {url}
+    PREVIOUS ACTIONS:
+    {previous_actions}
+    GUIDANCE TEXT :
+    {guidance_text}
     """
 
     page_op = ["click", "type", "go_back", "go_home", "scroll"]
@@ -93,22 +101,17 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
     answer = generate_content(get_action_prompt)
 
-    try:
+    result = parse_elements(answer, ["reason", "action"])
 
-        result = parse_elements(answer, ["plan", "reason", "action"])
+    arguments = parse_action_call(result["action"])
 
-        arguments = parse_action_call(result["action"])
+    if not (arguments[0] in possible_actions):
+        print(f"Impossible action : {arguments[0]}\n")
 
-        if not (arguments[0] in possible_actions):
-            print(f"Impossible action : {arguments[0]}\n")
+    is_page_op = arguments[0].lower() in page_op
 
-        is_page_op = arguments[0].lower() in page_op
+    is_stop = arguments[0].lower() == "stop"
 
-        is_stop = arguments[0].lower() == "stop"
+    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
 
-        action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"], "plan":result["plan"]}
-
-        return action
-
-    except:
-        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies)
+    return action

@@ -1,0 +1,638 @@
+{
+	"created_policies": null,
+	"plan": null,
+	"trace": {
+		"trace": [
+			{
+				"type": "policy",
+				"description": "find_subreddit",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "find_subreddit [r/books]. The reason is to navigate to the r/books subreddit to post the review. \n\nThen, once on the subreddit page, the next steps would involve clicking the submit button, filling in the title and comment. But since we can only do one action at a time, the first step is to find the subreddit.\n</think>",
+				"steps_nb": 0,
+				"reason": "Navigate to the r/books subreddit to post the review.",
+				"observation": "RootWebArea 'Postmill', focused\n\t[24] navigation ''\n\t\t[25] link 'Jump to main content'\n\t\t[26] link 'Jump to sidebar'\n\t[27] navigation ''\n\t\t[30] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[40] list ''\n\t\t\t[41] listitem ''\n\t\t\t\t[42] link 'Forums'\n\t\t\t[43] listitem ''\n\t\t\t\t[44] link 'Wiki'\n\t\t[45] Section ''\n\t\t\t[54] searchbox 'Search query'\n\t\t[55] list ''\n\t\t\t[56] listitem ''\n\t\t\t\t[57] link 'Notifications (0)'\n\t\t\t\t\t[60] image ''\n\t\t\t[61] listitem ''\n\t\t\t\t[62] link 'Submit'\n\t\t\t\t\t[65] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[67] listitem ''\n\t\t\t\t[68] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[71] image ''\n\t\t\t\t\t[72] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[113] main ''\n\t\t[114] navigation ''\n\t\t\t[115] list ''\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'Submissions'\n\t\t\t\t[118] listitem ''\n\t\t\t\t\t[119] link 'Comments'\n\t\t\t[120] list ''\n\t\t\t\t[121] listitem ''\n\t\t\t\t\t[122] button 'Filter on: Featured', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[124] image ''\n\t\t\t\t\t\tStaticText 'Featured'\n\t\t\t\t[134] listitem ''\n\t\t\t\t\t[135] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[137] image ''\n\t\t\t\t\t\tStaticText 'Hot'\n\t\t[158] paragraph ''\n\t\t\tStaticText 'You are not subscribed to any forum. Showing featured forums instead.'\n\t[159] complementary ''\n\t\t[160] Section ''\n\t\t\t[161] heading 'Featured forums'\n\t\t\t[162] paragraph ''\n\t\t\t\tStaticText 'There are no featured forums to display.'\n\t[164] contentinfo ''\n\t\t[165] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[167] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"create_project",
+						"create_project"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "find_subreddit [r/books]",
+						"action": "click [42]",
+						"steps_nb": 1,
+						"reason": "Navigate to the Forums page to access the list of subreddits.",
+						"observation": "RootWebArea 'Postmill', focused\n\t[24] navigation ''\n\t\t[25] link 'Jump to main content'\n\t\t[26] link 'Jump to sidebar'\n\t[27] navigation ''\n\t\t[30] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[40] list ''\n\t\t\t[41] listitem ''\n\t\t\t\t[42] link 'Forums'\n\t\t\t[43] listitem ''\n\t\t\t\t[44] link 'Wiki'\n\t\t[45] Section ''\n\t\t\t[54] searchbox 'Search query'\n\t\t[55] list ''\n\t\t\t[56] listitem ''\n\t\t\t\t[57] link 'Notifications (0)'\n\t\t\t\t\t[60] image ''\n\t\t\t[61] listitem ''\n\t\t\t\t[62] link 'Submit'\n\t\t\t\t\t[65] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[67] listitem ''\n\t\t\t\t[68] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[71] image ''\n\t\t\t\t\t[72] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[113] main ''\n\t\t[114] navigation ''\n\t\t\t[115] list ''\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'Submissions'\n\t\t\t\t[118] listitem ''\n\t\t\t\t\t[119] link 'Comments'\n\t\t\t[120] list ''\n\t\t\t\t[121] listitem ''\n\t\t\t\t\t[122] button 'Filter on: Featured', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[124] image ''\n\t\t\t\t\t\tStaticText 'Featured'\n\t\t\t\t[134] listitem ''\n\t\t\t\t\t[135] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[137] image ''\n\t\t\t\t\t\tStaticText 'Hot'\n\t\t[158] paragraph ''\n\t\t\tStaticText 'You are not subscribed to any forum. Showing featured forums instead.'\n\t[159] complementary ''\n\t\t[160] Section ''\n\t\t\t[161] heading 'Featured forums'\n\t\t\t[162] paragraph ''\n\t\t\t\tStaticText 'There are no featured forums to display.'\n\t[164] contentinfo ''\n\t\t[165] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[167] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [issue] [1]\nstop [N/A]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n* The objective find_subreddit [query] asks you to navigate to the subreddit that best matches the query. The query can be specific or vague. \n* The first step is to navigate to Forums to see the list of subreddits. However, if you have done this already (indicated as non empty PREVIOUS ACTIONS), do not repeat this step.\n* Under forums, you will see only a subset of subreddits. To get the full list of subreddits, you need to navigate to the Alphabetical option.\n* To know you can see the full list of subreddits, you will see 'All Forums' in the observation\n* Often you will not find a focused subreddit that exactly matches your query. In that case, go ahead with the closest relevant subreddit.\n* To know that you have reached a subreddit successfully, you will see '/f/subreddit_name' in the observation. \n* Once you have navigated to any specific subreddit, return stop [N/A]. Even if the subreddit is generally related and not specific to your quwey, stop here and do not try to search again for another subreddit.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"search_nearest_place",
+								"search_nearest_place"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"search_order",
+								"search_order"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_group",
+								"create_group"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_subreddit [r/books]",
+						"action": "click [117]",
+						"steps_nb": 2,
+						"reason": "The current forums list is a subset; clicking 'Alphabetical' will display all subreddits, including 'books'.",
+						"observation": "RootWebArea 'List of forums', focused\n\t[20] navigation ''\n\t\t[21] link 'Jump to main content'\n\t\t[22] link 'Jump to sidebar'\n\t[23] navigation ''\n\t\t[26] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[36] list ''\n\t\t\t[37] listitem ''\n\t\t\t\t[38] link 'Forums'\n\t\t\t[39] listitem ''\n\t\t\t\t[40] link 'Wiki'\n\t\t[41] Section ''\n\t\t\t[50] searchbox 'Search query'\n\t\t[51] list ''\n\t\t\t[52] listitem ''\n\t\t\t\t[53] link 'Notifications (0)'\n\t\t\t\t\t[56] image ''\n\t\t\t[57] listitem ''\n\t\t\t\t[58] link 'Submit'\n\t\t\t\t\t[61] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[63] listitem ''\n\t\t\t\t[64] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[67] image ''\n\t\t\t\t\t[68] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[109] main ''\n\t\t[110] navigation ''\n\t\t\t[111] list ''\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Forums'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Tags'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'Alphabetical'\n\t\t\t[118] list ''\n\t\t\t\t[119] listitem ''\n\t\t\t\t\t[120] button 'Sort by: Submissions', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[122] image ''\n\t\t\t\t\t\tStaticText 'Submissions'\n\t\t[137] heading 'List of forums'\n\t\t[139] link 'Create forum'\n\t\t[141] article ''\n\t\t\t[143] heading 'AskReddit \u2014 AskReddit'\n\t\t\t\t[144] link 'AskReddit \u2014 AskReddit'\n\t\t\t[149] paragraph ''\n\t\t\t\tStaticText 'AskReddit'\n\t\t\t[152] Section ''\n\t\t\t\t[154] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[160] paragraph ''\n\t\t\t\tStaticText '10,042 submissions'\n\t\t[161] article ''\n\t\t\t[163] heading 'relationship_advice \u2014 relationship_advice'\n\t\t\t\t[164] link 'relationship_advice \u2014 relationship_advice'\n\t\t\t[169] paragraph ''\n\t\t\t\tStaticText 'relationship_advice'\n\t\t\t[172] Section ''\n\t\t\t\t[174] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[180] paragraph ''\n\t\t\t\tStaticText '5,719 submissions'\n\t\t[181] article ''\n\t\t\t[183] heading 'worldnews \u2014 worldnews'\n\t\t\t\t[184] link 'worldnews \u2014 worldnews'\n\t\t\t[189] paragraph ''\n\t\t\t\tStaticText 'worldnews'\n\t\t\t[192] Section ''\n\t\t\t\t[194] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[200] paragraph ''\n\t\t\t\tStaticText '3,464 submissions'\n\t\t[201] article ''\n\t\t\t[203] heading 'news \u2014 news'\n\t\t\t\t[204] link 'news \u2014 news'\n\t\t\t[209] paragraph ''\n\t\t\t\tStaticText 'news'\n\t\t\t[212] Section ''\n\t\t\t\t[214] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[220] paragraph ''\n\t\t\t\tStaticText '3,322 submissions'\n\t\t[221] article ''\n\t\t\t[223] heading 'movies \u2014 movies'\n\t\t\t\t[224] link 'movies \u2014 movies'\n\t\t\t[229] paragraph ''\n\t\t\t\tStaticText 'movies'\n\t\t\t[232] Section ''\n\t\t\t\t[234] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[240] paragraph ''\n\t\t\t\tStaticText '3,261 submissions'\n\t\t[241] article ''\n\t\t\t[243] heading 'memes \u2014 memes'\n\t\t\t\t[244] link 'memes \u2014 memes'\n\t\t\t[249] paragraph ''\n\t\t\t\tStaticText 'memes'\n\t\t\t[252] Section ''\n\t\t\t\t[254] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[260] paragraph ''\n\t\t\t\tStaticText '3,129 submissions'\n\t\t[261] article ''\n\t\t\t[263] heading 'wallstreetbets \u2014 wallstreetbets'\n\t\t\t\t[264] link 'wallstreetbets \u2014 wallstreetbets'\n\t\t\t[269] paragraph ''\n\t\t\t\tStaticText 'wallstreetbets'\n\t\t\t[272] Section ''\n\t\t\t\t[274] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[280] paragraph ''\n\t\t\t\tStaticText '3,089 submissions'\n\t\t[281] article ''\n\t\t\t[283] heading 'gaming \u2014 gaming'\n\t\t\t\t[284] link 'gaming \u2014 gaming'\n\t\t\t[289] paragraph ''\n\t\t\t\tStaticText 'gaming'\n\t\t\t[292] Section ''\n\t\t\t\t[294] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[300] paragraph ''\n\t\t\t\tStaticText '2,572 submissions'\n\t\t[301] article ''\n\t\t\t[303] heading 'technology \u2014 technology'\n\t\t\t\t[304] link 'technology \u2014 technology'\n\t\t\t[309] paragraph ''\n\t\t\t\tStaticText 'technology'\n\t\t\t[312] Section ''\n\t\t\t\t[314] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[320] paragraph ''\n\t\t\t\tStaticText '2,472 submissions'\n\t\t[321] article ''\n\t\t\t[323] heading 'pics \u2014 pics'\n\t\t\t\t[324] link 'pics \u2014 pics'\n\t\t\t[329] paragraph ''\n\t\t\t\tStaticText 'pics'\n\t\t\t[332] Section ''\n\t\t\t\t[334] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[340] paragraph ''\n\t\t\t\tStaticText '2,450 submissions'\n\t\t[341] article ''\n\t\t\t[343] heading 'funny \u2014 funny'\n\t\t\t\t[344] link 'funny \u2014 funny'\n\t\t\t[349] paragraph ''\n\t\t\t\tStaticText 'funny'\n\t\t\t[352] Section ''\n\t\t\t\t[354] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[360] paragraph ''\n\t\t\t\tStaticText '2,407 submissions'\n\t\t[361] article ''\n\t\t\t[363] heading 'television \u2014 television'\n\t\t\t\t[364] link 'television \u2014 television'\n\t\t\t[369] paragraph ''\n\t\t\t\tStaticText 'television'\n\t\t\t[372] Section ''\n\t\t\t\t[374] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[380] paragraph ''\n\t\t\t\tStaticText '2,389 submissions'\n\t\t[381] article ''\n\t\t\t[383] heading 'mildlyinteresting \u2014 mildlyinteresting'\n\t\t\t\t[384] link 'mildlyinteresting \u2014 mildlyinteresting'\n\t\t\t[389] paragraph ''\n\t\t\t\tStaticText 'mildlyinteresting'\n\t\t\t[392] Section ''\n\t\t\t\t[394] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[400] paragraph ''\n\t\t\t\tStaticText '2,211 submissions'\n\t\t[401] article ''\n\t\t\t[403] heading 'Showerthoughts \u2014 Showerthoughts'\n\t\t\t\t[404] link 'Showerthoughts \u2014 Showerthoughts'\n\t\t\t[409] paragraph ''\n\t\t\t\tStaticText 'Showerthoughts'\n\t\t\t[412] Section ''\n\t\t\t\t[414] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[420] paragraph ''\n\t\t\t\tStaticText '2,175 submissions'\n\t\t[421] article ''\n\t\t\t[423] heading 'todayilearned \u2014 todayilearned'\n\t\t\t\t[424] link 'todayilearned \u2014 todayilearned'\n\t\t\t[429] paragraph ''\n\t\t\t\tStaticText 'todayilearned'\n\t\t\t[432] Section ''\n\t\t\t\t[434] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[440] paragraph ''\n\t\t\t\tStaticText '2,111 submissions'\n\t\t[441] article ''\n\t\t\t[443] heading 'personalfinance \u2014 personalfinance'\n\t\t\t\t[444] link 'personalfinance \u2014 personalfinance'\n\t\t\t[449] paragraph ''\n\t\t\t\tStaticText 'personalfinance'\n\t\t\t[452] Section ''\n\t\t\t\t[454] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[460] paragraph ''\n\t\t\t\tStaticText '1,957 submissions'\n\t\t[461] article ''\n\t\t\t[463] heading 'LifeProTips \u2014 LifeProTips'\n\t\t\t\t[464] link 'LifeProTips \u2014 LifeProTips'\n\t\t\t[469] paragraph ''\n\t\t\t\tStaticText 'LifeProTips'\n\t\t\t[472] Section ''\n\t\t\t\t[474] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[480] paragraph ''\n\t\t\t\tStaticText '1,953 submissions'\n\t\t[481] article ''\n\t\t\t[483] heading 'Futurology \u2014 Futurology'\n\t\t\t\t[484] link 'Futurology \u2014 Futurology'\n\t\t\t[489] paragraph ''\n\t\t\t\tStaticText 'Futurology'\n\t\t\t[492] Section ''\n\t\t\t\t[494] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[500] paragraph ''\n\t\t\t\tStaticText '1,902 submissions'\n\t\t[501] article ''\n\t\t\t[503] heading 'Music \u2014 Music'\n\t\t\t\t[504] link 'Music \u2014 Music'\n\t\t\t[509] paragraph ''\n\t\t\t\tStaticText 'Music'\n\t\t\t[512] Section ''\n\t\t\t\t[514] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[520] paragraph ''\n\t\t\t\tStaticText '1,869 submissions'\n\t\t[521] article ''\n\t\t\t[523] heading 'explainlikeimfive \u2014 explainlikeimfive'\n\t\t\t\t[524] link 'explainlikeimfive \u2014 explainlikeimfive'\n\t\t\t[529] paragraph ''\n\t\t\t\tStaticText 'explainlikeimfive'\n\t\t\t[532] Section ''\n\t\t\t\t[534] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[540] paragraph ''\n\t\t\t\tStaticText '1,818 submissions'\n\t\t[541] article ''\n\t\t\t[543] heading 'books \u2014 books'\n\t\t\t\t[544] link 'books \u2014 books'\n\t\t\t[549] paragraph ''\n\t\t\t\tStaticText 'books'\n\t\t\t[552] Section ''\n\t\t\t\t[554] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[560] paragraph ''\n\t\t\t\tStaticText '1,798 submissions'\n\t\t[561] article ''\n\t\t\t[563] heading 'science \u2014 science'\n\t\t\t\t[564] link 'science \u2014 science'\n\t\t\t[569] paragraph ''\n\t\t\t\tStaticText 'science'\n\t\t\t[572] Section ''\n\t\t\t\t[574] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[580] paragraph ''\n\t\t\t\tStaticText '1,792 submissions'\n\t\t[581] article ''\n\t\t\t[583] heading 'Jokes \u2014 Jokes'\n\t\t\t\t[584] link 'Jokes \u2014 Jokes'\n\t\t\t[589] paragraph ''\n\t\t\t\tStaticText 'Jokes'\n\t\t\t[592] Section ''\n\t\t\t\t[594] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[600] paragraph ''\n\t\t\t\tStaticText '1,758 submissions'\n\t\t[601] article ''\n\t\t\t[603] heading 'tifu \u2014 tifu'\n\t\t\t\t[604] link 'tifu \u2014 tifu'\n\t\t\t[609] paragraph ''\n\t\t\t\tStaticText 'tifu'\n\t\t\t[612] Section ''\n\t\t\t\t[614] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[620] paragraph ''\n\t\t\t\tStaticText '1,678 submissions'\n\t\t[621] article ''\n\t\t\t[623] heading 'space \u2014 space'\n\t\t\t\t[624] link 'space \u2014 space'\n\t\t\t[629] paragraph ''\n\t\t\t\tStaticText 'space'\n\t\t\t[632] Section ''\n\t\t\t\t[634] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[640] paragraph ''\n\t\t\t\tStaticText '1,671 submissions'\n\t\t[641] navigation ''\n\t\t\t[642] list ''\n\t\t\t\t[644] listitem ''\n\t\t\t\t\t[645] button 'Previous', disabled=True\n\t\t\t\t[646] listitem ''\n\t\t\t\t\t[647] link 'Page 1'\n\t\t\t\t[648] listitem ''\n\t\t\t\t\t[649] link 'Page 2'\n\t\t\t\t[650] listitem ''\n\t\t\t\t\t[651] link 'Page 3'\n\t\t\t\t[652] listitem ''\n\t\t\t\t\t[653] link 'Page 4'\n\t\t\t\t[654] listitem ''\n\t\t\t\t\t[655] link 'Next'\n\t[658] contentinfo ''\n\t\t[659] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[661] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [issue] [1]\nstop [N/A]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n* The objective find_subreddit [query] asks you to navigate to the subreddit that best matches the query. The query can be specific or vague. \n* The first step is to navigate to Forums to see the list of subreddits. However, if you have done this already (indicated as non empty PREVIOUS ACTIONS), do not repeat this step.\n* Under forums, you will see only a subset of subreddits. To get the full list of subreddits, you need to navigate to the Alphabetical option.\n* To know you can see the full list of subreddits, you will see 'All Forums' in the observation\n* Often you will not find a focused subreddit that exactly matches your query. In that case, go ahead with the closest relevant subreddit.\n* To know that you have reached a subreddit successfully, you will see '/f/subreddit_name' in the observation. \n* Once you have navigated to any specific subreddit, return stop [N/A]. Even if the subreddit is generally related and not specific to your quwey, stop here and do not try to search again for another subreddit.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"search_nearest_place",
+								"search_nearest_place"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"search_order",
+								"search_order"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_group",
+								"create_group"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_subreddit [r/books]",
+						"action": "click [138]",
+						"steps_nb": 3,
+						"reason": "The 'books' subreddit link is found at ID 138 in the alphabetical list under the 'B' heading. Clicking this will navigate to the r/books subreddit.",
+						"observation": "RootWebArea 'All forums', focused\n\t[18] navigation ''\n\t\t[19] link 'Jump to main content'\n\t\t[20] link 'Jump to sidebar'\n\t[21] navigation ''\n\t\t[24] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[34] list ''\n\t\t\t[35] listitem ''\n\t\t\t\t[36] link 'Forums'\n\t\t\t[37] listitem ''\n\t\t\t\t[38] link 'Wiki'\n\t\t[39] Section ''\n\t\t\t[48] searchbox 'Search query'\n\t\t[49] list ''\n\t\t\t[50] listitem ''\n\t\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t\t[54] image ''\n\t\t\t[55] listitem ''\n\t\t\t\t[56] link 'Submit'\n\t\t\t\t\t[59] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[61] listitem ''\n\t\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[65] image ''\n\t\t\t\t\t[66] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[107] main ''\n\t\t[108] list ''\n\t\t\t[109] listitem ''\n\t\t\t\t[110] link 'Forums'\n\t\t\t[111] listitem ''\n\t\t\t\t[112] link 'Tags'\n\t\t\t[113] listitem ''\n\t\t\t\t[114] link 'Alphabetical'\n\t\t[115] heading 'All forums'\n\t\t[118] heading 'A'\n\t\t[119] list ''\n\t\t\t[120] listitem ''\n\t\t\t\t[121] link 'allentown'\n\t\t\t[122] listitem ''\n\t\t\t\t[123] link 'arlingtonva'\n\t\t\t[124] listitem ''\n\t\t\t\t[125] link 'Art'\n\t\t\t[126] listitem ''\n\t\t\t\t[127] link 'AskReddit'\n\t\t\t[128] listitem ''\n\t\t\t\t[129] link 'askscience'\n\t\t\t[130] listitem ''\n\t\t\t\t[131] link 'aww'\n\t\t[133] heading 'B'\n\t\t[134] list ''\n\t\t\t[135] listitem ''\n\t\t\t\t[136] link 'baltimore'\n\t\t\t[137] listitem ''\n\t\t\t\t[138] link 'books'\n\t\t\t[139] listitem ''\n\t\t\t\t[140] link 'boston'\n\t\t\t[141] listitem ''\n\t\t\t\t[142] link 'BridgeportCT'\n\t\t\t[143] listitem ''\n\t\t\t\t[144] link 'BuyItForLife'\n\t\t[146] heading 'C'\n\t\t[147] list ''\n\t\t\t[148] listitem ''\n\t\t\t\t[149] link 'CambridgeMA'\n\t\t\t[150] listitem ''\n\t\t\t\t[151] link 'ColumbiaMD'\n\t\t\t[152] listitem ''\n\t\t\t\t[153] link 'Connecticut'\n\t\t\t[154] listitem ''\n\t\t\t\t[155] link 'consoles'\n\t\t\t[156] listitem ''\n\t\t\t\t[157] link 'coolgithubprojects'\n\t\t\t[158] listitem ''\n\t\t\t\t[159] link 'creepy'\n\t\t[161] heading 'D'\n\t\t[162] list ''\n\t\t\t[163] listitem ''\n\t\t\t\t[164] link 'dataisbeautiful'\n\t\t\t[165] listitem ''\n\t\t\t\t[166] link 'deeplearning'\n\t\t\t[167] listitem ''\n\t\t\t\t[168] link 'DIY'\n\t\t\t[169] listitem ''\n\t\t\t\t[170] link 'Documentaries'\n\t\t[172] heading 'E'\n\t\t[173] list ''\n\t\t\t[174] listitem ''\n\t\t\t\t[175] link 'EarthPorn'\n\t\t\t[176] listitem ''\n\t\t\t\t[177] link 'explainlikeimfive'\n\t\t[179] heading 'F'\n\t\t[180] list ''\n\t\t\t[181] listitem ''\n\t\t\t\t[182] link 'food'\n\t\t\t[183] listitem ''\n\t\t\t\t[184] link 'funny'\n\t\t\t[185] listitem ''\n\t\t\t\t[186] link 'Futurology'\n\t\t[188] heading 'G'\n\t\t[189] list ''\n\t\t\t[190] listitem ''\n\t\t\t\t[191] link 'gadgets'\n\t\t\t[192] listitem ''\n\t\t\t\t[193] link 'gaming'\n\t\t\t[194] listitem ''\n\t\t\t\t[195] link 'GetMotivated'\n\t\t\t[196] listitem ''\n\t\t\t\t[197] link 'gifs'\n\t\t[199] heading 'H'\n\t\t[200] list ''\n\t\t\t[201] listitem ''\n\t\t\t\t[202] link 'Hartford'\n\t\t\t[203] listitem ''\n\t\t\t\t[204] link 'headphones'\n\t\t\t[205] listitem ''\n\t\t\t\t[206] link 'history'\n\t\t[208] heading 'I'\n\t\t[209] list ''\n\t\t\t[210] listitem ''\n\t\t\t\t[211] link 'IAmA'\n\t\t\t[212] listitem ''\n\t\t\t\t[213] link 'InternetIsBeautiful'\n\t\t\t[214] listitem ''\n\t\t\t\t[215] link 'iphone'\n\t\t[217] heading 'J'\n\t\t[218] list ''\n\t\t\t[219] listitem ''\n\t\t\t\t[220] link 'jerseycity'\n\t\t\t[221] listitem ''\n\t\t\t\t[222] link 'Jokes'\n\t\t[224] heading 'L'\n\t\t[225] list ''\n\t\t\t[226] listitem ''\n\t\t\t\t[227] link 'lakewood'\n\t\t\t[228] listitem ''\n\t\t\t\t[229] link 'LifeProTips'\n\t\t\t[230] listitem ''\n\t\t\t\t[231] link 'listentothis'\n\t\t\t[232] listitem ''\n\t\t\t\t[233] link 'LowellMA'\n\t\t[235] heading 'M'\n\t\t[236] list ''\n\t\t\t[237] listitem ''\n\t\t\t\t[238] link 'MachineLearning'\n\t\t\t[239] listitem ''\n\t\t\t\t[240] link 'Maine'\n\t\t\t[241] listitem ''\n\t\t\t\t[242] link 'ManchesterNH'\n\t\t\t[243] listitem ''\n\t\t\t\t[244] link 'massachusetts'\n\t\t\t[245] listitem ''\n\t\t\t\t[246] link 'MechanicalKeyboards'\n\t\t\t[247] listitem ''\n\t\t\t\t[248] link 'memes'\n\t\t\t[249] listitem ''\n\t\t\t\t[250] link 'mildlyinteresting'\n\t\t\t[251] listitem ''\n\t\t\t\t[252] link 'monitor'\n\t\t\t[253] listitem ''\n\t\t\t\t[254] link 'movies'\n\t\t\t[255] listitem ''\n\t\t\t\t[256] link 'Music'\n\t\t[258] heading 'N'\n\t\t[259] list ''\n\t\t\t[260] listitem ''\n\t\t\t\t[261] link 'Newark'\n\t\t\t[262] listitem ''\n\t\t\t\t[263] link 'newhampshire'\n\t\t\t[264] listitem ''\n\t\t\t\t[265] link 'newhaven'\n\t\t\t[266] listitem ''\n\t\t\t\t[267] link 'newjersey'\n\t\t\t[268] listitem ''\n\t\t\t\t[269] link 'news'\n\t\t\t[270] listitem ''\n\t\t\t\t[271] link 'nosleep'\n\t\t\t[272] listitem ''\n\t\t\t\t[273] link 'nottheonion'\n\t\t\t[274] listitem ''\n\t\t\t\t[275] link 'nyc'\n\t\t[277] heading 'O'\n\t\t[278] list ''\n\t\t\t[279] listitem ''\n\t\t\t\t[280] link 'OldSchoolCool'\n\t\t[282] heading 'P'\n\t\t[283] list ''\n\t\t\t[284] listitem ''\n\t\t\t\t[285] link 'Paterson'\n\t\t\t[286] listitem ''\n\t\t\t\t[287] link 'Pennsylvania'\n\t\t\t[288] listitem ''\n\t\t\t\t[289] link 'personalfinance'\n\t\t\t[290] listitem ''\n\t\t\t\t[291] link 'philadelphia'\n\t\t\t[292] listitem ''\n\t\t\t\t[293] link 'philosophy'\n\t\t\t[294] listitem ''\n\t\t\t\t[295] link 'photoshopbattles'\n\t\t\t[296] listitem ''\n\t\t\t\t[297] link 'pics'\n\t\t\t[298] listitem ''\n\t\t\t\t[299] link 'pittsburgh'\n\t\t\t[300] listitem ''\n\t\t\t\t[301] link 'providence'\n\t\t[303] heading 'R'\n\t\t[304] list ''\n\t\t\t[305] listitem ''\n\t\t\t\t[306] link 'relationship_advice'\n\t\t\t[307] listitem ''\n\t\t\t\t[308] link 'RhodeIsland'\n\t\t\t[309] listitem ''\n\t\t\t\t[310] link 'rva'\n\t\t[312] heading 'S'\n\t\t[313] list ''\n\t\t\t[314] listitem ''\n\t\t\t\t[315] link 'science'\n\t\t\t[316] listitem ''\n\t\t\t\t[317] link 'Showerthoughts'\n\t\t\t[318] listitem ''\n\t\t\t\t[319] link 'singularity'\n\t\t\t[320] listitem ''\n\t\t\t\t[321] link 'space'\n\t\t\t[322] listitem ''\n\t\t\t\t[323] link 'sports'\n\t\t\t[324] listitem ''\n\t\t\t\t[325] link 'springfieldMO'\n\t\t\t[326] listitem ''\n\t\t\t\t[327] link 'StamfordCT'\n\t\t[329] heading 'T'\n\t\t[330] list ''\n\t\t\t[331] listitem ''\n\t\t\t\t[332] link 'technology'\n\t\t\t[333] listitem ''\n\t\t\t\t[334] link 'television'\n\t\t\t[335] listitem ''\n\t\t\t\t[336] link 'tifu'\n\t\t\t[337] listitem ''\n\t\t\t\t[338] link 'todayilearned'\n\t\t[340] heading 'U'\n\t\t[341] list ''\n\t\t\t[342] listitem ''\n\t\t\t\t[343] link 'UpliftingNews'\n\t\t[345] heading 'V'\n\t\t[346] list ''\n\t\t\t[347] listitem ''\n\t\t\t\t[348] link 'vermont'\n\t\t\t[349] listitem ''\n\t\t\t\t[350] link 'videos'\n\t\t[352] heading 'W'\n\t\t[353] list ''\n\t\t\t[354] listitem ''\n\t\t\t\t[355] link 'wallstreetbets'\n\t\t\t[356] listitem ''\n\t\t\t\t[357] link 'Washington'\n\t\t\t[358] listitem ''\n\t\t\t\t[359] link 'washingtondc'\n\t\t\t[360] listitem ''\n\t\t\t\t[361] link 'WaterburyCT'\n\t\t\t[362] listitem ''\n\t\t\t\t[363] link 'WorcesterMA'\n\t\t\t[364] listitem ''\n\t\t\t\t[365] link 'worldnews'\n\t\t\t[366] listitem ''\n\t\t\t\t[367] link 'WritingPrompts'\n\t\t[369] heading 'Y'\n\t\t[370] list ''\n\t\t\t[371] listitem ''\n\t\t\t\t[372] link 'yonkers'\n\t[374] contentinfo ''\n\t\t[375] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[377] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/forums/all",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [issue] [1]\nstop [N/A]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n* The objective find_subreddit [query] asks you to navigate to the subreddit that best matches the query. The query can be specific or vague. \n* The first step is to navigate to Forums to see the list of subreddits. However, if you have done this already (indicated as non empty PREVIOUS ACTIONS), do not repeat this step.\n* Under forums, you will see only a subset of subreddits. To get the full list of subreddits, you need to navigate to the Alphabetical option.\n* To know you can see the full list of subreddits, you will see 'All Forums' in the observation\n* Often you will not find a focused subreddit that exactly matches your query. In that case, go ahead with the closest relevant subreddit.\n* To know that you have reached a subreddit successfully, you will see '/f/subreddit_name' in the observation. \n* Once you have navigated to any specific subreddit, return stop [N/A]. Even if the subreddit is generally related and not specific to your quwey, stop here and do not try to search again for another subreddit.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"search_nearest_place",
+								"search_nearest_place"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"search_order",
+								"search_order"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_group",
+								"create_group"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "find_subreddit [r/books]",
+						"action": "stop [N/A]",
+						"steps_nb": 4,
+						"reason": "The user is already on the '/f/books' subreddit as indicated by the URL and observation, fulfilling the objective to find the subreddit r/books.",
+						"observation": "RootWebArea 'books', focused\n\t[27] navigation ''\n\t\t[28] link 'Jump to main content'\n\t\t[29] link 'Jump to sidebar'\n\t[30] navigation ''\n\t\t[33] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[43] list ''\n\t\t\t[44] listitem ''\n\t\t\t\t[45] link 'Forums'\n\t\t\t[46] listitem ''\n\t\t\t\t[47] link 'Wiki'\n\t\t[48] Section ''\n\t\t\t[57] searchbox 'Search query'\n\t\t[58] list ''\n\t\t\t[59] listitem ''\n\t\t\t\t[60] link 'Notifications (0)'\n\t\t\t\t\t[63] image ''\n\t\t\t[64] listitem ''\n\t\t\t\t[65] link 'Submit'\n\t\t\t\t\t[68] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[70] listitem ''\n\t\t\t\t[71] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[74] image ''\n\t\t\t\t\t[75] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[116] main ''\n\t\t[117] heading '/f/books'\n\t\t\tStaticText '/f/'\n\t\t\t[119] strong ''\n\t\t\t\tStaticText 'books'\n\t\t[120] navigation ''\n\t\t\t[121] list ''\n\t\t\t\t[122] listitem ''\n\t\t\t\t\t[123] link 'Submissions'\n\t\t\t\t[124] listitem ''\n\t\t\t\t\t[125] link 'Comments'\n\t\t\t[126] list ''\n\t\t\t\t[127] listitem ''\n\t\t\t\t\t[128] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[130] image ''\n\t\t\t\t\t\tStaticText 'Hot'\n\t\t[146] article ''\n\t\t\t[151] heading 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t\t[152] link 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t[153] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[155] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[156] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[157] time 'May 15, 2025 at 8:43:12 AM EDT'\n\t\t\t\t\tStaticText '20 days ago'\n\t\t\t[158] navigation ''\n\t\t\t\t[159] list ''\n\t\t\t\t\t[160] listitem ''\n\t\t\t\t\t\t[161] link 'No comments'\n\t\t\t\t\t\t\t[162] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[164] listitem ''\n\t\t\t\t\t\t[165] link 'Edit'\n\t\t\t\t\t[166] listitem ''\n\t\t\t\t\t\t[167] Section ''\n\t\t\t\t\t\t\t[169] button 'Delete'\n\t\t\t[171] Section ''\n\t\t\t\t[173] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[183] button 'Downvote'\n\t\t[188] article ''\n\t\t\t[193] heading 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t\t[194] link 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t[195] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[197] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[198] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[199] time 'May 15, 2025 at 8:41:36 AM EDT'\n\t\t\t\t\tStaticText '20 days ago'\n\t\t\t[200] navigation ''\n\t\t\t\t[201] list ''\n\t\t\t\t\t[202] listitem ''\n\t\t\t\t\t\t[203] link 'No comments'\n\t\t\t\t\t\t\t[204] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[206] listitem ''\n\t\t\t\t\t\t[207] link 'Edit'\n\t\t\t\t\t[208] listitem ''\n\t\t\t\t\t\t[209] Section ''\n\t\t\t\t\t\t\t[211] button 'Delete'\n\t\t\t[213] Section ''\n\t\t\t\t[215] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[225] button 'Downvote'\n\t\t[230] article ''\n\t\t\t[235] heading 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\t\t[236] link 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\tStaticText ''\n\t\t\t[237] link 'tseliot.com'\n\t\t\t[238] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[240] link 'RunDNA', expanded=False\n\t\t\t\t\t[241] strong ''\n\t\t\t\t\t\tStaticText 'RunDNA'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_10p83br'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[243] time 'January 30, 2023 at 12:11:46 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[244] navigation ''\n\t\t\t\t[245] list ''\n\t\t\t\t\t[246] listitem ''\n\t\t\t\t\t\t[247] link '184 comments'\n\t\t\t\t\t\t\t[248] strong ''\n\t\t\t\t\t\t\t\tStaticText '184 comments'\n\t\t\t[251] Section ''\n\t\t\t\t[253] button 'Upvote'\n\t\t\t\tStaticText '3591'\n\t\t\t\t[263] button 'Downvote'\n\t\t[268] article ''\n\t\t\t[273] heading 'Friendly reminder bookshop.org exists.'\n\t\t\t\t[274] link 'Friendly reminder bookshop.org exists.'\n\t\t\t[275] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[277] link 'smita16', expanded=False\n\t\t\t\t\t[278] strong ''\n\t\t\t\t\t\tStaticText 'smita16'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zzvi0q'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[280] time 'December 31, 2022 at 9:40:19 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[281] navigation ''\n\t\t\t\t[282] list ''\n\t\t\t\t\t[283] listitem ''\n\t\t\t\t\t\t[284] link '125 comments'\n\t\t\t\t\t\t\t[285] strong ''\n\t\t\t\t\t\t\t\tStaticText '125 comments'\n\t\t\t[288] Section ''\n\t\t\t\t[290] button 'Upvote'\n\t\t\t\tStaticText '3085'\n\t\t\t\t[300] button 'Downvote'\n\t\t[305] article ''\n\t\t\t[310] heading 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\t\t[311] link 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\tStaticText ''\n\t\t\t[312] link 'timeswv.com'\n\t\t\t[313] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[315] link 'SAT0725', expanded=False\n\t\t\t\t\t[316] strong ''\n\t\t\t\t\t\tStaticText 'SAT0725'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zd6cxz'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[318] time 'December 5, 2022 at 8:08:47 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[319] navigation ''\n\t\t\t\t[320] list ''\n\t\t\t\t\t[321] listitem ''\n\t\t\t\t\t\t[322] link '33 comments'\n\t\t\t\t\t\t\t[323] strong ''\n\t\t\t\t\t\t\t\tStaticText '33 comments'\n\t\t\t[326] Section ''\n\t\t\t\t[328] button 'Upvote'\n\t\t\t\tStaticText '1716'\n\t\t\t\t[338] button 'Downvote'\n\t\t[343] article ''\n\t\t\t[348] heading 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\t\t[349] link 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\tStaticText ''\n\t\t\t[350] link 'forbes.com'\n\t\t\t[351] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[353] link 'drak0bsidian', expanded=False\n\t\t\t\t\t[354] strong ''\n\t\t\t\t\t\tStaticText 'drak0bsidian'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11dewje'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[356] time 'February 27, 2023 at 10:43:55 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[357] navigation ''\n\t\t\t\t[358] list ''\n\t\t\t\t\t[359] listitem ''\n\t\t\t\t\t\t[360] link '27 comments'\n\t\t\t\t\t\t\t[361] strong ''\n\t\t\t\t\t\t\t\tStaticText '27 comments'\n\t\t\t[364] Section ''\n\t\t\t\t[366] button 'Upvote'\n\t\t\t\tStaticText '1695'\n\t\t\t\t[376] button 'Downvote'\n\t\t[381] article ''\n\t\t\t[386] heading 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\t\t[387] link 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\tStaticText ''\n\t\t\t[388] link 'delmarvanow.com'\n\t\t\t[389] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[391] link 'ZebZ', expanded=False\n\t\t\t\t\t[392] strong ''\n\t\t\t\t\t\tStaticText 'ZebZ'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11goa5z'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[394] time 'March 2, 2023 at 9:12:11 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[395] navigation ''\n\t\t\t\t[396] list ''\n\t\t\t\t\t[397] listitem ''\n\t\t\t\t\t\t[398] link '43 comments'\n\t\t\t\t\t\t\t[399] strong ''\n\t\t\t\t\t\t\t\tStaticText '43 comments'\n\t\t\t[402] Section ''\n\t\t\t\t[404] button 'Upvote'\n\t\t\t\tStaticText '1539'\n\t\t\t\t[414] button 'Downvote'\n\t\t[419] article ''\n\t\t\t[424] heading 'How Ukrainian publishers are fighting to survive'\n\t\t\t\t[425] link 'How Ukrainian publishers are fighting to survive'\n\t\t\tStaticText ''\n\t\t\t[426] link 'publishersweekly.com'\n\t\t\t[427] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[429] link 'livingmybestestlyfe', expanded=False\n\t\t\t\t\t[430] strong ''\n\t\t\t\t\t\tStaticText 'livingmybestestlyfe'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zwihxz'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[432] time 'December 27, 2022 at 10:42:13 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[433] navigation ''\n\t\t\t\t[434] list ''\n\t\t\t\t\t[435] listitem ''\n\t\t\t\t\t\t[436] link '31 comments'\n\t\t\t\t\t\t\t[437] strong ''\n\t\t\t\t\t\t\t\tStaticText '31 comments'\n\t\t\t[440] Section ''\n\t\t\t\t[442] button 'Upvote'\n\t\t\t\tStaticText '1434'\n\t\t\t\t[452] button 'Downvote'\n\t\t[457] article ''\n\t\t\t[462] heading 'The simple greatness of Agatha Christie'\n\t\t\t\t[463] link 'The simple greatness of Agatha Christie'\n\t\t\t[464] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[466] link '-something_something', expanded=False\n\t\t\t\t\t[467] strong ''\n\t\t\t\t\t\tStaticText '-something_something'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zvr666'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[469] time 'December 26, 2022 at 11:49:57 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[470] navigation ''\n\t\t\t\t[471] list ''\n\t\t\t\t\t[472] listitem ''\n\t\t\t\t\t\t[473] link '147 comments'\n\t\t\t\t\t\t\t[474] strong ''\n\t\t\t\t\t\t\t\tStaticText '147 comments'\n\t\t\t[477] Section ''\n\t\t\t\t[479] button 'Upvote'\n\t\t\t\tStaticText '1423'\n\t\t\t\t[489] button 'Downvote'\n\t\t[494] article ''\n\t\t\t[499] heading 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t\t[500] link 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t[501] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[503] link 'Shaosil', expanded=False\n\t\t\t\t\t[504] strong ''\n\t\t\t\t\t\tStaticText 'Shaosil'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_ydeu5t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[506] time 'October 25, 2022 at 4:27:33 PM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[507] navigation ''\n\t\t\t\t[508] list ''\n\t\t\t\t\t[509] listitem ''\n\t\t\t\t\t\t[510] link '138 comments'\n\t\t\t\t\t\t\t[511] strong ''\n\t\t\t\t\t\t\t\tStaticText '138 comments'\n\t\t\t[514] Section ''\n\t\t\t\t[516] button 'Upvote'\n\t\t\t\tStaticText '1423'\n\t\t\t\t[526] button 'Downvote'\n\t\t[531] article ''\n\t\t\t[536] heading 'Apple Books has a free audiobook of A Christmas Carol narrated by LeVar Burton!'\n\t\t\t\t[537] link 'Apple Books has a free audiobook of A Christmas Carol narrated by LeVar Burton!'\n\t\t\t[538] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[540] link 'ancienthippo', expanded=False\n\t\t\t\t\t[541] strong ''\n\t\t\t\t\t\tStaticText 'ancienthippo'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zs60at'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[543] time 'December 21, 2022 at 7:02:08 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[544] navigation ''\n\t\t\t\t[545] list ''\n\t\t\t\t\t[546] listitem ''\n\t\t\t\t\t\t[547] link '39 comments'\n\t\t\t\t\t\t\t[548] strong ''\n\t\t\t\t\t\t\t\tStaticText '39 comments'\n\t\t\t[551] Section ''\n\t\t\t\t[553] button 'Upvote'\n\t\t\t\tStaticText '1335'\n\t\t\t\t[563] button 'Downvote'\n\t\t[568] article ''\n\t\t\t[573] heading 'What Is It That Makes Used Bookstores So Wonderful?'\n\t\t\t\t[574] link 'What Is It That Makes Used Bookstores So Wonderful?'\n\t\t\tStaticText ''\n\t\t\t[575] link 'crimereads.com'\n\t\t\t[576] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[578] link 'zsreport', expanded=False\n\t\t\t\t\t[579] strong ''\n\t\t\t\t\t\tStaticText 'zsreport'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11bs6is'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[581] time 'February 25, 2023 at 1:38:36 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[582] navigation ''\n\t\t\t\t[583] list ''\n\t\t\t\t\t[584] listitem ''\n\t\t\t\t\t\t[585] link '142 comments'\n\t\t\t\t\t\t\t[586] strong ''\n\t\t\t\t\t\t\t\tStaticText '142 comments'\n\t\t\t[589] Section ''\n\t\t\t\t[591] button 'Upvote'\n\t\t\t\tStaticText '1334'\n\t\t\t\t[601] button 'Downvote'\n\t\t[606] article ''\n\t\t\t[611] heading \"After 30+ years, 'The Stinky Cheese Man' is aging well\"\n\t\t\t\t[612] link \"After 30+ years, 'The Stinky Cheese Man' is aging well\"\n\t\t\tStaticText ''\n\t\t\t[613] link 'npr.org'\n\t\t\t[614] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[616] link 'drak0bsidian', expanded=False\n\t\t\t\t\t[617] strong ''\n\t\t\t\t\t\tStaticText 'drak0bsidian'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_10mny74'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[619] time 'January 27, 2023 at 10:43:49 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[620] navigation ''\n\t\t\t\t[621] list ''\n\t\t\t\t\t[622] listitem ''\n\t\t\t\t\t\t[623] link '81 comments'\n\t\t\t\t\t\t\t[624] strong ''\n\t\t\t\t\t\t\t\tStaticText '81 comments'\n\t\t\t[627] Section ''\n\t\t\t\t[629] button 'Upvote'\n\t\t\t\tStaticText '1321'\n\t\t\t\t[639] button 'Downvote'\n\t\t[644] article ''\n\t\t\t[649] heading 'Just finished Things Fall Apart (Chinua Achebe) and I LOVED it'\n\t\t\t\t[650] link 'Just finished Things Fall Apart (Chinua Achebe) and I LOVED it'\n\t\t\t[651] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[653] link 'SublimeLime1', expanded=False\n\t\t\t\t\t[654] strong ''\n\t\t\t\t\t\tStaticText 'SublimeLime1'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zbxnpm'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[656] time 'December 3, 2022 at 9:13:17 PM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[657] navigation ''\n\t\t\t\t[658] list ''\n\t\t\t\t\t[659] listitem ''\n\t\t\t\t\t\t[660] link '116 comments'\n\t\t\t\t\t\t\t[661] strong ''\n\t\t\t\t\t\t\t\tStaticText '116 comments'\n\t\t\t[664] Section ''\n\t\t\t\t[666] button 'Upvote'\n\t\t\t\tStaticText '1103'\n\t\t\t\t[676] button 'Downvote'\n\t\t[681] article ''\n\t\t\t[686] heading 'The haunting of hill house was so good'\n\t\t\t\t[687] link 'The haunting of hill house was so good'\n\t\t\t[688] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[690] link 'AxidentalMe', expanded=False\n\t\t\t\t\t[691] strong ''\n\t\t\t\t\t\tStaticText 'AxidentalMe'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_z4ph9t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[693] time 'November 25, 2022 at 4:58:46 PM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[694] navigation ''\n\t\t\t\t[695] list ''\n\t\t\t\t\t[696] listitem ''\n\t\t\t\t\t\t[697] link '88 comments'\n\t\t\t\t\t\t\t[698] strong ''\n\t\t\t\t\t\t\t\tStaticText '88 comments'\n\t\t\t[701] Section ''\n\t\t\t\t[703] button 'Upvote'\n\t\t\t\tStaticText '1011'\n\t\t\t\t[713] button 'Downvote'\n\t\t[718] article ''\n\t\t\t[723] heading 'Post book depression'\n\t\t\t\t[724] link 'Post book depression'\n\t\t\t[725] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[727] link 'bertiewoooster', expanded=False\n\t\t\t\t\t[728] strong ''\n\t\t\t\t\t\tStaticText 'bertiewoooster'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_124f4e2'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[730] time 'March 28, 2023 at 2:04:20 AM EDT'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[731] navigation ''\n\t\t\t\t[732] list ''\n\t\t\t\t\t[733] listitem ''\n\t\t\t\t\t\t[734] link '185 comments'\n\t\t\t\t\t\t\t[735] strong ''\n\t\t\t\t\t\t\t\tStaticText '185 comments'\n\t\t\t[738] Section ''\n\t\t\t\t[740] button 'Upvote'\n\t\t\t\tStaticText '965'\n\t\t\t\t[750] button 'Downvote'\n\t\t[755] article ''\n\t\t\t[760] heading 'I fell in love and my interests in books changed drastically.'\n\t\t\t\t[761] link 'I fell in love and my interests in books changed drastically.'\n\t\t\t[762] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[764] link 'kingkontroverseP0si', expanded=False\n\t\t\t\t\t[765] strong ''\n\t\t\t\t\t\tStaticText 'kingkontroverseP0si'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zutjs8'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[767] time 'December 25, 2022 at 2:54:31 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[768] navigation ''\n\t\t\t\t[769] list ''\n\t\t\t\t\t[770] listitem ''\n\t\t\t\t\t\t[771] link '203 comments'\n\t\t\t\t\t\t\t[772] strong ''\n\t\t\t\t\t\t\t\tStaticText '203 comments'\n\t\t\t[775] Section ''\n\t\t\t\t[777] button 'Upvote'\n\t\t\t\tStaticText '926'\n\t\t\t\t[787] button 'Downvote'\n\t\t[792] article ''\n\t\t\t[797] heading 'Fayette County Schools partnered with AFT Kentucky 120 United and First Book to distribute 40,000 free books in Lexington on Saturday.'\n\t\t\t\t[798] link 'Fayette County Schools partnered with AFT Kentucky 120 United and First Book to distribute 40,000 free books in Lexington on Saturday.'\n\t\t\tStaticText ''\n\t\t\t[799] link 'wkyt.com'\n\t\t\t[800] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[802] link 'Sariel007', expanded=False\n\t\t\t\t\t[803] strong ''\n\t\t\t\t\t\tStaticText 'Sariel007'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_ycal5t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[805] time 'October 24, 2022 at 8:58:27 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[806] navigation ''\n\t\t\t\t[807] list ''\n\t\t\t\t\t[808] listitem ''\n\t\t\t\t\t\t[809] link '12 comments'\n\t\t\t\t\t\t\t[810] strong ''\n\t\t\t\t\t\t\t\tStaticText '12 comments'\n\t\t\t[813] Section ''\n\t\t\t\t[815] button 'Upvote'\n\t\t\t\tStaticText '906'\n\t\t\t\t[825] button 'Downvote'\n\t\t[830] article ''\n\t\t\t[835] heading 'I just can\u2019t with the forced romances in mysteries and thrillers! They are so ridiculous'\n\t\t\t\t[836] link 'I just can\u2019t with the forced romances in mysteries and thrillers! They are so ridiculous'\n\t\t\t[837] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[839] link 'ginnygrakie', expanded=False\n\t\t\t\t\t[840] strong ''\n\t\t\t\t\t\tStaticText 'ginnygrakie'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zyxdsp'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[842] time 'December 30, 2022 at 5:33:09 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[843] navigation ''\n\t\t\t\t[844] list ''\n\t\t\t\t\t[845] listitem ''\n\t\t\t\t\t\t[846] link '129 comments'\n\t\t\t\t\t\t\t[847] strong ''\n\t\t\t\t\t\t\t\tStaticText '129 comments'\n\t\t\t[850] Section ''\n\t\t\t\t[852] button 'Upvote'\n\t\t\t\tStaticText '890'\n\t\t\t\t[862] button 'Downvote'\n\t\t[867] article ''\n\t\t\t[872] heading '\"All Spaniards, we discovered, knew two English expressions. One was \u2018OK, baby,\u2019 the other was a word used by the Barcelona whores in their dealings with English sailors, and I am afraid the compositors would not print it.\"'\n\t\t\t\t[873] link '\"All Spaniards, we discovered, knew two English expressions. One was \u2018OK, baby,\u2019 the other was a word used by the Barcelona whores in their dealings with English sailors, and I am afraid the compositors would not print it.\"'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[876] link 'SlitchBap', expanded=False\n\t\t\t\t\t[877] strong ''\n\t\t\t\t\t\tStaticText 'SlitchBap'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yc28u1'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[879] time 'October 24, 2022 at 12:40:45 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[880] navigation ''\n\t\t\t\t[881] list ''\n\t\t\t\t\t[882] listitem ''\n\t\t\t\t\t\t[883] link '119 comments'\n\t\t\t\t\t\t\t[884] strong ''\n\t\t\t\t\t\t\t\tStaticText '119 comments'\n\t\t\t[887] Section ''\n\t\t\t\t[889] button 'Upvote'\n\t\t\t\tStaticText '847'\n\t\t\t\t[899] button 'Downvote'\n\t\t[904] article ''\n\t\t\t[909] heading '\"The Bell Jar\" by Sylvia Plath'\n\t\t\t\t[910] link '\"The Bell Jar\" by Sylvia Plath'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[913] link 'salon_i', expanded=False\n\t\t\t\t\t[914] strong ''\n\t\t\t\t\t\tStaticText 'salon_i'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yffxuw'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[916] time 'October 28, 2022 at 2:07:13 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[917] navigation ''\n\t\t\t\t[918] list ''\n\t\t\t\t\t[919] listitem ''\n\t\t\t\t\t\t[920] link '76 comments'\n\t\t\t\t\t\t\t[921] strong ''\n\t\t\t\t\t\t\t\tStaticText '76 comments'\n\t\t\t[924] Section ''\n\t\t\t\t[926] button 'Upvote'\n\t\t\t\tStaticText '762'\n\t\t\t\t[936] button 'Downvote'\n\t\t[941] article ''\n\t\t\t[946] heading '5 N.Y. Schools Evacuated After Bomb Threats Over LGBTQ+ Book'\n\t\t\t\t[947] link '5 N.Y. Schools Evacuated After Bomb Threats Over LGBTQ+ Book'\n\t\t\tStaticText ''\n\t\t\t[948] link 'advocate.com'\n\t\t\t[949] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[951] link 'wdcmsnbcgay', expanded=False\n\t\t\t\t\t[952] strong ''\n\t\t\t\t\t\tStaticText 'wdcmsnbcgay'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11ywemh'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[954] time 'March 22, 2023 at 4:57:40 PM EDT'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[955] navigation ''\n\t\t\t\t[956] list ''\n\t\t\t\t\t[957] listitem ''\n\t\t\t\t\t\t[958] link '184 comments'\n\t\t\t\t\t\t\t[959] strong ''\n\t\t\t\t\t\t\t\tStaticText '184 comments'\n\t\t\t[962] Section ''\n\t\t\t\t[964] button 'Upvote'\n\t\t\t\tStaticText '738'\n\t\t\t\t[974] button 'Downvote'\n\t\t[979] article ''\n\t\t\t[984] heading 'Banning Words Won\u2019t Make the World More Just - The Atlantic'\n\t\t\t\t[985] link 'Banning Words Won\u2019t Make the World More Just - The Atlantic'\n\t\t\tStaticText ''\n\t\t\t[986] link 'theatlantic.com'\n\t\t\t[987] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[989] link 'vaikrunta', expanded=False\n\t\t\t\t\t[990] strong ''\n\t\t\t\t\t\tStaticText 'vaikrunta'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11h76xc'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[992] time 'March 3, 2023 at 12:25:52 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[993] navigation ''\n\t\t\t\t[994] list ''\n\t\t\t\t\t[995] listitem ''\n\t\t\t\t\t\t[996] link '135 comments'\n\t\t\t\t\t\t\t[997] strong ''\n\t\t\t\t\t\t\t\tStaticText '135 comments'\n\t\t\t[1000] Section ''\n\t\t\t\t[1002] button 'Upvote'\n\t\t\t\tStaticText '722'\n\t\t\t\t[1012] button 'Downvote'\n\t\t[1017] article ''\n\t\t\t[1022] heading 'All Systems Red by Martha Wells'\n\t\t\t\t[1023] link 'All Systems Red by Martha Wells'\n\t\t\t[1024] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[1026] link 'angryscout2', expanded=False\n\t\t\t\t\t[1027] strong ''\n\t\t\t\t\t\tStaticText 'angryscout2'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yrgfhk'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[1029] time 'November 10, 2022 at 9:21:05 AM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[1030] navigation ''\n\t\t\t\t[1031] list ''\n\t\t\t\t\t[1032] listitem ''\n\t\t\t\t\t\t[1033] link '180 comments'\n\t\t\t\t\t\t\t[1034] strong ''\n\t\t\t\t\t\t\t\tStaticText '180 comments'\n\t\t\t[1037] Section ''\n\t\t\t\t[1039] button 'Upvote'\n\t\t\t\tStaticText '712'\n\t\t\t\t[1049] button 'Downvote'\n\t\t[1054] article ''\n\t\t\t[1059] heading 'Joining the \u201cThe Song of Achilles\u201d Appreciation Club'\n\t\t\t\t[1060] link 'Joining the \u201cThe Song of Achilles\u201d Appreciation Club'\n\t\t\t[1061] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[1063] link 'my-nips-hurt', expanded=False\n\t\t\t\t\t[1064] strong ''\n\t\t\t\t\t\tStaticText 'my-nips-hurt'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zwlfq6'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[1066] time 'December 27, 2022 at 12:49:39 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1067] navigation ''\n\t\t\t\t[1068] list ''\n\t\t\t\t\t[1069] listitem ''\n\t\t\t\t\t\t[1070] link '117 comments'\n\t\t\t\t\t\t\t[1071] strong ''\n\t\t\t\t\t\t\t\tStaticText '117 comments'\n\t\t\t[1074] Section ''\n\t\t\t\t[1076] button 'Upvote'\n\t\t\t\tStaticText '710'\n\t\t\t\t[1086] button 'Downvote'\n\t\t[1091] navigation ''\n\t\t\t[1092] list ''\n\t\t\t\t[1094] listitem ''\n\t\t\t\t\t[1095] link 'More'\n\t[1097] complementary ''\n\t\t[1098] Section ''\n\t\t\t[1099] heading 'books'\n\t\t\t\t[1100] link 'books'\n\t\t\t[1101] Section ''\n\t\t\t\t[1104] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[1111] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[1112] separator '', orientation='horizontal'\n\t\t\t[1113] list ''\n\t\t\t\t[1114] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[1115] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[1116] listitem ''\n\t\t\t\t\t[1117] link 'Subscribe via RSS'\n\t\t\t\t\t\t[1119] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[1121] group ''\n\t\t\t[1122] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[1128] Section ''\n\t\t\t[1129] heading 'Toolbox'\n\t\t\t[1130] list ''\n\t\t\t\t[1131] listitem ''\n\t\t\t\t\t[1132] link 'Bans'\n\t\t\t\t[1133] listitem ''\n\t\t\t\t\t[1134] link 'Moderation log'\n\t[1135] contentinfo ''\n\t\t[1136] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[1138] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/f/books",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [issue] [1]\nstop [N/A]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n* The objective find_subreddit [query] asks you to navigate to the subreddit that best matches the query. The query can be specific or vague. \n* The first step is to navigate to Forums to see the list of subreddits. However, if you have done this already (indicated as non empty PREVIOUS ACTIONS), do not repeat this step.\n* Under forums, you will see only a subset of subreddits. To get the full list of subreddits, you need to navigate to the Alphabetical option.\n* To know you can see the full list of subreddits, you will see 'All Forums' in the observation\n* Often you will not find a focused subreddit that exactly matches your query. In that case, go ahead with the closest relevant subreddit.\n* To know that you have reached a subreddit successfully, you will see '/f/subreddit_name' in the observation. \n* Once you have navigated to any specific subreddit, return stop [N/A]. Even if the subreddit is generally related and not specific to your quwey, stop here and do not try to search again for another subreddit.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"search_nearest_place",
+								"search_nearest_place"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"search_order",
+								"search_order"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_group",
+								"create_group"
+							]
+						]
+					}
+				],
+				"feedback": "**  \nThe task is a **success** because the current URL (`/f/books`) and page content (book-themed posts, subreddit metadata) perfectly match the objective. The navigation sequence successfully transitioned from the homepage to the targeted subreddit through logical steps (Forums \u2192 Alphabetical \u2192 Click \"books\").  \n\n**Key Actions to Reproduce:**  \n1. Click \"Forums\" on the Postmill dashboard.  \n2. Apply the \"Alphabetical\" filter to the subreddit list.  \n3. Click the \"books\" link in the alphabetical subreddit directory.  \n\n**Notes on Previous Actions:**  \n- The actions were efficient: clicking \"Forums,\" then \"Alphabetical,\" and finally the \"books\" link directly achieved the goal without errors.  \n- The `stop [N/A]` action correctly recognized the objective was fulfilled once the `/f/books` URL was loaded."
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "click [65]",
+				"steps_nb": 5,
+				"reason": "To access the submission form for posting a review in the r/books subreddit.",
+				"observation": "RootWebArea 'books', focused\n\t[27] navigation ''\n\t\t[28] link 'Jump to main content'\n\t\t[29] link 'Jump to sidebar'\n\t[30] navigation ''\n\t\t[33] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[43] list ''\n\t\t\t[44] listitem ''\n\t\t\t\t[45] link 'Forums'\n\t\t\t[46] listitem ''\n\t\t\t\t[47] link 'Wiki'\n\t\t[48] Section ''\n\t\t\t[57] searchbox 'Search query'\n\t\t[58] list ''\n\t\t\t[59] listitem ''\n\t\t\t\t[60] link 'Notifications (0)'\n\t\t\t\t\t[63] image ''\n\t\t\t[64] listitem ''\n\t\t\t\t[65] link 'Submit'\n\t\t\t\t\t[68] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[70] listitem ''\n\t\t\t\t[71] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[74] image ''\n\t\t\t\t\t[75] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[116] main ''\n\t\t[117] heading '/f/books'\n\t\t\tStaticText '/f/'\n\t\t\t[119] strong ''\n\t\t\t\tStaticText 'books'\n\t\t[120] navigation ''\n\t\t\t[121] list ''\n\t\t\t\t[122] listitem ''\n\t\t\t\t\t[123] link 'Submissions'\n\t\t\t\t[124] listitem ''\n\t\t\t\t\t[125] link 'Comments'\n\t\t\t[126] list ''\n\t\t\t\t[127] listitem ''\n\t\t\t\t\t[128] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t\t[130] image ''\n\t\t\t\t\t\tStaticText 'Hot'\n\t\t[146] article ''\n\t\t\t[151] heading 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t\t[152] link 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t[153] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[155] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[156] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[157] time 'May 15, 2025 at 8:43:12 AM EDT'\n\t\t\t\t\tStaticText '20 days ago'\n\t\t\t[158] navigation ''\n\t\t\t\t[159] list ''\n\t\t\t\t\t[160] listitem ''\n\t\t\t\t\t\t[161] link 'No comments'\n\t\t\t\t\t\t\t[162] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[164] listitem ''\n\t\t\t\t\t\t[165] link 'Edit'\n\t\t\t\t\t[166] listitem ''\n\t\t\t\t\t\t[167] Section ''\n\t\t\t\t\t\t\t[169] button 'Delete'\n\t\t\t[171] Section ''\n\t\t\t\t[173] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[183] button 'Downvote'\n\t\t[188] article ''\n\t\t\t[193] heading 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t\t[194] link 'Virtual meetup for book reading enthusiasts on March 15th'\n\t\t\t[195] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[197] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[198] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[199] time 'May 15, 2025 at 8:41:36 AM EDT'\n\t\t\t\t\tStaticText '20 days ago'\n\t\t\t[200] navigation ''\n\t\t\t\t[201] list ''\n\t\t\t\t\t[202] listitem ''\n\t\t\t\t\t\t[203] link 'No comments'\n\t\t\t\t\t\t\t[204] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[206] listitem ''\n\t\t\t\t\t\t[207] link 'Edit'\n\t\t\t\t\t[208] listitem ''\n\t\t\t\t\t\t[209] Section ''\n\t\t\t\t\t\t\t[211] button 'Delete'\n\t\t\t[213] Section ''\n\t\t\t\t[215] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[225] button 'Downvote'\n\t\t[230] article ''\n\t\t\t[235] heading 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\t\t[236] link 'The letters of T. S. Eliot to Emily Hale that were kept sealed from 1956 to 2020 have been released for free online'\n\t\t\tStaticText ''\n\t\t\t[237] link 'tseliot.com'\n\t\t\t[238] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[240] link 'RunDNA', expanded=False\n\t\t\t\t\t[241] strong ''\n\t\t\t\t\t\tStaticText 'RunDNA'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_10p83br'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[243] time 'January 30, 2023 at 12:11:46 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[244] navigation ''\n\t\t\t\t[245] list ''\n\t\t\t\t\t[246] listitem ''\n\t\t\t\t\t\t[247] link '184 comments'\n\t\t\t\t\t\t\t[248] strong ''\n\t\t\t\t\t\t\t\tStaticText '184 comments'\n\t\t\t[251] Section ''\n\t\t\t\t[253] button 'Upvote'\n\t\t\t\tStaticText '3591'\n\t\t\t\t[263] button 'Downvote'\n\t\t[268] article ''\n\t\t\t[273] heading 'Friendly reminder bookshop.org exists.'\n\t\t\t\t[274] link 'Friendly reminder bookshop.org exists.'\n\t\t\t[275] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[277] link 'smita16', expanded=False\n\t\t\t\t\t[278] strong ''\n\t\t\t\t\t\tStaticText 'smita16'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zzvi0q'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[280] time 'December 31, 2022 at 9:40:19 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[281] navigation ''\n\t\t\t\t[282] list ''\n\t\t\t\t\t[283] listitem ''\n\t\t\t\t\t\t[284] link '125 comments'\n\t\t\t\t\t\t\t[285] strong ''\n\t\t\t\t\t\t\t\tStaticText '125 comments'\n\t\t\t[288] Section ''\n\t\t\t\t[290] button 'Upvote'\n\t\t\t\tStaticText '3085'\n\t\t\t\t[300] button 'Downvote'\n\t\t[305] article ''\n\t\t\t[310] heading 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\t\t[311] link 'Appalachian prison book project seeks notebook donations: \"The books can help inmates learn new skills, broaden their worldviews and obtain college credits through the West Virginia University Higher Education in Prison Initiative\"'\n\t\t\tStaticText ''\n\t\t\t[312] link 'timeswv.com'\n\t\t\t[313] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[315] link 'SAT0725', expanded=False\n\t\t\t\t\t[316] strong ''\n\t\t\t\t\t\tStaticText 'SAT0725'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zd6cxz'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[318] time 'December 5, 2022 at 8:08:47 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[319] navigation ''\n\t\t\t\t[320] list ''\n\t\t\t\t\t[321] listitem ''\n\t\t\t\t\t\t[322] link '33 comments'\n\t\t\t\t\t\t\t[323] strong ''\n\t\t\t\t\t\t\t\tStaticText '33 comments'\n\t\t\t[326] Section ''\n\t\t\t\t[328] button 'Upvote'\n\t\t\t\tStaticText '1716'\n\t\t\t\t[338] button 'Downvote'\n\t\t[343] article ''\n\t\t\t[348] heading 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\t\t[349] link 'After Two Decades And 38 Children\u2019s Books Lin Oliver Continues Her Thriving Collaboration With Henry Winkler'\n\t\t\tStaticText ''\n\t\t\t[350] link 'forbes.com'\n\t\t\t[351] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[353] link 'drak0bsidian', expanded=False\n\t\t\t\t\t[354] strong ''\n\t\t\t\t\t\tStaticText 'drak0bsidian'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11dewje'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[356] time 'February 27, 2023 at 10:43:55 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[357] navigation ''\n\t\t\t\t[358] list ''\n\t\t\t\t\t[359] listitem ''\n\t\t\t\t\t\t[360] link '27 comments'\n\t\t\t\t\t\t\t[361] strong ''\n\t\t\t\t\t\t\t\tStaticText '27 comments'\n\t\t\t[364] Section ''\n\t\t\t\t[366] button 'Upvote'\n\t\t\t\tStaticText '1695'\n\t\t\t\t[376] button 'Downvote'\n\t\t[381] article ''\n\t\t\t[386] heading 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\t\t[387] link 'Museum issues appeal to save famed \"Misty of Chincoteague\" ranch from being sold to developers'\n\t\t\tStaticText ''\n\t\t\t[388] link 'delmarvanow.com'\n\t\t\t[389] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[391] link 'ZebZ', expanded=False\n\t\t\t\t\t[392] strong ''\n\t\t\t\t\t\tStaticText 'ZebZ'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11goa5z'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[394] time 'March 2, 2023 at 9:12:11 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[395] navigation ''\n\t\t\t\t[396] list ''\n\t\t\t\t\t[397] listitem ''\n\t\t\t\t\t\t[398] link '43 comments'\n\t\t\t\t\t\t\t[399] strong ''\n\t\t\t\t\t\t\t\tStaticText '43 comments'\n\t\t\t[402] Section ''\n\t\t\t\t[404] button 'Upvote'\n\t\t\t\tStaticText '1539'\n\t\t\t\t[414] button 'Downvote'\n\t\t[419] article ''\n\t\t\t[424] heading 'How Ukrainian publishers are fighting to survive'\n\t\t\t\t[425] link 'How Ukrainian publishers are fighting to survive'\n\t\t\tStaticText ''\n\t\t\t[426] link 'publishersweekly.com'\n\t\t\t[427] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[429] link 'livingmybestestlyfe', expanded=False\n\t\t\t\t\t[430] strong ''\n\t\t\t\t\t\tStaticText 'livingmybestestlyfe'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zwihxz'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[432] time 'December 27, 2022 at 10:42:13 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[433] navigation ''\n\t\t\t\t[434] list ''\n\t\t\t\t\t[435] listitem ''\n\t\t\t\t\t\t[436] link '31 comments'\n\t\t\t\t\t\t\t[437] strong ''\n\t\t\t\t\t\t\t\tStaticText '31 comments'\n\t\t\t[440] Section ''\n\t\t\t\t[442] button 'Upvote'\n\t\t\t\tStaticText '1434'\n\t\t\t\t[452] button 'Downvote'\n\t\t[457] article ''\n\t\t\t[462] heading 'The simple greatness of Agatha Christie'\n\t\t\t\t[463] link 'The simple greatness of Agatha Christie'\n\t\t\t[464] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[466] link '-something_something', expanded=False\n\t\t\t\t\t[467] strong ''\n\t\t\t\t\t\tStaticText '-something_something'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zvr666'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[469] time 'December 26, 2022 at 11:49:57 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[470] navigation ''\n\t\t\t\t[471] list ''\n\t\t\t\t\t[472] listitem ''\n\t\t\t\t\t\t[473] link '147 comments'\n\t\t\t\t\t\t\t[474] strong ''\n\t\t\t\t\t\t\t\tStaticText '147 comments'\n\t\t\t[477] Section ''\n\t\t\t\t[479] button 'Upvote'\n\t\t\t\tStaticText '1423'\n\t\t\t\t[489] button 'Downvote'\n\t\t[494] article ''\n\t\t\t[499] heading 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t\t[500] link 'I just finished reading The Hobbit to my 6 year old daughter, and she loved it!'\n\t\t\t[501] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[503] link 'Shaosil', expanded=False\n\t\t\t\t\t[504] strong ''\n\t\t\t\t\t\tStaticText 'Shaosil'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_ydeu5t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[506] time 'October 25, 2022 at 4:27:33 PM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[507] navigation ''\n\t\t\t\t[508] list ''\n\t\t\t\t\t[509] listitem ''\n\t\t\t\t\t\t[510] link '138 comments'\n\t\t\t\t\t\t\t[511] strong ''\n\t\t\t\t\t\t\t\tStaticText '138 comments'\n\t\t\t[514] Section ''\n\t\t\t\t[516] button 'Upvote'\n\t\t\t\tStaticText '1423'\n\t\t\t\t[526] button 'Downvote'\n\t\t[531] article ''\n\t\t\t[536] heading 'Apple Books has a free audiobook of A Christmas Carol narrated by LeVar Burton!'\n\t\t\t\t[537] link 'Apple Books has a free audiobook of A Christmas Carol narrated by LeVar Burton!'\n\t\t\t[538] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[540] link 'ancienthippo', expanded=False\n\t\t\t\t\t[541] strong ''\n\t\t\t\t\t\tStaticText 'ancienthippo'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zs60at'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[543] time 'December 21, 2022 at 7:02:08 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[544] navigation ''\n\t\t\t\t[545] list ''\n\t\t\t\t\t[546] listitem ''\n\t\t\t\t\t\t[547] link '39 comments'\n\t\t\t\t\t\t\t[548] strong ''\n\t\t\t\t\t\t\t\tStaticText '39 comments'\n\t\t\t[551] Section ''\n\t\t\t\t[553] button 'Upvote'\n\t\t\t\tStaticText '1335'\n\t\t\t\t[563] button 'Downvote'\n\t\t[568] article ''\n\t\t\t[573] heading 'What Is It That Makes Used Bookstores So Wonderful?'\n\t\t\t\t[574] link 'What Is It That Makes Used Bookstores So Wonderful?'\n\t\t\tStaticText ''\n\t\t\t[575] link 'crimereads.com'\n\t\t\t[576] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[578] link 'zsreport', expanded=False\n\t\t\t\t\t[579] strong ''\n\t\t\t\t\t\tStaticText 'zsreport'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11bs6is'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[581] time 'February 25, 2023 at 1:38:36 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[582] navigation ''\n\t\t\t\t[583] list ''\n\t\t\t\t\t[584] listitem ''\n\t\t\t\t\t\t[585] link '142 comments'\n\t\t\t\t\t\t\t[586] strong ''\n\t\t\t\t\t\t\t\tStaticText '142 comments'\n\t\t\t[589] Section ''\n\t\t\t\t[591] button 'Upvote'\n\t\t\t\tStaticText '1334'\n\t\t\t\t[601] button 'Downvote'\n\t\t[606] article ''\n\t\t\t[611] heading \"After 30+ years, 'The Stinky Cheese Man' is aging well\"\n\t\t\t\t[612] link \"After 30+ years, 'The Stinky Cheese Man' is aging well\"\n\t\t\tStaticText ''\n\t\t\t[613] link 'npr.org'\n\t\t\t[614] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[616] link 'drak0bsidian', expanded=False\n\t\t\t\t\t[617] strong ''\n\t\t\t\t\t\tStaticText 'drak0bsidian'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_10mny74'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[619] time 'January 27, 2023 at 10:43:49 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[620] navigation ''\n\t\t\t\t[621] list ''\n\t\t\t\t\t[622] listitem ''\n\t\t\t\t\t\t[623] link '81 comments'\n\t\t\t\t\t\t\t[624] strong ''\n\t\t\t\t\t\t\t\tStaticText '81 comments'\n\t\t\t[627] Section ''\n\t\t\t\t[629] button 'Upvote'\n\t\t\t\tStaticText '1321'\n\t\t\t\t[639] button 'Downvote'\n\t\t[644] article ''\n\t\t\t[649] heading 'Just finished Things Fall Apart (Chinua Achebe) and I LOVED it'\n\t\t\t\t[650] link 'Just finished Things Fall Apart (Chinua Achebe) and I LOVED it'\n\t\t\t[651] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[653] link 'SublimeLime1', expanded=False\n\t\t\t\t\t[654] strong ''\n\t\t\t\t\t\tStaticText 'SublimeLime1'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zbxnpm'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[656] time 'December 3, 2022 at 9:13:17 PM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[657] navigation ''\n\t\t\t\t[658] list ''\n\t\t\t\t\t[659] listitem ''\n\t\t\t\t\t\t[660] link '116 comments'\n\t\t\t\t\t\t\t[661] strong ''\n\t\t\t\t\t\t\t\tStaticText '116 comments'\n\t\t\t[664] Section ''\n\t\t\t\t[666] button 'Upvote'\n\t\t\t\tStaticText '1103'\n\t\t\t\t[676] button 'Downvote'\n\t\t[681] article ''\n\t\t\t[686] heading 'The haunting of hill house was so good'\n\t\t\t\t[687] link 'The haunting of hill house was so good'\n\t\t\t[688] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[690] link 'AxidentalMe', expanded=False\n\t\t\t\t\t[691] strong ''\n\t\t\t\t\t\tStaticText 'AxidentalMe'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_z4ph9t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[693] time 'November 25, 2022 at 4:58:46 PM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[694] navigation ''\n\t\t\t\t[695] list ''\n\t\t\t\t\t[696] listitem ''\n\t\t\t\t\t\t[697] link '88 comments'\n\t\t\t\t\t\t\t[698] strong ''\n\t\t\t\t\t\t\t\tStaticText '88 comments'\n\t\t\t[701] Section ''\n\t\t\t\t[703] button 'Upvote'\n\t\t\t\tStaticText '1011'\n\t\t\t\t[713] button 'Downvote'\n\t\t[718] article ''\n\t\t\t[723] heading 'Post book depression'\n\t\t\t\t[724] link 'Post book depression'\n\t\t\t[725] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[727] link 'bertiewoooster', expanded=False\n\t\t\t\t\t[728] strong ''\n\t\t\t\t\t\tStaticText 'bertiewoooster'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_124f4e2'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[730] time 'March 28, 2023 at 2:04:20 AM EDT'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[731] navigation ''\n\t\t\t\t[732] list ''\n\t\t\t\t\t[733] listitem ''\n\t\t\t\t\t\t[734] link '185 comments'\n\t\t\t\t\t\t\t[735] strong ''\n\t\t\t\t\t\t\t\tStaticText '185 comments'\n\t\t\t[738] Section ''\n\t\t\t\t[740] button 'Upvote'\n\t\t\t\tStaticText '965'\n\t\t\t\t[750] button 'Downvote'\n\t\t[755] article ''\n\t\t\t[760] heading 'I fell in love and my interests in books changed drastically.'\n\t\t\t\t[761] link 'I fell in love and my interests in books changed drastically.'\n\t\t\t[762] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[764] link 'kingkontroverseP0si', expanded=False\n\t\t\t\t\t[765] strong ''\n\t\t\t\t\t\tStaticText 'kingkontroverseP0si'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zutjs8'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[767] time 'December 25, 2022 at 2:54:31 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[768] navigation ''\n\t\t\t\t[769] list ''\n\t\t\t\t\t[770] listitem ''\n\t\t\t\t\t\t[771] link '203 comments'\n\t\t\t\t\t\t\t[772] strong ''\n\t\t\t\t\t\t\t\tStaticText '203 comments'\n\t\t\t[775] Section ''\n\t\t\t\t[777] button 'Upvote'\n\t\t\t\tStaticText '926'\n\t\t\t\t[787] button 'Downvote'\n\t\t[792] article ''\n\t\t\t[797] heading 'Fayette County Schools partnered with AFT Kentucky 120 United and First Book to distribute 40,000 free books in Lexington on Saturday.'\n\t\t\t\t[798] link 'Fayette County Schools partnered with AFT Kentucky 120 United and First Book to distribute 40,000 free books in Lexington on Saturday.'\n\t\t\tStaticText ''\n\t\t\t[799] link 'wkyt.com'\n\t\t\t[800] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[802] link 'Sariel007', expanded=False\n\t\t\t\t\t[803] strong ''\n\t\t\t\t\t\tStaticText 'Sariel007'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_ycal5t'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[805] time 'October 24, 2022 at 8:58:27 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[806] navigation ''\n\t\t\t\t[807] list ''\n\t\t\t\t\t[808] listitem ''\n\t\t\t\t\t\t[809] link '12 comments'\n\t\t\t\t\t\t\t[810] strong ''\n\t\t\t\t\t\t\t\tStaticText '12 comments'\n\t\t\t[813] Section ''\n\t\t\t\t[815] button 'Upvote'\n\t\t\t\tStaticText '906'\n\t\t\t\t[825] button 'Downvote'\n\t\t[830] article ''\n\t\t\t[835] heading 'I just can\u2019t with the forced romances in mysteries and thrillers! They are so ridiculous'\n\t\t\t\t[836] link 'I just can\u2019t with the forced romances in mysteries and thrillers! They are so ridiculous'\n\t\t\t[837] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[839] link 'ginnygrakie', expanded=False\n\t\t\t\t\t[840] strong ''\n\t\t\t\t\t\tStaticText 'ginnygrakie'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zyxdsp'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[842] time 'December 30, 2022 at 5:33:09 AM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[843] navigation ''\n\t\t\t\t[844] list ''\n\t\t\t\t\t[845] listitem ''\n\t\t\t\t\t\t[846] link '129 comments'\n\t\t\t\t\t\t\t[847] strong ''\n\t\t\t\t\t\t\t\tStaticText '129 comments'\n\t\t\t[850] Section ''\n\t\t\t\t[852] button 'Upvote'\n\t\t\t\tStaticText '890'\n\t\t\t\t[862] button 'Downvote'\n\t\t[867] article ''\n\t\t\t[872] heading '\"All Spaniards, we discovered, knew two English expressions. One was \u2018OK, baby,\u2019 the other was a word used by the Barcelona whores in their dealings with English sailors, and I am afraid the compositors would not print it.\"'\n\t\t\t\t[873] link '\"All Spaniards, we discovered, knew two English expressions. One was \u2018OK, baby,\u2019 the other was a word used by the Barcelona whores in their dealings with English sailors, and I am afraid the compositors would not print it.\"'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[876] link 'SlitchBap', expanded=False\n\t\t\t\t\t[877] strong ''\n\t\t\t\t\t\tStaticText 'SlitchBap'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yc28u1'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[879] time 'October 24, 2022 at 12:40:45 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[880] navigation ''\n\t\t\t\t[881] list ''\n\t\t\t\t\t[882] listitem ''\n\t\t\t\t\t\t[883] link '119 comments'\n\t\t\t\t\t\t\t[884] strong ''\n\t\t\t\t\t\t\t\tStaticText '119 comments'\n\t\t\t[887] Section ''\n\t\t\t\t[889] button 'Upvote'\n\t\t\t\tStaticText '847'\n\t\t\t\t[899] button 'Downvote'\n\t\t[904] article ''\n\t\t\t[909] heading '\"The Bell Jar\" by Sylvia Plath'\n\t\t\t\t[910] link '\"The Bell Jar\" by Sylvia Plath'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[913] link 'salon_i', expanded=False\n\t\t\t\t\t[914] strong ''\n\t\t\t\t\t\tStaticText 'salon_i'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yffxuw'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[916] time 'October 28, 2022 at 2:07:13 AM EDT'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[917] navigation ''\n\t\t\t\t[918] list ''\n\t\t\t\t\t[919] listitem ''\n\t\t\t\t\t\t[920] link '76 comments'\n\t\t\t\t\t\t\t[921] strong ''\n\t\t\t\t\t\t\t\tStaticText '76 comments'\n\t\t\t[924] Section ''\n\t\t\t\t[926] button 'Upvote'\n\t\t\t\tStaticText '762'\n\t\t\t\t[936] button 'Downvote'\n\t\t[941] article ''\n\t\t\t[946] heading '5 N.Y. Schools Evacuated After Bomb Threats Over LGBTQ+ Book'\n\t\t\t\t[947] link '5 N.Y. Schools Evacuated After Bomb Threats Over LGBTQ+ Book'\n\t\t\tStaticText ''\n\t\t\t[948] link 'advocate.com'\n\t\t\t[949] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[951] link 'wdcmsnbcgay', expanded=False\n\t\t\t\t\t[952] strong ''\n\t\t\t\t\t\tStaticText 'wdcmsnbcgay'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11ywemh'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[954] time 'March 22, 2023 at 4:57:40 PM EDT'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[955] navigation ''\n\t\t\t\t[956] list ''\n\t\t\t\t\t[957] listitem ''\n\t\t\t\t\t\t[958] link '184 comments'\n\t\t\t\t\t\t\t[959] strong ''\n\t\t\t\t\t\t\t\tStaticText '184 comments'\n\t\t\t[962] Section ''\n\t\t\t\t[964] button 'Upvote'\n\t\t\t\tStaticText '738'\n\t\t\t\t[974] button 'Downvote'\n\t\t[979] article ''\n\t\t\t[984] heading 'Banning Words Won\u2019t Make the World More Just - The Atlantic'\n\t\t\t\t[985] link 'Banning Words Won\u2019t Make the World More Just - The Atlantic'\n\t\t\tStaticText ''\n\t\t\t[986] link 'theatlantic.com'\n\t\t\t[987] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[989] link 'vaikrunta', expanded=False\n\t\t\t\t\t[990] strong ''\n\t\t\t\t\t\tStaticText 'vaikrunta'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_11h76xc'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[992] time 'March 3, 2023 at 12:25:52 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[993] navigation ''\n\t\t\t\t[994] list ''\n\t\t\t\t\t[995] listitem ''\n\t\t\t\t\t\t[996] link '135 comments'\n\t\t\t\t\t\t\t[997] strong ''\n\t\t\t\t\t\t\t\tStaticText '135 comments'\n\t\t\t[1000] Section ''\n\t\t\t\t[1002] button 'Upvote'\n\t\t\t\tStaticText '722'\n\t\t\t\t[1012] button 'Downvote'\n\t\t[1017] article ''\n\t\t\t[1022] heading 'All Systems Red by Martha Wells'\n\t\t\t\t[1023] link 'All Systems Red by Martha Wells'\n\t\t\t[1024] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[1026] link 'angryscout2', expanded=False\n\t\t\t\t\t[1027] strong ''\n\t\t\t\t\t\tStaticText 'angryscout2'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_yrgfhk'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[1029] time 'November 10, 2022 at 9:21:05 AM EST'\n\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[1030] navigation ''\n\t\t\t\t[1031] list ''\n\t\t\t\t\t[1032] listitem ''\n\t\t\t\t\t\t[1033] link '180 comments'\n\t\t\t\t\t\t\t[1034] strong ''\n\t\t\t\t\t\t\t\tStaticText '180 comments'\n\t\t\t[1037] Section ''\n\t\t\t\t[1039] button 'Upvote'\n\t\t\t\tStaticText '712'\n\t\t\t\t[1049] button 'Downvote'\n\t\t[1054] article ''\n\t\t\t[1059] heading 'Joining the \u201cThe Song of Achilles\u201d Appreciation Club'\n\t\t\t\t[1060] link 'Joining the \u201cThe Song of Achilles\u201d Appreciation Club'\n\t\t\t[1061] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[1063] link 'my-nips-hurt', expanded=False\n\t\t\t\t\t[1064] strong ''\n\t\t\t\t\t\tStaticText 'my-nips-hurt'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 't3_zwlfq6'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText ''\n\t\t\t\t[1066] time 'December 27, 2022 at 12:49:39 PM EST'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1067] navigation ''\n\t\t\t\t[1068] list ''\n\t\t\t\t\t[1069] listitem ''\n\t\t\t\t\t\t[1070] link '117 comments'\n\t\t\t\t\t\t\t[1071] strong ''\n\t\t\t\t\t\t\t\tStaticText '117 comments'\n\t\t\t[1074] Section ''\n\t\t\t\t[1076] button 'Upvote'\n\t\t\t\tStaticText '710'\n\t\t\t\t[1086] button 'Downvote'\n\t\t[1091] navigation ''\n\t\t\t[1092] list ''\n\t\t\t\t[1094] listitem ''\n\t\t\t\t\t[1095] link 'More'\n\t[1097] complementary ''\n\t\t[1098] Section ''\n\t\t\t[1099] heading 'books'\n\t\t\t\t[1100] link 'books'\n\t\t\t[1101] Section ''\n\t\t\t\t[1104] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[1111] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[1112] separator '', orientation='horizontal'\n\t\t\t[1113] list ''\n\t\t\t\t[1114] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[1115] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[1116] listitem ''\n\t\t\t\t\t[1117] link 'Subscribe via RSS'\n\t\t\t\t\t\t[1119] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[1121] group ''\n\t\t\t[1122] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[1128] Section ''\n\t\t\t[1129] heading 'Toolbox'\n\t\t\t[1130] list ''\n\t\t\t\t[1131] listitem ''\n\t\t\t\t\t[1132] link 'Bans'\n\t\t\t\t[1133] listitem ''\n\t\t\t\t\t[1134] link 'Moderation log'\n\t[1135] contentinfo ''\n\t\t[1136] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[1138] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/f/books",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "type [138] [\"Review: To Kill a Mockingbird by Harper Lee\"] [0]",
+				"steps_nb": 6,
+				"reason": "Filling the required title field for the book review submission.",
+				"observation": "RootWebArea 'Create submission', focused\n\t[23] navigation ''\n\t\t[24] link 'Jump to main content'\n\t\t[25] link 'Jump to sidebar'\n\t[26] navigation ''\n\t\t[29] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[39] list ''\n\t\t\t[40] listitem ''\n\t\t\t\t[41] link 'Forums'\n\t\t\t[42] listitem ''\n\t\t\t\t[43] link 'Wiki'\n\t\t[44] Section ''\n\t\t\t[53] searchbox 'Search query'\n\t\t[54] list ''\n\t\t\t[55] listitem ''\n\t\t\t\t[56] link 'Notifications (0)'\n\t\t\t\t\t[59] image ''\n\t\t\t[60] listitem ''\n\t\t\t\t[61] link 'Submit'\n\t\t\t\t\t[64] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[66] listitem ''\n\t\t\t\t[67] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[70] image ''\n\t\t\t\t\t[71] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[112] main ''\n\t\t[113] heading 'Create submission'\n\t\t[114] Section ''\n\t\t\t[120] radio 'URL', checked='true'\n\t\t\t[121] LabelText ''\n\t\t\t\tStaticText 'URL'\n\t\t\t[122] radio 'Image', checked='false'\n\t\t\t[123] LabelText ''\n\t\t\t\tStaticText 'Image'\n\t\t\t[128] textbox ''\n\t\t\t[136] LabelText ''\n\t\t\t\tStaticText 'Title'\n\t\t\t\tStaticText '*'\n\t\t\t[138] textbox 'Title This field is required.', required\n\t\t\t[141] LabelText ''\n\t\t\t\tStaticText 'Body'\n\t\t\t[143] textbox 'Body', describedby='submission_body_help'\n\t\t\t[148] checkbox 'Formatting help +', checked='false'\n\t\t\tStaticText 'Markdown allowed.'\n\t\t\t[150] LabelText ''\n\t\t\t\tStaticText 'Formatting help'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '+'\n\t\t\t[277] LabelText ''\n\t\t\t\tStaticText 'Forum'\n\t\t\t\tStaticText '*'\n\t\t\t[379] combobox 'books' value='books', hasPopup='menu', expanded=False\n\t\t\t\t[380] textbox 'books' value='books'\n\t\t\t\t\tStaticText 'books'\n\t\t\t[396] button 'Create submission'\n\t[400] complementary ''\n\t\t[401] Section ''\n\t\t\t[402] heading 'books'\n\t\t\t\t[403] link 'books'\n\t\t\t[404] Section ''\n\t\t\t\t[407] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[414] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[415] separator '', orientation='horizontal'\n\t\t\t[416] list ''\n\t\t\t\t[417] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[418] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[419] listitem ''\n\t\t\t\t\t[420] link 'Subscribe via RSS'\n\t\t\t\t\t\t[422] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[424] group ''\n\t\t\t[425] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[431] Section ''\n\t\t\t[432] heading 'Toolbox'\n\t\t\t[433] list ''\n\t\t\t\t[434] listitem ''\n\t\t\t\t\t[435] link 'Bans'\n\t\t\t\t[436] listitem ''\n\t\t\t\t\t[437] link 'Moderation log'\n\t[438] contentinfo ''\n\t\t[439] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[441] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit/books",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "type [143] [\"good book!\"] [0]",
+				"steps_nb": 7,
+				"reason": "Entering the review comment into the submission body field.",
+				"observation": "RootWebArea 'Create submission', focused\n\t[23] navigation ''\n\t\t[24] link 'Jump to main content'\n\t\t[25] link 'Jump to sidebar'\n\t[26] navigation ''\n\t\t[29] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[39] list ''\n\t\t\t[40] listitem ''\n\t\t\t\t[41] link 'Forums'\n\t\t\t[42] listitem ''\n\t\t\t\t[43] link 'Wiki'\n\t\t[44] Section ''\n\t\t\t[53] searchbox 'Search query'\n\t\t[54] list ''\n\t\t\t[55] listitem ''\n\t\t\t\t[56] link 'Notifications (0)'\n\t\t\t\t\t[59] image ''\n\t\t\t[60] listitem ''\n\t\t\t\t[61] link 'Submit'\n\t\t\t\t\t[64] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[66] listitem ''\n\t\t\t\t[67] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[70] image ''\n\t\t\t\t\t[71] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[112] main ''\n\t\t[113] heading 'Create submission'\n\t\t[114] Section ''\n\t\t\t[120] radio 'URL', checked='true'\n\t\t\t[121] LabelText ''\n\t\t\t\tStaticText 'URL'\n\t\t\t[122] radio 'Image', checked='false'\n\t\t\t[123] LabelText ''\n\t\t\t\tStaticText 'Image'\n\t\t\t[128] textbox ''\n\t\t\t[136] LabelText ''\n\t\t\t\tStaticText 'Title'\n\t\t\t\tStaticText '*'\n\t\t\t[138] textbox 'Title This field is required.' value='\"Review: To Kill a Mockingbird by Harper Lee\"', focused, required\n\t\t\t\tStaticText '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t[141] LabelText ''\n\t\t\t\tStaticText 'Body'\n\t\t\t[143] textbox 'Body', describedby='submission_body_help'\n\t\t\t[148] checkbox 'Formatting help +', checked='false'\n\t\t\tStaticText 'Markdown allowed.'\n\t\t\t[150] LabelText ''\n\t\t\t\tStaticText 'Formatting help'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '+'\n\t\t\t[277] LabelText ''\n\t\t\t\tStaticText 'Forum'\n\t\t\t\tStaticText '*'\n\t\t\t[379] combobox 'books' value='books', hasPopup='menu', expanded=False\n\t\t\t\t[380] textbox 'books' value='books'\n\t\t\t\t\tStaticText 'books'\n\t\t\t[396] button 'Create submission'\n\t[400] complementary ''\n\t\t[401] Section ''\n\t\t\t[402] heading 'books'\n\t\t\t\t[403] link 'books'\n\t\t\t[404] Section ''\n\t\t\t\t[407] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[414] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[415] separator '', orientation='horizontal'\n\t\t\t[416] list ''\n\t\t\t\t[417] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[418] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[419] listitem ''\n\t\t\t\t\t[420] link 'Subscribe via RSS'\n\t\t\t\t\t\t[422] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[424] group ''\n\t\t\t[425] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[431] Section ''\n\t\t\t[432] heading 'Toolbox'\n\t\t\t[433] list ''\n\t\t\t\t[434] listitem ''\n\t\t\t\t\t[435] link 'Bans'\n\t\t\t\t[436] listitem ''\n\t\t\t\t\t[437] link 'Moderation log'\n\t[438] contentinfo ''\n\t\t[439] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[441] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit/books",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "click [396]",
+				"steps_nb": 8,
+				"reason": "Submit the filled review form to post the comment.",
+				"observation": "RootWebArea 'Create submission', focused\n\t[23] navigation ''\n\t\t[24] link 'Jump to main content'\n\t\t[25] link 'Jump to sidebar'\n\t[26] navigation ''\n\t\t[29] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[39] list ''\n\t\t\t[40] listitem ''\n\t\t\t\t[41] link 'Forums'\n\t\t\t[42] listitem ''\n\t\t\t\t[43] link 'Wiki'\n\t\t[44] Section ''\n\t\t\t[53] searchbox 'Search query'\n\t\t[54] list ''\n\t\t\t[55] listitem ''\n\t\t\t\t[56] link 'Notifications (0)'\n\t\t\t\t\t[59] image ''\n\t\t\t[60] listitem ''\n\t\t\t\t[61] link 'Submit'\n\t\t\t\t\t[64] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[66] listitem ''\n\t\t\t\t[67] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[70] image ''\n\t\t\t\t\t[71] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[112] main ''\n\t\t[113] heading 'Create submission'\n\t\t[114] Section ''\n\t\t\t[120] radio 'URL', checked='true'\n\t\t\t[121] LabelText ''\n\t\t\t\tStaticText 'URL'\n\t\t\t[122] radio 'Image', checked='false'\n\t\t\t[123] LabelText ''\n\t\t\t\tStaticText 'Image'\n\t\t\t[128] textbox ''\n\t\t\t[136] LabelText ''\n\t\t\t\tStaticText 'Title'\n\t\t\t\tStaticText '*'\n\t\t\t[138] textbox 'Title This field is required.' value='\"Review: To Kill a Mockingbird by Harper Lee\"', required\n\t\t\t\tStaticText '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t[141] LabelText ''\n\t\t\t\tStaticText 'Body'\n\t\t\t[143] textbox 'Body' value='\"good book!\"', focused, describedby='submission_body_help'\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t[148] checkbox 'Formatting help +', checked='false'\n\t\t\tStaticText 'Markdown allowed.'\n\t\t\t[150] LabelText ''\n\t\t\t\tStaticText 'Formatting help'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '+'\n\t\t\t[277] LabelText ''\n\t\t\t\tStaticText 'Forum'\n\t\t\t\tStaticText '*'\n\t\t\t[379] combobox 'books' value='books', hasPopup='menu', expanded=False\n\t\t\t\t[380] textbox 'books' value='books'\n\t\t\t\t\tStaticText 'books'\n\t\t\t[396] button 'Create submission'\n\t[400] complementary ''\n\t\t[401] Section ''\n\t\t\t[402] heading 'books'\n\t\t\t\t[403] link 'books'\n\t\t\t[404] Section ''\n\t\t\t\t[407] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[414] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[415] separator '', orientation='horizontal'\n\t\t\t[416] list ''\n\t\t\t\t[417] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[418] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[419] listitem ''\n\t\t\t\t\t[420] link 'Subscribe via RSS'\n\t\t\t\t\t\t[422] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[424] group ''\n\t\t\t[425] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[431] Section ''\n\t\t\t[432] heading 'Toolbox'\n\t\t\t[433] list ''\n\t\t\t\t[434] listitem ''\n\t\t\t\t\t[435] link 'Bans'\n\t\t\t\t[436] listitem ''\n\t\t\t\t\t[437] link 'Moderation log'\n\t[438] contentinfo ''\n\t\t[439] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[441] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit/books",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "type [178] [\"good book!\"] [1]",
+				"steps_nb": 9,
+				"reason": "Entering the review comment into the comment box and submitting it.",
+				"observation": "RootWebArea '\"Review: To Kill a Mockingbird by Harper Lee\"', focused\n\t[27] navigation ''\n\t\t[28] link 'Jump to main content'\n\t\t[29] link 'Jump to sidebar'\n\t[30] navigation ''\n\t\t[33] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[43] list ''\n\t\t\t[44] listitem ''\n\t\t\t\t[45] link 'Forums'\n\t\t\t[46] listitem ''\n\t\t\t\t[47] link 'Wiki'\n\t\t[48] Section ''\n\t\t\t[57] searchbox 'Search query'\n\t\t[58] list ''\n\t\t\t[59] listitem ''\n\t\t\t\t[60] link 'Notifications (0)'\n\t\t\t\t\t[63] image ''\n\t\t\t[64] listitem ''\n\t\t\t\t[65] link 'Submit'\n\t\t\t\t\t[68] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[70] listitem ''\n\t\t\t\t[71] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[74] image ''\n\t\t\t\t\t[75] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[116] main ''\n\t\t[117] navigation ''\n\t\t\t[118] list ''\n\t\t\t\t[119] listitem ''\n\t\t\t\t\t[120] link '/f/books'\n\t\t\t\t\t\t[122] image ''\n\t\t\t\t\t\tStaticText '/f/'\n\t\t\t\t\t\t[124] strong ''\n\t\t\t\t\t\t\tStaticText 'books'\n\t\t[125] article ''\n\t\t\t[130] heading '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t\t[131] link '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t[132] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[134] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[135] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[136] time 'June 4, 2025 at 10:14:57 AM EDT'\n\t\t\t\t\tStaticText '1 second ago'\n\t\t\t\tStaticText 'in'\n\t\t\t\t[137] link 'books'\n\t\t\t\t\t[138] strong ''\n\t\t\t\t\t\tStaticText 'books'\n\t\t\t[141] paragraph ''\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t[142] navigation ''\n\t\t\t\t[143] list ''\n\t\t\t\t\t[144] listitem ''\n\t\t\t\t\t\t[145] link 'No comments'\n\t\t\t\t\t\t\t[146] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[147] listitem ''\n\t\t\t\t\t\t[148] link 'Edit'\n\t\t\t\t\t[149] listitem ''\n\t\t\t\t\t\t[150] Section ''\n\t\t\t\t\t\t\t[152] button 'Delete'\n\t\t\t[154] Section ''\n\t\t\t\t[156] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[166] button 'Downvote'\n\t\t[171] heading 'Comments'\n\t\t[172] Section ''\n\t\t\t[178] textbox 'Comment', required, describedby='reply_to_submission_8_comment_help'\n\t\t\t[183] checkbox 'Formatting help +', checked='false'\n\t\t\tStaticText 'Markdown allowed.'\n\t\t\t[185] LabelText ''\n\t\t\t\tStaticText 'Formatting help'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '+'\n\t\t\t[318] button 'Post'\n\t\t[323] image 'A tense emoji'\n\t\t\tStaticText '(\u30fc\u30fc\u309b)'\n\t\tStaticText \"There's nothing here\u2026\"\n\t[326] complementary ''\n\t\t[327] Section ''\n\t\t\t[328] paragraph ''\n\t\t\t\t[329] strong ''\n\t\t\t\t\tStaticText '1 point'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '(+1, \u22120)'\n\t\t\t[332] heading 'Short URL:'\n\t\t\t[333] paragraph ''\n\t\t\t\tStaticText 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/8'\n\t\t[335] Section ''\n\t\t\t[336] heading 'books'\n\t\t\t\t[337] link 'books'\n\t\t\t[338] Section ''\n\t\t\t\t[341] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[348] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[349] separator '', orientation='horizontal'\n\t\t\t[350] list ''\n\t\t\t\t[351] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[352] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[353] listitem ''\n\t\t\t\t\t[354] link 'Subscribe via RSS'\n\t\t\t\t\t\t[356] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[358] group ''\n\t\t\t[359] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[365] Section ''\n\t\t\t[366] heading 'Toolbox'\n\t\t\t[367] list ''\n\t\t\t\t[368] listitem ''\n\t\t\t\t\t[369] link 'Bans'\n\t\t\t\t[370] listitem ''\n\t\t\t\t\t[371] link 'Moderation log'\n\t[372] contentinfo ''\n\t\t[373] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[375] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/f/books/8/review-to-kill-a-mockingbird-by-harper-lee",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "click [318]",
+				"steps_nb": 10,
+				"reason": "Submit the comment \"good book!\" after typing it into the comment box.",
+				"observation": "RootWebArea '\"Review: To Kill a Mockingbird by Harper Lee\"', focused\n\t[27] navigation ''\n\t\t[28] link 'Jump to main content'\n\t\t[29] link 'Jump to sidebar'\n\t[30] navigation ''\n\t\t[33] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[43] list ''\n\t\t\t[44] listitem ''\n\t\t\t\t[45] link 'Forums'\n\t\t\t[46] listitem ''\n\t\t\t\t[47] link 'Wiki'\n\t\t[48] Section ''\n\t\t\t[57] searchbox 'Search query'\n\t\t[58] list ''\n\t\t\t[59] listitem ''\n\t\t\t\t[60] link 'Notifications (0)'\n\t\t\t\t\t[63] image ''\n\t\t\t[64] listitem ''\n\t\t\t\t[65] link 'Submit'\n\t\t\t\t\t[68] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[70] listitem ''\n\t\t\t\t[71] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[74] image ''\n\t\t\t\t\t[75] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[116] main ''\n\t\t[117] navigation ''\n\t\t\t[118] list ''\n\t\t\t\t[119] listitem ''\n\t\t\t\t\t[120] link '/f/books'\n\t\t\t\t\t\t[122] image ''\n\t\t\t\t\t\tStaticText '/f/'\n\t\t\t\t\t\t[124] strong ''\n\t\t\t\t\t\t\tStaticText 'books'\n\t\t[125] article ''\n\t\t\t[130] heading '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t\t[131] link '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t[132] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[134] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[135] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[136] time 'June 4, 2025 at 10:14:57 AM EDT'\n\t\t\t\t\tStaticText '1 second ago'\n\t\t\t\tStaticText 'in'\n\t\t\t\t[137] link 'books'\n\t\t\t\t\t[138] strong ''\n\t\t\t\t\t\tStaticText 'books'\n\t\t\t[141] paragraph ''\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t[142] navigation ''\n\t\t\t\t[143] list ''\n\t\t\t\t\t[144] listitem ''\n\t\t\t\t\t\t[145] link 'No comments'\n\t\t\t\t\t\t\t[146] strong ''\n\t\t\t\t\t\t\t\tStaticText 'No comments'\n\t\t\t\t\t[147] listitem ''\n\t\t\t\t\t\t[148] link 'Edit'\n\t\t\t\t\t[149] listitem ''\n\t\t\t\t\t\t[150] Section ''\n\t\t\t\t\t\t\t[152] button 'Delete'\n\t\t\t[154] Section ''\n\t\t\t\t[156] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[166] button 'Downvote'\n\t\t[171] heading 'Comments'\n\t\t[172] Section ''\n\t\t\t[178] textbox 'Comment' value='\"good book!\"\\n', focused, required, describedby='reply_to_submission_8_comment_help'\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t\tStaticText ''\n\t\t\t[180] heading 'Preview'\n\t\t\t[386] paragraph ''\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t[183] checkbox 'Formatting help +', checked='false'\n\t\t\tStaticText 'Markdown allowed.'\n\t\t\t[185] LabelText ''\n\t\t\t\tStaticText 'Formatting help'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '+'\n\t\t\t[318] button 'Post'\n\t\t[323] image 'A tense emoji'\n\t\t\tStaticText '(\u30fc\u30fc\u309b)'\n\t\tStaticText \"There's nothing here\u2026\"\n\t[326] complementary ''\n\t\t[327] Section ''\n\t\t\t[328] paragraph ''\n\t\t\t\t[329] strong ''\n\t\t\t\t\tStaticText '1 point'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '(+1, \u22120)'\n\t\t\t[332] heading 'Short URL:'\n\t\t\t[333] paragraph ''\n\t\t\t\tStaticText 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/8'\n\t\t[335] Section ''\n\t\t\t[336] heading 'books'\n\t\t\t\t[337] link 'books'\n\t\t\t[338] Section ''\n\t\t\t\t[341] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[348] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[349] separator '', orientation='horizontal'\n\t\t\t[350] list ''\n\t\t\t\t[351] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[352] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[353] listitem ''\n\t\t\t\t\t[354] link 'Subscribe via RSS'\n\t\t\t\t\t\t[356] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[358] group ''\n\t\t\t[359] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[365] Section ''\n\t\t\t[366] heading 'Toolbox'\n\t\t\t[367] list ''\n\t\t\t\t[368] listitem ''\n\t\t\t\t\t[369] link 'Bans'\n\t\t\t\t[370] listitem ''\n\t\t\t\t\t[371] link 'Moderation log'\n\t[372] contentinfo ''\n\t\t[373] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[375] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/f/books/8/review-to-kill-a-mockingbird-by-harper-lee",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Post a review of my recent reading \"To Kill a Mockingbird by Harper Lee\" in the r/books with my comment \"good book!\".",
+				"action": "stop [Review posted successfully]",
+				"steps_nb": 11,
+				"reason": "The comment \"good book!\" is already visible in the current page observation, indicating the review has been successfully posted.",
+				"observation": "RootWebArea '\"Review: To Kill a Mockingbird by Harper Lee\"', focused\n\t[19] navigation ''\n\t\t[20] link 'Jump to main content'\n\t\t[21] link 'Jump to sidebar'\n\t[22] navigation ''\n\t\t[25] link 'Home'\n\t\t\tStaticText 'Postmill'\n\t\t[35] list ''\n\t\t\t[36] listitem ''\n\t\t\t\t[37] link 'Forums'\n\t\t\t[38] listitem ''\n\t\t\t\t[39] link 'Wiki'\n\t\t[40] Section ''\n\t\t\t[49] searchbox 'Search query'\n\t\t[50] list ''\n\t\t\t[51] listitem ''\n\t\t\t\t[52] link 'Notifications (0)'\n\t\t\t\t\t[55] image ''\n\t\t\t[56] listitem ''\n\t\t\t\t[57] link 'Submit'\n\t\t\t\t\t[60] image ''\n\t\t\t\t\tStaticText 'Submit'\n\t\t\t[62] listitem ''\n\t\t\t\t[63] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t\t[66] image ''\n\t\t\t\t\t[67] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t[108] main ''\n\t\t[109] navigation ''\n\t\t\t[110] list ''\n\t\t\t\t[111] listitem ''\n\t\t\t\t\t[112] link '/f/books'\n\t\t\t\t\t\t[114] image ''\n\t\t\t\t\t\tStaticText '/f/'\n\t\t\t\t\t\t[116] strong ''\n\t\t\t\t\t\t\tStaticText 'books'\n\t\t[117] article ''\n\t\t\t[122] heading '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t\t[123] link '\"Review: To Kill a Mockingbird by Harper Lee\"'\n\t\t\t[124] paragraph ''\n\t\t\t\tStaticText 'Submitted by'\n\t\t\t\t[126] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[127] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\t[128] time 'June 4, 2025 at 10:14:57 AM EDT'\n\t\t\t\t\tStaticText '1 minute ago'\n\t\t\t\tStaticText 'in'\n\t\t\t\t[129] link 'books'\n\t\t\t\t\t[130] strong ''\n\t\t\t\t\t\tStaticText 'books'\n\t\t\t[131] navigation ''\n\t\t\t\t[132] list ''\n\t\t\t\t\t[133] listitem ''\n\t\t\t\t\t\t[134] link '1 comment'\n\t\t\t\t\t\t\t[135] strong ''\n\t\t\t\t\t\t\t\tStaticText '1 comment'\n\t\t\t\t\t\tStaticText '(1 new)'\n\t\t\t\t\t[137] listitem ''\n\t\t\t\t\t\t[138] link 'Edit'\n\t\t\t\t\t[139] listitem ''\n\t\t\t\t\t\t[140] Section ''\n\t\t\t\t\t\t\t[142] button 'Delete'\n\t\t\t[144] Section ''\n\t\t\t\t[146] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[156] button 'Downvote'\n\t\t[166] paragraph ''\n\t\t\tStaticText 'Viewing a single comment thread.'\n\t\t\t[167] link 'View all comments'\n\t\t[168] article ''\n\t\t\t[169] checkbox 'Hide \u2212', checked='true'\n\t\t\t[173] heading 'MarvelsGrantMan136 Original poster wrote 1 second ago'\n\t\t\t\t[175] link 'MarvelsGrantMan136', expanded=False\n\t\t\t\t\t[176] strong ''\n\t\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '['\n\t\t\t\tStaticText 'OP'\n\t\t\t\tStaticText ']'\n\t\t\t\tStaticText 'wrote'\n\t\t\t\t[178] time 'June 4, 2025 at 10:15:32 AM EDT'\n\t\t\t\t\tStaticText '1 second ago'\n\t\t\t[179] list ''\n\t\t\t\t[180] listitem ''\n\t\t\t\t\t[181] LabelText ''\n\t\t\t\t\t\tStaticText 'Hide \u2212'\n\t\t\t[185] paragraph ''\n\t\t\t\tStaticText '\"good book!\"'\n\t\t\t[186] navigation ''\n\t\t\t\t[187] list ''\n\t\t\t\t\t[188] listitem ''\n\t\t\t\t\t\t[189] link 'Reply'\n\t\t\t\t\t\t\t[190] strong ''\n\t\t\t\t\t\t\t\tStaticText 'Reply'\n\t\t\t\t\t[191] listitem ''\n\t\t\t\t\t\t[192] link 'Permalink'\n\t\t\t\t\t[193] listitem ''\n\t\t\t\t\t\t[194] Section ''\n\t\t\t\t\t\t\t[196] button 'Delete'\n\t\t\t\t\t[197] listitem ''\n\t\t\t\t\t\t[198] link 'Edit'\n\t\t\t[350] Section ''\n\t\t\t\t[352] button 'Retract upvote'\n\t\t\t\tStaticText '1'\n\t\t\t\t[362] button 'Downvote'\n\t[367] complementary ''\n\t\t[368] Section ''\n\t\t\t[369] paragraph ''\n\t\t\t\t[370] strong ''\n\t\t\t\t\tStaticText '1 point'\n\t\t\t\tStaticText ''\n\t\t\t\tStaticText '(+1, \u22120)'\n\t\t\t[373] heading 'Short URL:'\n\t\t\t[374] paragraph ''\n\t\t\t\tStaticText 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/8'\n\t\t[376] Section ''\n\t\t\t[377] heading 'books'\n\t\t\t\t[378] link 'books'\n\t\t\t[379] Section ''\n\t\t\t\t[382] button 'Subscribe No subscribers'\n\t\t\t\t\tStaticText 'Subscribe'\n\t\t\t\t\tStaticText '0'\n\t\t\t[389] paragraph ''\n\t\t\t\tStaticText 't5_2qh4i'\n\t\t\t[390] separator '', orientation='horizontal'\n\t\t\t[391] list ''\n\t\t\t\t[392] listitem ''\n\t\t\t\t\tStaticText 'Created'\n\t\t\t\t\t[393] time 'September 30, 2022 at 10:17:55 PM EDT'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t\t[394] listitem ''\n\t\t\t\t\t[395] link 'Subscribe via RSS'\n\t\t\t\t\t\t[397] image ''\n\t\t\t\t\t\tStaticText 'Subscribe via RSS'\n\t\t[399] group ''\n\t\t\t[400] DisclosureTriangle 'Hide this forum', expanded=False\n\t\t[406] Section ''\n\t\t\t[407] heading 'Toolbox'\n\t\t\t[408] list ''\n\t\t\t\t[409] listitem ''\n\t\t\t\t\t[410] link 'Bans'\n\t\t\t\t[411] listitem ''\n\t\t\t\t\t[412] link 'Moderation log'\n\t[413] contentinfo ''\n\t\t[414] paragraph ''\n\t\t\tStaticText 'Running'\n\t\t\t[416] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/f/books/8/review-to-kill-a-mockingbird-by-harper-lee/comment/1",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"create_group",
+						"create_group"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 1.0
+}

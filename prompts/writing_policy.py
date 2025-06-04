@@ -45,8 +45,14 @@ A textual criticism of the previous actions to assess the fulfilment of the task
 OLD GUIDANCE:
 Guidance text from the previous iteration.
 
+Here are some general guidelines to keep in mind for the guidance text:
+ 1) Write a guidance text to be used by a web agent to achieve a specific task.
+ 2) Don't be too specific, your guidance text should generalize to multiple queries
+ 3) Do not mention any specific query in the guidance text. The guidance text should be applicable to a wide range of queries
+ 4) Only give information about the tricky steps of the task-solving process. The agent is capable and independent for simple actions.
+ 5) Change the granularity of your guidance depending on the importance of the action. The more important an action is, the more detailed it needs to be.
 
-You should then respond to me with:
+Adhere strictly to the following YAML output format :
 EXPLAIN:
 Based on FEEDBACK, BREAKDOWN and OLD_GUIDANCE :
 - If the task was a success, identify which actions performed were not part of old guidance. These actions are probably important to correctly solve the task. Is there any missing step in the old guidance or any incorrect step ?
@@ -55,13 +61,6 @@ PLAN:
 Based on the explanation, provide a new step-by-step plan of how to solve the task. If the task was a failure, use a new step-by-step plan based on the proposed new path in the explanation.
 GUIDANCE:
 Based on your plan and explanation, write general directions for the web agent to solve the task. Your guidance should be ordered as bullet points and only include the key actions highlighted in your plan and explanation.
-
-Here are some general guidelines to keep in mind for the guidance text:
- 1) Write a guidance text to be used by a web agent to achieve a specific task.
- 2) Don't be too specific, your guidance text should generalize to multiple queries
- 3) Do not mention any specific query in the guidance text. The guidance text should be applicable to a wide range of queries
- 4) Only give information about the tricky steps of the task-solving process. The agent is capable and independent for simple actions.
- 5) Change the granularity of your guidance depending on the importance of the action. The more important an action is, the more detailed it needs to be.
 """
 
 
@@ -69,14 +68,22 @@ Here are some general guidelines to keep in mind for the guidance text:
 def write_policy(task_name, task_description, query, observation, breakdown, feedback, previous_guidance, initial_observation):
     writing_prompt = f"""
     {writing_system_prompt}
-    TASK NAME: {task_name}
-    TASK DESCRIPTION: "{task_description}"
-    QUERY: {query}
-    INITAL OBSERVATION: {initial_observation}
-    END OBSERVATION: {observation}
-    BREAKDOWN: {breakdown}
-    FEEDBACK: {feedback}
-    OLD GUIDANCE: {previous_guidance}
+    TASK NAME:
+    {task_name}
+    TASK DESCRIPTION:
+    {task_description}
+    QUERY:
+    {query}
+    INITAL OBSERVATION:
+    {initial_observation}
+    END OBSERVATION:
+    {observation}
+    BREAKDOWN:
+    {breakdown}
+    FEEDBACK:
+    {feedback}
+    OLD GUIDANCE:
+    {previous_guidance}
     """
 
     answer = generate_content(writing_prompt)

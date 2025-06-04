@@ -4,6 +4,8 @@ import numpy as np
 import re
 import json
 import os
+import requests
+
 
 from api_keys import gemini_keys, saturn_key, saturn_url
 
@@ -47,9 +49,32 @@ def generate_content_saturn(prompt):
     return response.choices[0].message.content
 
 
+def generate_content_bsc(prompt):
+    url = "http://localhost:8000/v1/chat/completions"
+
+    headers = {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+    }
+
+    data = {
+    "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
+    "messages": [
+        {"role": "system", "content": "detailed thinking on"},
+        {"role": "user", "content": prompt}
+    ],
+    "temperature":0.7,
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+
+    return response.json()["choices"][0]["message"]["content"]
+
+
 def generate_content(prompt):
-    return generate_content_gemini(prompt)
+    # return generate_content_gemini(prompt)
     # return generate_content_saturn(prompt)
+    return generate_content_bsc(prompt)
 
 
 def get_embedding_gemini(prompt):
@@ -94,7 +119,7 @@ def parse_action_call(call):
         else:
             result.append(match[1])
     
-    return result
+    return result[:4]
 
 def print_gym_call(name, arguments):
     return f"""{name}({','.join([f"'{arg}'" for arg in arguments])})"""
@@ -106,8 +131,7 @@ def get_site_type(task_id):
         with open(config_file, 'r') as file:
             data = json.load(file)
     except:
-        if os.path.exists(config_file):
-            return get_site_type(task_id)
+        return get_site_type(task_id)
 
     sites = data.get('sites', [])
     if "wikipedia" in sites:

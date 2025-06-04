@@ -28,9 +28,10 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        name = "dynamic_llama_base_step"
+        name = "dynamic_llama_base_step_new_pol"
+        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=True, improve_policies=True)
         # policies/{name}/last.json
-        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=False, improve_policies=True)
+        # policies/step_policies.json
         iter_nb = 3
         save_library = True
         total_nb = 30
@@ -46,6 +47,7 @@ def main(args):
     remaining_ids = np.setdiff1d(np.arange(812), mandatory_ids)
     random_ids = np.random.choice(remaining_ids, size=total_nb-len(mandatory_ids), replace=False)
     tasks_id = np.concatenate((mandatory_ids, random_ids))
+
 
 
     for iter_id in range(iter_nb):

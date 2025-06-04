@@ -16,6 +16,7 @@ from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prun
 
 from prompts.critique import get_critique
 from prompts.writing_policy import write_policy
+from prompts.get_action import get_action
 
 from utils import *
 
@@ -240,7 +241,9 @@ def extract_actions_and_reasons(json_file_path):
 
 
 file_path = "test.json"  # Replace with your actual file path
-# previous_actions = extract_actions_and_reasons(file_path)
+
+
+previous_actions = extract_actions_and_reasons(file_path)
 
 
 obs = """
@@ -272,7 +275,9 @@ url = """
 http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/byteblaze/a11y-webring.club/-/issues/?sort=title_asc&state=opened&label_name%5B%5D=help%20wanted&first_page_size=20
 """
 
-# get_critique(obj, init_obs, "", previous_actions, init_obs)
+# get_critique(obj, obs, "", previous_actions, init_obs)
+
+# get_action(obj, description, obs, url, previous_actions, "", [])
 
 
 
@@ -304,16 +309,16 @@ The task is a success because the issues are filtered by 'help wanted' and sorte
 """
 
 
-# old_guidance = """
-# Locate the column header (e.g., \"Updated date\") corresponding to the desired sorting criteria.\n*   Click the column header to sort by that criteria. The first click typically sorts in ascending order.\n*   If the desired sort direction is descending, click the *same* column header again to toggle the sort direction.\n*   Stop once the issues are sorted by the specified criteria and in the correct direction. Avoid unnecessary clicks after the desired sorting is achieved.
-# """
+old_guidance = """
+Locate the column header (e.g., \"Updated date\") corresponding to the desired sorting criteria.\n*   Click the column header to sort by that criteria. The first click typically sorts in ascending order.\n*   If the desired sort direction is descending, click the *same* column header again to toggle the sort direction.\n*   Stop once the issues are sorted by the specified criteria and in the correct direction. Avoid unnecessary clicks after the desired sorting is achieved.
+"""
 
 # old_guidance = """
 
 # """
 
 
-# write_policy(task_name, description, query, obs, breakdown, feedback, old_guidance, init_obs)
+write_policy(task_name, description, query, obs, breakdown, feedback, old_guidance, init_obs)
 
 # REVIEW: The navigation started on the issues dashboard. Several attempts were made to open the sorting menu using the "Priority" button, "Sort direction" link, and other interactive elements, but without success. A combobox with project options was clicked. Finally, the issues are filtered by the label "help wanted" by clicking on the 'help wanted' link. After this, the "Title" sort was selected and the sort direction was set to ascending.
 # EXPLAIN: The objective was to filter issues by the "help wanted" label and sort them by title in ascending order. The current URL indicates that the issues are indeed filtered by "help wanted" (label_name%5B%5D=help%20wanted) and sorted by title in ascending order (sort=title_asc). Therefore, the objective has been successfully fulfilled.
@@ -326,4 +331,4 @@ The task is a success because the issues are filtered by 'help wanted' and sorte
 
 
 
-print(generate_content("Hello world"))
+# print(generate_content("Hello world"))

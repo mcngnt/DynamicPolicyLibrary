@@ -55,7 +55,7 @@ class Agent:
 		if self.only_policy:
 			return "stop", ["Only creating policies"], False, True, log_info
 
-
+		
 		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site,k=10)
 		log_info["relevant_policies"] = relevant_policies
 		if len(top_policy["actions"]) > 20:
@@ -80,7 +80,7 @@ class Agent:
 				critique_feedback = get_critique(print_action_call(prev_policy_name, [prev_query]), observation, url, prev_actions, prev_inital_observation)
 				print(f"get_critique feedback : {critique_feedback}\n")
 				log_info["feedback"] = critique_feedback["feedback"]
-				nb_used, nb_failed = self.library.report_use(prev_policy_name, int(critique_feedback["success"]))
+				nb_used, nb_failed = self.library.report_use(prev_policy_name, int('1' in critique_feedback["success"]))
 				if nb_used == nb_failed and nb_used >= 3:
 					self.library.reset(prev_policy_name)
 				else:
