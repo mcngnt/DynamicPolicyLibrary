@@ -1,0 +1,326 @@
+{
+	"created_policies": null,
+	"plan": null,
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "type [145] [CMU Sorrells Library] [1]",
+				"steps_nb": 0,
+				"reason": "Search for CMU Sorrells Library location",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "search_nearest_place",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "search_nearest_place [restaurant near CMU Sorrells Library]",
+				"steps_nb": 1,
+				"reason": "Find closest restaurant to CMU Sorrells Library",
+				"observation": "RootWebArea 'CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[448] status '', live='polite', atomic, relevant='additions text'\n\t\tStaticText 'Loading...'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "type [145] [CMU Sorrells Library] [1]",
+						"steps_nb": 2,
+						"reason": "Center map around CMU Sorrells Library by searching for it",
+						"observation": "RootWebArea 'CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[448] status '', live='polite', atomic, relevant='additions text'\n\t\tStaticText 'Loading...'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [Zoe] [1]\nstop [De Fer Coffee & Tea, La Prima Espresso, Rothberg's Roasters II, Cafe Phipps, La Prima Espresso, Starbucks]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "type [145] [restaurant near Sorrells Library] [1]",
+						"steps_nb": 3,
+						"reason": "Center map around CMU Sorrells Library by searching for it and then searching for the nearest restaurant.",
+						"observation": "RootWebArea 'CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[461] heading 'Search Results'\n\t[463] button 'Close'\n\t[464] heading 'Results from OpenStreetMap Nominatim'\n\t\t[465] link 'OpenStreetMap Nominatim'\n\t[467] list ''\n\t\t[468] listitem ''\n\t\t\tStaticText 'No results found'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [Zoe] [1]\nstop [De Fer Coffee & Tea, La Prima Espresso, Rothberg's Roasters II, Cafe Phipps, La Prima Espresso, Starbucks]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "stop [Hunan Express, Schatz Dining Room, Union Grill, Nourish, El Gallo de Oro, Rose Tea Cafe, Lucca Ristorante, Back Bar Grill, Grano, Beefsteak]",
+						"steps_nb": 4,
+						"reason": "Search is already performed, now stop and provide the list of restaurants.",
+						"observation": "RootWebArea 'restaurant near Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='restaurant near Sorrells Library', focused\n\t\t\tStaticText 'restaurant near Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[470] heading 'Search Results'\n\t[472] button 'Close'\n\t[473] heading 'Results from OpenStreetMap Nominatim'\n\t\t[474] link 'OpenStreetMap Nominatim'\n\t[476] list ''\n\t\t[477] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[478] link 'Hunan Express, 4804, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[479] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[480] link 'Schatz Dining Room, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[481] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[482] link 'Union Grill, 413, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[483] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[484] link 'Nourish, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[485] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[486] link 'El Gallo de Oro, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[487] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[488] link 'Rose Tea Cafe, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[489] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[490] link 'Lucca Ristorante, 317, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[491] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[492] link 'Back Bar Grill, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[493] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[494] link 'Grano, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[495] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[496] link 'Beefsteak, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t[498] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=restaurant%20near%20Sorrells%20Library#map=19/40.44329/-79.94548",
+						"guidance": "You are an AI assistant performing tasks on a web browser. To solve these tasks, you will issue specific actions.\n\nThe actions you can perform fall into several categories:\n\nPage Operation Actions:\n`click [id]`: This action clicks on an element with a specific id on the webpage.\n`type [id] [content] [press_enter_after=0|1]`: Use this to type the content into the field with id. By default, the \"Enter\" key is pressed after typing unless press_enter_after is set to 0.\n\nCompletion Action:\n`stop [answer]`: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as \"N/A\" in the bracket.\n\nExample actions:\nclick [7]\ntype [7] [Zoe] [1]\nstop [De Fer Coffee & Tea, La Prima Espresso, Rothberg's Roasters II, Cafe Phipps, La Prima Espresso, Starbucks]\n\nYou will be provided with the following,\nOBJECTIVE:\nThe goal you need to achieve.\nOBSERVATION:\nA simplified text description of the current browser content, without formatting elements.\nURL:\nThe current webpage URL\nPREVIOUS ACTIONS:\nA list of your past actions\n\nYou need to generate a response in the following format. Please issue only a single action at a time.\nREASON:\nYour reason for selecting the action below\nACTION:\nYour action\n\nPlease follow these instructions to solve the subtask:\n1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.\n\nHere are a few examples:Please issue only a single action at a time.\n    Adhere strictly to the following output format :\n    RESPONSE FORMAT :\n    REASON: ...\n    ACTION: ...\n    \nOBJECTIVE:\n{objective}\nOBSERVATION:\n{observation}\nURL:\n{url}\nPREVIOUS ACTIONS:\n{previous_actions} \n",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a success because the current page displays the search results for \"restaurant near Sorrells Library\", which matches the objective. The key actions to reproduce this outcome are:\n1. Search for \"CMU Sorrells Library\" on OpenStreetMap to center the map around the location.\n2. Update the search query to \"restaurant near Sorrells Library\" to find nearby restaurants.\n3. The search results will display a list of nearby restaurants, achieving the objective of finding the nearest place (restaurant) near CMU Sorrells Library."
+			},
+			{
+				"type": "stop",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "stop [Hunan Express, Schatz Dining Room, Union Grill, Nourish, El Gallo de Oro, Rose Tea Cafe, Lucca Ristorante, Back Bar Grill, Grano, Beefsteak]",
+				"steps_nb": 5,
+				"reason": "Providing list of restaurants",
+				"observation": "RootWebArea 'restaurant near Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='restaurant near Sorrells Library', focused\n\t\t\tStaticText 'restaurant near Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[470] heading 'Search Results'\n\t[472] button 'Close'\n\t[473] heading 'Results from OpenStreetMap Nominatim'\n\t\t[474] link 'OpenStreetMap Nominatim'\n\t[476] list ''\n\t\t[477] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[478] link 'Hunan Express, 4804, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[479] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[480] link 'Schatz Dining Room, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[481] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[482] link 'Union Grill, 413, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[483] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[484] link 'Nourish, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[485] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[486] link 'El Gallo de Oro, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[487] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[488] link 'Rose Tea Cafe, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[489] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[490] link 'Lucca Ristorante, 317, South Craig Street, Schenley Farms Historic District, Bellefield, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[491] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[492] link 'Back Bar Grill, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[493] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[494] link 'Grano, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[495] listitem ''\n\t\t\tStaticText 'Restaurant'\n\t\t\t[496] link 'Beefsteak, 5032, Forbes Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t[498] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=restaurant%20near%20Sorrells%20Library#map=19/40.44329/-79.94548",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 0.0
+}

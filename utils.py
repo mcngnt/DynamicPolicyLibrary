@@ -73,8 +73,8 @@ def generate_content_bsc(prompt):
 
 def generate_content(prompt):
     # return generate_content_gemini(prompt)
-    # return generate_content_saturn(prompt)
-    return generate_content_bsc(prompt)
+    return generate_content_saturn(prompt)
+    # return generate_content_bsc(prompt)
 
 
 def get_embedding_gemini(prompt):

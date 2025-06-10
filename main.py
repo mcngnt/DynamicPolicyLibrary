@@ -28,8 +28,9 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        name = "dynamic_llama_base_step_new_pol"
-        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=True, improve_policies=True)
+        name = "dynamic_llama_base_step"
+        # name = "dynamic_llama_base_step_new_pol"
+        agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=False, improve_policies=True)
         # policies/{name}/last.json
         # policies/step_policies.json
         iter_nb = 3

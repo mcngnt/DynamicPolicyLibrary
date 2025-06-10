@@ -1,0 +1,2360 @@
+{
+	"created_policies": null,
+	"plan": null,
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "type [145] [CMU Sorrells Library] [1]",
+				"steps_nb": 0,
+				"reason": "Search for CMU Sorrells Library location",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "search_nearest_place",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "search_nearest_place [restaurant near CMU Sorrells Library]",
+				"steps_nb": 1,
+				"reason": "Find closest restaurant to CMU Sorrells Library",
+				"observation": "RootWebArea 'CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'No results found'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "type [145] [restaurant near CMU Sorrells Library] [1]",
+						"steps_nb": 2,
+						"reason": "Refine search query",
+						"observation": "RootWebArea 'CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'No results found'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [147]",
+						"steps_nb": 3,
+						"reason": "Submit search query",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='restaurant near CMU Sorrells Library', focused\n\t\t\tStaticText 'restaurant near CMU Sorrells Library'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[458] heading 'Search Results'\n\t[460] button 'Close'\n\t[461] heading 'Results from OpenStreetMap Nominatim'\n\t\t[462] link 'OpenStreetMap Nominatim'\n\t[464] list ''\n\t\t[465] listitem ''\n\t\t\tStaticText 'No results found'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=restaurant%20near%20CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [147]",
+						"steps_nb": 4,
+						"reason": "Submit search query",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='restaurant near CMU Sorrells Library'\n\t\t\tStaticText 'restaurant near CMU Sorrells Library'\n\t\t[147] button 'Go', focused\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[467] heading 'Search Results'\n\t[469] button 'Close'\n\t[470] heading 'Results from OpenStreetMap Nominatim'\n\t\t[471] link 'OpenStreetMap Nominatim'\n\t[474] status '', live='polite', atomic, relevant='additions text'\n\t\tStaticText 'Loading...'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=restaurant%20near%20CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [149]",
+						"steps_nb": 5,
+						"reason": "Find alternative search options",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='restaurant near CMU Sorrells Library'\n\t\t\tStaticText 'restaurant near CMU Sorrells Library'\n\t\t[147] button 'Go', focused\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[477] heading 'Search Results'\n\t[479] button 'Close'\n\t[480] heading 'Results from OpenStreetMap Nominatim'\n\t\t[481] link 'OpenStreetMap Nominatim'\n\t[483] list ''\n\t\t[484] listitem ''\n\t\t\tStaticText 'No results found'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=restaurant%20near%20CMU%20Sorrells%20Library#map=7/42.896/-73.180",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "type [158] [CMU Sorrells Library] [0]",
+						"steps_nb": 6,
+						"reason": "Enter starting location",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 7,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library', focused\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 8,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 9,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 10,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 11,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 12,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 13,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 14,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 15,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 16,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 17,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 18,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 19,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 20,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 21,
+						"reason": "Submit search query to find nearest place",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "type [163] [restaurant] [0]",
+						"steps_nb": 22,
+						"reason": "Refine search query",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "stop [ask not achieved : too many steps.]",
+						"steps_nb": 23,
+						"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='restaurant', focused\n\t\t\tStaticText 'restaurant'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because the current page does not provide a list of nearest restaurants to CMU Sorrells Library. The multiple submissions of the search query by clicking the 'Go' button did not yield the desired result.\n\nNew Plan:\n1. Enter 'CMU Sorrells Library' in the search box and submit the query to ensure the location is recognized.\n2. Use the 'Layers' or 'Search' function to find points of interest, such as restaurants, near the location.\n3. Filter the search results by category, such as 'restaurant', to get a list of nearest places.\n4. Use the map view to visualize the locations and find the nearest restaurant to CMU Sorrells Library.\n5. Consider using a different search query, such as 'restaurants near me' or 'restaurants near CMU Sorrells Library', to get more relevant results."
+			},
+			{
+				"type": "page_op",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "click [171]",
+				"steps_nb": 24,
+				"reason": "Click Go to find directions",
+				"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='restaurant', focused\n\t\t\tStaticText 'restaurant'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "search_nearest_place",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "search_nearest_place [restaurant near CMU Sorrells Library]",
+				"steps_nb": 25,
+				"reason": "Find closest restaurant to CMU Sorrells Library",
+				"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 26,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 27,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 28,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 29,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 30,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 31,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 32,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 33,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 34,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 35,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 36,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 37,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 38,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "stop [N/A]",
+						"steps_nb": 39,
+						"reason": "Repeatedly clicking same button",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because, despite the repeated clicks on the \"Go\" button, the webpage does not display any search results or information about the nearest restaurant to CMU Sorrells Library. The objective of finding the nearest place (a restaurant) was not fulfilled.\n\nNew Plan:\n1. Ensure the correct search query is entered: Verify that \"restaurant near CMU Sorrells Library\" is correctly entered as the search query.\n2. Use the map's search function: Instead of filling in the \"From\" and \"To\" textboxes, try using the map's general search function to find \"restaurants near CMU Sorrells Library.\"\n3. Apply filters or layers for points of interest: Look for options to display points of interest, such as restaurants, on the map.\n4. Check for alternative search tools or websites: If OpenStreetMap does not provide the desired results, consider using other map services or review websites that specialize in locating nearby businesses, such as Google Maps or Yelp."
+			},
+			{
+				"type": "policy",
+				"description": "search_nearest_place",
+				"objective": "Tell me the closest restaurant(s) to CMU Sorrells Library",
+				"action": "search_nearest_place [restaurant near CMU Sorrells Library]",
+				"steps_nb": 40,
+				"reason": "Find closest restaurant to CMU Sorrells Library",
+				"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 41,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 42,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 43,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [restaurant near CMU Sorrells Library]",
+						"action": "click [171]",
+						"steps_nb": 44,
+						"reason": "Initiate search for directions",
+						"observation": "RootWebArea 'restaurant near CMU Sorrells Library | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='CMU Sorrells Library'\n\t\t\tStaticText 'CMU Sorrells Library'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t\tStaticText 'Restaurant, 21, South Bridge Street, Village of Fonda, Town of Mohawk, Montgomery County, New York, 12068, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[485] image ''\n\t[486] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "* To solve the task, first, ensure that the search query is accurate and free of spelling or syntax errors.\n* If the initial search query does not return any results, try refining the query to include more specific keywords or use a different search engine or mapping service.\n* Utilize additional features such as \"Find directions between two points\" to get more specific results.\n* Consider using a different location or landmark as a reference point to get more accurate results.\n* When searching, ensure that the search query is specific and includes all necessary details to get accurate results.\n* If available, use features like \"Near\" or \"Around\" to find points of interest near the specific location.\n* When the search returns a list of elements, return them in a structured format.",
+						"relevant_policies": [
+							[
+								"find_directions",
+								"find_directions"
+							],
+							[
+								"find_order",
+								"find_order"
+							],
+							[
+								"find_customer_review",
+								"find_customer_review"
+							],
+							[
+								"search_customer",
+								"search_customer"
+							],
+							[
+								"search_reviews",
+								"search_reviews"
+							],
+							[
+								"find_user",
+								"find_user"
+							],
+							[
+								"find_commits",
+								"find_commits"
+							],
+							[
+								"list_products",
+								"list_products"
+							],
+							[
+								"search_issues",
+								"search_issues"
+							],
+							[
+								"create_project",
+								"create_project"
+							]
+						]
+					}
+				]
+			}
+		]
+	},
+	"score": 0.0
+}

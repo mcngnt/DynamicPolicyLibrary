@@ -1,0 +1,426 @@
+{
+	"created_policies": null,
+	"plan": null,
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "type [145] [hotels near Carnegie Mellon University Pittsburgh] [1]",
+				"steps_nb": 0,
+				"reason": "Search for hotels near CMU to find their locations.\n\nAfter that, the next steps would involve handling the search results, but since I can only output one action at a time, this is the first step.\n</think>",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "click [149]",
+				"steps_nb": 1,
+				"reason": "Access directions tool to calculate walking distance between hotels and CMU.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='hotels near Carnegie Mellon University Pittsburgh', focused\n\t\t\tStaticText 'hotels near Carnegie Mellon University Pittsburgh'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[449] link 'Mansions On Fifth Hotel, 5105, Fifth Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t\t[450] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[451] link 'Fifth Avenue, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t\t[452] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[453] link 'The Mansion at Maple Heights, Maple Heights Drive, Squirrel Hill North, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t\t[454] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[455] link 'Family House, 5245, Centre Avenue, Bloomfield, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t\t[456] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[457] link 'Courtyard Pittsburgh University Center, 100, Lytton Avenue, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[458] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[459] link 'The Oaklander Hotel, 5130, Bigelow Boulevard, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[460] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[461] link 'Courtyard Pittsburgh Shadyside, 5308, Liberty Avenue, Bloomfield, Pittsburgh, Allegheny County, Pennsylvania, 15224, United States'\n\t\t[462] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[463] link 'Hyatt House Pittsburgh / Bloomfield / Shadyside, 5335, Baum Boulevard, Bloomfield, Pittsburgh, Allegheny County, Pennsylvania, 15224, United States'\n\t\t[464] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[465] link 'Shadyside Inn, 811, South Negley Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t\t[466] listitem ''\n\t\t\tStaticText 'Hotel'\n\t\t\t[467] link 'Quality Inn University Center, Halket Street, Central Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t[469] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=hotels%20near%20Carnegie%20Mellon%20University%20Pittsburgh#map=19/40.44812/-79.93836",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "click [166], REASON: Open route mode selection menu.\n\nThen, after that, click [169] to select Foot.\n\nOnce the mode is Foot, the next steps would involve entering the From and To locations. But how to get the hotel locations? Since the user searched for \"hotels near CMU\", perhaps the map displays those hotels, and there's a way to select them as waypoints. However, the OBSERVATION doesn't show any hotel markers or listings, only the directions form.\n\nAlternatively, maybe the \"From\" and \"To\" fields can be typed. For example, type the hotel name in \"From\" and CMU in \"To\". But without knowing specific hotel names, this is tricky.\n\nWait, the initial search was \"hotels near Carnegie Mellon University Pittsburgh\", so maybe the map shows those hotels. If the user can click on a hotel marker to set as \"From\", but the page elements don't show such markers. The available elements are mostly navigation and the directions form.\n\nGiven the available elements, perhaps the approach is to use the directions form with Foot mode. So first, select Foot as the route mode.\n\nSo the first action is to click on the combobox (ID 166) to open it, then next action to select Foot (ID 169).\n\nBut let's check the elements again. The combobox is ID 166, with options 167 (Bicycle), 168 (Car, selected), 169 (Foot). So clicking on ID 169 would select Foot if the menu is open. But to open the menu, we need to click on the combobox itself (ID 166).\n\nTherefore, the first action should be click [166] to open the menu. Then, the next action would be click [169].\n\nBut since we can only output one action at a time, the current step is to click [166].\n\nSo ACTION: click [166], REASON: Open mode selection to choose walking.\n\nWait, but the user's previous action was click [149], which might have opened the directions panel. Now, the combobox is part of that panel.\n\nYes, so the first step is to open the combobox to select Foot mode.\n</think>",
+				"steps_nb": 2,
+				"reason": "Open route mode selection menu.\n\nThen, after that, click [169] to select Foot.\n\nOnce the mode is Foot, the next steps would involve entering the From and To locations. But how to get the hotel locations? Since the user searched for \"hotels near CMU\", perhaps the map displays those hotels, and there's a way to select them as waypoints. However, the OBSERVATION doesn't show any hotel markers or listings, only the directions form.\n\nAlternatively, maybe the \"From\" and \"To\" fields can be typed. For example, type the hotel name in \"From\" and CMU in \"To\". But without knowing specific hotel names, this is tricky.\n\nWait, the initial search was \"hotels near Carnegie Mellon University Pittsburgh\", so maybe the map shows those hotels. If the user can click on a hotel marker to set as \"From\", but the page elements don't show such markers. The available elements are mostly navigation and the directions form.\n\nGiven the available elements, perhaps the approach is to use the directions form with Foot mode. So first, select Foot as the route mode.\n\nSo the first action is to click on the combobox (ID 166) to open it, then next action to select Foot (ID 169).\n\nBut let's check the elements again. The combobox is ID 166, with options 167 (Bicycle), 168 (Car, selected), 169 (Foot). So clicking on ID 169 would select Foot if the menu is open. But to open the menu, we need to click on the combobox itself (ID 166).\n\nTherefore, the first action should be click [166] to open the menu. Then, the next action would be click [169].\n\nBut since we can only output one action at a time, the current step is to click [166].\n\nSo ACTION: click [166], REASON: Open mode selection to choose walking.\n\nWait, but the user's previous action was click [149], which might have opened the directions panel. Now, the combobox is part of that panel.\n\nYes, so the first step is to open the combobox to select Foot mode.\n</think>",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 3,
+				"reason": "Select walking mode for route calculation.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "type [163] [\"Carnegie Mellon University\"] [1]",
+				"steps_nb": 4,
+				"reason": "Set CMU as the destination for walking distance calculation.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "type [158] [\"hotel near Carnegie Mellon University\"] [1]",
+				"steps_nb": 5,
+				"reason": "Input hotel location to calculate walking distance to CMU.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States', focused\n\t\t\tStaticText 'Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[502] image ''\n\t[503] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "click [171]",
+				"steps_nb": 6,
+				"reason": "Calculate walking route to display distance.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='\"hotel near Carnegie Mellon University\"', focused\n\t\t\tStaticText '\"hotel near Carnegie Mellon University\"'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t\tStaticText 'Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[502] image ''\n\t[503] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Show me the walking distance from nearby hotels to CMU, Pittsburgh that take at most 5 minutes?",
+				"action": "stop [N/A]",
+				"steps_nb": 7,
+				"reason": "Distance element lacks ID; unable to extract value.",
+				"observation": "RootWebArea 'hotels near Carnegie Mellon University Pittsburgh | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='\"hotel near Carnegie Mellon University\"'\n\t\t\tStaticText '\"hotel near Carnegie Mellon University\"'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t\tStaticText 'Carnegie Mellon University, Henry Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15213, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[502] image ''\n\t[503] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44812/-79.93882",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 1.0
+}

@@ -38,6 +38,19 @@ GUIDANCE TEXT:
 A short text to guide you through the task-solving process.
 
 
+Expected output :
+
+ACTION:
+The action you choose to perform in the format action_name [argument_1] ... [argument_n] to make progress at completing the OBJECTIVE
+REASON:
+A very very short explanation of what your action is doing. (No more than 15 words)
+
+Here is an example of what is expected :
+ACTION:
+type [832] [Cooking video empanadas]
+REASON:
+I search for the video to be able to leave a comment
+
 Here are some general guidelines to keep in mind :
 1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
 2. Only use a subroutine action if needed. Page operations action are better for simple tasks.
@@ -48,15 +61,10 @@ Here are some general guidelines to keep in mind :
 
 Please issue only a single action at a time.
 Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
-(Here is an example of what is expected :
 ACTION:
-type [832] [Cooking video empanadas]
+action_name [argument_1] ... [argument_n]
 REASON:
-I search for the video to be able to leave a comment)
-ACTION:
-The action you choose to perform in the format action_name [argument_1] ... [argument_n] to make progress at completing the OBJECTIVE
-REASON:
-A very very short explanation of what your action is doing.
+...
 """
 
 
@@ -101,17 +109,21 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
     answer = generate_content(get_action_prompt)
 
-    result = parse_elements(answer, ["reason", "action"])
 
-    arguments = parse_action_call(result["action"])
+    try:
+        result = parse_elements(answer, ["reason", "action"])
 
-    if not (arguments[0] in possible_actions):
-        print(f"Impossible action : {arguments[0]}\n")
+        arguments = parse_action_call(result["action"])
 
-    is_page_op = arguments[0].lower() in page_op
+        if not (arguments[0] in possible_actions):
+            raise Exception(f"Impossible action : {arguments[0]}\n")
 
-    is_stop = arguments[0].lower() == "stop"
+        is_page_op = arguments[0].lower() in page_op
 
-    action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
+        is_stop = arguments[0].lower() == "stop"
 
-    return action
+        action = {"name":arguments[0], "arguments":arguments[1:], "is_page_op":is_page_op,"is_stop":is_stop, "reason":result["reason"], "call":result["action"]}
+
+        return action
+    except:
+        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies)

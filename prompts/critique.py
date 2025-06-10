@@ -17,8 +17,22 @@ PREVIOUS ACTIONS:
 A list of the past actions, along with their intents during navigation. Be aware that it is only an intent and not always what really happened.
 
 
-Adhere strictly to the following YAML output format :
-(Here is an example:
+Here is the expected output:
+
+EXPLAIN:
+Make a brief summary of the current observation state and the initial observation state. Then, by comparing the current observation with the initial observation, explain why is the task a success or a failure related to the objective. Please be severe in your judgement, current observation needs to perfectly achieve the task.
+SUCCESS:
+Output 1 if it is a success (objective fulfilled), 0 if it is a failure (objective not fulfilled) (output only an int)
+BREAKDOWN:
+Make a long and detailed summary of all the actions taken as an ordered list with redundant actions removed and no page ID mentionned.
+FEEDBACK:
+Based on SUCCESS, explain if the task is a success or a failure and why it is a success or a failure. 
+If it is a success : Describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be precise and given chronologically. Be aware that if two actions seem to achieve the same thing in the breakdown, the latter is probably a key action and the former a mistake.
+If it is a failure : Suggest a new plan as an ordered list that the agent could try instead of the current trajectory to solve the task.
+
+
+Here is an example:
+
 EXPLAIN:
 The INITIAL OBSERVATION showed a dashboard listing 24 issues across various projects, with no explicit "urgent" filter or sorting applied. The CURRENT OBSERVATION displays the `mcngnt-card-project` project’s issues page with the URL `?sort=title_dsc&state=opened&label_name%5B%5D=urgent`, indicating successful filtering for "urgent" labels and sorting by title in descending order. Two matching issues ("Color theme slider" and "WCAG trash panda mode") are listed, confirming the filter. The sort order is explicitly set to "descending" via the `Sort direction` button.
 SUCCESS:  
@@ -39,17 +53,17 @@ Key Actions to Reproduce:
 Notes on Previous Actions: 
 - Redundant clicks on non-functional sort menus (e.g., "Priority") were errors but did not derail the outcome.  
 - The critical step was successfully applying the "urgent" filter and title-based sorting.
-)
+
+
+Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
 EXPLAIN:
-Make a brief summary of the current observation state and the initial observation state. Then, by comparing the current observation with the initial observation, explain why is the task a success or a failure related to the objective. Please be severe in your judgement, current observation needs to perfectly achieve the task.
+Brief summary and explanation
 SUCCESS:
-Output 1 if it is a success (objective fulfilled), 0 if it is a failure (objective not fulfilled) (output only an int)
+1 or 0
 BREAKDOWN:
-Make a long and detailed summary of all the actions taken as an ordered list with redundant actions removed and no page ID mentionned.
+Detailed list summary
 FEEDBACK:
-Based on SUCCESS, explain if the task is a success or a failure and why it is a success or a failure. 
-If it is a success : Describe the key actions that have to be taken to be able to reproduce the same navigation outcome as an ordered list. The key actions need to be precise and given chronologically. Be aware that if two actions seem to achieve the same thing in the breakdown, the latter is probably a key action and the former a mistake.
-If it is a failure : Suggest a new plan as an ordered list that the agent could try instead of the current trajectory to solve the task.
+Key actions or new plan
 """
 
 # Do not include breakdown if failure
