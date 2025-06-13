@@ -4,6 +4,11 @@ import gymnasium as gym
 import browsergym.core
 import browsergym.webarena
 from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, prune_html
+from obs_opt import (
+    prune_tree,
+    translate_node_to_str,
+)
+
 
 
 # Page Operation Actions:
@@ -51,7 +56,38 @@ class WebEnvironment:
 		self.browserenv_env = None
 
 	def observe(self):
-		return flatten_axtree_to_str(self.current_observation["axtree_object"]), self.current_observation["url"], self.current_observation["screenshot"]
+		# print(prune_html(flatten_dom_to_str(self.current_observation["dom_object"])))
+		# 1662 with not visible
+		# 11999 with all
+		# 4259 with only bid
+		tr = flatten_axtree_to_str(self.current_observation["axtree_object"], extra_properties={},filter_visible_only=False, filter_with_bid_only=True)
+		# print(tr)
+		# print(len(tr))
+		return tr, self.current_observation["url"], self.current_observation["screenshot"]
+
+	# def observe(self):
+	# 	# print(self.current_observation.keys())
+	# 	root_node = self.current_observation["axtree_object"]
+	# 	print(root_node)
+	# 	# print(root_node)
+	# 	DOM_root_node = prune_tree(objective="", root_node=root_node, mode="node")
+	# 	DOM_str = translate_node_to_str(node=DOM_root_node, mode="concise")
+	# 	print(DOM_str)
+	# 	return DOM_str, self.current_url, self.current_observation["screenshot"]
+
+	# def observation(self): 
+	# 	self.url = self.webarena_env.page.url
+	# 	if self.global_config and self.global_config.env.prune:
+	# 		root_node = self.obs["text"][1]
+	# 		DOM_root_node = prune_tree(objective=self.objective, root_node=root_node, mode="node")
+	# 		DOM_str = translate_node_to_str(node=DOM_root_node, mode="concise")
+	# 		return {"text": DOM_str, "image": self.obs["image"], "node": DOM_root_node}
+	# 	else:
+	# 		browser_content = self.obs["text"][0]
+	# 		browser_content = browser_content.split("\n")[:self.max_browser_rows] 
+	# 		browser_content = "\n".join(browser_content)
+	# 		return browser_content
+
 
 	def interact(self, action_name, arguments=[]):
 		gym_action_name = action_name

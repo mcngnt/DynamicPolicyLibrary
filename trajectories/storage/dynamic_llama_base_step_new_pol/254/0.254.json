@@ -1,0 +1,93 @@
+{
+	"created_policies": [
+		{
+			"name": "LocateOnMap",
+			"description": "Find the location of a specific place or address on the map",
+			"query": "Western Pennsylvania Hospital"
+		},
+		{
+			"name": "SearchNearby",
+			"description": "Search for specific points of interest near a given location",
+			"query": "Western Pennsylvania Hospital phone number"
+		}
+	],
+	"plan": "Find the location of Western Pennsylvania Hospital on the map | Extract the phone number of Western Pennsylvania Hospital from the map location",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "What is the phone number of Western Pennsylvania Hospital",
+				"action": "type [145] [Western Pennsylvania Hospital] [1]",
+				"steps_nb": 0,
+				"reason": "Search for the hospital location",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What is the phone number of Western Pennsylvania Hospital",
+				"action": "click [449]",
+				"steps_nb": 1,
+				"reason": "Select hospital link for details",
+				"observation": "RootWebArea 'Western Pennsylvania Hospital | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='Western Pennsylvania Hospital', focused\n\t\t\tStaticText 'Western Pennsylvania Hospital'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'Hospital'\n\t\t\t[449] link 'West Penn Hospital, 4800, Friendship Avenue, Bloomfield, Pittsburgh, Allegheny County, Pennsylvania, 15224, United States'\n\t[451] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 m'\n\tStaticText '200 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Western%20Pennsylvania%20Hospital#map=17/40.46102/-79.94595",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "What is the phone number of Western Pennsylvania Hospital",
+				"action": "stop [+1 412 578 5000]",
+				"steps_nb": 2,
+				"reason": "Found phone number",
+				"observation": "RootWebArea 'Way: \\u202aWestern Pennsylvania Hospital\\u202c (\\u202a330151993\\u202c) | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[477] heading 'Way: Western Pennsylvania Hospital (330151993)'\n\t\tStaticText 'Western Pennsylvania Hospital'\n\t\tStaticText '330151993'\n\t[481] button 'Close'\n\t[483] heading 'Version #6'\n\t[484] paragraph ''\n\t\tStaticText '(no comment)'\n\t[485] list ''\n\t\t[486] listitem ''\n\t\t\tStaticText 'Edited'\n\t\t\t[487] Abbr 'Thu, 01 Sep 2022 03:31:48 +0000'\n\t\t\t\tStaticText 'almost 3 years ago'\n\t\t\tStaticText 'by anonymous'\n\t\t[488] listitem ''\n\t\t\tStaticText 'Changeset #'\n\t\t\t[489] link '0'\n\t[490] heading 'Tags'\n\t[491] table ''\n\t\t[492] rowgroup ''\n\t\t\t[493] row ''\n\t\t\t\t[494] rowheader 'addr:city'\n\t\t\t\t\t[495] link 'addr:city'\n\t\t\t\t[496] gridcell 'Pittsburgh'\n\t\t\t[497] row ''\n\t\t\t\t[498] rowheader 'addr:housenumber'\n\t\t\t\t\t[499] link 'addr:housenumber'\n\t\t\t\t[500] gridcell '4800'\n\t\t\t[501] row ''\n\t\t\t\t[502] rowheader 'addr:postcode'\n\t\t\t\t\t[503] link 'addr:postcode'\n\t\t\t\t[504] gridcell '15224'\n\t\t\t[505] row ''\n\t\t\t\t[506] rowheader 'addr:street'\n\t\t\t\t\t[507] link 'addr:street'\n\t\t\t\t[508] gridcell 'Friendship Avenue'\n\t\t\t[509] row ''\n\t\t\t\t[510] rowheader 'alt_name'\n\t\t\t\t\t[511] link 'alt_name'\n\t\t\t\t[512] gridcell 'West Penn Hospital'\n\t\t\t[513] row ''\n\t\t\t\t[514] rowheader 'amenity'\n\t\t\t\t\t[515] link 'amenity'\n\t\t\t\t[516] gridcell 'hospital'\n\t\t\t\t\t[517] link 'hospital'\n\t\t\t[518] row ''\n\t\t\t\t[519] rowheader 'beds'\n\t\t\t\t\t[520] link 'beds'\n\t\t\t\t[521] gridcell '317'\n\t\t\t[522] row ''\n\t\t\t\t[523] rowheader 'emergency'\n\t\t\t\t\t[524] link 'emergency'\n\t\t\t\t[525] gridcell 'yes'\n\t\t\t\t\t[526] link 'yes'\n\t\t\t[527] row ''\n\t\t\t\t[528] rowheader 'gnis:feature_id'\n\t\t\t\t\t[529] link 'gnis:feature_id'\n\t\t\t\t[530] gridcell '1191147'\n\t\t\t[531] row ''\n\t\t\t\t[532] rowheader 'healthcare'\n\t\t\t\t\t[533] link 'healthcare'\n\t\t\t\t[534] gridcell 'hospital'\n\t\t\t\t\t[535] link 'hospital'\n\t\t\t[536] row ''\n\t\t\t\t[537] rowheader 'name'\n\t\t\t\t\t[538] link 'name'\n\t\t\t\t[539] gridcell 'Western Pennsylvania Hospital'\n\t\t\t[540] row ''\n\t\t\t\t[541] rowheader 'opening_hours'\n\t\t\t\t\t[542] link 'opening_hours'\n\t\t\t\t[543] gridcell '24/7'\n\t\t\t\t\t[544] link '24/7'\n\t\t\t[545] row ''\n\t\t\t\t[546] rowheader 'operator'\n\t\t\t\t\t[547] link 'operator'\n\t\t\t\t[548] gridcell 'Allegheny Health Network'\n\t\t\t[549] row ''\n\t\t\t\t[550] rowheader 'phone'\n\t\t\t\t\t[551] link 'phone'\n\t\t\t\t[552] gridcell '+1 412 578 5000'\n\t\t\t\t\t[553] link '+1 412 578 5000'\n\t\t\t[554] row ''\n\t\t\t\t[555] rowheader 'website'\n\t\t\t\t\t[556] link 'website'\n\t\t\t\t[557] gridcell 'https://www.ahn.org/locations/west-penn-hospital'\n\t\t\t\t\t[558] link 'https://www.ahn.org/locations/west-penn-hospital'\n\t\t\t[559] row ''\n\t\t\t\t[560] rowheader 'wikidata'\n\t\t\t\t\t[561] link 'wikidata'\n\t\t\t\t[562] gridcell 'Q7988157'\n\t\t\t\t\t[563] link 'Q7988157'\n\t\t\t[564] row ''\n\t\t\t\t[565] rowheader 'wikipedia'\n\t\t\t\t\t[566] link 'wikipedia'\n\t\t\t\t[567] gridcell 'en:Western Pennsylvania Hospital'\n\t\t\t\t\t[568] link 'en:Western Pennsylvania Hospital'\n\t[569] heading 'Nodes'\n\t[570] group ''\n\t\t[571] DisclosureTriangle '14 nodes', expanded=False\n\t[607] link 'Download XML'\n\tStaticText '\u00b7'\n\t[608] link 'View History'\n\t[609] image ''\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 m'\n\tStaticText '200 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/way/330151993",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 0.0
+}

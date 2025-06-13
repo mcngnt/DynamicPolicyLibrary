@@ -26,7 +26,157 @@ from .utils import (
     png_bytes_to_numpy,
 )
 
-IN_VIEWPORT_RATIO_THRESHOLD = 0.6
+IN_VIEWPORT_RATIO_THRESHOLD = 0.8
+
+class TreeNode:
+    def __init__(self, node_id, role, name, depth, **kwargs):
+        self.visible = True
+        self.node_id = node_id
+        self.role = role
+        self.name = name
+        self.depth = depth
+        self.properties = None
+        if "properties" in kwargs.keys():
+            self.properties = kwargs["properties"]
+
+        self.children = []
+        self.parent = None
+
+    def add_child(self, child):
+        child.parent = self
+        self.children.append(child)
+
+    def copy(self):
+        from copy import deepcopy
+        new_self = deepcopy(self)
+        new_self.children = []
+        new_self.parent = None
+        return new_self
+    
+    def get_visible_node_number(self):
+        visible_ids = []
+
+        def dfs(current_node):
+            if current_node.visible:
+                visible_ids.append(current_node.node_id)
+            for child in current_node.children:
+                dfs(child)
+
+        dfs(self)
+
+        return len(visible_ids)
+    
+    def delete_tree(self):
+        for child in self.children:
+            child.delete_tree()
+        self.children.clear()
+        self.parent = None
+
+    def has_properties(self):
+        return getattr(self, "properties", {})
+    
+    def visible_children(self):
+        return [c for c in self.children if c.visible]
+    
+    def visible_siblings(self):
+        if not self.parent:
+            return []
+        return [n for n in self.parent.children if n.visible and n.node_id != self.node_id]
+    
+    def siblings(self):
+        if not self.parent:
+            return []
+        return [n for n in self.parent.children if n.node_id != self.node_id]
+
+    def search_node_by_id(self, target_id):
+        if self.node_id == target_id or (self.name and f"[{target_id}]" in self.name):
+            return self
+        for child in self.children:
+            result = child.search_node_by_id(target_id)
+            if result:
+                return result
+        return None
+    
+    def all_children_invisible(self):
+        if not self.children:
+            return True
+        for child in self.children:
+            if child.visible:
+                return False
+        return True
+    
+    def has_the_same_properties_as(self, another_node):
+        node_a_has_properties = getattr(self, "properties", "")
+        node_b_has_properties = getattr(another_node, "properties", "")
+        if not node_a_has_properties and not node_b_has_properties:
+            return True
+        elif (node_a_has_properties and not node_b_has_properties) or (not node_a_has_properties and node_b_has_properties):
+            return False
+        else:
+            return self.properties == another_node.properties
+        
+    def is_identical_to(self, another_node):
+        if another_node.children:
+            return False
+        return self.role == another_node.role and self.name == another_node.name and self.has_the_same_properties_as(another_node=another_node)
+        
+    def last_sibling(self, visible_required=False):
+        if not self.parent:
+            return None
+        last_sibling_idx = self.parent.children.index(self) - 1
+        if last_sibling_idx < 0:
+            return None
+        if not visible_required:
+            return self.parent.children[last_sibling_idx]
+        for sibling in self.parent.children[:self.parent.children.index(self):-1]:
+            if sibling.visible:
+                return sibling
+        return None
+        
+    def next_sibling(self, visible_required=False):
+        if not self.parent:
+            return None
+        next_sibling_idx = self.parent.children.index(self) + 1
+        if next_sibling_idx >= len(self.parent.children):
+            return None
+        if not visible_required:
+            return self.parent.children[next_sibling_idx]
+        for sibling in self.parent.children[next_sibling_idx:]:
+            if sibling.visible:
+                return sibling
+        return None
+    
+    def has_identical_siblings(self):
+        if not (self.parent and self.all_children_invisible()):
+            return False
+        if any(sibling.role == self.role and sibling.name == self.name for sibling in self.parent.children if (sibling.node_id != self.node_id and sibling.all_children_invisible())):
+            return True
+        return False
+    
+    def has_identical_surrounding_siblings(self):
+        if self.last_sibling(visible_required=False):
+            if self.is_identical_to(self.last_sibling(visible_required=False)):
+                return True
+        if self.last_sibling(visible_required=True):
+            if self.is_identical_to(self.last_sibling(visible_required=True)):
+                return True
+        if self.next_sibling(visible_required=False):
+            if self.is_identical_to(self.next_sibling(visible_required=False)):
+                return True
+        if self.next_sibling(visible_required=True):
+            if self.is_identical_to(self.next_sibling(visible_required=True)):
+                return True
+        return False
+        
+    def is_differentiable(self, strict=False):
+        if self.parent and self.parent.role == "row":
+            return True
+        if not strict and self.has_identical_siblings():
+            return False
+        if self.has_identical_surrounding_siblings():
+            return False
+        return True
+
 
 
 class ObservationProcessor:

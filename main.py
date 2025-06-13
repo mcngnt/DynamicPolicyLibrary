@@ -28,14 +28,15 @@ def main(args):
 
 
     if args.agent_type == "dynamic":
-        name = "dynamic_llama_base_step"
-        # name = "dynamic_llama_base_step_new_pol"
-        agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=False, improve_policies=True)
+        # name = "dynamic_llama_base_step"
+        name = "dynamic_llama_base_step_new_pol"
+        # agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
+        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=True, improve_policies=True)
         # policies/{name}/last.json
         # policies/step_policies.json
         iter_nb = 3
         save_library = True
-        total_nb = 30
+        total_nb = 40
 
     else:
         agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
@@ -66,7 +67,7 @@ def main(args):
                 observation, url, screenshot = env.observe()
                 name, args, is_page_op, is_final, log_info = agent.get_action(observation, url, screenshot)
                 action_logs += [log_info]
-                dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}")
+                # dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}")
                 if is_page_op:
                     env.interact(name, args)
                 if is_final:
@@ -76,7 +77,7 @@ def main(args):
                         final_answer = "N/A"
                     break    
 
-            print(f"{'-'*10}\nFor the task :\n{objective}\nMy final answer is : {final_answer}\n{'-'*10}\n")
+            print(f"{'-'*10}\nFor the task {task_id}:\n{objective}\nMy final answer is : {final_answer}\n{'-'*10}\n")
             print(f"Final URL : {env.current_url}")
             score = evaluate_task(task_id, env.webarena_actions_history, env.obs_info_history, env.browserenv_env, final_answer)
             print(f"Final score : {score}")

@@ -318,7 +318,7 @@ Locate the column header (e.g., \"Updated date\") corresponding to the desired s
 # """
 
 
-write_policy(task_name, description, query, obs, breakdown, feedback, old_guidance, init_obs)
+# write_policy(task_name, description, query, obs, breakdown, feedback, old_guidance, init_obs)
 
 # REVIEW: The navigation started on the issues dashboard. Several attempts were made to open the sorting menu using the "Priority" button, "Sort direction" link, and other interactive elements, but without success. A combobox with project options was clicked. Finally, the issues are filtered by the label "help wanted" by clicking on the 'help wanted' link. After this, the "Title" sort was selected and the sort direction was set to ascending.
 # EXPLAIN: The objective was to filter issues by the "help wanted" label and sort them by title in ascending order. The current URL indicates that the issues are indeed filtered by "help wanted" (label_name%5B%5D=help%20wanted) and sorted by title in ascending order (sort=title_asc). Therefore, the objective has been successfully fulfilled.
@@ -332,3 +332,4 @@ write_policy(task_name, description, query, obs, breakdown, feedback, old_guidan
 
 
 # print(generate_content("Hello world"))
+

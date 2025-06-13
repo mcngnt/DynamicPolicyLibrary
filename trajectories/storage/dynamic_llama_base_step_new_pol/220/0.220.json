@@ -1,0 +1,549 @@
+{
+	"created_policies": [
+		{
+			"name": "SearchNearby",
+			"description": "Search for specific points of interest near a given location",
+			"query": "hotels near Gardner Steel Conference Center"
+		},
+		{
+			"name": "CalculateRoute",
+			"description": "Calculate the route between two locations and provide the estimated time for walking and driving",
+			"query": "Gardner Steel Conference Center to nearby hotels"
+		}
+	],
+	"plan": "Find nearby hotels | Calculate walking distance to Gardner Steel Conference Center",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "type [145] [Gardner Steel Conference Center] [1]",
+				"steps_nb": 0,
+				"reason": "Search for the conference center location",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [149]",
+				"steps_nb": 1,
+				"reason": "Find directions between two points",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='Gardner Steel Conference Center', focused\n\t\t\tStaticText 'Gardner Steel Conference Center'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'University Building'\n\t\t\t[449] link 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t[451] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Gardner%20Steel%20Conference%20Center#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [168]",
+				"steps_nb": 2,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44446/-79.95822",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "type [158] [nearby hotels] [0]",
+				"steps_nb": 3,
+				"reason": "Search for nearby hotels to get locations.",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44446/-79.95822",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [171]",
+				"steps_nb": 4,
+				"reason": "Get directions from nearby hotels.",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='nearby hotels', focused\n\t\t\tStaticText 'nearby hotels'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44446/-79.95822",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "type [163] [Gardner Steel Conference Center] [0]",
+				"steps_nb": 5,
+				"reason": "Enter destination for walking distance.",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[488] image ''\n\t[489] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44446/-79.95822",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [171]",
+				"steps_nb": 6,
+				"reason": "Get walking directions",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center', focused\n\t\t\tStaticText 'Gardner Steel Conference Center'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go'\n\t\t[174] button 'Reverse Directions'\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[488] image ''\n\t[489] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.44446/-79.95822",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 7,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 8,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 9,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 10,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 11,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 12,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 13,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 14,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 15,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 16,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 17,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 18,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 19,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "click [169]",
+				"steps_nb": 20,
+				"reason": "Select walking direction option",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Show me the walking distance from nearby hotels to Gardner Steel Conference Center, that take at most 5 minutes?",
+				"action": "stop [ask not achieved : too many steps.]",
+				"steps_nb": 21,
+				"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+				"observation": "RootWebArea 'Gardner Steel Conference Center | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[151] Section ''\n\t\t[153] button 'Close'\n\t\t[156] image ''\n\t\t[158] textbox 'From' value='BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t\tStaticText 'BV Homestay Hyde Tower nearby I-City And Jakel, E-29-12, Lorong Keluli 1C, Seksyen 7, Shah Alam, Klang, Selangor, 40000, Malaysia \u0645\u0644\u064a\u0633\u064a\u0627'\n\t\t[161] image ''\n\t\t[163] textbox 'To' value='Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t\tStaticText 'Gardner Steel Conference Center, 130, Thackeray Street, Schenley Farms Historic District, North Oakland, Pittsburgh, Allegheny County, Pennsylvania, 15260, United States'\n\t\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t\t[168] option 'Car (OSRM)', selected=True\n\t\t\t[169] option 'Foot (OSRM)', selected=False\n\t\t[171] button 'Go', focused\n\t\t[174] button 'Reverse Directions'\n\t[490] paragraph ''\n\t\tStaticText \"Couldn't find a route between those two places.\"\n\t[488] image ''\n\t[491] image ''\n\t[489] button 'Marker'\n\t[492] button 'Marker'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '20 m'\n\tStaticText '50 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=3.06447%2C101.48073%3B40.44446%2C-79.95781#map=19/40.44446/-79.95775",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"CalculateRoute",
+						"Calculate the route between two locations and provide the estimated time for walking and driving"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 0.0
+}

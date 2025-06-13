@@ -3,9 +3,9 @@ import json
 from collections import defaultdict
 from utils import *
 
-parent_folder = "trajectories/dynamic_llama_base_step"
+parent_folder = "trajectories/dynamic_llama_base_step_new_pol"
 output_folder = "experiments"
-output_file = os.path.join(output_folder, "dynamic_step.json")
+output_file = os.path.join(output_folder, "dynamic_llama_base_step_new_pol.json")
 
 # Dictionary to store scores per site
 site_scores = defaultdict(list)
@@ -24,7 +24,7 @@ for subfolder in os.listdir(parent_folder):
     # if site == "map":
     #     continue
 
-    json_file = os.path.join(subfolder_path, f"2.{subfolder}.json")
+    json_file = os.path.join(subfolder_path, f"0.{subfolder}.json")
     if os.path.exists(json_file):
         with open(json_file, 'r') as f:
             data = json.load(f)

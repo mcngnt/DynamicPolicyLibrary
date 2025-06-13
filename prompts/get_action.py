@@ -52,12 +52,12 @@ REASON:
 I search for the video to be able to leave a comment
 
 Here are some general guidelines to keep in mind :
-1. A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
-2. Only use a subroutine action if needed. Page operations action are better for simple tasks.
-3. You do not have access to external resources. Limit yourself to the content of the current webpage.
-4. Always refer to specific elements in the page by their ID and not by their name when using page operation actions.
-5. You can't reuse the objective subroutine.
-6. Adhere strictly to your plan. If a part of the plan fails, use stop [N/A] instead of endlessly repeating the same sequence of actions (you can spot such a sequence by looking at PREVIOUS ACTIONS)
+- A subroutine is a high-level function used to perform long-range tasks. A subroutine serves as an abstraction of multiple page operations.
+- You do not have access to external resources. Limit yourself to the content of the current webpage.
+- Always refer to specific elements in the page by their ID and not by their name when using page operation actions.
+- You can't reuse the objective subroutine.
+- I what you want to do fails, use stop [N/A] instead of endlessly repeating the same sequence of actions (you can spot such a sequence by looking at PREVIOUS ACTIONS)
+- Do not try to directly change the url to accomplish the goal. Try using the interface instead of guessing the right url using the searchbar for instance.
 
 Please issue only a single action at a time.
 Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
@@ -80,10 +80,10 @@ def get_action(objective, description, observation, url, previous_actions, guida
     1. Page Operation Actions:
     {page_operations}
 
-    2. Subroutine Actions :
+    2. Subroutine Actions:
     {subroutine_actions_prompt}
 
-    Here are some example page operations :
+    Here are some example actions:
     {example_page_operation}
 
     {get_action_system_prompt}

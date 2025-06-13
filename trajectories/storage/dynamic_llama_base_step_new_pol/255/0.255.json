@@ -1,0 +1,81 @@
+{
+	"created_policies": [
+		{
+			"name": "LocateOnMap",
+			"description": "Find the location of a specific place or address on the map",
+			"query": "PIT airport"
+		},
+		{
+			"name": "SearchNearby",
+			"description": "Search for specific points of interest near a given location",
+			"query": "airport operator"
+		}
+	],
+	"plan": "Find the location of PIT airport on the map | Extract the operator information of the located airport",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Who is the operator of PIT airport",
+				"action": "type [145] [PIT airport] [1]",
+				"steps_nb": 0,
+				"reason": "Search for PIT airport on OpenStreetMap",
+				"observation": "RootWebArea 'OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search', focused\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[187] heading 'Welcome to OpenStreetMap!'\n\t[189] button 'Close'\n\t[191] paragraph ''\n\t\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n\t[192] paragraph ''\n\t\tStaticText 'Hosting is supported by'\n\t\t[193] link 'UCL'\n\t\tStaticText ','\n\t\t[194] link 'Fastly'\n\t\tStaticText ','\n\t\t[195] link 'Bytemark Hosting'\n\t\tStaticText ', and other'\n\t\t[196] link 'partners'\n\t\tStaticText '.'\n\t[199] link 'Learn More'\n\t[201] link 'Start Mapping'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '50 km'\n\tStaticText '50 mi'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Who is the operator of PIT airport",
+				"action": "click [449]",
+				"steps_nb": 1,
+				"reason": "Get Pittsburgh airport details",
+				"observation": "RootWebArea 'PIT airport | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[145] textbox 'Search' value='PIT airport', focused\n\t\t\tStaticText 'PIT airport'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[441] heading 'Search Results'\n\t[443] button 'Close'\n\t[444] heading 'Results from OpenStreetMap Nominatim'\n\t\t[445] link 'OpenStreetMap Nominatim'\n\t[447] list ''\n\t\t[448] listitem ''\n\t\t\tStaticText 'Aerodrome'\n\t\t\t[449] link 'Pittsburgh International Airport, Airport Expressway, Findlay Township, Allegheny County, Pennsylvania, 15231, United States'\n\t[451] link 'More results'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '500 m'\n\tStaticText '2000 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=PIT%20airport#map=14/40.4918/-80.2421",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Who is the operator of PIT airport",
+				"action": "stop [Allegheny County Airport Authority]",
+				"steps_nb": 2,
+				"reason": "Found operator in table row.",
+				"observation": "RootWebArea 'Way: \\u202aPittsburgh International Airport\\u202c (\\u202a209051849\\u202c) | OpenStreetMap', focused\n\t[44] banner ''\n\t\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\t\tStaticText ''\n\t\t[51] navigation ''\n\t\t\t[95] link 'Edit'\n\t\t\t[96] button ''\n\t\t\t[102] link 'History'\n\t\t\t[103] link 'Export'\n\t\t[104] navigation ''\n\t\t\t[105] list ''\n\t\t\t\t[106] listitem ''\n\t\t\t\t\t[107] link 'GPS Traces'\n\t\t\t\t[108] listitem ''\n\t\t\t\t\t[109] link 'User Diaries'\n\t\t\t\t[110] listitem ''\n\t\t\t\t\t[111] link 'Communities'\n\t\t\t\t[112] listitem ''\n\t\t\t\t\t[113] link 'Copyright'\n\t\t\t\t[114] listitem ''\n\t\t\t\t\t[115] link 'Help'\n\t\t\t\t[116] listitem ''\n\t\t\t\t\t[117] link 'About'\n\t\t\t[134] link 'Log In'\n\t\t\t[135] link 'Sign Up'\n\t[139] Section ''\n\t\t[144] link 'Where is this?'\n\t\t[145] textbox 'Search'\n\t\t[147] button 'Go'\n\t\t[149] link 'Find directions between two points'\n\t\t\t[150] image ''\n\t[469] heading 'Way: Pittsburgh International Airport (209051849)'\n\t\tStaticText 'Pittsburgh International Airport'\n\t\tStaticText '209051849'\n\t[473] button 'Close'\n\t[475] heading 'Version #23'\n\t[476] paragraph ''\n\t\tStaticText '(no comment)'\n\t[477] list ''\n\t\t[478] listitem ''\n\t\t\tStaticText 'Edited'\n\t\t\t[479] Abbr 'Sat, 16 Jul 2022 04:27:04 +0000'\n\t\t\t\tStaticText 'almost 3 years ago'\n\t\t\tStaticText 'by anonymous'\n\t\t[480] listitem ''\n\t\t\tStaticText 'Changeset #'\n\t\t\t[481] link '0'\n\t[482] heading 'Tags'\n\t[483] table ''\n\t\t[484] rowgroup ''\n\t\t\t[485] row ''\n\t\t\t\t[486] rowheader 'addr:state'\n\t\t\t\t\t[487] link 'addr:state'\n\t\t\t\t[488] gridcell 'PA'\n\t\t\t[489] row ''\n\t\t\t\t[490] rowheader 'aerodrome:type'\n\t\t\t\t\t[491] link 'aerodrome:type'\n\t\t\t\t[492] gridcell 'military/public'\n\t\t\t[493] row ''\n\t\t\t\t[494] rowheader 'aeroway'\n\t\t\t\t\t[495] link 'aeroway'\n\t\t\t\t[496] gridcell 'aerodrome'\n\t\t\t\t\t[497] link 'aerodrome'\n\t\t\t[498] row ''\n\t\t\t\t[499] rowheader 'alt_name'\n\t\t\t\t\t[500] link 'alt_name'\n\t\t\t\t[501] gridcell 'Greater Pittsburgh International Airport'\n\t\t\t[502] row ''\n\t\t\t\t[503] rowheader 'ele'\n\t\t\t\t\t[504] link 'ele'\n\t\t\t\t[505] gridcell '356'\n\t\t\t[506] row ''\n\t\t\t\t[507] rowheader 'gnis:county_name'\n\t\t\t\t[508] gridcell 'Allegheny'\n\t\t\t[509] row ''\n\t\t\t\t[510] rowheader 'gnis:created'\n\t\t\t\t[511] gridcell '08/30/1990'\n\t\t\t[512] row ''\n\t\t\t\t[513] rowheader 'gnis:feature_id'\n\t\t\t\t\t[514] link 'gnis:feature_id'\n\t\t\t\t[515] gridcell '1194003'\n\t\t\t[516] row ''\n\t\t\t\t[517] rowheader 'gnis:feature_type'\n\t\t\t\t[518] gridcell 'Airport'\n\t\t\t[519] row ''\n\t\t\t\t[520] rowheader 'iata'\n\t\t\t\t\t[521] link 'iata'\n\t\t\t\t[522] gridcell 'PIT'\n\t\t\t[523] row ''\n\t\t\t\t[524] rowheader 'icao'\n\t\t\t\t\t[525] link 'icao'\n\t\t\t\t[526] gridcell 'KPIT'\n\t\t\t[527] row ''\n\t\t\t\t[528] rowheader 'is_in'\n\t\t\t\t\t[529] link 'is_in'\n\t\t\t\t[530] gridcell 'Findlay Township, Pennsylvania'\n\t\t\t[531] row ''\n\t\t\t\t[532] rowheader 'name'\n\t\t\t\t\t[533] link 'name'\n\t\t\t\t[534] gridcell 'Pittsburgh International Airport'\n\t\t\t[535] row ''\n\t\t\t\t[536] rowheader 'name:en'\n\t\t\t\t\t[537] link 'name:en'\n\t\t\t\t[538] gridcell 'Pittsburgh International Airport'\n\t\t\t[539] row ''\n\t\t\t\t[540] rowheader 'operator'\n\t\t\t\t\t[541] link 'operator'\n\t\t\t\t[542] gridcell 'Allegheny County Airport Authority'\n\t\t\t[543] row ''\n\t\t\t\t[544] rowheader 'source'\n\t\t\t\t\t[545] link 'source'\n\t\t\t\t[546] gridcell 'wikipedia'\n\t\t\t[547] row ''\n\t\t\t\t[548] rowheader 'source_ref'\n\t\t\t\t\t[549] link 'source_ref'\n\t\t\t\t[550] gridcell 'geonames.usgs.gov'\n\t\t\t[551] row ''\n\t\t\t\t[552] rowheader 'website'\n\t\t\t\t\t[553] link 'website'\n\t\t\t\t[554] gridcell 'http://www.flypittsburgh.com/'\n\t\t\t\t\t[555] link 'http://www.flypittsburgh.com/'\n\t\t\t[556] row ''\n\t\t\t\t[557] rowheader 'wikidata'\n\t\t\t\t\t[558] link 'wikidata'\n\t\t\t\t[559] gridcell 'Q1421504'\n\t\t\t\t\t[560] link 'Q1421504'\n\t\t\t[561] row ''\n\t\t\t\t[562] rowheader 'wikipedia'\n\t\t\t\t\t[563] link 'wikipedia'\n\t\t\t\t[564] gridcell 'en:Pittsburgh International Airport'\n\t\t\t\t\t[565] link 'en:Pittsburgh International Airport'\n\t[566] heading 'Nodes'\n\t[567] group ''\n\t\t[568] DisclosureTriangle '224 nodes', expanded=False\n\t[1211] link 'Download XML'\n\tStaticText '\u00b7'\n\t[1212] link 'View History'\n\t[394] link 'Zoom In'\n\t[396] link 'Zoom Out'\n\t[399] button 'Show My Location'\n\t[402] link 'Layers'\n\t[405] link ''\n\t[408] link 'Share'\n\t[411] link ''\n\t[414] link ''\n\tStaticText '500 m'\n\tStaticText '2000 ft'\n\tStaticText '\u00a9'\n\t[422] link 'OpenStreetMap contributors'\n\tStaticText '\u2665'\n\t[423] link 'Make a Donation'\n\tStaticText '.'\n\t[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/way/209051849",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"SearchNearby",
+						"Search for specific points of interest near a given location"
+					],
+					[
+						"LocateOnMap",
+						"Find the location of a specific place or address on the map"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 1.0
+}
