@@ -3,11 +3,15 @@ import json
 from collections import defaultdict
 from utils import *
 
-parent_folder = "trajectories/dynamic_llama_base_step_new_pol"
+# name = "dynamic_llama_base_step_new_pol"
+name = "base"
+parent_folder = f"trajectories/{name}"
 output_folder = "experiments"
-output_file = os.path.join(output_folder, "dynamic_llama_base_step_new_pol.json")
+output_file = os.path.join(output_folder, f"{name}.json")
 
-# Dictionary to store scores per site
+title = "Single LLM"
+
+
 site_scores = defaultdict(list)
 
 for subfolder in os.listdir(parent_folder):
@@ -21,7 +25,7 @@ for subfolder in os.listdir(parent_folder):
         continue  # skip folders that aren't task IDs
 
     site = get_site_type(task_id)
-    # if site == "map":
+    # if si te == "map":
     #     continue
 
     json_file = os.path.join(subfolder_path, f"0.{subfolder}.json")
@@ -32,27 +36,26 @@ for subfolder in os.listdir(parent_folder):
             if score is not None:
                 site_scores[site].append(score)
 
-# Compute average scores per site
+
 result = {}
 all_scores = []
 
 for site, scores in site_scores.items():
     all_scores.extend(scores)
     result[site] = {
-        "average_score": sum(scores) / len(scores),
-        "num_trajectories": len(scores)
+        "score": sum(scores) / len(scores),
+        "nb": len(scores)
     }
 
-# Add overall score
 if all_scores:
     result["overall"] = {
-        "average_score": sum(all_scores) / len(all_scores),
-        "num_trajectories": len(all_scores)
+        "score": sum(all_scores) / len(all_scores),
+        "nb": len(all_scores)
     }
 
-# Create output directory if it doesn't exist
+result["title"] = title
+
 os.makedirs(output_folder, exist_ok=True)
 
-# Save to step.json
 with open(output_file, "w") as f:
     json.dump(result, f, indent=4)

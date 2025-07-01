@@ -1,0 +1,1165 @@
+{
+	"created_policies": [
+		{
+			"name": "search_nearest_place",
+			"description": "Search for a specific location on the map",
+			"query": "CVS"
+		},
+		{
+			"name": "find_directions",
+			"description": "Find the directions between two points on the map",
+			"query": "UPMC Shadyside to CVS"
+		}
+	],
+	"plan": "Find the location of CVS and UPMC Shadyside on the map | Calculate the walking distance between the two locations",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "type [145] [CVS] [0]",
+				"steps_nb": 0,
+				"reason": "Search for CVS location",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [147]",
+				"steps_nb": 1,
+				"reason": "Submit search for CVS location",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='CVS', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [149]",
+				"steps_nb": 2,
+				"reason": "Find directions between two points",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='CVS'\n\t[147] button 'Go', focused\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[441] heading 'Search Results'\n[443] button 'Close'\n[444] heading 'Results from OpenStreetMap Nominatim'\n\t[445] link 'OpenStreetMap Nominatim'\n[448] status '', live='polite', atomic, relevant='additions text'\n\tStaticText 'Loading...'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=CVS#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "type [158] [UPMC Shadyside] [0]",
+				"steps_nb": 3,
+				"reason": "Enter destination location",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.68140/-73.84230",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "type [163] [CVS] [0]",
+				"steps_nb": 4,
+				"reason": "Enter CVS as starting point",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.68140/-73.84230",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [171]",
+				"steps_nb": 5,
+				"reason": "Start calculating directions",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS', focused\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[509] image ''\n[510] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=19/40.68140/-73.84230",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 6,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 7,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 8,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 9,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 10,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 11,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 12,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 13,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 14,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 15,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 16,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 17,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 18,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 19,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "click [169]",
+				"steps_nb": 20,
+				"reason": "Select walking option",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Measure distance between CVS (closet one) and UPMC Shadyside by walking",
+				"action": "stop [ask not achieved : too many steps.]",
+				"steps_nb": 21,
+				"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='UPMC Shadyside, 5230, Centre Avenue, Shadyside, Pittsburgh, Allegheny County, Pennsylvania, 15232, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='CVS Pharmacy, 97-01, Liberty Avenue, Ozone Park, Queens, Queens County, City of New York, New York, 11417, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[511] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[509] image ''\n[512] image ''\n[510] button 'Marker'\n[513] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '20 m'\nStaticText '50 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.45534%2C-79.93979%3B40.68139%2C-73.84183#map=19/40.68140/-73.84183",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"extract_zip_code",
+						"Extract a specific detail from a located place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_order",
+						"search_order"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 0.0
+}

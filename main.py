@@ -1,7 +1,8 @@
 
 from web_environment import WebEnvironment
 from agent import Agent
-from step.step_agent import StepAgent
+from baseline.step_agent import StepAgent
+from baseline.base_agent import BaseAgent
 from logger import dump_log
 import json
 import os
@@ -20,29 +21,29 @@ def main(args):
 
     print(f"Running with agent_type = {args.agent_type}")
 
-    # tasks_id = [45, 46, 102, 103, 104, 106, 132, 134, 136]
-
-    # tasks_id = np.random.choice(812, size=100, replace=False)
-
     env = WebEnvironment()
 
-
-    if args.agent_type == "dynamic":
-        # name = "dynamic_llama_base_step"
-        name = "dynamic_llama_base_step_new_pol"
-        # agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
-        agent = Agent(name=name, policy_library_path=f"policies/step_policies.json", generate_new_policies=True, improve_policies=True)
-        # policies/{name}/last.json
-        # policies/step_policies.json
-        iter_nb = 3
-        save_library = True
-        total_nb = 40
-
-    else:
-        agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
-        iter_nb = 1
-        save_library = False
-        total_nb = 100
+    
+    match args.agent_type:
+        case "dynamic":
+             # name = "dynamic_llama_base_step"
+            name = "dynamic_llama_base_step_new_pol"
+            agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
+            iter_nb = 3
+            save_library = True
+            total_nb = 30
+        case "step":
+            agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
+            iter_nb = 1
+            save_library = False
+            total_nb = 100
+        case "base":
+            agent = BaseAgent(name="base")
+            iter_nb = 1
+            save_library = False
+            total_nb = 50
+        case default:
+            raise Exception("Wrong agent type.")
 
 
     mandatory_ids = [int(name) for name in os.listdir(f"trajectories/{agent.name}")] if os.path.exists(f"trajectories/{agent.name}") else []
@@ -50,10 +51,11 @@ def main(args):
     random_ids = np.random.choice(remaining_ids, size=total_nb-len(mandatory_ids), replace=False)
     tasks_id = np.concatenate((mandatory_ids, random_ids))
 
-
+    counter = 0
 
     for iter_id in range(iter_nb):
         for task_id in tasks_id:
+            counter += 1
             task_id = int(task_id)
             if os.path.exists(f"trajectories/{agent.name}/{task_id}/{iter_id}.{task_id}.json"):
                 continue
@@ -63,11 +65,10 @@ def main(args):
             agent.load(objective, observation, site)
             final_answer = ""
             action_logs = []
-            for i in range(45):
+            for i in range(30):
                 observation, url, screenshot = env.observe()
                 name, args, is_page_op, is_final, log_info = agent.get_action(observation, url, screenshot)
                 action_logs += [log_info]
-                # dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}")
                 if is_page_op:
                     env.interact(name, args)
                 if is_final:
@@ -83,7 +84,7 @@ def main(args):
             print(f"Final score : {score}")
             dump_log(action_logs, f"trajectories/{agent.name}/{task_id}/", f"{iter_id}.{task_id}", score)
             if save_library:
-                agent.library.save(f"policies/{agent.name}/", f"{iter_id}.{task_id}")
+                agent.library.save(f"policies/{agent.name}/", f"{counter}.{iter_id}.{task_id}")
                 agent.library.save(f"policies/{agent.name}/", f"last")
 
 
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--agent_type",
         type=str,
-        choices=["dynamic", "step"],
+        choices=["dynamic", "step", "base"],
         default="dynamic",
     )
     args = parser.parse_args()

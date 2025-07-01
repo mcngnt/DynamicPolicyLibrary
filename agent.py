@@ -7,8 +7,8 @@ from prompts.critique import get_critique
 from prompts.get_policy import get_policy
 
 class Agent:
-	def __init__(self,name="default", policy_library_path=None, only_policy=False, generate_new_policies=True, improve_policies=True):
-		self.library = PolicyLibrary(path=policy_library_path)
+	def __init__(self,name="default", policy_library_path=None, only_policy=False, generate_new_policies=True, improve_policies=True, default_policy_library_path="policies/step_policies.json"):
+		self.library = PolicyLibrary(path=policy_library_path, default_path=default_policy_library_path)
 		self.objective = None
 		self.trajectory = None
 		self.policy_stack = None

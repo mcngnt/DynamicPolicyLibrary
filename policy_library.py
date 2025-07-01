@@ -5,12 +5,16 @@ from datetime import datetime
 from utils import *
 
 class PolicyLibrary:
-    def __init__(self, path=None):
+    def __init__(self, path=None, default_path=None):
         self.policies = {}
-        self.usage_stats = {}  # Track usage and failure counts per policy
-        if path is None or not (os.path.exists(path)):
-            return    
-        self.load(path)
+        self.usage_stats = {}
+        if path is not None and os.path.exists(path):
+            self.load(path)
+        else:
+            if default_path is not None and os.path.exists(default_path):
+                self.load(default_path)
+            else:
+                return
 
     def update(self, name, description, content="", site=None):
         embedding = get_embedding(description)
@@ -80,6 +84,7 @@ class PolicyLibrary:
     def load(self, path):
         with open(path, "r") as f:
             data = json.load(f)
+        print(f"Loaded policy library from {path}.")
         self.policies = {
             tuple(np.array(list(map(float, item["embedding"].split(", "))))): 
             (item["name"], item["description"], item["content"], item["site"]) 

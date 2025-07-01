@@ -1,0 +1,437 @@
+{
+	"created_policies": [
+		{
+			"name": "search_nearest_place",
+			"description": "Search for a location on the map",
+			"query": "New York City"
+		},
+		{
+			"name": "find_directions",
+			"description": "Find the directions between two points on the map",
+			"query": "New York City, Maine \n\nNote: Since \"the big apple\" is a nickname for New York City, I've used that as the query for the first subtask. For the second subtask, I've assumed that the biggest city in Maine is being referred to, which is likely Portland, but since that information is not provided, I've used \"Maine\" as the query to find the biggest city, and then used \"New York City, Maine\" as a temporary query for the find_directions subroutine, which will be updated once the correct location of the biggest city in Maine is found. \n\nHowever, a better approach would be to first find the biggest city in Maine, and then use that information to find the directions. \n\nA better plan would be:"
+		}
+	],
+	"plan": "Find the location of the big apple and the biggest city in Maine | Find the path and travel time between the two locations",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "click [149]",
+				"steps_nb": 0,
+				"reason": "Find directions between two points",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "type [158] [New York City] [0]",
+				"steps_nb": 1,
+				"reason": "Enter starting point",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "type [163] [Portland, Maine] [1]",
+				"steps_nb": 2,
+				"reason": "Enter destination point",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='New York City', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "click [171]",
+				"steps_nb": 3,
+				"reason": "Get route between two places.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='City of New York, New York, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Portland, Cumberland County, Maine, United States', focused\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[442] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[440] image ''\n[451] image ''\n[441] button 'Marker'\n[452] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.713%2C-74.006%3B43.657%2C-70.259#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "click [171]",
+				"steps_nb": 4,
+				"reason": "Get route between two points again",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='City of New York, New York, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Portland, Cumberland County, Maine, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[453] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[440] image ''\n[451] image ''\n[441] button 'Marker'\n[452] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.713%2C-74.006%3B43.657%2C-70.259",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "click [171]",
+				"steps_nb": 5,
+				"reason": "Get route between two points again",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='City of New York, New York, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Portland, Cumberland County, Maine, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[454] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[440] image ''\n[451] image ''\n[441] button 'Marker'\n[452] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.713%2C-74.006%3B43.657%2C-70.259",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "click [171]",
+				"steps_nb": 6,
+				"reason": "Get route between two points again",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='City of New York, New York, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Portland, Cumberland County, Maine, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[455] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[440] image ''\n[451] image ''\n[441] button 'Marker'\n[452] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.713%2C-74.006%3B43.657%2C-70.259",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Show me the path and travel time from the big apple to biggest city in Maine.",
+				"action": "stop [N/A]",
+				"steps_nb": 7,
+				"reason": "Failed to find route between cities.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='City of New York, New York, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Portland, Cumberland County, Maine, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[456] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[440] image ''\n[451] image ''\n[441] button 'Marker'\n[452] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=40.713%2C-74.006%3B43.657%2C-70.259",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 1.0
+}

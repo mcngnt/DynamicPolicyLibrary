@@ -1,0 +1,125 @@
+{
+	"created_policies": [
+		{
+			"name": "search_nearest_place",
+			"description": "Search for a location on the map",
+			"query": "Yale University"
+		},
+		{
+			"name": "find_directions",
+			"description": "Find the directions or details of a specific location",
+			"query": "Yale University"
+		}
+	],
+	"plan": "Find the location of Yale University on the map | Extract the zip code of the located university",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "What is the zip code of Yale University?",
+				"action": "type [145] [Yale University] [1]",
+				"steps_nb": 0,
+				"reason": "Search for Yale University location",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "What is the zip code of Yale University?",
+				"action": "stop [06516]",
+				"steps_nb": 1,
+				"reason": "Found zip code in search results",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Yale University', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[441] heading 'Search Results'\n[443] button 'Close'\n[444] heading 'Results from OpenStreetMap Nominatim'\n\t[445] link 'OpenStreetMap Nominatim'\n[447] list ''\n\t[448] listitem ''\n\t\tStaticText 'University'\n\t\t[449] link 'Yale University, West Haven, South Central Connecticut Planning Region, Connecticut, 06516, United States'\n[451] link 'More results'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '1 km'\nStaticText '3000 ft'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Yale%20University#map=13/41.2900/-72.9588",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_order",
+						"find_order"
+					],
+					[
+						"find_user",
+						"find_user"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"list_products",
+						"list_products"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 1.0
+}
