@@ -57,13 +57,24 @@ def generate_content_bsc(prompt):
         "Content-Type": "application/json"
     }
 
+    # data = {
+    # "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
+    # "messages": [
+    #     {"role": "system", "content": "detailed thinking on"},
+    #     {"role": "user", "content": prompt}
+    # ],
+    # "temperature":0.7,
+    # }
+
     data = {
-    "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
+    "model": "/gpfs/scratch/shared/ai-hub/models/text-models/Llama-3.3-70B-Instruct",
     "messages": [
-        {"role": "system", "content": "detailed thinking on"},
-        {"role": "user", "content": prompt}
+        {
+            "role": "user",
+            "content": prompt
+        }
     ],
-    "temperature":0.7,
+    "temperature":0.8,
     }
 
     response = requests.post(url, headers=headers, json=data)
@@ -71,10 +82,11 @@ def generate_content_bsc(prompt):
     return response.json()["choices"][0]["message"]["content"]
 
 
+
 def generate_content(prompt):
     # return generate_content_gemini(prompt)
-    return generate_content_saturn(prompt)
-    # return generate_content_bsc(prompt)
+    # return generate_content_saturn(prompt)
+    return generate_content_bsc(prompt)
 
 
 def get_embedding_gemini(prompt):

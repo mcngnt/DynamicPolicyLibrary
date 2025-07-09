@@ -1,0 +1,593 @@
+{
+	"created_policies": [
+		{
+			"name": "search_nearest_place",
+			"description": "Search for a specific location",
+			"query": "Stephen King hometown"
+		},
+		{
+			"name": "find_directions",
+			"description": "Find the directions between two locations",
+			"query": "closest national park to the result of the first query \n\nNote: The query for the second subroutine is dependent on the result of the first query, which is the hometown of Stephen King. Once we have the hometown, we can use the find_directions subroutine to find the closest national park and calculate the driving time."
+		}
+	],
+	"plan": "Find the hometown of Stephen King | Find the closest national park to the hometown and calculate the driving time",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "type [145] [Bangor, Maine] [1]",
+				"steps_nb": 0,
+				"reason": "To find the closest national park to Stephen King's hometown, we first need to locate Bangor, Maine, on the map. By typing \"Bangor, Maine\" in the search box and pressing enter, we can zoom in on the location and potentially find nearby national parks or use the map to find directions to the closest one. This action utilizes the search functionality of the OpenStreetMap to focus on the specific area of interest.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [149]",
+				"steps_nb": 1,
+				"reason": "The current webpage is displaying the search results for \"Bangor, Maine\" on OpenStreetMap. To find the closest national park to Bangor, Maine, and get the driving directions, we need to use the \"Find directions between two points\" feature. This feature can be accessed by clicking on the link with the ID [149]. By clicking on this link, we can potentially find the closest national park and get the driving directions from Bangor, Maine to that park. This action utilizes the navigation functionality of the OpenStreetMap to find the desired information.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Bangor, Maine', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[441] heading 'Search Results'\n[443] button 'Close'\n[444] heading 'Results from OpenStreetMap Nominatim'\n\t[445] link 'OpenStreetMap Nominatim'\n[447] list ''\n\t[448] listitem ''\n\t\tStaticText 'City'\n\t\t[449] link 'Bangor, Penobscot County, Maine, 04401, United States'\n[451] link 'More results'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Bangor%2C%20Maine#map=12/44.8289/-68.7889",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "type [158] [Bangor, Maine] [0]",
+				"steps_nb": 2,
+				"reason": "To find the closest national park to Stephen King's hometown, we first need to set the starting point for the directions. Since we are already on the OpenStreetMap page and have located Bangor, Maine, we can use the \"From\" textbox to set the starting point. By typing \"Bangor, Maine\" in the textbox with ID [158], we are preparing to find the directions to the closest national park. This action utilizes the direction feature of the OpenStreetMap to set the starting point for the journey.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=12/44.8290/-68.8489",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "type [163] [Acadia National Park] [0]",
+				"steps_nb": 3,
+				"reason": "To find the closest national park to Stephen King's hometown, we need to set the destination point for the directions. Since Acadia National Park is a well-known national park in Maine, we can use it as our destination point. By typing \"Acadia National Park\" in the textbox with ID [163], we are preparing to find the directions from Bangor, Maine to Acadia National Park. This action utilizes the direction feature of the OpenStreetMap to set the destination point for the journey.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Maine', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=12/44.8290/-68.8489",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [171]",
+				"steps_nb": 4,
+				"reason": "The current webpage is displaying the direction input fields with the starting point set to \"Bangor, Penobscot County, Maine, 04401, United States\" and the destination point set to \"Acadia National Park\". To find the driving directions from Bangor, Maine to Acadia National Park, we need to click the \"Go\" button with ID [171]. This action utilizes the direction feature of the OpenStreetMap to calculate the driving route and potentially provide the driving time.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park', focused\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[484] image ''\n[485] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=12/44.8290/-68.8489",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [171]",
+				"steps_nb": 5,
+				"reason": "The current webpage is displaying the direction input fields with the starting point set to \"Bangor, Penobscot County, Maine, 04401, United States\" and the destination point set to \"Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States\". To find the driving directions from Bangor, Maine to Acadia National Park, we need to click the \"Go\" button with ID [171]. This action utilizes the direction feature of the OpenStreetMap to calculate the driving route and potentially provide the driving time.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[486] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155#map=12/44.8290/-68.7888",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [171]",
+				"steps_nb": 6,
+				"reason": "The current webpage is displaying the direction input fields with the starting point set to \"Bangor, Penobscot County, Maine, 04401, United States\" and the destination point set to \"Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States\". To find the driving directions from Bangor, Maine to Acadia National Park, we need to click the \"Go\" button with ID [171]. This action utilizes the direction feature of the OpenStreetMap to calculate the driving route and potentially provide the driving time. Although we have already clicked this button twice before, the webpage is still displaying the input fields and the \"Go\" button, indicating that the calculation of the driving route may not have been successful or the results are not being displayed. By clicking the button again, we can attempt to retrieve the driving directions and estimated time.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[489] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [158]",
+				"steps_nb": 7,
+				"reason": "The current webpage is displaying an error message \"Couldn't find a route between those two places.\" after attempting to calculate the driving directions from Bangor, Maine to Acadia National Park. The starting point in the \"From\" textbox is set to \"Bangor, Penobscot County, Maine, 04401, United States\", which seems to be a more specific location than what we initially intended. To simplify the starting point and potentially resolve the routing issue, we can try clicking on the \"From\" textbox with ID [158] to edit its value. This action utilizes the direction feature of the OpenStreetMap to revisit and possibly correct the starting point for the journey.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[490] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [171]",
+				"steps_nb": 8,
+				"reason": "The current webpage is displaying the direction input fields with the starting point set to \"Bangor, Penobscot County, Maine, 04401, United States\" and the destination point set to \"Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States\". To find the driving directions from Bangor, Maine to Acadia National Park, we need to click the \"Go\" button with ID [171]. This action utilizes the direction feature of the OpenStreetMap to calculate the driving route and potentially provide the driving time. Although we have already clicked this button multiple times before, the webpage is still displaying the input fields and the \"Go\" button, indicating that the calculation of the driving route may not have been successful or the results are not being displayed. By clicking the button again, we can attempt to retrieve the driving directions and estimated time.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States', focused\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[490] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "click [158]",
+				"steps_nb": 9,
+				"reason": "The current webpage is displaying an error message \"Couldn't find a route between those two places.\" after attempting to calculate the driving directions from Bangor, Maine to Acadia National Park. To simplify the starting point and potentially resolve the routing issue, we can try editing the value in the \"From\" textbox with ID [158] to use a less specific location, such as just \"Bangor, Maine\", which might help the routing algorithm find a path between the two points. This action utilizes the direction feature of the OpenStreetMap to revisit and possibly correct the starting point for the journey.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States'\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[491] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "What's the closest national park to the hometown of Stephen King? How long it takes to drive there?",
+				"action": "stop [N/A]",
+				"steps_nb": 10,
+				"reason": "The current webpage is displaying an error message \"Couldn't find a route between those two places.\" after multiple attempts to calculate the driving directions from Bangor, Maine to Acadia National Park. Despite trying to simplify the starting point and clicking the \"Go\" button multiple times, the routing issue persists. Since we have already tried various approaches and the webpage is not providing the desired results, it's reasonable to conclude that the task cannot be accomplished with the current webpage or available tools. Therefore, the best course of action is to stop and indicate that the task is not achievable with the provided resources.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Bangor, Penobscot County, Maine, 04401, United States', focused\n\t[161] image ''\n\t[163] textbox 'To' value='Acadia National Park, Bar Harbor, Hancock County, Maine, 04609, United States'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[491] paragraph ''\n\tStaticText \"Couldn't find a route between those two places.\"\n[484] image ''\n[487] image ''\n[485] button 'Marker'\n[488] button 'Marker'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '2 km'\nStaticText '1 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions?engine=fossgis_osrm_car&route=44.8016%2C-68.7713%3B44.3563%2C-68.2155",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"find_directions"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"search_nearest_place",
+						"search_nearest_place"
+					],
+					[
+						"find_subreddit",
+						"find_subreddit"
+					],
+					[
+						"find_customer_review",
+						"find_customer_review"
+					],
+					[
+						"search_order",
+						"search_order"
+					],
+					[
+						"find_commits",
+						"find_commits"
+					],
+					[
+						"search_reviews",
+						"search_reviews"
+					],
+					[
+						"search_customer",
+						"search_customer"
+					],
+					[
+						"search_issues",
+						"search_issues"
+					]
+				]
+			}
+		],
+		"feedback": null
+	},
+	"score": 0.0
+}

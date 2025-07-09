@@ -27,7 +27,7 @@ def main(args):
     match args.agent_type:
         case "dynamic":
              # name = "dynamic_llama_base_step"
-            name = "dynamic_llama_base_step_new_pol"
+            name = "dynamic_llama_base_step_new_pol_test"
             agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
             iter_nb = 3
             save_library = True
