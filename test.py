@@ -24,6 +24,8 @@ from logger import dump_log
 
 page_op = ["click", "type", "go_back", "go_home", "stop"]
 
+from policy_library import PolicyLibrary
+
 
 # help(browsergym.webarena)
 
@@ -333,3 +335,14 @@ Locate the column header (e.g., \"Updated date\") corresponding to the desired s
 
 # print(generate_content("Hello world"))
 
+
+
+step_pol = PolicyLibrary("policies/step_policies.json")
+
+new_pol = PolicyLibrary()
+
+for (k,p) in step_pol.policies.items():
+    new_pol.update(*p)
+
+
+new_pol.save("policies/new_step_policies.json")

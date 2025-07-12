@@ -46,11 +46,11 @@ OLD GUIDANCE:
 Guidance text from the previous iteration.
 
 Here are some general guidelines to keep in mind for the guidance text:
- 1) Write a guidance text to be used by a web agent to achieve a specific task.
- 2) Don't be too specific, your guidance text should generalize to multiple queries
- 3) Do not mention any specific query in the guidance text. The guidance text should be applicable to a wide range of queries
- 4) Only give information about the tricky steps of the task-solving process. The agent is capable and independent for simple actions.
- 5) Change the granularity of your guidance depending on the importance of the action. The more important an action is, the more detailed it needs to be.
+- Write a guidance text to be used by a web agent to achieve a specific task.
+- Don't be too specific, your guidance text should generalize to multiple queries
+- Do not mention any specific query in the guidance text. The guidance text should be applicable to a wide range of queries
+- Only give information about the tricky steps of the task-solving process. The agent is capable and independent for simple actions.
+- Change the granularity of your guidance depending on the importance of the action. The more important an action is, the more detailed it needs to be.
 
 Adhere strictly to the following YAML output format :
 EXPLAIN:

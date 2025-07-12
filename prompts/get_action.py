@@ -37,9 +37,9 @@ page_operations = """
 get_action_system_prompt = """
 You will be provided with the following,
 OBJECTIVE:
-The current subroutine you need to complete.
+The current objective you need to complete.
 DESCRIPTION:
-The description of the subroutine you have to complete.
+The description of the type of objective you need to complete
 OBSERVATION:
 A simplified text description of the current browser content, without formatting elements.
 URL:
@@ -47,7 +47,7 @@ The current webpage URL
 PREVIOUS ACTIONS:
 A list of the past actions, along with their intents during navigation. Be aware that it is only an intent and not always what really happened.
 GUIDANCE TEXT:
-A short text to guide you through the task-solving process.
+A short text to guide you through the task-solving process. Follow it closely.
 
 
 Here are some general guidelines to keep in mind :
@@ -57,14 +57,13 @@ Here are some general guidelines to keep in mind :
 - You can't reuse the objective subroutine.
 - If what you want to do fails, use stop [N/A] instead of endlessly repeating the same sequence of actions (you can spot such a sequence by looking at PREVIOUS ACTIONS)
 - Do not try to directly change the url to accomplish the goal. Use the interface instead of guessing the right url by using the searchbar for instance.
-- Try to use subroutines as much as possible when you feel it's relavant.
 
 Please issue only a single action at a time.
 Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
 ACTION:
 action_name [argument_1] ... [argument_n]
 REASON:
-...
+A very short text (20 words max) describing the purpose of your action
 """
 
 
@@ -128,4 +127,4 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
         return action
     except:
-        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies)
+        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies, is_root)

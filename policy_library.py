@@ -17,9 +17,15 @@ class PolicyLibrary:
                 return
 
     def update(self, name, description, content="", site=None):
-        embedding = get_embedding(description)
-        self.policies[tuple(embedding)] = (name, description, content, site)
-        self.usage_stats.setdefault(name, {"used": 0, "failed": 0})
+        if self.is_new(name):
+            embedding = get_embedding(description)
+            self.policies[tuple(embedding)] = (name, description, content, site)
+            self.usage_stats[name] = {"used": 0, "failed": 0}
+        else:
+            for e,(policy_name, desc, cont, s) in self.policies.items():
+                if policy_name == name:
+                    self.policies[e] = (name, desc if len(description)==0 else description, cont if len(content)==0 else content, s if site is None else site)
+                    return
 
     def retrieve(self, description, k=5, exclude_policy=None, site=None):
         query_embedding = get_embedding(description)
