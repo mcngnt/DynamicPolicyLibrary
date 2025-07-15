@@ -18,6 +18,7 @@ class Agent:
 		self.only_policy = only_policy
 		self.generate_new_policies =  generate_new_policies
 		self.improve_policies = improve_policies
+		self.current_plan = ""
 
 	def load(self, objective, observation, site):
 		self.objective = objective
@@ -25,6 +26,7 @@ class Agent:
 		self.policy_stack = [{"name":"root", "query":objective, "actions":[], "inital_observation":observation}]
 		self.steps_nb = 0
 		self.site = site
+		self.current_plan = ""
 
 
 	def get_action(self, observation, url, screenshot):
@@ -48,6 +50,7 @@ class Agent:
 			print(f"get_policy feedback : {policy_feedback}\n")
 			log_info["created_policies"] = policy_feedback["policies"]
 			log_info["plan"] = policy_feedback["plan"]
+			self.current_plan = policy_feedback["plan"]
 			for policy in policy_feedback["policies"]:
 				if self.library.is_new(policy["name"]):
 					self.library.update(policy["name"], policy["description"], "", self.site)
@@ -58,10 +61,10 @@ class Agent:
 		
 		relevant_policies = self.library.retrieve(policy_objective, exclude_policy=top_policy["name"], site=self.site,k=10)
 		log_info["relevant_policies"] = relevant_policies
-		if len(top_policy["actions"]) > 20:
+		if len(top_policy["actions"]) > 15:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
 		else:
-			action = get_action(policy_objective, policy_description, observation, url, top_policy["actions"], guidance_text, relevant_policies, is_root)
+			action = get_action(policy_objective, policy_description, observation, url, top_policy["actions"], guidance_text, relevant_policies, is_root, self.current_plan, step_nb=self.steps_nb)
 		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]
 		log_info["reason"] = action["reason"]
@@ -95,8 +98,8 @@ class Agent:
 			descr,_ = self.library.get(action["name"])
 			log_info["description"] = descr
 
-		if is_final:
-			log_info["end_screenshot"] = screenshot
+
+		log_info["end_screenshot"] = screenshot
 
 
 		self.steps_nb += 1

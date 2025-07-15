@@ -9,6 +9,8 @@ import requests
 
 from api_keys import gemini_keys, saturn_key, saturn_url
 
+token_nb = 0
+
 
 current_key_id_gemini = 0
 gemini_client = genai.Client(api_key=gemini_keys[0])
@@ -50,6 +52,7 @@ def generate_content_saturn(prompt):
 
 
 def generate_content_bsc(prompt):
+    global token_nb
     url = "http://localhost:8000/v1/chat/completions"
 
     headers = {
@@ -74,10 +77,15 @@ def generate_content_bsc(prompt):
             "content": prompt
         }
     ],
-    "temperature":0.8,
+    "temperature":1.0,
     }
 
     response = requests.post(url, headers=headers, json=data)
+
+    print(response.json()["usage"])
+    token_nb += response.json()["usage"]["total_tokens"]
+    if response.json()["usage"]["total_tokens"] > 30000:
+        print(prompt)
 
     return response.json()["choices"][0]["message"]["content"]
 

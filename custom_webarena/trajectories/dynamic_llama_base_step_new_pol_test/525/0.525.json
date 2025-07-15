@@ -1,0 +1,1475 @@
+{
+	"created_policies": [
+		{
+			"name": "find_repos",
+			"description": "Find repositories based on specific criteria, such as the number of stars",
+			"query": "top four most starred"
+		},
+		{
+			"name": "star_repo",
+			"description": "Star a repository",
+			"query": "top four most starred repos"
+		}
+	],
+	"plan": "Identify the top four most starred repos | Star each of the top four most starred repos",
+	"trace": {
+		"trace": [
+			{
+				"type": "policy",
+				"description": "Find repositories based on specific criteria, such as the number of stars",
+				"objective": "Star the top four most stared repos in Gitlab",
+				"action": "find_repos [most starred]",
+				"steps_nb": 0,
+				"reason": "Find top repos",
+				"observation": "[51] banner ''\n\t[52] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[58] link 'Dashboard'\n\t\t[59] image ''\n\t[62] list ''\n\t\t[63] listitem ''\n\t\t\t[64] button '', hasPopup='menu', expanded=False\n\t[124] list ''\n\t\t[125] listitem ''\n\t\t\t[127] Section ''\n\t\t\t\t[129] image ''\n\t\t\t\t[130] textbox 'Search GitLab'\n\t[139] list ''\n\t\t[140] listitem ''\n\t\t\t[141] link 'Create new...'\n\t\t\t\t[142] image ''\n\t\t\t\t[143] image ''\n\t\t[152] listitem ''\n\t\t\t[153] link 'Issues'\n\t\t\t\t[154] image ''\n\t\t[156] listitem ''\n\t\t\t[157] link 'Merge requests'\n\t\t\t\t[158] image ''\n\t\t\t\t[160] image ''\n\t\t[170] listitem ''\n\t\t\t[171] link 'To-Do List'\n\t\t\t\t[172] image ''\n\t\t\t\tStaticText '5'\n\t\t[174] listitem ''\n\t\t\t[175] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[177] image ''\n\t\t\t\t[179] image ''\n\t\t[200] listitem ''\n\t\t\t[201] link 'Byte Blaze'\n\t\t\t\t[202] image 'Byte Blaze'\n\t\t\t\t[203] image ''\n[243] main ''\n\t[246] heading 'Projects'\n\t[248] link 'New project'\n\t\tStaticText 'New project'\n\t[256] list ''\n\t\t[257] listitem ''\n\t\t\t[258] link 'Yours 18'\n\t\t\t\tStaticText '18'\n\t\t[260] listitem ''\n\t\t\t[261] link 'Starred 3'\n\t\t\t\tStaticText '3'\n\t\t[263] listitem ''\n\t\t\t[264] link 'Explore'\n\t\t[265] listitem ''\n\t\t\t[266] link 'Topics'\n\t[268] Section ''\n\t\t[269] searchbox 'Filter by name'\n\t\t[273] button 'Name'\n\t\t\tStaticText 'Name'\n\t\t\t[275] image ''\n\t[305] list ''\n\t\t[306] listitem ''\n\t\t\t[307] link 'All'\n\t\t[308] listitem ''\n\t\t\t[309] link 'Personal'\n\t[311] list ''\n\t\t[312] listitem ''\n\t\t\t[314] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[319] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t[320] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-syntax-highlighting'\n\t\t\t[324] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[327] paragraph ''\n\t\t\t\tStaticText 'Accessible light and dark syntax highlighting themes'\n\t\t\t[338] link '1'\n\t\t\t\t[339] image ''\n\t\t\t[340] link '0'\n\t\t\t\t[341] image ''\n\t\t\t[342] link '0'\n\t\t\t\t[343] image ''\n\t\t\t[344] link '1'\n\t\t\t\t[345] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[348] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[349] listitem ''\n\t\t\t[351] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[356] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t\t[357] link 'Byte Blaze / a11y-webring.club'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-webring.club'\n\t\t\t[361] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[364] paragraph ''\n\t\t\t\tStaticText 'A webring for digital accessibility practitioners.'\n\t\t\t[375] link '2'\n\t\t\t\t[376] image ''\n\t\t\t[377] link '0'\n\t\t\t\t[378] image ''\n\t\t\t[379] link '1'\n\t\t\t\t[380] image ''\n\t\t\t[381] link '4'\n\t\t\t\t[382] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[385] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[386] listitem ''\n\t\t\t[388] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[393] heading 'The A11Y Project / a11yproject.com'\n\t\t\t\t[394] link 'The A11Y Project / a11yproject.com'\n\t\t\t\t\tStaticText 'The A11Y Project /'\n\t\t\t\t\tStaticText 'a11yproject.com'\n\t\t\t[398] image ''\n\t\t\tStaticText 'Maintainer'\n\t\t\t[401] paragraph ''\n\t\t\t\tStaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t\t[412] link '21'\n\t\t\t\t[413] image ''\n\t\t\t[414] link '0'\n\t\t\t\t[415] image ''\n\t\t\t[416] link '10'\n\t\t\t\t[417] image ''\n\t\t\t[418] link '40'\n\t\t\t\t[419] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[422] time 'Mar 27, 2023 10:15pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[423] listitem ''\n\t\t\t[425] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[430] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t[431] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'accessible-html-content-patterns'\n\t\t\t[435] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[438] paragraph ''\n\t\t\t\tStaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t\t[449] link '1'\n\t\t\t\t[450] image ''\n\t\t\t[451] link '0'\n\t\t\t\t[452] image ''\n\t\t\t[453] link '0'\n\t\t\t\t[454] image ''\n\t\t\t[455] link '0'\n\t\t\t\t[456] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[459] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[460] listitem ''\n\t\t\t[462] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[467] heading 'Byte Blaze / AutoAGI'\n\t\t\t\t[468] link 'Byte Blaze / AutoAGI'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'AutoAGI'\n\t\t\t[472] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[484] link '0'\n\t\t\t\t[485] image ''\n\t\t\t[486] link '0'\n\t\t\t\t[487] image ''\n\t\t\t[488] link '0'\n\t\t\t\t[489] image ''\n\t\t\t[490] link '0'\n\t\t\t\t[491] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[494] time 'Jul 12, 2025 6:40pm GMT+0200'\n\t\t\t\tStaticText '42 minutes ago'\n\t\t[495] listitem ''\n\t\t\t[497] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[502] heading 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t[503] link 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'awesome_llm_reading'\n\t\t\t[507] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[519] link '0'\n\t\t\t\t[520] image ''\n\t\t\t[521] link '0'\n\t\t\t\t[522] image ''\n\t\t\t[523] link '0'\n\t\t\t\t[524] image ''\n\t\t\t[525] link '0'\n\t\t\t\t[526] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[529] time 'Jul 11, 2025 6:39pm GMT+0200'\n\t\t\t\tStaticText '1 day ago'\n\t\t[530] listitem ''\n\t\t\t[532] link ''\n\t\t\t\t[533] image ''\n\t\t\t[537] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t\t[538] link 'Byte Blaze / cloud-to-butt'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'cloud-to-butt'\n\t\t\t[542] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[545] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t\t[556] link '0'\n\t\t\t\t[557] image ''\n\t\t\t[558] link '0'\n\t\t\t\t[559] image ''\n\t\t\t[560] link '0'\n\t\t\t\t[561] image ''\n\t\t\t[562] link '0'\n\t\t\t\t[563] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[566] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[567] listitem ''\n\t\t\t[569] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[574] heading 'Primer / design'\n\t\t\t\t[575] link 'Primer / design'\n\t\t\t\t\tStaticText 'Primer /'\n\t\t\t\t\tStaticText 'design'\n\t\t\t[579] image ''\n\t\t\tStaticText 'Developer'\n\t\t\t[582] paragraph ''\n\t\t\t\tStaticText 'Primer Design Guidelines'\n\t\t\t[593] link '21'\n\t\t\t\t[594] image ''\n\t\t\t[595] link '0'\n\t\t\t\t[596] image ''\n\t\t\t[597] link '16'\n\t\t\t\t[598] image ''\n\t\t\t[599] link '21'\n\t\t\t\t[600] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[603] time 'Mar 27, 2023 11:04pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[604] listitem ''\n\t\t\t[606] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[611] heading 'Byte Blaze / dotfiles'\n\t\t\t\t[612] link 'Byte Blaze / dotfiles'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'dotfiles'\n\t\t\t[616] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[619] paragraph ''\n\t\t\t\tStaticText 'Computer setup'\n\t\t\t[630] link '0'\n\t\t\t\t[631] image ''\n\t\t\t[632] link '0'\n\t\t\t\t[633] image ''\n\t\t\t[634] link '0'\n\t\t\t\t[635] image ''\n\t\t\t[636] link '0'\n\t\t\t\t[637] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[640] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[641] listitem ''\n\t\t\t[643] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[648] heading 'Byte Blaze / empathy-prompts'\n\t\t\t\t[649] link 'Byte Blaze / empathy-prompts'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'empathy-prompts'\n\t\t\t[653] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[656] paragraph ''\n\t\t\t\tStaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t\t[667] link '6'\n\t\t\t\t[668] image ''\n\t\t\t[669] link '1'\n\t\t\t\t[670] image ''\n\t\t\t[671] link '2'\n\t\t\t\t[672] image ''\n\t\t\t[673] link '6'\n\t\t\t\t[674] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[677] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[678] listitem ''\n\t\t\t[680] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[685] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t\t[686] link 'Byte Blaze / ericwbailey.website'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'ericwbailey.website'\n\t\t\t[690] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[693] paragraph ''\n\t\t\t\tStaticText 'Repo for my personal website.'\n\t\t\t[704] link '2'\n\t\t\t\t[705] image ''\n\t\t\t[706] link '0'\n\t\t\t\t[707] image ''\n\t\t\t[708] link '0'\n\t\t\t\t[709] image ''\n\t\t\t[710] link '0'\n\t\t\t\t[711] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[714] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[715] listitem ''\n\t\t\t[717] link 'G'\n\t\t\t\tStaticText 'G'\n\t\t\t[722] heading 'Byte Blaze / gimmiethat.space'\n\t\t\t\t[723] link 'Byte Blaze / gimmiethat.space'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'gimmiethat.space'\n\t\t\t[727] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[730] paragraph ''\n\t\t\t\tStaticText 'I need some space.'\n\t\t\t[741] link '0'\n\t\t\t\t[742] image ''\n\t\t\t[743] link '0'\n\t\t\t\t[744] image ''\n\t\t\t[745] link '0'\n\t\t\t\t[746] image ''\n\t\t\t[747] link '0'\n\t\t\t\t[748] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[751] time 'Apr 24, 2023 11:22pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[752] listitem ''\n\t\t\t[754] link 'M'\n\t\t\t\tStaticText 'M'\n\t\t\t[759] heading 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t[760] link 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'millennials-to-snake-people'\n\t\t\t[764] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[767] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'\"\n\t\t\t[778] link '6'\n\t\t\t\t[779] image ''\n\t\t\t[780] link '0'\n\t\t\t\t[781] image ''\n\t\t\t[782] link '2'\n\t\t\t\t[783] image ''\n\t\t\t[784] link '4'\n\t\t\t\t[785] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[788] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[789] listitem ''\n\t\t\t[791] link 'N'\n\t\t\t\tStaticText 'N'\n\t\t\t[796] heading 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t[797] link 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'nolan_honest_fans'\n\t\t\t[801] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[813] link '0'\n\t\t\t\t[814] image ''\n\t\t\t[815] link '0'\n\t\t\t\t[816] image ''\n\t\t\t[817] link '0'\n\t\t\t\t[818] image ''\n\t\t\t[819] link '0'\n\t\t\t\t[820] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[823] time 'Jul 12, 2025 6:43pm GMT+0200'\n\t\t\t\tStaticText '39 minutes ago'\n\t\t[824] listitem ''\n\t\t\t[826] link 'P'\n\t\t\t\tStaticText 'P'\n\t\t\t[831] heading 'Byte Blaze / planner'\n\t\t\t\t[832] link 'Byte Blaze / planner'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'planner'\n\t\t\t[836] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[848] link '0'\n\t\t\t\t[849] image ''\n\t\t\t[850] link '0'\n\t\t\t\t[851] image ''\n\t\t\t[852] link '0'\n\t\t\t\t[853] image ''\n\t\t\t[854] link '0'\n\t\t\t\t[855] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[858] time 'Jul 11, 2025 7:51pm GMT+0200'\n\t\t\t\tStaticText '23 hours ago'\n\t\t[859] listitem ''\n\t\t\t[861] link 'R'\n\t\t\t\tStaticText 'R'\n\t\t\t[866] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t[867] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t[871] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText \"This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.\"\n\t\t\t[885] link '0'\n\t\t\t\t[886] image ''\n\t\t\t[887] link '1'\n\t\t\t\t[888] image ''\n\t\t\t[889] link '0'\n\t\t\t\t[890] image ''\n\t\t\t[891] link '0'\n\t\t\t\t[892] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[895] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[896] listitem ''\n\t\t\t[898] link 'S'\n\t\t\t\tStaticText 'S'\n\t\t\t[903] heading 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t[904] link 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'solarized-prism-theme'\n\t\t\t[908] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'solarized theme for prism.js'\n\t\t\t[922] link '0'\n\t\t\t\t[923] image ''\n\t\t\t[924] link '0'\n\t\t\t\t[925] image ''\n\t\t\t[926] link '0'\n\t\t\t\t[927] image ''\n\t\t\t[928] link '0'\n\t\t\t\t[929] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[932] time 'Apr 24, 2023 11:23pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[933] listitem ''\n\t\t\t[935] link 'T'\n\t\t\t\tStaticText 'T'\n\t\t\t[940] heading 'Byte Blaze / timeit'\n\t\t\t\t[941] link 'Byte Blaze / timeit'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'timeit'\n\t\t\t[945] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[948] paragraph ''\n\t\t\t\tStaticText 'Rails implementation of time tracking tool timeit'\n\t\t\t[959] link '0'\n\t\t\t\t[960] image ''\n\t\t\t[961] link '0'\n\t\t\t\t[962] image ''\n\t\t\t[963] link '0'\n\t\t\t\t[964] image ''\n\t\t\t[965] link '0'\n\t\t\t\t[966] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[969] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"star_repo",
+						"Star a repository"
+					],
+					[
+						"find_repos",
+						"Find repositories based on specific criteria, such as the number of stars"
+					],
+					[
+						"search_issues",
+						"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"find_merge_request_and_comment",
+						"Find a merge request related to a specific topic and post a comment"
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					],
+					[
+						"create_milestone",
+						"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+					],
+					[
+						"create_project",
+						"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+					],
+					[
+						"navigate_to_create_new_project",
+						"Navigate to the page where a new project can be created"
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [130]",
+						"steps_nb": 1,
+						"reason": "Click search box",
+						"observation": "[51] banner ''\n\t[52] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[58] link 'Dashboard'\n\t\t[59] image ''\n\t[62] list ''\n\t\t[63] listitem ''\n\t\t\t[64] button '', hasPopup='menu', expanded=False\n\t[124] list ''\n\t\t[125] listitem ''\n\t\t\t[127] Section ''\n\t\t\t\t[129] image ''\n\t\t\t\t[130] textbox 'Search GitLab'\n\t[139] list ''\n\t\t[140] listitem ''\n\t\t\t[141] link 'Create new...'\n\t\t\t\t[142] image ''\n\t\t\t\t[143] image ''\n\t\t[152] listitem ''\n\t\t\t[153] link 'Issues'\n\t\t\t\t[154] image ''\n\t\t[156] listitem ''\n\t\t\t[157] link 'Merge requests'\n\t\t\t\t[158] image ''\n\t\t\t\t[160] image ''\n\t\t[170] listitem ''\n\t\t\t[171] link 'To-Do List'\n\t\t\t\t[172] image ''\n\t\t\t\tStaticText '5'\n\t\t[174] listitem ''\n\t\t\t[175] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[177] image ''\n\t\t\t\t[179] image ''\n\t\t[200] listitem ''\n\t\t\t[201] link 'Byte Blaze'\n\t\t\t\t[202] image 'Byte Blaze'\n\t\t\t\t[203] image ''\n[243] main ''\n\t[246] heading 'Projects'\n\t[248] link 'New project'\n\t\tStaticText 'New project'\n\t[256] list ''\n\t\t[257] listitem ''\n\t\t\t[258] link 'Yours 18'\n\t\t\t\tStaticText '18'\n\t\t[260] listitem ''\n\t\t\t[261] link 'Starred 3'\n\t\t\t\tStaticText '3'\n\t\t[263] listitem ''\n\t\t\t[264] link 'Explore'\n\t\t[265] listitem ''\n\t\t\t[266] link 'Topics'\n\t[268] Section ''\n\t\t[269] searchbox 'Filter by name'\n\t\t[273] button 'Name'\n\t\t\tStaticText 'Name'\n\t\t\t[275] image ''\n\t[305] list ''\n\t\t[306] listitem ''\n\t\t\t[307] link 'All'\n\t\t[308] listitem ''\n\t\t\t[309] link 'Personal'\n\t[311] list ''\n\t\t[312] listitem ''\n\t\t\t[314] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[319] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t[320] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-syntax-highlighting'\n\t\t\t[324] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[327] paragraph ''\n\t\t\t\tStaticText 'Accessible light and dark syntax highlighting themes'\n\t\t\t[338] link '1'\n\t\t\t\t[339] image ''\n\t\t\t[340] link '0'\n\t\t\t\t[341] image ''\n\t\t\t[342] link '0'\n\t\t\t\t[343] image ''\n\t\t\t[344] link '1'\n\t\t\t\t[345] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[348] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[349] listitem ''\n\t\t\t[351] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[356] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t\t[357] link 'Byte Blaze / a11y-webring.club'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-webring.club'\n\t\t\t[361] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[364] paragraph ''\n\t\t\t\tStaticText 'A webring for digital accessibility practitioners.'\n\t\t\t[375] link '2'\n\t\t\t\t[376] image ''\n\t\t\t[377] link '0'\n\t\t\t\t[378] image ''\n\t\t\t[379] link '1'\n\t\t\t\t[380] image ''\n\t\t\t[381] link '4'\n\t\t\t\t[382] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[385] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[386] listitem ''\n\t\t\t[388] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[393] heading 'The A11Y Project / a11yproject.com'\n\t\t\t\t[394] link 'The A11Y Project / a11yproject.com'\n\t\t\t\t\tStaticText 'The A11Y Project /'\n\t\t\t\t\tStaticText 'a11yproject.com'\n\t\t\t[398] image ''\n\t\t\tStaticText 'Maintainer'\n\t\t\t[401] paragraph ''\n\t\t\t\tStaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t\t[412] link '21'\n\t\t\t\t[413] image ''\n\t\t\t[414] link '0'\n\t\t\t\t[415] image ''\n\t\t\t[416] link '10'\n\t\t\t\t[417] image ''\n\t\t\t[418] link '40'\n\t\t\t\t[419] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[422] time 'Mar 27, 2023 10:15pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[423] listitem ''\n\t\t\t[425] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[430] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t[431] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'accessible-html-content-patterns'\n\t\t\t[435] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[438] paragraph ''\n\t\t\t\tStaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t\t[449] link '1'\n\t\t\t\t[450] image ''\n\t\t\t[451] link '0'\n\t\t\t\t[452] image ''\n\t\t\t[453] link '0'\n\t\t\t\t[454] image ''\n\t\t\t[455] link '0'\n\t\t\t\t[456] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[459] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[460] listitem ''\n\t\t\t[462] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[467] heading 'Byte Blaze / AutoAGI'\n\t\t\t\t[468] link 'Byte Blaze / AutoAGI'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'AutoAGI'\n\t\t\t[472] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[484] link '0'\n\t\t\t\t[485] image ''\n\t\t\t[486] link '0'\n\t\t\t\t[487] image ''\n\t\t\t[488] link '0'\n\t\t\t\t[489] image ''\n\t\t\t[490] link '0'\n\t\t\t\t[491] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[494] time 'Jul 12, 2025 6:40pm GMT+0200'\n\t\t\t\tStaticText '42 minutes ago'\n\t\t[495] listitem ''\n\t\t\t[497] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[502] heading 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t[503] link 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'awesome_llm_reading'\n\t\t\t[507] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[519] link '0'\n\t\t\t\t[520] image ''\n\t\t\t[521] link '0'\n\t\t\t\t[522] image ''\n\t\t\t[523] link '0'\n\t\t\t\t[524] image ''\n\t\t\t[525] link '0'\n\t\t\t\t[526] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[529] time 'Jul 11, 2025 6:39pm GMT+0200'\n\t\t\t\tStaticText '1 day ago'\n\t\t[530] listitem ''\n\t\t\t[532] link ''\n\t\t\t\t[533] image ''\n\t\t\t[537] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t\t[538] link 'Byte Blaze / cloud-to-butt'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'cloud-to-butt'\n\t\t\t[542] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[545] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t\t[556] link '0'\n\t\t\t\t[557] image ''\n\t\t\t[558] link '0'\n\t\t\t\t[559] image ''\n\t\t\t[560] link '0'\n\t\t\t\t[561] image ''\n\t\t\t[562] link '0'\n\t\t\t\t[563] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[566] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[567] listitem ''\n\t\t\t[569] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[574] heading 'Primer / design'\n\t\t\t\t[575] link 'Primer / design'\n\t\t\t\t\tStaticText 'Primer /'\n\t\t\t\t\tStaticText 'design'\n\t\t\t[579] image ''\n\t\t\tStaticText 'Developer'\n\t\t\t[582] paragraph ''\n\t\t\t\tStaticText 'Primer Design Guidelines'\n\t\t\t[593] link '21'\n\t\t\t\t[594] image ''\n\t\t\t[595] link '0'\n\t\t\t\t[596] image ''\n\t\t\t[597] link '16'\n\t\t\t\t[598] image ''\n\t\t\t[599] link '21'\n\t\t\t\t[600] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[603] time 'Mar 27, 2023 11:04pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[604] listitem ''\n\t\t\t[606] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[611] heading 'Byte Blaze / dotfiles'\n\t\t\t\t[612] link 'Byte Blaze / dotfiles'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'dotfiles'\n\t\t\t[616] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[619] paragraph ''\n\t\t\t\tStaticText 'Computer setup'\n\t\t\t[630] link '0'\n\t\t\t\t[631] image ''\n\t\t\t[632] link '0'\n\t\t\t\t[633] image ''\n\t\t\t[634] link '0'\n\t\t\t\t[635] image ''\n\t\t\t[636] link '0'\n\t\t\t\t[637] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[640] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[641] listitem ''\n\t\t\t[643] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[648] heading 'Byte Blaze / empathy-prompts'\n\t\t\t\t[649] link 'Byte Blaze / empathy-prompts'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'empathy-prompts'\n\t\t\t[653] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[656] paragraph ''\n\t\t\t\tStaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t\t[667] link '6'\n\t\t\t\t[668] image ''\n\t\t\t[669] link '1'\n\t\t\t\t[670] image ''\n\t\t\t[671] link '2'\n\t\t\t\t[672] image ''\n\t\t\t[673] link '6'\n\t\t\t\t[674] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[677] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[678] listitem ''\n\t\t\t[680] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[685] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t\t[686] link 'Byte Blaze / ericwbailey.website'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'ericwbailey.website'\n\t\t\t[690] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[693] paragraph ''\n\t\t\t\tStaticText 'Repo for my personal website.'\n\t\t\t[704] link '2'\n\t\t\t\t[705] image ''\n\t\t\t[706] link '0'\n\t\t\t\t[707] image ''\n\t\t\t[708] link '0'\n\t\t\t\t[709] image ''\n\t\t\t[710] link '0'\n\t\t\t\t[711] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[714] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[715] listitem ''\n\t\t\t[717] link 'G'\n\t\t\t\tStaticText 'G'\n\t\t\t[722] heading 'Byte Blaze / gimmiethat.space'\n\t\t\t\t[723] link 'Byte Blaze / gimmiethat.space'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'gimmiethat.space'\n\t\t\t[727] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[730] paragraph ''\n\t\t\t\tStaticText 'I need some space.'\n\t\t\t[741] link '0'\n\t\t\t\t[742] image ''\n\t\t\t[743] link '0'\n\t\t\t\t[744] image ''\n\t\t\t[745] link '0'\n\t\t\t\t[746] image ''\n\t\t\t[747] link '0'\n\t\t\t\t[748] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[751] time 'Apr 24, 2023 11:22pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[752] listitem ''\n\t\t\t[754] link 'M'\n\t\t\t\tStaticText 'M'\n\t\t\t[759] heading 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t[760] link 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'millennials-to-snake-people'\n\t\t\t[764] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[767] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'\"\n\t\t\t[778] link '6'\n\t\t\t\t[779] image ''\n\t\t\t[780] link '0'\n\t\t\t\t[781] image ''\n\t\t\t[782] link '2'\n\t\t\t\t[783] image ''\n\t\t\t[784] link '4'\n\t\t\t\t[785] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[788] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[789] listitem ''\n\t\t\t[791] link 'N'\n\t\t\t\tStaticText 'N'\n\t\t\t[796] heading 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t[797] link 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'nolan_honest_fans'\n\t\t\t[801] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[813] link '0'\n\t\t\t\t[814] image ''\n\t\t\t[815] link '0'\n\t\t\t\t[816] image ''\n\t\t\t[817] link '0'\n\t\t\t\t[818] image ''\n\t\t\t[819] link '0'\n\t\t\t\t[820] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[823] time 'Jul 12, 2025 6:43pm GMT+0200'\n\t\t\t\tStaticText '39 minutes ago'\n\t\t[824] listitem ''\n\t\t\t[826] link 'P'\n\t\t\t\tStaticText 'P'\n\t\t\t[831] heading 'Byte Blaze / planner'\n\t\t\t\t[832] link 'Byte Blaze / planner'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'planner'\n\t\t\t[836] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[848] link '0'\n\t\t\t\t[849] image ''\n\t\t\t[850] link '0'\n\t\t\t\t[851] image ''\n\t\t\t[852] link '0'\n\t\t\t\t[853] image ''\n\t\t\t[854] link '0'\n\t\t\t\t[855] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[858] time 'Jul 11, 2025 7:51pm GMT+0200'\n\t\t\t\tStaticText '23 hours ago'\n\t\t[859] listitem ''\n\t\t\t[861] link 'R'\n\t\t\t\tStaticText 'R'\n\t\t\t[866] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t[867] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t[871] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText \"This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.\"\n\t\t\t[885] link '0'\n\t\t\t\t[886] image ''\n\t\t\t[887] link '1'\n\t\t\t\t[888] image ''\n\t\t\t[889] link '0'\n\t\t\t\t[890] image ''\n\t\t\t[891] link '0'\n\t\t\t\t[892] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[895] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[896] listitem ''\n\t\t\t[898] link 'S'\n\t\t\t\tStaticText 'S'\n\t\t\t[903] heading 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t[904] link 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'solarized-prism-theme'\n\t\t\t[908] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'solarized theme for prism.js'\n\t\t\t[922] link '0'\n\t\t\t\t[923] image ''\n\t\t\t[924] link '0'\n\t\t\t\t[925] image ''\n\t\t\t[926] link '0'\n\t\t\t\t[927] image ''\n\t\t\t[928] link '0'\n\t\t\t\t[929] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[932] time 'Apr 24, 2023 11:23pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[933] listitem ''\n\t\t\t[935] link 'T'\n\t\t\t\tStaticText 'T'\n\t\t\t[940] heading 'Byte Blaze / timeit'\n\t\t\t\t[941] link 'Byte Blaze / timeit'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'timeit'\n\t\t\t[945] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[948] paragraph ''\n\t\t\t\tStaticText 'Rails implementation of time tracking tool timeit'\n\t\t\t[959] link '0'\n\t\t\t\t[960] image ''\n\t\t\t[961] link '0'\n\t\t\t\t[962] image ''\n\t\t\t[963] link '0'\n\t\t\t\t[964] image ''\n\t\t\t[965] link '0'\n\t\t\t\t[966] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[969] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [1038] [most starred] [1]",
+						"steps_nb": 2,
+						"reason": "Search for most starred repos",
+						"observation": "[51] banner ''\n\t[52] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[58] link 'Dashboard'\n\t\t[59] image ''\n\t[62] list ''\n\t\t[63] listitem ''\n\t\t\t[64] button '', hasPopup='menu', expanded=False\n\t[124] list ''\n\t\t[125] listitem ''\n\t\t\t[1035] search 'Search GitLab'\n\t\t\t\t[1038] searchbox 'Search GitLab', focused, describedby='search-input-description'\n\t\t\t\t[1041] region ''\n\t\t\t\t\tStaticText 'Type for new suggestions to appear below.'\n\t\t\t\t[1042] region '', live='polite', atomic, relevant='additions text'\n\t\t\t\t\tStaticText '5 default results provided. Use the up and down arrow keys to navigate search results list.'\n\t\t\t\t[1046] listitem ''\n\t\t\t\t\t[1047] heading 'All GitLab'\n\t\t\t\t[1048] listitem ''\n\t\t\t\t\t[1049] menuitem 'Issues assigned to me'\n\t\t\t\t\t\t[1051] paragraph ''\n\t\t\t\t[1053] listitem ''\n\t\t\t\t\t[1054] menuitem \"Issues I've created\"\n\t\t\t\t\t\t[1056] paragraph ''\n\t\t\t\t[1058] listitem ''\n\t\t\t\t\t[1059] menuitem 'Merge requests assigned to me'\n\t\t\t\t\t\t[1061] paragraph ''\n\t\t\t\t[1063] listitem ''\n\t\t\t\t\t[1064] menuitem \"Merge requests that I'm a reviewer\"\n\t\t\t\t\t\t[1066] paragraph ''\n\t\t\t\t[1068] listitem ''\n\t\t\t\t\t[1069] menuitem \"Merge requests I've created\"\n\t\t\t\t\t\t[1071] paragraph ''\n\t[139] list ''\n\t\t[140] listitem ''\n\t\t\t[141] link 'Create new...'\n\t\t\t\t[142] image ''\n\t\t\t\t[143] image ''\n\t\t[152] listitem ''\n\t\t\t[153] link 'Issues'\n\t\t\t\t[154] image ''\n\t\t[156] listitem ''\n\t\t\t[157] link 'Merge requests'\n\t\t\t\t[158] image ''\n\t\t\t\t[160] image ''\n\t\t[170] listitem ''\n\t\t\t[171] link 'To-Do List'\n\t\t\t\t[172] image ''\n\t\t\t\tStaticText '5'\n\t\t[174] listitem ''\n\t\t\t[175] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[177] image ''\n\t\t\t\t[179] image ''\n\t\t[200] listitem ''\n\t\t\t[201] link 'Byte Blaze'\n\t\t\t\t[202] image 'Byte Blaze'\n\t\t\t\t[203] image ''\n[243] main ''\n\t[246] heading 'Projects'\n\t[248] link 'New project'\n\t\tStaticText 'New project'\n\t[256] list ''\n\t\t[257] listitem ''\n\t\t\t[258] link 'Yours 18'\n\t\t\t\tStaticText '18'\n\t\t[260] listitem ''\n\t\t\t[261] link 'Starred 3'\n\t\t\t\tStaticText '3'\n\t\t[263] listitem ''\n\t\t\t[264] link 'Explore'\n\t\t[265] listitem ''\n\t\t\t[266] link 'Topics'\n\t[268] Section ''\n\t\t[269] searchbox 'Filter by name'\n\t\t[273] button 'Name'\n\t\t\tStaticText 'Name'\n\t\t\t[275] image ''\n\t[305] list ''\n\t\t[306] listitem ''\n\t\t\t[307] link 'All'\n\t\t[308] listitem ''\n\t\t\t[309] link 'Personal'\n\t[311] list ''\n\t\t[312] listitem ''\n\t\t\t[314] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[319] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t[320] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-syntax-highlighting'\n\t\t\t[324] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[327] paragraph ''\n\t\t\t\tStaticText 'Accessible light and dark syntax highlighting themes'\n\t\t\t[338] link '1'\n\t\t\t\t[339] image ''\n\t\t\t[340] link '0'\n\t\t\t\t[341] image ''\n\t\t\t[342] link '0'\n\t\t\t\t[343] image ''\n\t\t\t[344] link '1'\n\t\t\t\t[345] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[348] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[349] listitem ''\n\t\t\t[351] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[356] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t\t[357] link 'Byte Blaze / a11y-webring.club'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-webring.club'\n\t\t\t[361] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[364] paragraph ''\n\t\t\t\tStaticText 'A webring for digital accessibility practitioners.'\n\t\t\t[375] link '2'\n\t\t\t\t[376] image ''\n\t\t\t[377] link '0'\n\t\t\t\t[378] image ''\n\t\t\t[379] link '1'\n\t\t\t\t[380] image ''\n\t\t\t[381] link '4'\n\t\t\t\t[382] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[385] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[386] listitem ''\n\t\t\t[388] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[393] heading 'The A11Y Project / a11yproject.com'\n\t\t\t\t[394] link 'The A11Y Project / a11yproject.com'\n\t\t\t\t\tStaticText 'The A11Y Project /'\n\t\t\t\t\tStaticText 'a11yproject.com'\n\t\t\t[398] image ''\n\t\t\tStaticText 'Maintainer'\n\t\t\t[401] paragraph ''\n\t\t\t\tStaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t\t[412] link '21'\n\t\t\t\t[413] image ''\n\t\t\t[414] link '0'\n\t\t\t\t[415] image ''\n\t\t\t[416] link '10'\n\t\t\t\t[417] image ''\n\t\t\t[418] link '40'\n\t\t\t\t[419] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[422] time 'Mar 27, 2023 10:15pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[423] listitem ''\n\t\t\t[425] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[430] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t[431] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'accessible-html-content-patterns'\n\t\t\t[435] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[438] paragraph ''\n\t\t\t\tStaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t\t[449] link '1'\n\t\t\t\t[450] image ''\n\t\t\t[451] link '0'\n\t\t\t\t[452] image ''\n\t\t\t[453] link '0'\n\t\t\t\t[454] image ''\n\t\t\t[455] link '0'\n\t\t\t\t[456] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[459] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[460] listitem ''\n\t\t\t[462] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[467] heading 'Byte Blaze / AutoAGI'\n\t\t\t\t[468] link 'Byte Blaze / AutoAGI'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'AutoAGI'\n\t\t\t[472] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[484] link '0'\n\t\t\t\t[485] image ''\n\t\t\t[486] link '0'\n\t\t\t\t[487] image ''\n\t\t\t[488] link '0'\n\t\t\t\t[489] image ''\n\t\t\t[490] link '0'\n\t\t\t\t[491] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[494] time 'Jul 12, 2025 6:40pm GMT+0200'\n\t\t\t\tStaticText '42 minutes ago'\n\t\t[495] listitem ''\n\t\t\t[497] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[502] heading 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t[503] link 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'awesome_llm_reading'\n\t\t\t[507] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[519] link '0'\n\t\t\t\t[520] image ''\n\t\t\t[521] link '0'\n\t\t\t\t[522] image ''\n\t\t\t[523] link '0'\n\t\t\t\t[524] image ''\n\t\t\t[525] link '0'\n\t\t\t\t[526] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[529] time 'Jul 11, 2025 6:39pm GMT+0200'\n\t\t\t\tStaticText '1 day ago'\n\t\t[530] listitem ''\n\t\t\t[532] link ''\n\t\t\t\t[533] image ''\n\t\t\t[537] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t\t[538] link 'Byte Blaze / cloud-to-butt'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'cloud-to-butt'\n\t\t\t[542] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[545] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t\t[556] link '0'\n\t\t\t\t[557] image ''\n\t\t\t[558] link '0'\n\t\t\t\t[559] image ''\n\t\t\t[560] link '0'\n\t\t\t\t[561] image ''\n\t\t\t[562] link '0'\n\t\t\t\t[563] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[566] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[567] listitem ''\n\t\t\t[569] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[574] heading 'Primer / design'\n\t\t\t\t[575] link 'Primer / design'\n\t\t\t\t\tStaticText 'Primer /'\n\t\t\t\t\tStaticText 'design'\n\t\t\t[579] image ''\n\t\t\tStaticText 'Developer'\n\t\t\t[582] paragraph ''\n\t\t\t\tStaticText 'Primer Design Guidelines'\n\t\t\t[593] link '21'\n\t\t\t\t[594] image ''\n\t\t\t[595] link '0'\n\t\t\t\t[596] image ''\n\t\t\t[597] link '16'\n\t\t\t\t[598] image ''\n\t\t\t[599] link '21'\n\t\t\t\t[600] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[603] time 'Mar 27, 2023 11:04pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[604] listitem ''\n\t\t\t[606] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[611] heading 'Byte Blaze / dotfiles'\n\t\t\t\t[612] link 'Byte Blaze / dotfiles'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'dotfiles'\n\t\t\t[616] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[619] paragraph ''\n\t\t\t\tStaticText 'Computer setup'\n\t\t\t[630] link '0'\n\t\t\t\t[631] image ''\n\t\t\t[632] link '0'\n\t\t\t\t[633] image ''\n\t\t\t[634] link '0'\n\t\t\t\t[635] image ''\n\t\t\t[636] link '0'\n\t\t\t\t[637] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[640] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[641] listitem ''\n\t\t\t[643] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[648] heading 'Byte Blaze / empathy-prompts'\n\t\t\t\t[649] link 'Byte Blaze / empathy-prompts'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'empathy-prompts'\n\t\t\t[653] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[656] paragraph ''\n\t\t\t\tStaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t\t[667] link '6'\n\t\t\t\t[668] image ''\n\t\t\t[669] link '1'\n\t\t\t\t[670] image ''\n\t\t\t[671] link '2'\n\t\t\t\t[672] image ''\n\t\t\t[673] link '6'\n\t\t\t\t[674] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[677] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[678] listitem ''\n\t\t\t[680] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[685] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t\t[686] link 'Byte Blaze / ericwbailey.website'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'ericwbailey.website'\n\t\t\t[690] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[693] paragraph ''\n\t\t\t\tStaticText 'Repo for my personal website.'\n\t\t\t[704] link '2'\n\t\t\t\t[705] image ''\n\t\t\t[706] link '0'\n\t\t\t\t[707] image ''\n\t\t\t[708] link '0'\n\t\t\t\t[709] image ''\n\t\t\t[710] link '0'\n\t\t\t\t[711] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[714] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[715] listitem ''\n\t\t\t[717] link 'G'\n\t\t\t\tStaticText 'G'\n\t\t\t[722] heading 'Byte Blaze / gimmiethat.space'\n\t\t\t\t[723] link 'Byte Blaze / gimmiethat.space'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'gimmiethat.space'\n\t\t\t[727] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[730] paragraph ''\n\t\t\t\tStaticText 'I need some space.'\n\t\t\t[741] link '0'\n\t\t\t\t[742] image ''\n\t\t\t[743] link '0'\n\t\t\t\t[744] image ''\n\t\t\t[745] link '0'\n\t\t\t\t[746] image ''\n\t\t\t[747] link '0'\n\t\t\t\t[748] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[751] time 'Apr 24, 2023 11:22pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[752] listitem ''\n\t\t\t[754] link 'M'\n\t\t\t\tStaticText 'M'\n\t\t\t[759] heading 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t[760] link 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'millennials-to-snake-people'\n\t\t\t[764] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[767] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'\"\n\t\t\t[778] link '6'\n\t\t\t\t[779] image ''\n\t\t\t[780] link '0'\n\t\t\t\t[781] image ''\n\t\t\t[782] link '2'\n\t\t\t\t[783] image ''\n\t\t\t[784] link '4'\n\t\t\t\t[785] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[788] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[789] listitem ''\n\t\t\t[791] link 'N'\n\t\t\t\tStaticText 'N'\n\t\t\t[796] heading 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t[797] link 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'nolan_honest_fans'\n\t\t\t[801] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[813] link '0'\n\t\t\t\t[814] image ''\n\t\t\t[815] link '0'\n\t\t\t\t[816] image ''\n\t\t\t[817] link '0'\n\t\t\t\t[818] image ''\n\t\t\t[819] link '0'\n\t\t\t\t[820] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[823] time 'Jul 12, 2025 6:43pm GMT+0200'\n\t\t\t\tStaticText '39 minutes ago'\n\t\t[824] listitem ''\n\t\t\t[826] link 'P'\n\t\t\t\tStaticText 'P'\n\t\t\t[831] heading 'Byte Blaze / planner'\n\t\t\t\t[832] link 'Byte Blaze / planner'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'planner'\n\t\t\t[836] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[848] link '0'\n\t\t\t\t[849] image ''\n\t\t\t[850] link '0'\n\t\t\t\t[851] image ''\n\t\t\t[852] link '0'\n\t\t\t\t[853] image ''\n\t\t\t[854] link '0'\n\t\t\t\t[855] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[858] time 'Jul 11, 2025 7:51pm GMT+0200'\n\t\t\t\tStaticText '23 hours ago'\n\t\t[859] listitem ''\n\t\t\t[861] link 'R'\n\t\t\t\tStaticText 'R'\n\t\t\t[866] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t[867] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t[871] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText \"This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.\"\n\t\t\t[885] link '0'\n\t\t\t\t[886] image ''\n\t\t\t[887] link '1'\n\t\t\t\t[888] image ''\n\t\t\t[889] link '0'\n\t\t\t\t[890] image ''\n\t\t\t[891] link '0'\n\t\t\t\t[892] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[895] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[896] listitem ''\n\t\t\t[898] link 'S'\n\t\t\t\tStaticText 'S'\n\t\t\t[903] heading 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t[904] link 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'solarized-prism-theme'\n\t\t\t[908] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'solarized theme for prism.js'\n\t\t\t[922] link '0'\n\t\t\t\t[923] image ''\n\t\t\t[924] link '0'\n\t\t\t\t[925] image ''\n\t\t\t[926] link '0'\n\t\t\t\t[927] image ''\n\t\t\t[928] link '0'\n\t\t\t\t[929] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[932] time 'Apr 24, 2023 11:23pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[933] listitem ''\n\t\t\t[935] link 'T'\n\t\t\t\tStaticText 'T'\n\t\t\t[940] heading 'Byte Blaze / timeit'\n\t\t\t\t[941] link 'Byte Blaze / timeit'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'timeit'\n\t\t\t[945] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[948] paragraph ''\n\t\t\t\tStaticText 'Rails implementation of time tracking tool timeit'\n\t\t\t[959] link '0'\n\t\t\t\t[960] image ''\n\t\t\t[961] link '0'\n\t\t\t\t[962] image ''\n\t\t\t[963] link '0'\n\t\t\t\t[964] image ''\n\t\t\t[965] link '0'\n\t\t\t\t[966] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[969] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 3,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t[291] listitem ''\n\t\t\t\t\t[292] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[295] listitem ''\n\t\t\t\t\t[296] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[299] listitem ''\n\t\t\t\t\t[300] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[307] heading \"We couldn't find any projects matching most starred\"\n\t\t[308] image ''\n\t\t[309] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most%20starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 4,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 5,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 6,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred] [1]",
+						"steps_nb": 7,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred repositories] [1]",
+						"steps_nb": 8,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t[296] listitem ''\n\t\t\t\t\t[297] link 'Milestones'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t[299] listitem ''\n\t\t\t\t\t[300] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[307] heading \"We couldn't find any projects matching most starred\"\n\t\t[308] image ''\n\t\t[309] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "go_back",
+						"steps_nb": 9,
+						"reason": "Back to previous page due to request limit error",
+						"observation": "StaticText 'This endpoint has been requested too many times. Try again later.'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred repositories in GitLab] [1]",
+						"steps_nb": 10,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t[296] listitem ''\n\t\t\t\t\t[297] link 'Milestones'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t[299] listitem ''\n\t\t\t\t\t[300] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[307] heading \"We couldn't find any projects matching most starred\"\n\t\t[308] image ''\n\t\t[309] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred] [1]",
+						"steps_nb": 11,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories in GitLab'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 2'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '2'\n\t\t\t\t[292] listitem ''\n\t\t\t\t\t[293] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[296] listitem ''\n\t\t\t\t\t[297] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[300] listitem ''\n\t\t\t\t\t[301] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[308] heading \"We couldn't find any projects matching most starred repositories in GitLab\"\n\t\t[309] image ''\n\t\t[310] code ''\n\t\t\tStaticText 'most starred repositories in GitLab'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories+in+GitLab&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 12,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred repositories] [1]",
+						"steps_nb": 13,
+						"reason": "Refine search query again",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred repositories] [0]",
+						"steps_nb": 14,
+						"reason": "Refine search query again",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred repositories\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 15,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories', focused\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred repositories\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 16,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred repositories\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [227]",
+						"steps_nb": 17,
+						"reason": "Clear search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred repositories\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 18,
+						"reason": "Search for repositories",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred repositories', focused\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred repositories\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "go_home",
+						"steps_nb": 19,
+						"reason": "Start over due to repeated failures",
+						"observation": "StaticText 'This endpoint has been requested too many times. Try again later.'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+repositories&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [130]",
+						"steps_nb": 20,
+						"reason": "Click search box",
+						"observation": "[51] banner ''\n\t[52] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[58] link 'Dashboard'\n\t\t[59] image ''\n\t[62] list ''\n\t\t[63] listitem ''\n\t\t\t[64] button '', hasPopup='menu', expanded=False\n\t[124] list ''\n\t\t[125] listitem ''\n\t\t\t[127] Section ''\n\t\t\t\t[129] image ''\n\t\t\t\t[130] textbox 'Search GitLab'\n\t[139] list ''\n\t\t[140] listitem ''\n\t\t\t[141] link 'Create new...'\n\t\t\t\t[142] image ''\n\t\t\t\t[143] image ''\n\t\t[152] listitem ''\n\t\t\t[153] link 'Issues'\n\t\t\t\t[154] image ''\n\t\t[156] listitem ''\n\t\t\t[157] link 'Merge requests'\n\t\t\t\t[158] image ''\n\t\t\t\t[160] image ''\n\t\t[170] listitem ''\n\t\t\t[171] link 'To-Do List'\n\t\t\t\t[172] image ''\n\t\t\t\tStaticText '5'\n\t\t[174] listitem ''\n\t\t\t[175] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[177] image ''\n\t\t\t\t[179] image ''\n\t\t[200] listitem ''\n\t\t\t[201] link 'Byte Blaze'\n\t\t\t\t[202] image 'Byte Blaze'\n\t\t\t\t[203] image ''\n[243] main ''\n\t[246] heading 'Projects'\n\t[248] link 'New project'\n\t\tStaticText 'New project'\n\t[256] list ''\n\t\t[257] listitem ''\n\t\t\t[258] link 'Yours 18'\n\t\t\t\tStaticText '18'\n\t\t[260] listitem ''\n\t\t\t[261] link 'Starred 3'\n\t\t\t\tStaticText '3'\n\t\t[263] listitem ''\n\t\t\t[264] link 'Explore'\n\t\t[265] listitem ''\n\t\t\t[266] link 'Topics'\n\t[268] Section ''\n\t\t[269] searchbox 'Filter by name'\n\t\t[273] button 'Name'\n\t\t\tStaticText 'Name'\n\t\t\t[275] image ''\n\t[305] list ''\n\t\t[306] listitem ''\n\t\t\t[307] link 'All'\n\t\t[308] listitem ''\n\t\t\t[309] link 'Personal'\n\t[311] list ''\n\t\t[312] listitem ''\n\t\t\t[314] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[319] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t[320] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-syntax-highlighting'\n\t\t\t[324] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[327] paragraph ''\n\t\t\t\tStaticText 'Accessible light and dark syntax highlighting themes'\n\t\t\t[338] link '1'\n\t\t\t\t[339] image ''\n\t\t\t[340] link '0'\n\t\t\t\t[341] image ''\n\t\t\t[342] link '0'\n\t\t\t\t[343] image ''\n\t\t\t[344] link '1'\n\t\t\t\t[345] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[348] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[349] listitem ''\n\t\t\t[351] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[356] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t\t[357] link 'Byte Blaze / a11y-webring.club'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-webring.club'\n\t\t\t[361] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[364] paragraph ''\n\t\t\t\tStaticText 'A webring for digital accessibility practitioners.'\n\t\t\t[375] link '2'\n\t\t\t\t[376] image ''\n\t\t\t[377] link '0'\n\t\t\t\t[378] image ''\n\t\t\t[379] link '1'\n\t\t\t\t[380] image ''\n\t\t\t[381] link '4'\n\t\t\t\t[382] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[385] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[386] listitem ''\n\t\t\t[388] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[393] heading 'The A11Y Project / a11yproject.com'\n\t\t\t\t[394] link 'The A11Y Project / a11yproject.com'\n\t\t\t\t\tStaticText 'The A11Y Project /'\n\t\t\t\t\tStaticText 'a11yproject.com'\n\t\t\t[398] image ''\n\t\t\tStaticText 'Maintainer'\n\t\t\t[401] paragraph ''\n\t\t\t\tStaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t\t[412] link '21'\n\t\t\t\t[413] image ''\n\t\t\t[414] link '0'\n\t\t\t\t[415] image ''\n\t\t\t[416] link '10'\n\t\t\t\t[417] image ''\n\t\t\t[418] link '40'\n\t\t\t\t[419] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[422] time 'Mar 27, 2023 10:15pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[423] listitem ''\n\t\t\t[425] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[430] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t[431] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'accessible-html-content-patterns'\n\t\t\t[435] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[438] paragraph ''\n\t\t\t\tStaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t\t[449] link '1'\n\t\t\t\t[450] image ''\n\t\t\t[451] link '0'\n\t\t\t\t[452] image ''\n\t\t\t[453] link '0'\n\t\t\t\t[454] image ''\n\t\t\t[455] link '0'\n\t\t\t\t[456] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[459] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[460] listitem ''\n\t\t\t[462] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[467] heading 'Byte Blaze / AutoAGI'\n\t\t\t\t[468] link 'Byte Blaze / AutoAGI'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'AutoAGI'\n\t\t\t[472] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[484] link '0'\n\t\t\t\t[485] image ''\n\t\t\t[486] link '0'\n\t\t\t\t[487] image ''\n\t\t\t[488] link '0'\n\t\t\t\t[489] image ''\n\t\t\t[490] link '0'\n\t\t\t\t[491] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[494] time 'Jul 12, 2025 6:40pm GMT+0200'\n\t\t\t\tStaticText '52 minutes ago'\n\t\t[495] listitem ''\n\t\t\t[497] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[502] heading 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t[503] link 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'awesome_llm_reading'\n\t\t\t[507] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[519] link '0'\n\t\t\t\t[520] image ''\n\t\t\t[521] link '0'\n\t\t\t\t[522] image ''\n\t\t\t[523] link '0'\n\t\t\t\t[524] image ''\n\t\t\t[525] link '0'\n\t\t\t\t[526] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[529] time 'Jul 11, 2025 6:39pm GMT+0200'\n\t\t\t\tStaticText '1 day ago'\n\t\t[530] listitem ''\n\t\t\t[532] link ''\n\t\t\t\t[533] image ''\n\t\t\t[537] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t\t[538] link 'Byte Blaze / cloud-to-butt'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'cloud-to-butt'\n\t\t\t[542] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[545] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t\t[556] link '0'\n\t\t\t\t[557] image ''\n\t\t\t[558] link '0'\n\t\t\t\t[559] image ''\n\t\t\t[560] link '0'\n\t\t\t\t[561] image ''\n\t\t\t[562] link '0'\n\t\t\t\t[563] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[566] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[567] listitem ''\n\t\t\t[569] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[574] heading 'Primer / design'\n\t\t\t\t[575] link 'Primer / design'\n\t\t\t\t\tStaticText 'Primer /'\n\t\t\t\t\tStaticText 'design'\n\t\t\t[579] image ''\n\t\t\tStaticText 'Developer'\n\t\t\t[582] paragraph ''\n\t\t\t\tStaticText 'Primer Design Guidelines'\n\t\t\t[593] link '21'\n\t\t\t\t[594] image ''\n\t\t\t[595] link '0'\n\t\t\t\t[596] image ''\n\t\t\t[597] link '16'\n\t\t\t\t[598] image ''\n\t\t\t[599] link '21'\n\t\t\t\t[600] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[603] time 'Mar 27, 2023 11:04pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[604] listitem ''\n\t\t\t[606] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[611] heading 'Byte Blaze / dotfiles'\n\t\t\t\t[612] link 'Byte Blaze / dotfiles'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'dotfiles'\n\t\t\t[616] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[619] paragraph ''\n\t\t\t\tStaticText 'Computer setup'\n\t\t\t[630] link '0'\n\t\t\t\t[631] image ''\n\t\t\t[632] link '0'\n\t\t\t\t[633] image ''\n\t\t\t[634] link '0'\n\t\t\t\t[635] image ''\n\t\t\t[636] link '0'\n\t\t\t\t[637] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[640] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[641] listitem ''\n\t\t\t[643] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[648] heading 'Byte Blaze / empathy-prompts'\n\t\t\t\t[649] link 'Byte Blaze / empathy-prompts'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'empathy-prompts'\n\t\t\t[653] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[656] paragraph ''\n\t\t\t\tStaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t\t[667] link '6'\n\t\t\t\t[668] image ''\n\t\t\t[669] link '1'\n\t\t\t\t[670] image ''\n\t\t\t[671] link '2'\n\t\t\t\t[672] image ''\n\t\t\t[673] link '6'\n\t\t\t\t[674] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[677] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[678] listitem ''\n\t\t\t[680] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[685] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t\t[686] link 'Byte Blaze / ericwbailey.website'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'ericwbailey.website'\n\t\t\t[690] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[693] paragraph ''\n\t\t\t\tStaticText 'Repo for my personal website.'\n\t\t\t[704] link '2'\n\t\t\t\t[705] image ''\n\t\t\t[706] link '0'\n\t\t\t\t[707] image ''\n\t\t\t[708] link '0'\n\t\t\t\t[709] image ''\n\t\t\t[710] link '0'\n\t\t\t\t[711] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[714] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[715] listitem ''\n\t\t\t[717] link 'G'\n\t\t\t\tStaticText 'G'\n\t\t\t[722] heading 'Byte Blaze / gimmiethat.space'\n\t\t\t\t[723] link 'Byte Blaze / gimmiethat.space'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'gimmiethat.space'\n\t\t\t[727] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[730] paragraph ''\n\t\t\t\tStaticText 'I need some space.'\n\t\t\t[741] link '0'\n\t\t\t\t[742] image ''\n\t\t\t[743] link '0'\n\t\t\t\t[744] image ''\n\t\t\t[745] link '0'\n\t\t\t\t[746] image ''\n\t\t\t[747] link '0'\n\t\t\t\t[748] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[751] time 'Apr 24, 2023 11:22pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[752] listitem ''\n\t\t\t[754] link 'M'\n\t\t\t\tStaticText 'M'\n\t\t\t[759] heading 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t[760] link 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'millennials-to-snake-people'\n\t\t\t[764] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[767] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'\"\n\t\t\t[778] link '6'\n\t\t\t\t[779] image ''\n\t\t\t[780] link '0'\n\t\t\t\t[781] image ''\n\t\t\t[782] link '2'\n\t\t\t\t[783] image ''\n\t\t\t[784] link '4'\n\t\t\t\t[785] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[788] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[789] listitem ''\n\t\t\t[791] link 'N'\n\t\t\t\tStaticText 'N'\n\t\t\t[796] heading 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t[797] link 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'nolan_honest_fans'\n\t\t\t[801] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[813] link '0'\n\t\t\t\t[814] image ''\n\t\t\t[815] link '0'\n\t\t\t\t[816] image ''\n\t\t\t[817] link '0'\n\t\t\t\t[818] image ''\n\t\t\t[819] link '0'\n\t\t\t\t[820] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[823] time 'Jul 12, 2025 6:43pm GMT+0200'\n\t\t\t\tStaticText '49 minutes ago'\n\t\t[824] listitem ''\n\t\t\t[826] link 'P'\n\t\t\t\tStaticText 'P'\n\t\t\t[831] heading 'Byte Blaze / planner'\n\t\t\t\t[832] link 'Byte Blaze / planner'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'planner'\n\t\t\t[836] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[848] link '0'\n\t\t\t\t[849] image ''\n\t\t\t[850] link '0'\n\t\t\t\t[851] image ''\n\t\t\t[852] link '0'\n\t\t\t\t[853] image ''\n\t\t\t[854] link '0'\n\t\t\t\t[855] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[858] time 'Jul 11, 2025 7:51pm GMT+0200'\n\t\t\t\tStaticText '23 hours ago'\n\t\t[859] listitem ''\n\t\t\t[861] link 'R'\n\t\t\t\tStaticText 'R'\n\t\t\t[866] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t[867] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t[871] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText \"This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.\"\n\t\t\t[885] link '0'\n\t\t\t\t[886] image ''\n\t\t\t[887] link '1'\n\t\t\t\t[888] image ''\n\t\t\t[889] link '0'\n\t\t\t\t[890] image ''\n\t\t\t[891] link '0'\n\t\t\t\t[892] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[895] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[896] listitem ''\n\t\t\t[898] link 'S'\n\t\t\t\tStaticText 'S'\n\t\t\t[903] heading 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t[904] link 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'solarized-prism-theme'\n\t\t\t[908] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'solarized theme for prism.js'\n\t\t\t[922] link '0'\n\t\t\t\t[923] image ''\n\t\t\t[924] link '0'\n\t\t\t\t[925] image ''\n\t\t\t[926] link '0'\n\t\t\t\t[927] image ''\n\t\t\t[928] link '0'\n\t\t\t\t[929] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[932] time 'Apr 24, 2023 11:23pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[933] listitem ''\n\t\t\t[935] link 'T'\n\t\t\t\tStaticText 'T'\n\t\t\t[940] heading 'Byte Blaze / timeit'\n\t\t\t\t[941] link 'Byte Blaze / timeit'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'timeit'\n\t\t\t[945] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[948] paragraph ''\n\t\t\t\tStaticText 'Rails implementation of time tracking tool timeit'\n\t\t\t[959] link '0'\n\t\t\t\t[960] image ''\n\t\t\t[961] link '0'\n\t\t\t\t[962] image ''\n\t\t\t[963] link '0'\n\t\t\t\t[964] image ''\n\t\t\t[965] link '0'\n\t\t\t\t[966] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[969] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [1038] [most starred] [1]",
+						"steps_nb": 21,
+						"reason": "Search for most starred repos",
+						"observation": "[51] banner ''\n\t[52] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[58] link 'Dashboard'\n\t\t[59] image ''\n\t[62] list ''\n\t\t[63] listitem ''\n\t\t\t[64] button '', hasPopup='menu', expanded=False\n\t[124] list ''\n\t\t[125] listitem ''\n\t\t\t[1035] search 'Search GitLab'\n\t\t\t\t[1038] searchbox 'Search GitLab', focused, describedby='search-input-description'\n\t\t\t\t[1041] region ''\n\t\t\t\t\tStaticText 'Type for new suggestions to appear below.'\n\t\t\t\t[1042] region '', live='polite', atomic, relevant='additions text'\n\t\t\t\t\tStaticText '5 default results provided. Use the up and down arrow keys to navigate search results list.'\n\t\t\t\t[1046] listitem ''\n\t\t\t\t\t[1047] heading 'All GitLab'\n\t\t\t\t[1048] listitem ''\n\t\t\t\t\t[1049] menuitem 'Issues assigned to me'\n\t\t\t\t\t\t[1051] paragraph ''\n\t\t\t\t[1053] listitem ''\n\t\t\t\t\t[1054] menuitem \"Issues I've created\"\n\t\t\t\t\t\t[1056] paragraph ''\n\t\t\t\t[1058] listitem ''\n\t\t\t\t\t[1059] menuitem 'Merge requests assigned to me'\n\t\t\t\t\t\t[1061] paragraph ''\n\t\t\t\t[1063] listitem ''\n\t\t\t\t\t[1064] menuitem \"Merge requests that I'm a reviewer\"\n\t\t\t\t\t\t[1066] paragraph ''\n\t\t\t\t[1068] listitem ''\n\t\t\t\t\t[1069] menuitem \"Merge requests I've created\"\n\t\t\t\t\t\t[1071] paragraph ''\n\t[139] list ''\n\t\t[140] listitem ''\n\t\t\t[141] link 'Create new...'\n\t\t\t\t[142] image ''\n\t\t\t\t[143] image ''\n\t\t[152] listitem ''\n\t\t\t[153] link 'Issues'\n\t\t\t\t[154] image ''\n\t\t[156] listitem ''\n\t\t\t[157] link 'Merge requests'\n\t\t\t\t[158] image ''\n\t\t\t\t[160] image ''\n\t\t[170] listitem ''\n\t\t\t[171] link 'To-Do List'\n\t\t\t\t[172] image ''\n\t\t\t\tStaticText '5'\n\t\t[174] listitem ''\n\t\t\t[175] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[177] image ''\n\t\t\t\t[179] image ''\n\t\t[200] listitem ''\n\t\t\t[201] link 'Byte Blaze'\n\t\t\t\t[202] image 'Byte Blaze'\n\t\t\t\t[203] image ''\n[243] main ''\n\t[246] heading 'Projects'\n\t[248] link 'New project'\n\t\tStaticText 'New project'\n\t[256] list ''\n\t\t[257] listitem ''\n\t\t\t[258] link 'Yours 18'\n\t\t\t\tStaticText '18'\n\t\t[260] listitem ''\n\t\t\t[261] link 'Starred 3'\n\t\t\t\tStaticText '3'\n\t\t[263] listitem ''\n\t\t\t[264] link 'Explore'\n\t\t[265] listitem ''\n\t\t\t[266] link 'Topics'\n\t[268] Section ''\n\t\t[269] searchbox 'Filter by name'\n\t\t[273] button 'Name'\n\t\t\tStaticText 'Name'\n\t\t\t[275] image ''\n\t[305] list ''\n\t\t[306] listitem ''\n\t\t\t[307] link 'All'\n\t\t[308] listitem ''\n\t\t\t[309] link 'Personal'\n\t[311] list ''\n\t\t[312] listitem ''\n\t\t\t[314] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[319] heading 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t[320] link 'Byte Blaze / a11y-syntax-highlighting'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-syntax-highlighting'\n\t\t\t[324] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[327] paragraph ''\n\t\t\t\tStaticText 'Accessible light and dark syntax highlighting themes'\n\t\t\t[338] link '1'\n\t\t\t\t[339] image ''\n\t\t\t[340] link '0'\n\t\t\t\t[341] image ''\n\t\t\t[342] link '0'\n\t\t\t\t[343] image ''\n\t\t\t[344] link '1'\n\t\t\t\t[345] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[348] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[349] listitem ''\n\t\t\t[351] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[356] heading 'Byte Blaze / a11y-webring.club'\n\t\t\t\t[357] link 'Byte Blaze / a11y-webring.club'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'a11y-webring.club'\n\t\t\t[361] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[364] paragraph ''\n\t\t\t\tStaticText 'A webring for digital accessibility practitioners.'\n\t\t\t[375] link '2'\n\t\t\t\t[376] image ''\n\t\t\t[377] link '0'\n\t\t\t\t[378] image ''\n\t\t\t[379] link '1'\n\t\t\t\t[380] image ''\n\t\t\t[381] link '4'\n\t\t\t\t[382] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[385] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[386] listitem ''\n\t\t\t[388] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[393] heading 'The A11Y Project / a11yproject.com'\n\t\t\t\t[394] link 'The A11Y Project / a11yproject.com'\n\t\t\t\t\tStaticText 'The A11Y Project /'\n\t\t\t\t\tStaticText 'a11yproject.com'\n\t\t\t[398] image ''\n\t\t\tStaticText 'Maintainer'\n\t\t\t[401] paragraph ''\n\t\t\t\tStaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'\n\t\t\t[412] link '21'\n\t\t\t\t[413] image ''\n\t\t\t[414] link '0'\n\t\t\t\t[415] image ''\n\t\t\t[416] link '10'\n\t\t\t\t[417] image ''\n\t\t\t[418] link '40'\n\t\t\t\t[419] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[422] time 'Mar 27, 2023 10:15pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[423] listitem ''\n\t\t\t[425] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[430] heading 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t[431] link 'Byte Blaze / accessible-html-content-patterns'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'accessible-html-content-patterns'\n\t\t\t[435] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[438] paragraph ''\n\t\t\t\tStaticText '\ufe0f The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'\n\t\t\t[449] link '1'\n\t\t\t\t[450] image ''\n\t\t\t[451] link '0'\n\t\t\t\t[452] image ''\n\t\t\t[453] link '0'\n\t\t\t\t[454] image ''\n\t\t\t[455] link '0'\n\t\t\t\t[456] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[459] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[460] listitem ''\n\t\t\t[462] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[467] heading 'Byte Blaze / AutoAGI'\n\t\t\t\t[468] link 'Byte Blaze / AutoAGI'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'AutoAGI'\n\t\t\t[472] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[484] link '0'\n\t\t\t\t[485] image ''\n\t\t\t[486] link '0'\n\t\t\t\t[487] image ''\n\t\t\t[488] link '0'\n\t\t\t\t[489] image ''\n\t\t\t[490] link '0'\n\t\t\t\t[491] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[494] time 'Jul 12, 2025 6:40pm GMT+0200'\n\t\t\t\tStaticText '52 minutes ago'\n\t\t[495] listitem ''\n\t\t\t[497] link 'A'\n\t\t\t\tStaticText 'A'\n\t\t\t[502] heading 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t[503] link 'Byte Blaze / awesome_llm_reading'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'awesome_llm_reading'\n\t\t\t[507] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[519] link '0'\n\t\t\t\t[520] image ''\n\t\t\t[521] link '0'\n\t\t\t\t[522] image ''\n\t\t\t[523] link '0'\n\t\t\t\t[524] image ''\n\t\t\t[525] link '0'\n\t\t\t\t[526] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[529] time 'Jul 11, 2025 6:39pm GMT+0200'\n\t\t\t\tStaticText '1 day ago'\n\t\t[530] listitem ''\n\t\t\t[532] link ''\n\t\t\t\t[533] image ''\n\t\t\t[537] heading 'Byte Blaze / cloud-to-butt'\n\t\t\t\t[538] link 'Byte Blaze / cloud-to-butt'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'cloud-to-butt'\n\t\t\t[542] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[545] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'the cloud' with 'my butt'\"\n\t\t\t[556] link '0'\n\t\t\t\t[557] image ''\n\t\t\t[558] link '0'\n\t\t\t\t[559] image ''\n\t\t\t[560] link '0'\n\t\t\t\t[561] image ''\n\t\t\t[562] link '0'\n\t\t\t\t[563] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[566] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[567] listitem ''\n\t\t\t[569] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[574] heading 'Primer / design'\n\t\t\t\t[575] link 'Primer / design'\n\t\t\t\t\tStaticText 'Primer /'\n\t\t\t\t\tStaticText 'design'\n\t\t\t[579] image ''\n\t\t\tStaticText 'Developer'\n\t\t\t[582] paragraph ''\n\t\t\t\tStaticText 'Primer Design Guidelines'\n\t\t\t[593] link '21'\n\t\t\t\t[594] image ''\n\t\t\t[595] link '0'\n\t\t\t\t[596] image ''\n\t\t\t[597] link '16'\n\t\t\t\t[598] image ''\n\t\t\t[599] link '21'\n\t\t\t\t[600] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[603] time 'Mar 27, 2023 11:04pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[604] listitem ''\n\t\t\t[606] link 'D'\n\t\t\t\tStaticText 'D'\n\t\t\t[611] heading 'Byte Blaze / dotfiles'\n\t\t\t\t[612] link 'Byte Blaze / dotfiles'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'dotfiles'\n\t\t\t[616] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[619] paragraph ''\n\t\t\t\tStaticText 'Computer setup'\n\t\t\t[630] link '0'\n\t\t\t\t[631] image ''\n\t\t\t[632] link '0'\n\t\t\t\t[633] image ''\n\t\t\t[634] link '0'\n\t\t\t\t[635] image ''\n\t\t\t[636] link '0'\n\t\t\t\t[637] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[640] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[641] listitem ''\n\t\t\t[643] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[648] heading 'Byte Blaze / empathy-prompts'\n\t\t\t\t[649] link 'Byte Blaze / empathy-prompts'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'empathy-prompts'\n\t\t\t[653] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[656] paragraph ''\n\t\t\t\tStaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'\n\t\t\t[667] link '6'\n\t\t\t\t[668] image ''\n\t\t\t[669] link '1'\n\t\t\t\t[670] image ''\n\t\t\t[671] link '2'\n\t\t\t\t[672] image ''\n\t\t\t[673] link '6'\n\t\t\t\t[674] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[677] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[678] listitem ''\n\t\t\t[680] link 'E'\n\t\t\t\tStaticText 'E'\n\t\t\t[685] heading 'Byte Blaze / ericwbailey.website'\n\t\t\t\t[686] link 'Byte Blaze / ericwbailey.website'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'ericwbailey.website'\n\t\t\t[690] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[693] paragraph ''\n\t\t\t\tStaticText 'Repo for my personal website.'\n\t\t\t[704] link '2'\n\t\t\t\t[705] image ''\n\t\t\t[706] link '0'\n\t\t\t\t[707] image ''\n\t\t\t[708] link '0'\n\t\t\t\t[709] image ''\n\t\t\t[710] link '0'\n\t\t\t\t[711] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[714] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[715] listitem ''\n\t\t\t[717] link 'G'\n\t\t\t\tStaticText 'G'\n\t\t\t[722] heading 'Byte Blaze / gimmiethat.space'\n\t\t\t\t[723] link 'Byte Blaze / gimmiethat.space'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'gimmiethat.space'\n\t\t\t[727] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[730] paragraph ''\n\t\t\t\tStaticText 'I need some space.'\n\t\t\t[741] link '0'\n\t\t\t\t[742] image ''\n\t\t\t[743] link '0'\n\t\t\t\t[744] image ''\n\t\t\t[745] link '0'\n\t\t\t\t[746] image ''\n\t\t\t[747] link '0'\n\t\t\t\t[748] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[751] time 'Apr 24, 2023 11:22pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[752] listitem ''\n\t\t\t[754] link 'M'\n\t\t\t\tStaticText 'M'\n\t\t\t[759] heading 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t[760] link 'Byte Blaze / millennials-to-snake-people'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'millennials-to-snake-people'\n\t\t\t[764] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[767] paragraph ''\n\t\t\t\tStaticText \"Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'\"\n\t\t\t[778] link '6'\n\t\t\t\t[779] image ''\n\t\t\t[780] link '0'\n\t\t\t\t[781] image ''\n\t\t\t[782] link '2'\n\t\t\t\t[783] image ''\n\t\t\t[784] link '4'\n\t\t\t\t[785] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[788] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[789] listitem ''\n\t\t\t[791] link 'N'\n\t\t\t\tStaticText 'N'\n\t\t\t[796] heading 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t[797] link 'Byte Blaze / nolan_honest_fans'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'nolan_honest_fans'\n\t\t\t[801] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[813] link '0'\n\t\t\t\t[814] image ''\n\t\t\t[815] link '0'\n\t\t\t\t[816] image ''\n\t\t\t[817] link '0'\n\t\t\t\t[818] image ''\n\t\t\t[819] link '0'\n\t\t\t\t[820] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[823] time 'Jul 12, 2025 6:43pm GMT+0200'\n\t\t\t\tStaticText '49 minutes ago'\n\t\t[824] listitem ''\n\t\t\t[826] link 'P'\n\t\t\t\tStaticText 'P'\n\t\t\t[831] heading 'Byte Blaze / planner'\n\t\t\t\t[832] link 'Byte Blaze / planner'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'planner'\n\t\t\t[836] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[848] link '0'\n\t\t\t\t[849] image ''\n\t\t\t[850] link '0'\n\t\t\t\t[851] image ''\n\t\t\t[852] link '0'\n\t\t\t\t[853] image ''\n\t\t\t[854] link '0'\n\t\t\t\t[855] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[858] time 'Jul 11, 2025 7:51pm GMT+0200'\n\t\t\t\tStaticText '23 hours ago'\n\t\t[859] listitem ''\n\t\t\t[861] link 'R'\n\t\t\t\tStaticText 'R'\n\t\t\t[866] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t[867] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'remove-board-movement-events-from-the-github-issue-timeline'\n\t\t\t[871] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[874] paragraph ''\n\t\t\t\tStaticText \"This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.\"\n\t\t\t[885] link '0'\n\t\t\t\t[886] image ''\n\t\t\t[887] link '1'\n\t\t\t\t[888] image ''\n\t\t\t[889] link '0'\n\t\t\t\t[890] image ''\n\t\t\t[891] link '0'\n\t\t\t\t[892] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[895] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[896] listitem ''\n\t\t\t[898] link 'S'\n\t\t\t\tStaticText 'S'\n\t\t\t[903] heading 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t[904] link 'Byte Blaze / solarized-prism-theme'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'solarized-prism-theme'\n\t\t\t[908] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[911] paragraph ''\n\t\t\t\tStaticText 'solarized theme for prism.js'\n\t\t\t[922] link '0'\n\t\t\t\t[923] image ''\n\t\t\t[924] link '0'\n\t\t\t\t[925] image ''\n\t\t\t[926] link '0'\n\t\t\t\t[927] image ''\n\t\t\t[928] link '0'\n\t\t\t\t[929] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[932] time 'Apr 24, 2023 11:23pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[933] listitem ''\n\t\t\t[935] link 'T'\n\t\t\t\tStaticText 'T'\n\t\t\t[940] heading 'Byte Blaze / timeit'\n\t\t\t\t[941] link 'Byte Blaze / timeit'\n\t\t\t\t\tStaticText 'Byte Blaze /'\n\t\t\t\t\tStaticText 'timeit'\n\t\t\t[945] image ''\n\t\t\tStaticText 'Owner'\n\t\t\t[948] paragraph ''\n\t\t\t\tStaticText 'Rails implementation of time tracking tool timeit'\n\t\t\t[959] link '0'\n\t\t\t\t[960] image ''\n\t\t\t[961] link '0'\n\t\t\t\t[962] image ''\n\t\t\t[963] link '0'\n\t\t\t\t[964] image ''\n\t\t\t[965] link '0'\n\t\t\t\t[966] image ''\n\t\t\tStaticText 'Updated'\n\t\t\t[969] time 'Mar 28, 2023 1:22am GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "find_repos [most starred]",
+						"action": "stop [ask not achieved : too many steps.]",
+						"steps_nb": 22,
+						"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most%20starred&nav_source=navbar",
+						"guidance": "",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because the search query \"most starred\" did not yield any results, and the agent was unable to find the most starred repositories on GitLab. \n\nNew Plan:\n1. Review the search query to ensure it is correct and accurate.\n2. Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\".\n3. Check the search settings to ensure that the search is scoped to the correct repository or group.\n4. Consider using the GitLab API to fetch the most starred repositories programmatically.\n5. If the issue persists, try resetting the search query and starting over from the dashboard. \n\nNote: The previous actions indicate that the agent attempted to refine the search query multiple times and clicked the search button repeatedly, but this did not yield the desired results. A new approach is needed to achieve the objective."
+			},
+			{
+				"type": "policy",
+				"description": "Find repositories based on specific criteria, such as the number of stars",
+				"objective": "Star the top four most stared repos in Gitlab",
+				"action": "find_repos [most starred]",
+				"steps_nb": 23,
+				"reason": "Find top repos to star",
+				"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most%20starred&nav_source=navbar",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"star_repo",
+						"Star a repository"
+					],
+					[
+						"find_repos",
+						"Find repositories based on specific criteria, such as the number of stars"
+					],
+					[
+						"search_issues",
+						"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"find_merge_request_and_comment",
+						"Find a merge request related to a specific topic and post a comment"
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					],
+					[
+						"create_milestone",
+						"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+					],
+					[
+						"create_project",
+						"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+					],
+					[
+						"navigate_to_create_new_project",
+						"Navigate to the page where a new project can be created"
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 24,
+						"reason": "Initiate search",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most%20starred&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred projects] [1]",
+						"steps_nb": 25,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [most starred] [1]",
+						"steps_nb": 26,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred projects'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred projects\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred projects'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred+projects&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "type [227] [top starred repositories] [1]",
+						"steps_nb": 27,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='most starred'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 99 Result count is over limit.'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '99'\n\t\t\t\t\t\t[292] image 'Result count is over limit.'\n\t\t\t\t[293] listitem ''\n\t\t\t\t\t[294] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[297] listitem ''\n\t\t\t\t\t[298] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[301] listitem ''\n\t\t\t\t\t[302] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[309] heading \"We couldn't find any projects matching most starred\"\n\t\t[310] image ''\n\t\t[311] code ''\n\t\t\tStaticText 'most starred'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=most+starred&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 28,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='top starred repositories'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues 29'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t\t\tStaticText '29'\n\t\t\t\t[292] listitem ''\n\t\t\t\t\t[293] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[296] listitem ''\n\t\t\t\t\t[297] link 'Milestones 0'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[300] listitem ''\n\t\t\t\t\t[301] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[308] heading \"We couldn't find any projects matching top starred repositories\"\n\t\t[309] image ''\n\t\t[310] code ''\n\t\t\tStaticText 'top starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=top+starred+repositories&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_repos [most starred]",
+						"action": "click [231]",
+						"steps_nb": 29,
+						"reason": "Refine search query",
+						"observation": "[52] banner ''\n\t[53] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[59] link 'Dashboard'\n\t\t[60] image ''\n\t[63] list ''\n\t\t[64] listitem ''\n\t\t\t[65] button '', hasPopup='menu', expanded=False\n\t[106] list ''\n\t\t[107] listitem ''\n\t[112] list ''\n\t\t[113] listitem ''\n\t\t\t[114] link 'Create new...'\n\t\t\t\t[115] image ''\n\t\t\t\t[116] image ''\n\t\t[125] listitem ''\n\t\t\t[126] link 'Issues'\n\t\t\t\t[127] image ''\n\t\t[129] listitem ''\n\t\t\t[130] link 'Merge requests'\n\t\t\t\t[131] image ''\n\t\t\t\t[133] image ''\n\t\t[143] listitem ''\n\t\t\t[144] link 'To-Do List'\n\t\t\t\t[145] image ''\n\t\t\t\tStaticText '5'\n\t\t[147] listitem ''\n\t\t\t[148] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[150] image ''\n\t\t\t\t[152] image ''\n\t\t[173] listitem ''\n\t\t\t[174] link 'Byte Blaze'\n\t\t\t\t[175] image 'Byte Blaze'\n\t\t\t\t[176] image ''\n[216] main ''\n\t[219] heading 'Search'\n\t[221] Section ''\n\t\t[225] LabelText ''\n\t\t\tStaticText 'What are you searching for?'\n\t\t[226] group ''\n\t\t\t[227] searchbox 'Search for projects, issues, etc.' value='top starred repositories'\n\t\t\t[228] button 'Clear'\n\t\t\t[231] button 'Search'\n\t\t[234] LabelText ''\n\t\t\tStaticText 'Group'\n\t\t[236] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[257] LabelText ''\n\t\t\tStaticText 'Project'\n\t\t[259] button 'Any', hasPopup='menu', expanded=False\n\t\t\tStaticText 'Any'\n\t\t[279] separator '', orientation='horizontal'\n\t[281] Section ''\n\t\t[282] navigation ''\n\t\t\t[283] list ''\n\t\t\t\t[284] listitem ''\n\t\t\t\t\t[285] link 'Projects 0'\n\t\t\t\t\t\tStaticText 'Projects'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[288] listitem ''\n\t\t\t\t\t[289] link 'Issues'\n\t\t\t\t\t\tStaticText 'Issues'\n\t\t\t\t[291] listitem ''\n\t\t\t\t\t[292] link 'Merge requests 0'\n\t\t\t\t\t\tStaticText 'Merge requests'\n\t\t\t\t\t\tStaticText '0'\n\t\t\t\t[295] listitem ''\n\t\t\t\t\t[296] link 'Milestones'\n\t\t\t\t\t\tStaticText 'Milestones'\n\t\t\t\t[298] listitem ''\n\t\t\t\t\t[299] link 'Users 0'\n\t\t\t\t\t\tStaticText 'Users'\n\t\t\t\t\t\tStaticText '0'\n\t[306] heading \"We couldn't find any projects matching top starred repositories\"\n\t\t[307] image ''\n\t\t[308] code ''\n\t\t\tStaticText 'top starred repositories'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/search?search=top+starred+repositories&nav_source=navbar",
+						"guidance": "Please follow these general instructions:\n* To find repositories based on specific criteria, such as the number of stars, ensure that your search query is correct and accurate.\n* Try alternative search queries, such as \"most starred projects\" or \"top starred repositories\", to see if they yield better results.\n* Check the search settings to ensure that the search is scoped to the correct repository or group.\n* If the search function is not yielding the desired results, consider using the GitLab API to fetch the most starred repositories programmatically.\n* If the issue persists, try resetting the search query and starting over from the dashboard.\n* Be aware that the search function on GitLab may have limitations and nuances that need to be taken into account to achieve the desired results.",
+						"relevant_policies": [
+							[
+								"star_repo",
+								"Star a repository"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_merge_request_and_comment",
+								"Find a merge request related to a specific topic and post a comment"
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"navigate_to_create_new_project",
+								"Navigate to the page where a new project can be created"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"create_milestone",
+								"Given you are in the issues page, this subroutine completes the act of creating a new milestone"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							]
+						]
+					}
+				]
+			}
+		]
+	},
+	"score": 0
+}

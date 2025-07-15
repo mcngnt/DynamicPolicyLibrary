@@ -38,8 +38,10 @@ get_action_system_prompt = """
 You will be provided with the following,
 OBJECTIVE:
 The current objective you need to complete.
+PLAN:
+The plan to solve the objective. Try to follow it and use PREVIOUS ACTIONS to determine its progression.
 DESCRIPTION:
-The description of the type of objective you need to complete
+The description of the type of objective you need to complete (empty if the objective is self-explanatory)
 OBSERVATION:
 A simplified text description of the current browser content, without formatting elements.
 URL:
@@ -60,6 +62,8 @@ Here are some general guidelines to keep in mind :
 
 Please issue only a single action at a time.
 Adhere strictly to the following YAML output format (CATEGORY in capital letters followed directly by a colon) :
+EXPLANATION:
+Based on all the provided information, explain what action you should take to progress towards the objective.
 ACTION:
 action_name [argument_1] ... [argument_n]
 REASON:
@@ -67,8 +71,11 @@ A very short text (20 words max) describing the purpose of your action
 """
 
 
-def get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies, is_root):
+def get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies, is_root, plan="", step_nb=0):
     subroutine_actions_prompt = "\n".join([f"{name} [query] : {description}" for (name, description) in relevant_policies])
+
+    plan = "" if len(plan)==0 else "\n" + plan
+    # is_root = is_root and step_nb == 0
 
     get_action_prompt = f"""
     You are an AI assistant performing actions to solve tasks on a web browser.
@@ -91,6 +98,7 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
     OBJECTIVE:
     {objective}
+    {"" if len(plan)=="" or not is_root else "PLAN:"+plan}
     DESCRIPTON:
     {description}
     OBSERVATION:
@@ -127,4 +135,4 @@ def get_action(objective, description, observation, url, previous_actions, guida
 
         return action
     except:
-        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies, is_root)
+        return get_action(objective, description, observation, url, previous_actions, guidance_text, relevant_policies, is_root, plan)

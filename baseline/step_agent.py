@@ -36,7 +36,7 @@ class StepAgent:
 		log_info = {"objective":policy_objective, "observation":observation,"url":url, "steps_nb":self.steps_nb, "guidance":guidance_text,"relevant_policies":None, "action":None, "is_page_op":None, "is_stop":None, "reason":None, "description":None,"critique":None, "plan":None, "created_policies":None, "end_screenshot":None}
 
 		
-		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text)
+		action = get_action(policy_objective, observation, url, top_policy["actions"], guidance_text, self.site)
 
 		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]
@@ -59,8 +59,7 @@ class StepAgent:
 			descr,_ = self.library.get(action["name"])
 			log_info["description"] = descr
 
-		if is_final:
-			log_info["end_screenshot"] = screenshot
+		log_info["end_screenshot"] = screenshot
 
 
 		self.steps_nb += 1

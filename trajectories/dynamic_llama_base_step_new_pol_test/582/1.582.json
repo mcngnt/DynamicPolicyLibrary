@@ -1,0 +1,991 @@
+{
+	"created_policies": [
+		{
+			"name": "create_forum_with_details",
+			"description": "Create a new forum with the provided name, description, and sidebar details",
+			"query": "Cyberpunk, Welcome to the future"
+		},
+		{
+			"name": "configure_forum_details",
+			"description": "Configure the details of a newly created forum to include specific categories in the sidebar",
+			"query": "Games, Books, Movies, Future \n\nNote: The `configure_forum_details` subroutine does not exist in the provided list of subroutines, so I created it to fit the subtask of configuring the newly created forum's details."
+		}
+	],
+	"plan": "Create a new forum | Configure forum details",
+	"trace": {
+		"trace": [
+			{
+				"type": "policy",
+				"description": "Create a new forum with the provided name, description, and sidebar details",
+				"objective": "Create a new forum named Cyberpunk, with a description of Welcome to the future, and include ['Games', 'Books', 'Movies', 'Future'] in the sidebar?",
+				"action": "create_forum_with_details [Cyberpunk] [Welcome to the future] [Games, Books, Movies, Future]",
+				"steps_nb": 0,
+				"reason": "Create new forum Cyberpunk",
+				"observation": "[24] navigation ''\n\t[25] link 'Jump to main content'\n\t[26] link 'Jump to sidebar'\n[27] navigation ''\n\t[30] link 'Home'\n\t\tStaticText 'Postmill'\n\t[40] list ''\n\t\t[41] listitem ''\n\t\t\t[42] link 'Forums'\n\t\t[43] listitem ''\n\t\t\t[44] link 'Wiki'\n\t[45] Section ''\n\t\t[54] searchbox 'Search query'\n\t[55] list ''\n\t\t[56] listitem ''\n\t\t\t[57] link 'Notifications (0)'\n\t\t\t\t[60] image ''\n\t\t[61] listitem ''\n\t\t\t[62] link 'Submit'\n\t\t\t\t[65] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[67] listitem ''\n\t\t\t[68] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[71] image ''\n\t\t\t\t[72] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[113] main ''\n\t[114] navigation ''\n\t\t[115] list ''\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'Submissions'\n\t\t\t[118] listitem ''\n\t\t\t\t[119] link 'Comments'\n\t\t[120] list ''\n\t\t\t[121] listitem ''\n\t\t\t\t[122] button 'Filter on: Featured', hasPopup='menu', expanded=False\n\t\t\t\t\t[124] image ''\n\t\t\t\t\tStaticText 'Featured'\n\t\t\t[134] listitem ''\n\t\t\t\t[135] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t[137] image ''\n\t\t\t\t\tStaticText 'Hot'\n\t[158] paragraph ''\n\t\tStaticText 'You are not subscribed to any forum. Showing featured forums instead.'\n[159] complementary ''\n\t[160] Section ''\n\t\t[161] heading 'Featured forums'\n\t\t[162] paragraph ''\n\t\t\tStaticText 'There are no featured forums to display.'\n[164] contentinfo ''\n\t[165] paragraph ''\n\t\tStaticText 'Running'\n\t\t[167] link 'Postmill'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"create_forum_with_details",
+						"Create a new forum with the provided name, description, and sidebar details"
+					],
+					[
+						"configure_forum_details",
+						"Configure the details of a newly created forum to include specific categories in the sidebar"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"navigate_to_submit_page",
+						"Navigate to the page where new submissions can be made"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"downvote_top_posts",
+						"Downvote the top posts in the current subreddit"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "click [62]",
+						"steps_nb": 1,
+						"reason": "Navigate to submit page",
+						"observation": "[24] navigation ''\n\t[25] link 'Jump to main content'\n\t[26] link 'Jump to sidebar'\n[27] navigation ''\n\t[30] link 'Home'\n\t\tStaticText 'Postmill'\n\t[40] list ''\n\t\t[41] listitem ''\n\t\t\t[42] link 'Forums'\n\t\t[43] listitem ''\n\t\t\t[44] link 'Wiki'\n\t[45] Section ''\n\t\t[54] searchbox 'Search query'\n\t[55] list ''\n\t\t[56] listitem ''\n\t\t\t[57] link 'Notifications (0)'\n\t\t\t\t[60] image ''\n\t\t[61] listitem ''\n\t\t\t[62] link 'Submit'\n\t\t\t\t[65] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[67] listitem ''\n\t\t\t[68] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[71] image ''\n\t\t\t\t[72] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[113] main ''\n\t[114] navigation ''\n\t\t[115] list ''\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'Submissions'\n\t\t\t[118] listitem ''\n\t\t\t\t[119] link 'Comments'\n\t\t[120] list ''\n\t\t\t[121] listitem ''\n\t\t\t\t[122] button 'Filter on: Featured', hasPopup='menu', expanded=False\n\t\t\t\t\t[124] image ''\n\t\t\t\t\tStaticText 'Featured'\n\t\t\t[134] listitem ''\n\t\t\t\t[135] button 'Sort by: Hot', hasPopup='menu', expanded=False\n\t\t\t\t\t[137] image ''\n\t\t\t\t\tStaticText 'Hot'\n\t[158] paragraph ''\n\t\tStaticText 'You are not subscribed to any forum. Showing featured forums instead.'\n[159] complementary ''\n\t[160] Section ''\n\t\t[161] heading 'Featured forums'\n\t\t[162] paragraph ''\n\t\t\tStaticText 'There are no featured forums to display.'\n[164] contentinfo ''\n\t[165] paragraph ''\n\t\tStaticText 'Running'\n\t\t[167] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "type [137] [Cyberpunk Forum] [0]",
+						"steps_nb": 2,
+						"reason": "Enter forum title",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "click [378]",
+						"steps_nb": 3,
+						"reason": "Open forum combobox",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', focused, required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "click [395]",
+						"steps_nb": 4,
+						"reason": "Submit forum creation form",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026 Choose one\u2026', hasPopup='menu', expanded=True, owns='select2-submission_forum-results'\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t[418] listbox '', multiselectable=False, orientation='vertical', expanded=True\n\t\t\t\t[419] option 'Choose one\u2026', selected=True\n\t\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t\t[423] option 'allentown', selected=False\n\t\t\t\t\tStaticText 'allentown'\n\t\t\t\t[427] option 'arlingtonva', selected=False\n\t\t\t\t\tStaticText 'arlingtonva'\n\t\t\t\t[431] option 'Art', selected=False\n\t\t\t\t\tStaticText 'Art'\n\t\t\t\t[435] option 'AskReddit', selected=False\n\t\t\t\t\tStaticText 'AskReddit'\n\t\t\t\t[439] option 'askscience', selected=False\n\t\t\t\t\tStaticText 'askscience'\n\t\t\t\t[443] option 'aww', selected=False\n\t\t\t\t\tStaticText 'aww'\n\t\t\t\t[447] option 'baltimore', selected=False\n\t\t\t\t\tStaticText 'baltimore'\n\t\t\t\t[451] option 'books', selected=False\n\t\t\t\t\tStaticText 'books'\n\t\t\t\t[455] option 'boston', selected=False\n\t\t\t\t\tStaticText 'boston'\n\t\t\t\t[459] option 'BridgeportCT', selected=False\n\t\t\t\t\tStaticText 'BridgeportCT'\n\t\t\t\t[463] option 'BuyItForLife', selected=False\n\t\t\t\t\tStaticText 'BuyItForLife'\n\t\t\t\t[467] option 'CambridgeMA', selected=False\n\t\t\t\t\tStaticText 'CambridgeMA'\n\t\t\t\t[471] option 'ColumbiaMD', selected=False\n\t\t\t\t\tStaticText 'ColumbiaMD'\n\t\t\t\t[475] option 'Connecticut', selected=False\n\t\t\t\t\tStaticText 'Connecticut'\n\t\t\t\t[479] option 'consoles', selected=False\n\t\t\t\t\tStaticText 'consoles'\n\t\t\t\t[483] option 'coolgithubprojects', selected=False\n\t\t\t\t\tStaticText 'coolgithubprojects'\n\t\t\t\t[487] option 'creepy', selected=False\n\t\t\t\t\tStaticText 'creepy'\n\t\t\t\t[491] option 'dataisbeautiful', selected=False\n\t\t\t\t\tStaticText 'dataisbeautiful'\n\t\t\t\t[495] option 'deeplearning', selected=False\n\t\t\t\t\tStaticText 'deeplearning'\n\t\t\t\t[499] option 'DIY', selected=False\n\t\t\t\t\tStaticText 'DIY'\n\t\t\t\t[503] option 'Documentaries', selected=False\n\t\t\t\t\tStaticText 'Documentaries'\n\t\t\t\t[507] option 'EarthPorn', selected=False\n\t\t\t\t\tStaticText 'EarthPorn'\n\t\t\t\t[511] option 'explainlikeimfive', selected=False\n\t\t\t\t\tStaticText 'explainlikeimfive'\n\t\t\t\t[515] option 'food', selected=False\n\t\t\t\t\tStaticText 'food'\n\t\t\t\t[519] option 'funny', selected=False\n\t\t\t\t\tStaticText 'funny'\n\t\t\t\t[523] option 'Futurology', selected=False\n\t\t\t\t\tStaticText 'Futurology'\n\t\t\t\t[527] option 'gadgets', selected=False\n\t\t\t\t\tStaticText 'gadgets'\n\t\t\t\t[531] option 'gaming', selected=False\n\t\t\t\t\tStaticText 'gaming'\n\t\t\t\t[535] option 'GetMotivated', selected=False\n\t\t\t\t\tStaticText 'GetMotivated'\n\t\t\t\t[539] option 'gifs', selected=False\n\t\t\t\t\tStaticText 'gifs'\n\t\t\t\t[543] option 'Hartford', selected=False\n\t\t\t\t\tStaticText 'Hartford'\n\t\t\t\t[547] option 'headphones', selected=False\n\t\t\t\t\tStaticText 'headphones'\n\t\t\t\t[551] option 'history', selected=False\n\t\t\t\t\tStaticText 'history'\n\t\t\t\t[555] option 'IAmA', selected=False\n\t\t\t\t\tStaticText 'IAmA'\n\t\t\t\t[559] option 'InternetIsBeautiful', selected=False\n\t\t\t\t\tStaticText 'InternetIsBeautiful'\n\t\t\t\t[563] option 'iphone', selected=False\n\t\t\t\t\tStaticText 'iphone'\n\t\t\t\t[567] option 'jerseycity', selected=False\n\t\t\t\t\tStaticText 'jerseycity'\n\t\t\t\t[571] option 'Jokes', selected=False\n\t\t\t\t\tStaticText 'Jokes'\n\t\t\t\t[575] option 'lakewood', selected=False\n\t\t\t\t\tStaticText 'lakewood'\n\t\t\t\t[579] option 'LifeProTips', selected=False\n\t\t\t\t\tStaticText 'LifeProTips'\n\t\t\t\t[583] option 'listentothis', selected=False\n\t\t\t\t\tStaticText 'listentothis'\n\t\t\t\t[587] option 'LowellMA', selected=False\n\t\t\t\t\tStaticText 'LowellMA'\n\t\t\t\t[591] option 'MachineLearning', selected=False\n\t\t\t\t\tStaticText 'MachineLearning'\n\t\t\t\t[595] option 'Maine', selected=False\n\t\t\t\t\tStaticText 'Maine'\n\t\t\t\t[599] option 'ManchesterNH', selected=False\n\t\t\t\t\tStaticText 'ManchesterNH'\n\t\t\t\t[603] option 'massachusetts', selected=False\n\t\t\t\t\tStaticText 'massachusetts'\n\t\t\t\t[607] option 'MechanicalKeyboards', selected=False\n\t\t\t\t\tStaticText 'MechanicalKeyboards'\n\t\t\t\t[611] option 'memes', selected=False\n\t\t\t\t\tStaticText 'memes'\n\t\t\t\t[615] option 'mildlyinteresting', selected=False\n\t\t\t\t\tStaticText 'mildlyinteresting'\n\t\t\t\t[619] option 'monitor', selected=False\n\t\t\t\t\tStaticText 'monitor'\n\t\t\t\t[623] option 'movies', selected=False\n\t\t\t\t\tStaticText 'movies'\n\t\t\t\t[627] option 'Music', selected=False\n\t\t\t\t\tStaticText 'Music'\n\t\t\t\t[631] option 'Newark', selected=False\n\t\t\t\t\tStaticText 'Newark'\n\t\t\t\t[635] option 'newhampshire', selected=False\n\t\t\t\t\tStaticText 'newhampshire'\n\t\t\t\t[639] option 'newhaven', selected=False\n\t\t\t\t\tStaticText 'newhaven'\n\t\t\t\t[643] option 'newjersey', selected=False\n\t\t\t\t\tStaticText 'newjersey'\n\t\t\t\t[647] option 'news', selected=False\n\t\t\t\t\tStaticText 'news'\n\t\t\t\t[651] option 'nosleep', selected=False\n\t\t\t\t\tStaticText 'nosleep'\n\t\t\t\t[655] option 'nottheonion', selected=False\n\t\t\t\t\tStaticText 'nottheonion'\n\t\t\t\t[659] option 'nyc', selected=False\n\t\t\t\t\tStaticText 'nyc'\n\t\t\t\t[663] option 'OldSchoolCool', selected=False\n\t\t\t\t\tStaticText 'OldSchoolCool'\n\t\t\t\t[667] option 'Paterson', selected=False\n\t\t\t\t\tStaticText 'Paterson'\n\t\t\t\t[671] option 'Pennsylvania', selected=False\n\t\t\t\t\tStaticText 'Pennsylvania'\n\t\t\t\t[675] option 'personalfinance', selected=False\n\t\t\t\t\tStaticText 'personalfinance'\n\t\t\t\t[679] option 'philadelphia', selected=False\n\t\t\t\t\tStaticText 'philadelphia'\n\t\t\t\t[683] option 'philosophy', selected=False\n\t\t\t\t\tStaticText 'philosophy'\n\t\t\t\t[687] option 'photoshopbattles', selected=False\n\t\t\t\t\tStaticText 'photoshopbattles'\n\t\t\t\t[691] option 'pics', selected=False\n\t\t\t\t\tStaticText 'pics'\n\t\t\t\t[695] option 'pittsburgh', selected=False\n\t\t\t\t\tStaticText 'pittsburgh'\n\t\t\t\t[699] option 'providence', selected=False\n\t\t\t\t\tStaticText 'providence'\n\t\t\t\t[703] option 'relationship_advice', selected=False\n\t\t\t\t\tStaticText 'relationship_advice'\n\t\t\t\t[707] option 'RhodeIsland', selected=False\n\t\t\t\t\tStaticText 'RhodeIsland'\n\t\t\t\t[711] option 'rva', selected=False\n\t\t\t\t\tStaticText 'rva'\n\t\t\t\t[715] option 'science', selected=False\n\t\t\t\t\tStaticText 'science'\n\t\t\t\t[719] option 'Showerthoughts', selected=False\n\t\t\t\t\tStaticText 'Showerthoughts'\n\t\t\t\t[723] option 'singularity', selected=False\n\t\t\t\t\tStaticText 'singularity'\n\t\t\t\t[727] option 'space', selected=False\n\t\t\t\t\tStaticText 'space'\n\t\t\t\t[731] option 'sports', selected=False\n\t\t\t\t\tStaticText 'sports'\n\t\t\t\t[735] option 'springfieldMO', selected=False\n\t\t\t\t\tStaticText 'springfieldMO'\n\t\t\t\t[739] option 'StamfordCT', selected=False\n\t\t\t\t\tStaticText 'StamfordCT'\n\t\t\t\t[743] option 'technology', selected=False\n\t\t\t\t\tStaticText 'technology'\n\t\t\t\t[747] option 'television', selected=False\n\t\t\t\t\tStaticText 'television'\n\t\t\t\t[751] option 'tifu', selected=False\n\t\t\t\t\tStaticText 'tifu'\n\t\t\t\t[755] option 'todayilearned', selected=False\n\t\t\t\t\tStaticText 'todayilearned'\n\t\t\t\t[759] option 'UpliftingNews', selected=False\n\t\t\t\t\tStaticText 'UpliftingNews'\n\t\t\t\t[763] option 'vermont', selected=False\n\t\t\t\t\tStaticText 'vermont'\n\t\t\t\t[767] option 'videos', selected=False\n\t\t\t\t\tStaticText 'videos'\n\t\t\t\t[771] option 'wallstreetbets', selected=False\n\t\t\t\t\tStaticText 'wallstreetbets'\n\t\t\t\t[775] option 'Washington', selected=False\n\t\t\t\t\tStaticText 'Washington'\n\t\t\t\t[779] option 'washingtondc', selected=False\n\t\t\t\t\tStaticText 'washingtondc'\n\t\t\t\t[783] option 'WaterburyCT', selected=False\n\t\t\t\t\tStaticText 'WaterburyCT'\n\t\t\t\t[787] option 'WorcesterMA', selected=False\n\t\t\t\t\tStaticText 'WorcesterMA'\n\t\t\t\t[791] option 'worldnews', selected=False\n\t\t\t\t\tStaticText 'worldnews'\n\t\t\t\t[795] option 'WritingPrompts', selected=False\n\t\t\t\t\tStaticText 'WritingPrompts'\n\t\t\t\t[799] option 'yonkers', selected=False\n\t\t\t\t\tStaticText 'yonkers'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'\n[416] searchbox '', focused, autocomplete='list', controls='select2-submission_forum-results'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					},
+					{
+						"type": "policy",
+						"description": "Configure the details of a newly created forum to include specific categories in the sidebar",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "configure_forum_details [Cyberpunk]",
+						"steps_nb": 5,
+						"reason": "Configure forum details",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', focused, hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						],
+						"trace": [
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [66]",
+								"steps_nb": 6,
+								"reason": "Open user menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', focused, hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [137]",
+								"steps_nb": 7,
+								"reason": "Fill forum title",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', focused, hasPopup='menu', expanded=True\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t[72] list ''\n\t\t\t\t[78] listitem ''\n\t\t\t\t\t[79] link 'Profile'\n\t\t\t\t\t\t[81] image ''\n\t\t\t\t[82] listitem ''\n\t\t\t\t\t[83] link 'My account'\n\t\t\t\t\t\t[85] image ''\n\t\t\t\t[86] listitem ''\n\t\t\t\t\t[87] link 'User settings'\n\t\t\t\t\t\t[89] image ''\n\t\t\t\t[90] listitem ''\n\t\t\t\t\t[91] link 'Block list'\n\t\t\t\t\t\t[93] image ''\n\t\t\t\t[94] listitem ''\n\t\t\t\t\t[95] separator '', orientation='horizontal'\n\t\t\t\t[96] listitem ''\n\t\t\t\t\t[97] Section ''\n\t\t\t\t\t\t[99] button 'Dark mode'\n\t\t\t\t\t\t\t[101] image ''\n\t\t\t\t[105] listitem ''\n\t\t\t\t\t[106] Section ''\n\t\t\t\t\t\t[107] button 'Log out'\n\t\t\t\t\t\t\t[109] image ''\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 8,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', focused, required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 9,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026 Choose one\u2026', hasPopup='menu', expanded=True, owns='select2-submission_forum-results'\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t[418] listbox '', multiselectable=False, orientation='vertical', expanded=True\n\t\t\t\t[803] option 'Choose one\u2026', selected=True\n\t\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t\t[807] option 'allentown', selected=False\n\t\t\t\t\tStaticText 'allentown'\n\t\t\t\t[811] option 'arlingtonva', selected=False\n\t\t\t\t\tStaticText 'arlingtonva'\n\t\t\t\t[815] option 'Art', selected=False\n\t\t\t\t\tStaticText 'Art'\n\t\t\t\t[819] option 'AskReddit', selected=False\n\t\t\t\t\tStaticText 'AskReddit'\n\t\t\t\t[823] option 'askscience', selected=False\n\t\t\t\t\tStaticText 'askscience'\n\t\t\t\t[827] option 'aww', selected=False\n\t\t\t\t\tStaticText 'aww'\n\t\t\t\t[831] option 'baltimore', selected=False\n\t\t\t\t\tStaticText 'baltimore'\n\t\t\t\t[835] option 'books', selected=False\n\t\t\t\t\tStaticText 'books'\n\t\t\t\t[839] option 'boston', selected=False\n\t\t\t\t\tStaticText 'boston'\n\t\t\t\t[843] option 'BridgeportCT', selected=False\n\t\t\t\t\tStaticText 'BridgeportCT'\n\t\t\t\t[847] option 'BuyItForLife', selected=False\n\t\t\t\t\tStaticText 'BuyItForLife'\n\t\t\t\t[851] option 'CambridgeMA', selected=False\n\t\t\t\t\tStaticText 'CambridgeMA'\n\t\t\t\t[855] option 'ColumbiaMD', selected=False\n\t\t\t\t\tStaticText 'ColumbiaMD'\n\t\t\t\t[859] option 'Connecticut', selected=False\n\t\t\t\t\tStaticText 'Connecticut'\n\t\t\t\t[863] option 'consoles', selected=False\n\t\t\t\t\tStaticText 'consoles'\n\t\t\t\t[867] option 'coolgithubprojects', selected=False\n\t\t\t\t\tStaticText 'coolgithubprojects'\n\t\t\t\t[871] option 'creepy', selected=False\n\t\t\t\t\tStaticText 'creepy'\n\t\t\t\t[875] option 'dataisbeautiful', selected=False\n\t\t\t\t\tStaticText 'dataisbeautiful'\n\t\t\t\t[879] option 'deeplearning', selected=False\n\t\t\t\t\tStaticText 'deeplearning'\n\t\t\t\t[883] option 'DIY', selected=False\n\t\t\t\t\tStaticText 'DIY'\n\t\t\t\t[887] option 'Documentaries', selected=False\n\t\t\t\t\tStaticText 'Documentaries'\n\t\t\t\t[891] option 'EarthPorn', selected=False\n\t\t\t\t\tStaticText 'EarthPorn'\n\t\t\t\t[895] option 'explainlikeimfive', selected=False\n\t\t\t\t\tStaticText 'explainlikeimfive'\n\t\t\t\t[899] option 'food', selected=False\n\t\t\t\t\tStaticText 'food'\n\t\t\t\t[903] option 'funny', selected=False\n\t\t\t\t\tStaticText 'funny'\n\t\t\t\t[907] option 'Futurology', selected=False\n\t\t\t\t\tStaticText 'Futurology'\n\t\t\t\t[911] option 'gadgets', selected=False\n\t\t\t\t\tStaticText 'gadgets'\n\t\t\t\t[915] option 'gaming', selected=False\n\t\t\t\t\tStaticText 'gaming'\n\t\t\t\t[919] option 'GetMotivated', selected=False\n\t\t\t\t\tStaticText 'GetMotivated'\n\t\t\t\t[923] option 'gifs', selected=False\n\t\t\t\t\tStaticText 'gifs'\n\t\t\t\t[927] option 'Hartford', selected=False\n\t\t\t\t\tStaticText 'Hartford'\n\t\t\t\t[931] option 'headphones', selected=False\n\t\t\t\t\tStaticText 'headphones'\n\t\t\t\t[935] option 'history', selected=False\n\t\t\t\t\tStaticText 'history'\n\t\t\t\t[939] option 'IAmA', selected=False\n\t\t\t\t\tStaticText 'IAmA'\n\t\t\t\t[943] option 'InternetIsBeautiful', selected=False\n\t\t\t\t\tStaticText 'InternetIsBeautiful'\n\t\t\t\t[947] option 'iphone', selected=False\n\t\t\t\t\tStaticText 'iphone'\n\t\t\t\t[951] option 'jerseycity', selected=False\n\t\t\t\t\tStaticText 'jerseycity'\n\t\t\t\t[955] option 'Jokes', selected=False\n\t\t\t\t\tStaticText 'Jokes'\n\t\t\t\t[959] option 'lakewood', selected=False\n\t\t\t\t\tStaticText 'lakewood'\n\t\t\t\t[963] option 'LifeProTips', selected=False\n\t\t\t\t\tStaticText 'LifeProTips'\n\t\t\t\t[967] option 'listentothis', selected=False\n\t\t\t\t\tStaticText 'listentothis'\n\t\t\t\t[971] option 'LowellMA', selected=False\n\t\t\t\t\tStaticText 'LowellMA'\n\t\t\t\t[975] option 'MachineLearning', selected=False\n\t\t\t\t\tStaticText 'MachineLearning'\n\t\t\t\t[979] option 'Maine', selected=False\n\t\t\t\t\tStaticText 'Maine'\n\t\t\t\t[983] option 'ManchesterNH', selected=False\n\t\t\t\t\tStaticText 'ManchesterNH'\n\t\t\t\t[987] option 'massachusetts', selected=False\n\t\t\t\t\tStaticText 'massachusetts'\n\t\t\t\t[991] option 'MechanicalKeyboards', selected=False\n\t\t\t\t\tStaticText 'MechanicalKeyboards'\n\t\t\t\t[995] option 'memes', selected=False\n\t\t\t\t\tStaticText 'memes'\n\t\t\t\t[999] option 'mildlyinteresting', selected=False\n\t\t\t\t\tStaticText 'mildlyinteresting'\n\t\t\t\t[1003] option 'monitor', selected=False\n\t\t\t\t\tStaticText 'monitor'\n\t\t\t\t[1007] option 'movies', selected=False\n\t\t\t\t\tStaticText 'movies'\n\t\t\t\t[1011] option 'Music', selected=False\n\t\t\t\t\tStaticText 'Music'\n\t\t\t\t[1015] option 'Newark', selected=False\n\t\t\t\t\tStaticText 'Newark'\n\t\t\t\t[1019] option 'newhampshire', selected=False\n\t\t\t\t\tStaticText 'newhampshire'\n\t\t\t\t[1023] option 'newhaven', selected=False\n\t\t\t\t\tStaticText 'newhaven'\n\t\t\t\t[1027] option 'newjersey', selected=False\n\t\t\t\t\tStaticText 'newjersey'\n\t\t\t\t[1031] option 'news', selected=False\n\t\t\t\t\tStaticText 'news'\n\t\t\t\t[1035] option 'nosleep', selected=False\n\t\t\t\t\tStaticText 'nosleep'\n\t\t\t\t[1039] option 'nottheonion', selected=False\n\t\t\t\t\tStaticText 'nottheonion'\n\t\t\t\t[1043] option 'nyc', selected=False\n\t\t\t\t\tStaticText 'nyc'\n\t\t\t\t[1047] option 'OldSchoolCool', selected=False\n\t\t\t\t\tStaticText 'OldSchoolCool'\n\t\t\t\t[1051] option 'Paterson', selected=False\n\t\t\t\t\tStaticText 'Paterson'\n\t\t\t\t[1055] option 'Pennsylvania', selected=False\n\t\t\t\t\tStaticText 'Pennsylvania'\n\t\t\t\t[1059] option 'personalfinance', selected=False\n\t\t\t\t\tStaticText 'personalfinance'\n\t\t\t\t[1063] option 'philadelphia', selected=False\n\t\t\t\t\tStaticText 'philadelphia'\n\t\t\t\t[1067] option 'philosophy', selected=False\n\t\t\t\t\tStaticText 'philosophy'\n\t\t\t\t[1071] option 'photoshopbattles', selected=False\n\t\t\t\t\tStaticText 'photoshopbattles'\n\t\t\t\t[1075] option 'pics', selected=False\n\t\t\t\t\tStaticText 'pics'\n\t\t\t\t[1079] option 'pittsburgh', selected=False\n\t\t\t\t\tStaticText 'pittsburgh'\n\t\t\t\t[1083] option 'providence', selected=False\n\t\t\t\t\tStaticText 'providence'\n\t\t\t\t[1087] option 'relationship_advice', selected=False\n\t\t\t\t\tStaticText 'relationship_advice'\n\t\t\t\t[1091] option 'RhodeIsland', selected=False\n\t\t\t\t\tStaticText 'RhodeIsland'\n\t\t\t\t[1095] option 'rva', selected=False\n\t\t\t\t\tStaticText 'rva'\n\t\t\t\t[1099] option 'science', selected=False\n\t\t\t\t\tStaticText 'science'\n\t\t\t\t[1103] option 'Showerthoughts', selected=False\n\t\t\t\t\tStaticText 'Showerthoughts'\n\t\t\t\t[1107] option 'singularity', selected=False\n\t\t\t\t\tStaticText 'singularity'\n\t\t\t\t[1111] option 'space', selected=False\n\t\t\t\t\tStaticText 'space'\n\t\t\t\t[1115] option 'sports', selected=False\n\t\t\t\t\tStaticText 'sports'\n\t\t\t\t[1119] option 'springfieldMO', selected=False\n\t\t\t\t\tStaticText 'springfieldMO'\n\t\t\t\t[1123] option 'StamfordCT', selected=False\n\t\t\t\t\tStaticText 'StamfordCT'\n\t\t\t\t[1127] option 'technology', selected=False\n\t\t\t\t\tStaticText 'technology'\n\t\t\t\t[1131] option 'television', selected=False\n\t\t\t\t\tStaticText 'television'\n\t\t\t\t[1135] option 'tifu', selected=False\n\t\t\t\t\tStaticText 'tifu'\n\t\t\t\t[1139] option 'todayilearned', selected=False\n\t\t\t\t\tStaticText 'todayilearned'\n\t\t\t\t[1143] option 'UpliftingNews', selected=False\n\t\t\t\t\tStaticText 'UpliftingNews'\n\t\t\t\t[1147] option 'vermont', selected=False\n\t\t\t\t\tStaticText 'vermont'\n\t\t\t\t[1151] option 'videos', selected=False\n\t\t\t\t\tStaticText 'videos'\n\t\t\t\t[1155] option 'wallstreetbets', selected=False\n\t\t\t\t\tStaticText 'wallstreetbets'\n\t\t\t\t[1159] option 'Washington', selected=False\n\t\t\t\t\tStaticText 'Washington'\n\t\t\t\t[1163] option 'washingtondc', selected=False\n\t\t\t\t\tStaticText 'washingtondc'\n\t\t\t\t[1167] option 'WaterburyCT', selected=False\n\t\t\t\t\tStaticText 'WaterburyCT'\n\t\t\t\t[1171] option 'WorcesterMA', selected=False\n\t\t\t\t\tStaticText 'WorcesterMA'\n\t\t\t\t[1175] option 'worldnews', selected=False\n\t\t\t\t\tStaticText 'worldnews'\n\t\t\t\t[1179] option 'WritingPrompts', selected=False\n\t\t\t\t\tStaticText 'WritingPrompts'\n\t\t\t\t[1183] option 'yonkers', selected=False\n\t\t\t\t\tStaticText 'yonkers'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'\n[416] searchbox '', focused, autocomplete='list', controls='select2-submission_forum-results'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 10,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', focused, hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 11,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026 Choose one\u2026', hasPopup='menu', expanded=True, owns='select2-submission_forum-results'\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t[418] listbox '', multiselectable=False, orientation='vertical', expanded=True\n\t\t\t\t[1187] option 'Choose one\u2026', selected=True\n\t\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t\t[1191] option 'allentown', selected=False\n\t\t\t\t\tStaticText 'allentown'\n\t\t\t\t[1195] option 'arlingtonva', selected=False\n\t\t\t\t\tStaticText 'arlingtonva'\n\t\t\t\t[1199] option 'Art', selected=False\n\t\t\t\t\tStaticText 'Art'\n\t\t\t\t[1203] option 'AskReddit', selected=False\n\t\t\t\t\tStaticText 'AskReddit'\n\t\t\t\t[1207] option 'askscience', selected=False\n\t\t\t\t\tStaticText 'askscience'\n\t\t\t\t[1211] option 'aww', selected=False\n\t\t\t\t\tStaticText 'aww'\n\t\t\t\t[1215] option 'baltimore', selected=False\n\t\t\t\t\tStaticText 'baltimore'\n\t\t\t\t[1219] option 'books', selected=False\n\t\t\t\t\tStaticText 'books'\n\t\t\t\t[1223] option 'boston', selected=False\n\t\t\t\t\tStaticText 'boston'\n\t\t\t\t[1227] option 'BridgeportCT', selected=False\n\t\t\t\t\tStaticText 'BridgeportCT'\n\t\t\t\t[1231] option 'BuyItForLife', selected=False\n\t\t\t\t\tStaticText 'BuyItForLife'\n\t\t\t\t[1235] option 'CambridgeMA', selected=False\n\t\t\t\t\tStaticText 'CambridgeMA'\n\t\t\t\t[1239] option 'ColumbiaMD', selected=False\n\t\t\t\t\tStaticText 'ColumbiaMD'\n\t\t\t\t[1243] option 'Connecticut', selected=False\n\t\t\t\t\tStaticText 'Connecticut'\n\t\t\t\t[1247] option 'consoles', selected=False\n\t\t\t\t\tStaticText 'consoles'\n\t\t\t\t[1251] option 'coolgithubprojects', selected=False\n\t\t\t\t\tStaticText 'coolgithubprojects'\n\t\t\t\t[1255] option 'creepy', selected=False\n\t\t\t\t\tStaticText 'creepy'\n\t\t\t\t[1259] option 'dataisbeautiful', selected=False\n\t\t\t\t\tStaticText 'dataisbeautiful'\n\t\t\t\t[1263] option 'deeplearning', selected=False\n\t\t\t\t\tStaticText 'deeplearning'\n\t\t\t\t[1267] option 'DIY', selected=False\n\t\t\t\t\tStaticText 'DIY'\n\t\t\t\t[1271] option 'Documentaries', selected=False\n\t\t\t\t\tStaticText 'Documentaries'\n\t\t\t\t[1275] option 'EarthPorn', selected=False\n\t\t\t\t\tStaticText 'EarthPorn'\n\t\t\t\t[1279] option 'explainlikeimfive', selected=False\n\t\t\t\t\tStaticText 'explainlikeimfive'\n\t\t\t\t[1283] option 'food', selected=False\n\t\t\t\t\tStaticText 'food'\n\t\t\t\t[1287] option 'funny', selected=False\n\t\t\t\t\tStaticText 'funny'\n\t\t\t\t[1291] option 'Futurology', selected=False\n\t\t\t\t\tStaticText 'Futurology'\n\t\t\t\t[1295] option 'gadgets', selected=False\n\t\t\t\t\tStaticText 'gadgets'\n\t\t\t\t[1299] option 'gaming', selected=False\n\t\t\t\t\tStaticText 'gaming'\n\t\t\t\t[1303] option 'GetMotivated', selected=False\n\t\t\t\t\tStaticText 'GetMotivated'\n\t\t\t\t[1307] option 'gifs', selected=False\n\t\t\t\t\tStaticText 'gifs'\n\t\t\t\t[1311] option 'Hartford', selected=False\n\t\t\t\t\tStaticText 'Hartford'\n\t\t\t\t[1315] option 'headphones', selected=False\n\t\t\t\t\tStaticText 'headphones'\n\t\t\t\t[1319] option 'history', selected=False\n\t\t\t\t\tStaticText 'history'\n\t\t\t\t[1323] option 'IAmA', selected=False\n\t\t\t\t\tStaticText 'IAmA'\n\t\t\t\t[1327] option 'InternetIsBeautiful', selected=False\n\t\t\t\t\tStaticText 'InternetIsBeautiful'\n\t\t\t\t[1331] option 'iphone', selected=False\n\t\t\t\t\tStaticText 'iphone'\n\t\t\t\t[1335] option 'jerseycity', selected=False\n\t\t\t\t\tStaticText 'jerseycity'\n\t\t\t\t[1339] option 'Jokes', selected=False\n\t\t\t\t\tStaticText 'Jokes'\n\t\t\t\t[1343] option 'lakewood', selected=False\n\t\t\t\t\tStaticText 'lakewood'\n\t\t\t\t[1347] option 'LifeProTips', selected=False\n\t\t\t\t\tStaticText 'LifeProTips'\n\t\t\t\t[1351] option 'listentothis', selected=False\n\t\t\t\t\tStaticText 'listentothis'\n\t\t\t\t[1355] option 'LowellMA', selected=False\n\t\t\t\t\tStaticText 'LowellMA'\n\t\t\t\t[1359] option 'MachineLearning', selected=False\n\t\t\t\t\tStaticText 'MachineLearning'\n\t\t\t\t[1363] option 'Maine', selected=False\n\t\t\t\t\tStaticText 'Maine'\n\t\t\t\t[1367] option 'ManchesterNH', selected=False\n\t\t\t\t\tStaticText 'ManchesterNH'\n\t\t\t\t[1371] option 'massachusetts', selected=False\n\t\t\t\t\tStaticText 'massachusetts'\n\t\t\t\t[1375] option 'MechanicalKeyboards', selected=False\n\t\t\t\t\tStaticText 'MechanicalKeyboards'\n\t\t\t\t[1379] option 'memes', selected=False\n\t\t\t\t\tStaticText 'memes'\n\t\t\t\t[1383] option 'mildlyinteresting', selected=False\n\t\t\t\t\tStaticText 'mildlyinteresting'\n\t\t\t\t[1387] option 'monitor', selected=False\n\t\t\t\t\tStaticText 'monitor'\n\t\t\t\t[1391] option 'movies', selected=False\n\t\t\t\t\tStaticText 'movies'\n\t\t\t\t[1395] option 'Music', selected=False\n\t\t\t\t\tStaticText 'Music'\n\t\t\t\t[1399] option 'Newark', selected=False\n\t\t\t\t\tStaticText 'Newark'\n\t\t\t\t[1403] option 'newhampshire', selected=False\n\t\t\t\t\tStaticText 'newhampshire'\n\t\t\t\t[1407] option 'newhaven', selected=False\n\t\t\t\t\tStaticText 'newhaven'\n\t\t\t\t[1411] option 'newjersey', selected=False\n\t\t\t\t\tStaticText 'newjersey'\n\t\t\t\t[1415] option 'news', selected=False\n\t\t\t\t\tStaticText 'news'\n\t\t\t\t[1419] option 'nosleep', selected=False\n\t\t\t\t\tStaticText 'nosleep'\n\t\t\t\t[1423] option 'nottheonion', selected=False\n\t\t\t\t\tStaticText 'nottheonion'\n\t\t\t\t[1427] option 'nyc', selected=False\n\t\t\t\t\tStaticText 'nyc'\n\t\t\t\t[1431] option 'OldSchoolCool', selected=False\n\t\t\t\t\tStaticText 'OldSchoolCool'\n\t\t\t\t[1435] option 'Paterson', selected=False\n\t\t\t\t\tStaticText 'Paterson'\n\t\t\t\t[1439] option 'Pennsylvania', selected=False\n\t\t\t\t\tStaticText 'Pennsylvania'\n\t\t\t\t[1443] option 'personalfinance', selected=False\n\t\t\t\t\tStaticText 'personalfinance'\n\t\t\t\t[1447] option 'philadelphia', selected=False\n\t\t\t\t\tStaticText 'philadelphia'\n\t\t\t\t[1451] option 'philosophy', selected=False\n\t\t\t\t\tStaticText 'philosophy'\n\t\t\t\t[1455] option 'photoshopbattles', selected=False\n\t\t\t\t\tStaticText 'photoshopbattles'\n\t\t\t\t[1459] option 'pics', selected=False\n\t\t\t\t\tStaticText 'pics'\n\t\t\t\t[1463] option 'pittsburgh', selected=False\n\t\t\t\t\tStaticText 'pittsburgh'\n\t\t\t\t[1467] option 'providence', selected=False\n\t\t\t\t\tStaticText 'providence'\n\t\t\t\t[1471] option 'relationship_advice', selected=False\n\t\t\t\t\tStaticText 'relationship_advice'\n\t\t\t\t[1475] option 'RhodeIsland', selected=False\n\t\t\t\t\tStaticText 'RhodeIsland'\n\t\t\t\t[1479] option 'rva', selected=False\n\t\t\t\t\tStaticText 'rva'\n\t\t\t\t[1483] option 'science', selected=False\n\t\t\t\t\tStaticText 'science'\n\t\t\t\t[1487] option 'Showerthoughts', selected=False\n\t\t\t\t\tStaticText 'Showerthoughts'\n\t\t\t\t[1491] option 'singularity', selected=False\n\t\t\t\t\tStaticText 'singularity'\n\t\t\t\t[1495] option 'space', selected=False\n\t\t\t\t\tStaticText 'space'\n\t\t\t\t[1499] option 'sports', selected=False\n\t\t\t\t\tStaticText 'sports'\n\t\t\t\t[1503] option 'springfieldMO', selected=False\n\t\t\t\t\tStaticText 'springfieldMO'\n\t\t\t\t[1507] option 'StamfordCT', selected=False\n\t\t\t\t\tStaticText 'StamfordCT'\n\t\t\t\t[1511] option 'technology', selected=False\n\t\t\t\t\tStaticText 'technology'\n\t\t\t\t[1515] option 'television', selected=False\n\t\t\t\t\tStaticText 'television'\n\t\t\t\t[1519] option 'tifu', selected=False\n\t\t\t\t\tStaticText 'tifu'\n\t\t\t\t[1523] option 'todayilearned', selected=False\n\t\t\t\t\tStaticText 'todayilearned'\n\t\t\t\t[1527] option 'UpliftingNews', selected=False\n\t\t\t\t\tStaticText 'UpliftingNews'\n\t\t\t\t[1531] option 'vermont', selected=False\n\t\t\t\t\tStaticText 'vermont'\n\t\t\t\t[1535] option 'videos', selected=False\n\t\t\t\t\tStaticText 'videos'\n\t\t\t\t[1539] option 'wallstreetbets', selected=False\n\t\t\t\t\tStaticText 'wallstreetbets'\n\t\t\t\t[1543] option 'Washington', selected=False\n\t\t\t\t\tStaticText 'Washington'\n\t\t\t\t[1547] option 'washingtondc', selected=False\n\t\t\t\t\tStaticText 'washingtondc'\n\t\t\t\t[1551] option 'WaterburyCT', selected=False\n\t\t\t\t\tStaticText 'WaterburyCT'\n\t\t\t\t[1555] option 'WorcesterMA', selected=False\n\t\t\t\t\tStaticText 'WorcesterMA'\n\t\t\t\t[1559] option 'worldnews', selected=False\n\t\t\t\t\tStaticText 'worldnews'\n\t\t\t\t[1563] option 'WritingPrompts', selected=False\n\t\t\t\t\tStaticText 'WritingPrompts'\n\t\t\t\t[1567] option 'yonkers', selected=False\n\t\t\t\t\tStaticText 'yonkers'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'\n[416] searchbox '', focused, autocomplete='list', controls='select2-submission_forum-results'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 12,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', focused, hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [378]",
+								"steps_nb": 13,
+								"reason": "Open forum selection menu",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026 Choose one\u2026', hasPopup='menu', expanded=True, owns='select2-submission_forum-results'\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t[418] listbox '', multiselectable=False, orientation='vertical', expanded=True\n\t\t\t\t[1571] option 'Choose one\u2026', selected=True\n\t\t\t\t\tStaticText 'Choose one\u2026'\n\t\t\t\t[1575] option 'allentown', selected=False\n\t\t\t\t\tStaticText 'allentown'\n\t\t\t\t[1579] option 'arlingtonva', selected=False\n\t\t\t\t\tStaticText 'arlingtonva'\n\t\t\t\t[1583] option 'Art', selected=False\n\t\t\t\t\tStaticText 'Art'\n\t\t\t\t[1587] option 'AskReddit', selected=False\n\t\t\t\t\tStaticText 'AskReddit'\n\t\t\t\t[1591] option 'askscience', selected=False\n\t\t\t\t\tStaticText 'askscience'\n\t\t\t\t[1595] option 'aww', selected=False\n\t\t\t\t\tStaticText 'aww'\n\t\t\t\t[1599] option 'baltimore', selected=False\n\t\t\t\t\tStaticText 'baltimore'\n\t\t\t\t[1603] option 'books', selected=False\n\t\t\t\t\tStaticText 'books'\n\t\t\t\t[1607] option 'boston', selected=False\n\t\t\t\t\tStaticText 'boston'\n\t\t\t\t[1611] option 'BridgeportCT', selected=False\n\t\t\t\t\tStaticText 'BridgeportCT'\n\t\t\t\t[1615] option 'BuyItForLife', selected=False\n\t\t\t\t\tStaticText 'BuyItForLife'\n\t\t\t\t[1619] option 'CambridgeMA', selected=False\n\t\t\t\t\tStaticText 'CambridgeMA'\n\t\t\t\t[1623] option 'ColumbiaMD', selected=False\n\t\t\t\t\tStaticText 'ColumbiaMD'\n\t\t\t\t[1627] option 'Connecticut', selected=False\n\t\t\t\t\tStaticText 'Connecticut'\n\t\t\t\t[1631] option 'consoles', selected=False\n\t\t\t\t\tStaticText 'consoles'\n\t\t\t\t[1635] option 'coolgithubprojects', selected=False\n\t\t\t\t\tStaticText 'coolgithubprojects'\n\t\t\t\t[1639] option 'creepy', selected=False\n\t\t\t\t\tStaticText 'creepy'\n\t\t\t\t[1643] option 'dataisbeautiful', selected=False\n\t\t\t\t\tStaticText 'dataisbeautiful'\n\t\t\t\t[1647] option 'deeplearning', selected=False\n\t\t\t\t\tStaticText 'deeplearning'\n\t\t\t\t[1651] option 'DIY', selected=False\n\t\t\t\t\tStaticText 'DIY'\n\t\t\t\t[1655] option 'Documentaries', selected=False\n\t\t\t\t\tStaticText 'Documentaries'\n\t\t\t\t[1659] option 'EarthPorn', selected=False\n\t\t\t\t\tStaticText 'EarthPorn'\n\t\t\t\t[1663] option 'explainlikeimfive', selected=False\n\t\t\t\t\tStaticText 'explainlikeimfive'\n\t\t\t\t[1667] option 'food', selected=False\n\t\t\t\t\tStaticText 'food'\n\t\t\t\t[1671] option 'funny', selected=False\n\t\t\t\t\tStaticText 'funny'\n\t\t\t\t[1675] option 'Futurology', selected=False\n\t\t\t\t\tStaticText 'Futurology'\n\t\t\t\t[1679] option 'gadgets', selected=False\n\t\t\t\t\tStaticText 'gadgets'\n\t\t\t\t[1683] option 'gaming', selected=False\n\t\t\t\t\tStaticText 'gaming'\n\t\t\t\t[1687] option 'GetMotivated', selected=False\n\t\t\t\t\tStaticText 'GetMotivated'\n\t\t\t\t[1691] option 'gifs', selected=False\n\t\t\t\t\tStaticText 'gifs'\n\t\t\t\t[1695] option 'Hartford', selected=False\n\t\t\t\t\tStaticText 'Hartford'\n\t\t\t\t[1699] option 'headphones', selected=False\n\t\t\t\t\tStaticText 'headphones'\n\t\t\t\t[1703] option 'history', selected=False\n\t\t\t\t\tStaticText 'history'\n\t\t\t\t[1707] option 'IAmA', selected=False\n\t\t\t\t\tStaticText 'IAmA'\n\t\t\t\t[1711] option 'InternetIsBeautiful', selected=False\n\t\t\t\t\tStaticText 'InternetIsBeautiful'\n\t\t\t\t[1715] option 'iphone', selected=False\n\t\t\t\t\tStaticText 'iphone'\n\t\t\t\t[1719] option 'jerseycity', selected=False\n\t\t\t\t\tStaticText 'jerseycity'\n\t\t\t\t[1723] option 'Jokes', selected=False\n\t\t\t\t\tStaticText 'Jokes'\n\t\t\t\t[1727] option 'lakewood', selected=False\n\t\t\t\t\tStaticText 'lakewood'\n\t\t\t\t[1731] option 'LifeProTips', selected=False\n\t\t\t\t\tStaticText 'LifeProTips'\n\t\t\t\t[1735] option 'listentothis', selected=False\n\t\t\t\t\tStaticText 'listentothis'\n\t\t\t\t[1739] option 'LowellMA', selected=False\n\t\t\t\t\tStaticText 'LowellMA'\n\t\t\t\t[1743] option 'MachineLearning', selected=False\n\t\t\t\t\tStaticText 'MachineLearning'\n\t\t\t\t[1747] option 'Maine', selected=False\n\t\t\t\t\tStaticText 'Maine'\n\t\t\t\t[1751] option 'ManchesterNH', selected=False\n\t\t\t\t\tStaticText 'ManchesterNH'\n\t\t\t\t[1755] option 'massachusetts', selected=False\n\t\t\t\t\tStaticText 'massachusetts'\n\t\t\t\t[1759] option 'MechanicalKeyboards', selected=False\n\t\t\t\t\tStaticText 'MechanicalKeyboards'\n\t\t\t\t[1763] option 'memes', selected=False\n\t\t\t\t\tStaticText 'memes'\n\t\t\t\t[1767] option 'mildlyinteresting', selected=False\n\t\t\t\t\tStaticText 'mildlyinteresting'\n\t\t\t\t[1771] option 'monitor', selected=False\n\t\t\t\t\tStaticText 'monitor'\n\t\t\t\t[1775] option 'movies', selected=False\n\t\t\t\t\tStaticText 'movies'\n\t\t\t\t[1779] option 'Music', selected=False\n\t\t\t\t\tStaticText 'Music'\n\t\t\t\t[1783] option 'Newark', selected=False\n\t\t\t\t\tStaticText 'Newark'\n\t\t\t\t[1787] option 'newhampshire', selected=False\n\t\t\t\t\tStaticText 'newhampshire'\n\t\t\t\t[1791] option 'newhaven', selected=False\n\t\t\t\t\tStaticText 'newhaven'\n\t\t\t\t[1795] option 'newjersey', selected=False\n\t\t\t\t\tStaticText 'newjersey'\n\t\t\t\t[1799] option 'news', selected=False\n\t\t\t\t\tStaticText 'news'\n\t\t\t\t[1803] option 'nosleep', selected=False\n\t\t\t\t\tStaticText 'nosleep'\n\t\t\t\t[1807] option 'nottheonion', selected=False\n\t\t\t\t\tStaticText 'nottheonion'\n\t\t\t\t[1811] option 'nyc', selected=False\n\t\t\t\t\tStaticText 'nyc'\n\t\t\t\t[1815] option 'OldSchoolCool', selected=False\n\t\t\t\t\tStaticText 'OldSchoolCool'\n\t\t\t\t[1819] option 'Paterson', selected=False\n\t\t\t\t\tStaticText 'Paterson'\n\t\t\t\t[1823] option 'Pennsylvania', selected=False\n\t\t\t\t\tStaticText 'Pennsylvania'\n\t\t\t\t[1827] option 'personalfinance', selected=False\n\t\t\t\t\tStaticText 'personalfinance'\n\t\t\t\t[1831] option 'philadelphia', selected=False\n\t\t\t\t\tStaticText 'philadelphia'\n\t\t\t\t[1835] option 'philosophy', selected=False\n\t\t\t\t\tStaticText 'philosophy'\n\t\t\t\t[1839] option 'photoshopbattles', selected=False\n\t\t\t\t\tStaticText 'photoshopbattles'\n\t\t\t\t[1843] option 'pics', selected=False\n\t\t\t\t\tStaticText 'pics'\n\t\t\t\t[1847] option 'pittsburgh', selected=False\n\t\t\t\t\tStaticText 'pittsburgh'\n\t\t\t\t[1851] option 'providence', selected=False\n\t\t\t\t\tStaticText 'providence'\n\t\t\t\t[1855] option 'relationship_advice', selected=False\n\t\t\t\t\tStaticText 'relationship_advice'\n\t\t\t\t[1859] option 'RhodeIsland', selected=False\n\t\t\t\t\tStaticText 'RhodeIsland'\n\t\t\t\t[1863] option 'rva', selected=False\n\t\t\t\t\tStaticText 'rva'\n\t\t\t\t[1867] option 'science', selected=False\n\t\t\t\t\tStaticText 'science'\n\t\t\t\t[1871] option 'Showerthoughts', selected=False\n\t\t\t\t\tStaticText 'Showerthoughts'\n\t\t\t\t[1875] option 'singularity', selected=False\n\t\t\t\t\tStaticText 'singularity'\n\t\t\t\t[1879] option 'space', selected=False\n\t\t\t\t\tStaticText 'space'\n\t\t\t\t[1883] option 'sports', selected=False\n\t\t\t\t\tStaticText 'sports'\n\t\t\t\t[1887] option 'springfieldMO', selected=False\n\t\t\t\t\tStaticText 'springfieldMO'\n\t\t\t\t[1891] option 'StamfordCT', selected=False\n\t\t\t\t\tStaticText 'StamfordCT'\n\t\t\t\t[1895] option 'technology', selected=False\n\t\t\t\t\tStaticText 'technology'\n\t\t\t\t[1899] option 'television', selected=False\n\t\t\t\t\tStaticText 'television'\n\t\t\t\t[1903] option 'tifu', selected=False\n\t\t\t\t\tStaticText 'tifu'\n\t\t\t\t[1907] option 'todayilearned', selected=False\n\t\t\t\t\tStaticText 'todayilearned'\n\t\t\t\t[1911] option 'UpliftingNews', selected=False\n\t\t\t\t\tStaticText 'UpliftingNews'\n\t\t\t\t[1915] option 'vermont', selected=False\n\t\t\t\t\tStaticText 'vermont'\n\t\t\t\t[1919] option 'videos', selected=False\n\t\t\t\t\tStaticText 'videos'\n\t\t\t\t[1923] option 'wallstreetbets', selected=False\n\t\t\t\t\tStaticText 'wallstreetbets'\n\t\t\t\t[1927] option 'Washington', selected=False\n\t\t\t\t\tStaticText 'Washington'\n\t\t\t\t[1931] option 'washingtondc', selected=False\n\t\t\t\t\tStaticText 'washingtondc'\n\t\t\t\t[1935] option 'WaterburyCT', selected=False\n\t\t\t\t\tStaticText 'WaterburyCT'\n\t\t\t\t[1939] option 'WorcesterMA', selected=False\n\t\t\t\t\tStaticText 'WorcesterMA'\n\t\t\t\t[1943] option 'worldnews', selected=False\n\t\t\t\t\tStaticText 'worldnews'\n\t\t\t\t[1947] option 'WritingPrompts', selected=False\n\t\t\t\t\tStaticText 'WritingPrompts'\n\t\t\t\t[1951] option 'yonkers', selected=False\n\t\t\t\t\tStaticText 'yonkers'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'\n[416] searchbox '', focused, autocomplete='list', controls='select2-submission_forum-results'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [60]",
+								"steps_nb": 14,
+								"reason": "Navigate to submission page",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', focused, hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [66]",
+								"steps_nb": 15,
+								"reason": "Open user menu again",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [42]",
+								"steps_nb": 16,
+								"reason": "Navigate to Wiki for forum details configuration",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', focused, hasPopup='menu', expanded=True\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n\t\t\t[72] list ''\n\t\t\t\t[78] listitem ''\n\t\t\t\t\t[79] link 'Profile'\n\t\t\t\t\t\t[81] image ''\n\t\t\t\t[82] listitem ''\n\t\t\t\t\t[83] link 'My account'\n\t\t\t\t\t\t[85] image ''\n\t\t\t\t[86] listitem ''\n\t\t\t\t\t[87] link 'User settings'\n\t\t\t\t\t\t[89] image ''\n\t\t\t\t[90] listitem ''\n\t\t\t\t\t[91] link 'Block list'\n\t\t\t\t\t\t[93] image ''\n\t\t\t\t[94] listitem ''\n\t\t\t\t\t[95] separator '', orientation='horizontal'\n\t\t\t\t[96] listitem ''\n\t\t\t\t\t[97] Section ''\n\t\t\t\t\t\t[99] button 'Dark mode'\n\t\t\t\t\t\t\t[101] image ''\n\t\t\t\t[105] listitem ''\n\t\t\t\t\t[106] Section ''\n\t\t\t\t\t\t[107] button 'Log out'\n\t\t\t\t\t\t\t[109] image ''\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [111]",
+								"steps_nb": 17,
+								"reason": "Create page to configure forum details",
+								"observation": "[18] navigation ''\n\t[19] link 'Jump to main content'\n\t[20] link 'Jump to sidebar'\n[21] navigation ''\n\t[24] link 'Home'\n\t\tStaticText 'Postmill'\n\t[34] list ''\n\t\t[35] listitem ''\n\t\t\t[36] link 'Forums'\n\t\t[37] listitem ''\n\t\t\t[38] link 'Wiki'\n\t[39] Section ''\n\t\t[48] searchbox 'Search query'\n\t[49] list ''\n\t\t[50] listitem ''\n\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t[54] image ''\n\t\t[55] listitem ''\n\t\t\t[56] link 'Submit'\n\t\t\t\t[59] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[61] listitem ''\n\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[65] image ''\n\t\t\t\t[66] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[107] main ''\n\t[108] heading 'Page not found'\n\t[109] paragraph ''\n\t\tStaticText 'The requested page was not found.'\n\t[110] paragraph ''\n\t\t[111] link 'Create this page'\n[112] complementary ''\n\t[113] Section ''\n\t\t[114] heading 'Navigation'\n\t\t[115] list ''\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'All pages'\n\t\t\t[118] listitem ''\n\t\t\t\t[119] link 'Recent changes'\n\t\t\t[120] listitem ''\n\t\t\t\t[121] link 'Create new page'\n[122] contentinfo ''\n\t[123] paragraph ''\n\t\tStaticText 'Running'\n\t\t[125] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "type [121] [Cyberpunk Forum] [0]",
+								"steps_nb": 18,
+								"reason": "Enter forum title",
+								"observation": "[18] navigation ''\n\t[19] link 'Jump to main content'\n\t[20] link 'Jump to sidebar'\n[21] navigation ''\n\t[24] link 'Home'\n\t\tStaticText 'Postmill'\n\t[34] list ''\n\t\t[35] listitem ''\n\t\t\t[36] link 'Forums'\n\t\t[37] listitem ''\n\t\t\t[38] link 'Wiki'\n\t[39] Section ''\n\t\t[48] searchbox 'Search query'\n\t[49] list ''\n\t\t[50] listitem ''\n\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t[54] image ''\n\t\t[55] listitem ''\n\t\t\t[56] link 'Submit'\n\t\t\t\t[59] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[61] listitem ''\n\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[65] image ''\n\t\t\t\t[66] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[107] main ''\n\t[108] heading 'Creating \"index\"'\n\t[109] Section ''\n\t\t[112] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t\tStaticText '*'\n\t\t[114] LabelText ''\n\t\t\t[116] textbox 'URL This field is required.' value='index', disabled=True, required\n\t\t[119] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[121] textbox 'Title This field is required.', required\n\t\t[124] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t\tStaticText '*'\n\t\t[127] textbox 'Body This field is required.', required, describedby='wiki_body_help'\n\t\t[132] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[134] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[260] button 'Save'\n[263] contentinfo ''\n\t[264] paragraph ''\n\t\tStaticText 'Running'\n\t\t[266] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki/_create/index",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "type [127] [Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.] [0]",
+								"steps_nb": 19,
+								"reason": "Enter forum description",
+								"observation": "[18] navigation ''\n\t[19] link 'Jump to main content'\n\t[20] link 'Jump to sidebar'\n[21] navigation ''\n\t[24] link 'Home'\n\t\tStaticText 'Postmill'\n\t[34] list ''\n\t\t[35] listitem ''\n\t\t\t[36] link 'Forums'\n\t\t[37] listitem ''\n\t\t\t[38] link 'Wiki'\n\t[39] Section ''\n\t\t[48] searchbox 'Search query'\n\t[49] list ''\n\t\t[50] listitem ''\n\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t[54] image ''\n\t\t[55] listitem ''\n\t\t\t[56] link 'Submit'\n\t\t\t\t[59] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[61] listitem ''\n\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[65] image ''\n\t\t\t\t[66] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[107] main ''\n\t[108] heading 'Creating \"index\"'\n\t[109] Section ''\n\t\t[112] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t\tStaticText '*'\n\t\t[114] LabelText ''\n\t\t\t[116] textbox 'URL This field is required.' value='index', disabled=True, required\n\t\t[119] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[121] textbox 'Title This field is required.' value='Cyberpunk Forum', focused, required\n\t\t[124] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t\tStaticText '*'\n\t\t[127] textbox 'Body This field is required.', required, describedby='wiki_body_help'\n\t\t[132] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[134] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[260] button 'Save'\n[263] contentinfo ''\n\t[264] paragraph ''\n\t\tStaticText 'Running'\n\t\t[266] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki/_create/index",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [260]",
+								"steps_nb": 20,
+								"reason": "Save forum details",
+								"observation": "[18] navigation ''\n\t[19] link 'Jump to main content'\n\t[20] link 'Jump to sidebar'\n[21] navigation ''\n\t[24] link 'Home'\n\t\tStaticText 'Postmill'\n\t[34] list ''\n\t\t[35] listitem ''\n\t\t\t[36] link 'Forums'\n\t\t[37] listitem ''\n\t\t\t[38] link 'Wiki'\n\t[39] Section ''\n\t\t[48] searchbox 'Search query'\n\t[49] list ''\n\t\t[50] listitem ''\n\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t[54] image ''\n\t\t[55] listitem ''\n\t\t\t[56] link 'Submit'\n\t\t\t\t[59] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[61] listitem ''\n\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[65] image ''\n\t\t\t\t[66] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[107] main ''\n\t[108] heading 'Creating \"index\"'\n\t[109] Section ''\n\t\t[112] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t\tStaticText '*'\n\t\t[114] LabelText ''\n\t\t\t[116] textbox 'URL This field is required.' value='index', disabled=True, required\n\t\t[119] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[121] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[124] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t\tStaticText '*'\n\t\t[127] textbox 'Body This field is required.' value='Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.', focused, required, describedby='wiki_body_help'\n\t\t[129] heading 'Preview'\n\t\t[276] paragraph ''\n\t\t\tStaticText 'Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.'\n\t\t[132] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[134] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[260] button 'Save'\n[263] contentinfo ''\n\t[264] paragraph ''\n\t\tStaticText 'Running'\n\t\t[266] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki/_create/index",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [123]",
+								"steps_nb": 21,
+								"reason": "Edit page for forum details configuration",
+								"observation": "[19] navigation ''\n\t[20] link 'Jump to main content'\n\t[21] link 'Jump to sidebar'\n[22] navigation ''\n\t[25] link 'Home'\n\t\tStaticText 'Postmill'\n\t[35] list ''\n\t\t[36] listitem ''\n\t\t\t[37] link 'Forums'\n\t\t[38] listitem ''\n\t\t\t[39] link 'Wiki'\n\t[40] Section ''\n\t\t[49] searchbox 'Search query'\n\t[50] list ''\n\t\t[51] listitem ''\n\t\t\t[52] link 'Notifications (0)'\n\t\t\t\t[55] image ''\n\t\t[56] listitem ''\n\t\t\t[57] link 'Submit'\n\t\t\t\t[60] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[62] listitem ''\n\t\t\t[63] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[66] image ''\n\t\t\t\t[67] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[108] main ''\n\t[109] article ''\n\t\t[110] heading 'Cyberpunk Forum'\n\t\t[112] paragraph ''\n\t\t\tStaticText 'Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.'\n[113] complementary ''\n\t[114] Section ''\n\t\t[115] heading 'index'\n\t\t[116] paragraph ''\n\t\t\tStaticText 'Last edited by'\n\t\t\t[117] link 'MarvelsGrantMan136'\n\t\t\tStaticText ''\n\t\t\t[118] time 'July 12, 2025 at 1:48:18 PM EDT'\n\t\t\t\tStaticText '0 seconds ago'\n\t[119] Section ''\n\t\t[120] heading 'Toolbox'\n\t\t[121] list ''\n\t\t\t[122] listitem ''\n\t\t\t\t[123] link 'Edit page'\n\t\t\t[124] listitem ''\n\t\t\t\t[125] link 'Page history'\n\t[126] Section ''\n\t\t[127] heading 'Navigation'\n\t\t[128] list ''\n\t\t\t[129] listitem ''\n\t\t\t\t[130] link 'All pages'\n\t\t\t[131] listitem ''\n\t\t\t\t[132] link 'Recent changes'\n\t\t\t[133] listitem ''\n\t\t\t\t[134] link 'Create new page'\n[135] contentinfo ''\n\t[136] paragraph ''\n\t\tStaticText 'Running'\n\t\t[138] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [257]",
+								"steps_nb": 22,
+								"reason": "Save forum details",
+								"observation": "[20] navigation ''\n\t[21] link 'Jump to main content'\n\t[22] link 'Jump to sidebar'\n[23] navigation ''\n\t[26] link 'Home'\n\t\tStaticText 'Postmill'\n\t[36] list ''\n\t\t[37] listitem ''\n\t\t\t[38] link 'Forums'\n\t\t[39] listitem ''\n\t\t\t[40] link 'Wiki'\n\t[41] Section ''\n\t\t[50] searchbox 'Search query'\n\t[51] list ''\n\t\t[52] listitem ''\n\t\t\t[53] link 'Notifications (0)'\n\t\t\t\t[56] image ''\n\t\t[57] listitem ''\n\t\t\t[58] link 'Submit'\n\t\t\t\t[61] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[63] listitem ''\n\t\t\t[64] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[67] image ''\n\t\t\t\t[68] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[109] main ''\n\t[110] heading 'Editing \"index\"'\n\t\t[111] link 'index'\n\t[112] Section ''\n\t\t[115] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[117] textbox 'Title This field is required.' value='Cyberpunk Forum', required\n\t\t[120] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t\tStaticText '*'\n\t\t[123] textbox 'Body This field is required.' value='Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.', required, describedby='wiki_body_help'\n\t\t[125] heading 'Preview'\n\t\t[127] paragraph ''\n\t\t\tStaticText 'Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.'\n\t\t[129] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[131] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[257] button 'Save'\n[259] complementary ''\n\t[260] Section ''\n\t\t[261] heading 'index'\n\t\t[262] paragraph ''\n\t\t\tStaticText 'Last edited by'\n\t\t\t[263] link 'MarvelsGrantMan136'\n\t\t\tStaticText ''\n\t\t\t[264] time 'July 12, 2025 at 1:48:18 PM EDT'\n\t\t\t\tStaticText '4 seconds ago'\n\t[265] Section ''\n\t\t[266] heading 'Toolbox'\n\t\t[267] list ''\n\t\t\t[268] listitem ''\n\t\t\t\t[269] link '\u2022 Edit page'\n\t\t\t[270] listitem ''\n\t\t\t\t[271] link 'Page history'\n\t[272] Section ''\n\t\t[273] heading 'Navigation'\n\t\t[274] list ''\n\t\t\t[275] listitem ''\n\t\t\t\t[276] link 'All pages'\n\t\t\t[277] listitem ''\n\t\t\t\t[278] link 'Recent changes'\n\t\t\t[279] listitem ''\n\t\t\t\t[280] link 'Create new page'\n[281] contentinfo ''\n\t[282] paragraph ''\n\t\tStaticText 'Running'\n\t\t[284] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki/_edit/index",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [121]",
+								"steps_nb": 23,
+								"reason": "Edit page for forum details configuration",
+								"observation": "[19] navigation ''\n\t[20] link 'Jump to main content'\n\t[21] link 'Jump to sidebar'\n[22] navigation ''\n\t[25] link 'Home'\n\t\tStaticText 'Postmill'\n\t[35] list ''\n\t\t[36] listitem ''\n\t\t\t[37] link 'Forums'\n\t\t[38] listitem ''\n\t\t\t[39] link 'Wiki'\n\t[40] Section ''\n\t\t[49] searchbox 'Search query'\n\t[50] list ''\n\t\t[51] listitem ''\n\t\t\t[52] link 'Notifications (0)'\n\t\t\t\t[55] image ''\n\t\t[56] listitem ''\n\t\t\t[57] link 'Submit'\n\t\t\t\t[60] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[62] listitem ''\n\t\t\t[63] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[66] image ''\n\t\t\t\t[67] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[108] main ''\n\t[109] article ''\n\t\t[110] heading 'Cyberpunk Forum'\n\t\t[112] paragraph ''\n\t\t\tStaticText 'Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.'\n[113] complementary ''\n\t[114] Section ''\n\t\t[115] heading 'index'\n\t\t[116] paragraph ''\n\t\t\tStaticText 'Last edited by'\n\t\t\t[117] link 'MarvelsGrantMan136'\n\t\t\tStaticText ''\n\t\t\t[118] time 'July 12, 2025 at 1:48:25 PM EDT'\n\t\t\t\tStaticText '0 seconds ago'\n\t[119] Section ''\n\t\t[120] heading 'Toolbox'\n\t\t[121] list ''\n\t\t\t[122] listitem ''\n\t\t\t\t[123] link 'Edit page'\n\t\t\t[124] listitem ''\n\t\t\t\t[125] link 'Page history'\n\t[126] Section ''\n\t\t[127] heading 'Navigation'\n\t\t[128] list ''\n\t\t\t[129] listitem ''\n\t\t\t\t[130] link 'All pages'\n\t\t\t[131] listitem ''\n\t\t\t\t[132] link 'Recent changes'\n\t\t\t[133] listitem ''\n\t\t\t\t[134] link 'Create new page'\n[135] contentinfo ''\n\t[136] paragraph ''\n\t\tStaticText 'Running'\n\t\t[138] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [56]",
+								"steps_nb": 24,
+								"reason": "Navigate to submission page",
+								"observation": "[18] navigation ''\n\t[19] link 'Jump to main content'\n\t[20] link 'Jump to sidebar'\n[21] navigation ''\n\t[24] link 'Home'\n\t\tStaticText 'Postmill'\n\t[34] list ''\n\t\t[35] listitem ''\n\t\t\t[36] link 'Forums'\n\t\t[37] listitem ''\n\t\t\t[38] link 'Wiki'\n\t[39] Section ''\n\t\t[48] searchbox 'Search query'\n\t[49] list ''\n\t\t[50] listitem ''\n\t\t\t[51] link 'Notifications (0)'\n\t\t\t\t[54] image ''\n\t\t[55] listitem ''\n\t\t\t[56] link 'Submit'\n\t\t\t\t[59] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[61] listitem ''\n\t\t\t[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[65] image ''\n\t\t\t\t[66] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[107] main ''\n\t[108] heading 'Showing history for \"index\"'\n\t\t[109] link 'index'\n\t[110] Section ''\n\t\t[111] table ''\n\t\t\t[112] rowgroup ''\n\t\t\t\t[113] row ''\n\t\t\t\t\t[114] columnheader 'Compare'\n\t\t\t\t\t[115] columnheader 'ID'\n\t\t\t\t\t[116] columnheader 'Revised'\n\t\t\t\t\t[117] columnheader 'User'\n\t\t\t[118] rowgroup ''\n\t\t\t\t[119] row ''\n\t\t\t\t\t[120] gridcell ''\n\t\t\t\t\t\t[122] radio '', checked='false'\n\t\t\t\t\t[124] gridcell ''\n\t\t\t\t\t\t[126] radio '', checked='true'\n\t\t\t\t\t[128] gridcell '2ec2ebd3'\n\t\t\t\t\t\t[129] link '2ec2ebd3'\n\t\t\t\t\t[130] gridcell '4 seconds ago'\n\t\t\t\t\t\t[131] time 'July 12, 2025 at 1:48:25 PM EDT'\n\t\t\t\t\t\t\tStaticText '4 seconds ago'\n\t\t\t\t\t[132] gridcell 'MarvelsGrantMan136'\n\t\t\t\t\t\t[133] link 'MarvelsGrantMan136'\n\t\t\t\t[134] row ''\n\t\t\t\t\t[135] gridcell ''\n\t\t\t\t\t\t[137] radio '', checked='true'\n\t\t\t\t\t[139] gridcell ''\n\t\t\t\t\t\t[141] radio '', checked='false'\n\t\t\t\t\t[143] gridcell 'c96de415'\n\t\t\t\t\t\t[144] link 'c96de415'\n\t\t\t\t\t[145] gridcell '11 seconds ago'\n\t\t\t\t\t\t[146] time 'July 12, 2025 at 1:48:18 PM EDT'\n\t\t\t\t\t\t\tStaticText '11 seconds ago'\n\t\t\t\t\t[147] gridcell 'MarvelsGrantMan136'\n\t\t\t\t\t\t[148] link 'MarvelsGrantMan136'\n\t\t[150] button 'Compare'\n[151] complementary ''\n\t[152] Section ''\n\t\t[153] heading 'index'\n\t\t[154] paragraph ''\n\t\t\tStaticText 'Last edited by'\n\t\t\t[155] link 'MarvelsGrantMan136'\n\t\t\tStaticText ''\n\t\t\t[156] time 'July 12, 2025 at 1:48:25 PM EDT'\n\t\t\t\tStaticText '4 seconds ago'\n\t[157] Section ''\n\t\t[158] heading 'Toolbox'\n\t\t[159] list ''\n\t\t\t[160] listitem ''\n\t\t\t\t[161] link 'Edit page'\n\t\t\t[162] listitem ''\n\t\t\t\t[163] link '\u2022 Page history'\n\t[164] Section ''\n\t\t[165] heading 'Navigation'\n\t\t[166] list ''\n\t\t\t[167] listitem ''\n\t\t\t\t[168] link 'All pages'\n\t\t\t[169] listitem ''\n\t\t\t\t[170] link 'Recent changes'\n\t\t\t[171] listitem ''\n\t\t\t\t[172] link 'Create new page'\n[173] contentinfo ''\n\t[174] paragraph ''\n\t\tStaticText 'Running'\n\t\t[176] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki/_history/index",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [42]",
+								"steps_nb": 25,
+								"reason": "Navigate to Wiki for forum configuration",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "page_op",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "click [57]",
+								"steps_nb": 26,
+								"reason": "Navigate to submission page for configuration",
+								"observation": "[19] navigation ''\n\t[20] link 'Jump to main content'\n\t[21] link 'Jump to sidebar'\n[22] navigation ''\n\t[25] link 'Home'\n\t\tStaticText 'Postmill'\n\t[35] list ''\n\t\t[36] listitem ''\n\t\t\t[37] link 'Forums'\n\t\t[38] listitem ''\n\t\t\t[39] link 'Wiki'\n\t[40] Section ''\n\t\t[49] searchbox 'Search query'\n\t[50] list ''\n\t\t[51] listitem ''\n\t\t\t[52] link 'Notifications (0)'\n\t\t\t\t[55] image ''\n\t\t[56] listitem ''\n\t\t\t[57] link 'Submit'\n\t\t\t\t[60] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[62] listitem ''\n\t\t\t[63] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[66] image ''\n\t\t\t\t[67] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[108] main ''\n\t[109] article ''\n\t\t[110] heading 'Cyberpunk Forum'\n\t\t[112] paragraph ''\n\t\t\tStaticText 'Welcome to the Cyberpunk Forum, where you can discuss your favorite cyberpunk themes, books, and movies.'\n[113] complementary ''\n\t[114] Section ''\n\t\t[115] heading 'index'\n\t\t[116] paragraph ''\n\t\t\tStaticText 'Last edited by'\n\t\t\t[117] link 'MarvelsGrantMan136'\n\t\t\tStaticText ''\n\t\t\t[118] time 'July 12, 2025 at 1:48:25 PM EDT'\n\t\t\t\tStaticText '12 seconds ago'\n\t[119] Section ''\n\t\t[120] heading 'Toolbox'\n\t\t[121] list ''\n\t\t\t[122] listitem ''\n\t\t\t\t[123] link 'Edit page'\n\t\t\t[124] listitem ''\n\t\t\t\t[125] link 'Page history'\n\t[126] Section ''\n\t\t[127] heading 'Navigation'\n\t\t[128] list ''\n\t\t\t[129] listitem ''\n\t\t\t\t[130] link 'All pages'\n\t\t\t[131] listitem ''\n\t\t\t\t[132] link 'Recent changes'\n\t\t\t[133] listitem ''\n\t\t\t\t[134] link 'Create new page'\n[135] contentinfo ''\n\t[136] paragraph ''\n\t\tStaticText 'Running'\n\t\t[138] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/wiki",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							},
+							{
+								"type": "stop",
+								"objective": "configure_forum_details [Cyberpunk]",
+								"action": "stop [ask not achieved : too many steps.]",
+								"steps_nb": 27,
+								"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+								"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+								"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+								"guidance": "",
+								"relevant_policies": [
+									[
+										"create_forum_with_details",
+										"Create a new forum with the provided name, description, and sidebar details"
+									],
+									[
+										"find_subreddit",
+										"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+									],
+									[
+										"downvote_top_posts",
+										"Downvote the top posts in the current subreddit"
+									],
+									[
+										"find_user",
+										"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+									],
+									[
+										"navigate_to_submit_page",
+										"Navigate to the page where new submissions can be made"
+									]
+								]
+							}
+						],
+						"feedback": "The task is a failure because the current page does not show the successful configuration of forum details for \"Cyberpunk\". The user is still on the submission page, and the forum selection combobox has not been updated.\n\nNew Plan:\n1. Navigate to the Wiki page for forum configuration.\n2. Create a new page for the \"Cyberpunk\" forum.\n3. Enter the forum title and description.\n4. Save the forum details.\n5. Verify that the forum has been successfully created.\n6. Navigate back to the submission page and select the newly created \"Cyberpunk\" forum from the combobox.\n7. Fill in the required information and submit the configuration.\n\nNote: The previous actions indicate a lot of redundant and unsuccessful attempts to configure the forum details. A more direct approach, as outlined in the new plan, is necessary to achieve the objective."
+					},
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "click [62]",
+						"steps_nb": 28,
+						"reason": "Navigate to submit page again",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "create_forum_with_details [Cyberpunk]",
+						"action": "click [62]",
+						"steps_nb": 29,
+						"reason": "Navigate to submit page again",
+						"observation": "[22] navigation ''\n\t[23] link 'Jump to main content'\n\t[24] link 'Jump to sidebar'\n[25] navigation ''\n\t[28] link 'Home'\n\t\tStaticText 'Postmill'\n\t[38] list ''\n\t\t[39] listitem ''\n\t\t\t[40] link 'Forums'\n\t\t[41] listitem ''\n\t\t\t[42] link 'Wiki'\n\t[43] Section ''\n\t\t[52] searchbox 'Search query'\n\t[53] list ''\n\t\t[54] listitem ''\n\t\t\t[55] link 'Notifications (0)'\n\t\t\t\t[58] image ''\n\t\t[59] listitem ''\n\t\t\t[60] link 'Submit'\n\t\t\t\t[63] image ''\n\t\t\t\tStaticText 'Submit'\n\t\t[65] listitem ''\n\t\t\t[66] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False\n\t\t\t\t[69] image ''\n\t\t\t\t[70] strong ''\n\t\t\t\t\tStaticText 'MarvelsGrantMan136'\n[111] main ''\n\t[112] heading 'Create submission'\n\t[113] Section ''\n\t\t[119] radio 'URL', checked='true'\n\t\t[120] LabelText ''\n\t\t\tStaticText 'URL'\n\t\t[121] radio 'Image', checked='false'\n\t\t[122] LabelText ''\n\t\t\tStaticText 'Image'\n\t\t[127] textbox ''\n\t\t[135] LabelText ''\n\t\t\tStaticText 'Title'\n\t\t\tStaticText '*'\n\t\t[137] textbox 'Title This field is required.', required\n\t\t[140] LabelText ''\n\t\t\tStaticText 'Body'\n\t\t[142] textbox 'Body', describedby='submission_body_help'\n\t\t[147] checkbox 'Formatting help +', checked='false'\n\t\tStaticText 'Markdown allowed.'\n\t\t[149] LabelText ''\n\t\t\tStaticText 'Formatting help'\n\t\t\tStaticText ''\n\t\t\tStaticText '+'\n\t\t[276] LabelText ''\n\t\t\tStaticText 'Forum'\n\t\t\tStaticText '*'\n\t\t[378] combobox 'Choose one\u2026' value='Choose one\u2026', hasPopup='menu', expanded=False\n\t\t\t[379] textbox 'Choose one\u2026' value='Choose one\u2026'\n\t\t\t\tStaticText 'Choose one\u2026'\n\t\t[395] button 'Create submission'\n[400] contentinfo ''\n\t[401] paragraph ''\n\t\tStaticText 'Running'\n\t\t[403] link 'Postmill'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:9999/submit",
+						"guidance": "Please follow these general instructions:\n* To create a new forum, navigate to the submit page and enter the required information in the title and body fields.\n* Select a valid option from the forum combobox to ensure that the forum is created in the correct category. This is a required step, and the form will not be submitted successfully without it.\n* Before submitting the forum creation form, verify that all required fields are filled in and properly formatted, including the selection of a valid forum option.\n* Submit the forum creation form only once. If the submission is not successful, check for any error messages or indicators of what might be going wrong and adjust the submission attempt accordingly.\n* When selecting a forum option from the combobox, make sure to choose a valid option that matches the category of the forum you want to create. If you are unsure about which option to choose, review the available options carefully and select the one that best fits the purpose of your forum.",
+						"relevant_policies": [
+							[
+								"configure_forum_details",
+								"Configure the details of a newly created forum to include specific categories in the sidebar"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"downvote_top_posts",
+								"Downvote the top posts in the current subreddit"
+							],
+							[
+								"navigate_to_submit_page",
+								"Navigate to the page where new submissions can be made"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							]
+						]
+					}
+				]
+			}
+		]
+	},
+	"score": 0.0
+}

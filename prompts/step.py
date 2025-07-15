@@ -438,30 +438,25 @@ PREVIOUS ACTIONS:
 
 
 
-def get_action(objective, observation, url, previous_actions, guidance_text, task_id):
-    config_file = f"custom_webarena/config_files/{task_id}.json"
-    with open(config_file, 'r') as file:
-        data = json.load(file)
-
+def get_action(objective, observation, url, previous_actions, guidance_text, site):
     prompt_dict = None
 
-    for site in data.get('sites', []):
-        match site.lower():
-            case "gitlab":
-                prompt_dict = github_agent
-            case "shopping":
-                prompt_dict = shopping_agent
-            case "shopping_admin":
-                prompt_dict = shopping_admin_agent
-            case "reddit":
-                prompt_dict = reddit_agent
-            case "map":
-                prompt_dict = maps_agent
-            case _:
-                prompt_dict = None
+    match site:
+        case "gitlab":
+            prompt_dict = github_agent
+        case "shopping":
+            prompt_dict = shopping_agent
+        case "shopping_admin":
+            prompt_dict = shopping_admin_agent
+        case "reddit":
+            prompt_dict = reddit_agent
+        case "map":
+            prompt_dict = maps_agent
+        case _:
+            prompt_dict = None
 
-        if not (prompt_dict is None):
-            break
+        # if not (prompt_dict is None):
+        #     break
 
     prompt = step_dict_to_prompt(prompt_dict)
 
@@ -496,4 +491,5 @@ def get_action(objective, observation, url, previous_actions, guidance_text, tas
 
         return action
     except:
-        return get_action(objective, observation, url, previous_actions, guidance_text, task_id)
+        print(f"FAILURE when handling SteP answer : {answer}")
+        return get_action(objective, observation, url, previous_actions, guidance_text, site)

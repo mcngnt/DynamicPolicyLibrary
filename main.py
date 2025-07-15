@@ -6,6 +6,7 @@ from baseline.base_agent import BaseAgent
 from logger import dump_log
 import json
 import os
+import utils
 
 from utils import *
 
@@ -27,13 +28,13 @@ def main(args):
     match args.agent_type:
         case "dynamic":
              # name = "dynamic_llama_base_step"
-            name = "dynamic_llama_base_step_new_pol_test"
+            name = "dynamic_llama_base_step_new_pol_test2"
             agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
             iter_nb = 3
             save_library = True
             total_nb = 30
         case "step":
-            agent = StepAgent(name="step_agent_llama", policy_library_path="policies/step_policies.json")
+            agent = StepAgent(name="step_agent_llama_test2", policy_library_path="policies/step_policies_full.json")
             iter_nb = 1
             save_library = False
             total_nb = 100
@@ -61,11 +62,13 @@ def main(args):
                 continue
             print(f"\n----- TASK ID : {task_id} -----\n")
             site = get_site_type(int(task_id))
+            if site == "shopping" or site == "map":
+                continue
             objective, observation = env.load(task_id)
             agent.load(objective, observation, site)
             final_answer = ""
             action_logs = []
-            for i in range(30):
+            for i in range(20):
                 observation, url, screenshot = env.observe()
                 name, args, is_page_op, is_final, log_info = agent.get_action(observation, url, screenshot)
                 action_logs += [log_info]
@@ -86,6 +89,8 @@ def main(args):
             if save_library:
                 agent.library.save(f"policies/{agent.name}/", f"{counter}.{iter_id}.{task_id}")
                 agent.library.save(f"policies/{agent.name}/", f"last")
+            with open("tokens.txt", "a") as f:
+                f.write(f"Task {task_id} with agent {agent.name} : {utils.token_nb} tokens.\n")
 
 
 

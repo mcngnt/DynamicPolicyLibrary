@@ -4,12 +4,12 @@ from collections import defaultdict
 from utils import *
 
 # name = "dynamic_llama_base_step_new_pol"
-name = "base"
+name = "step_agent_llama_test2"
 parent_folder = f"trajectories/{name}"
 output_folder = "experiments"
 output_file = os.path.join(output_folder, f"{name}.json")
 
-title = "Single LLM"
+title = ""
 
 
 site_scores = defaultdict(list)

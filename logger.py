@@ -48,7 +48,8 @@ def build_trace_from_actions(actions, score):
             } | base
             policy_stack[-1]["trace"].append(stop)
             policy_entry = policy_stack.pop()
-            policy_entry["feedback"] = action["feedback"]
+            if action.get("feedback"):
+                policy_entry["feedback"] = action["feedback"]
             
 
     return {
