@@ -64,7 +64,7 @@ class Agent:
 		if len(top_policy["actions"]) > 15:
 			action = {"name":"stop", "arguments":["Task not achieved : too many steps."], "is_page_op":False,"is_stop":True, "reason":"This action was taken automatically beacause of the high number of steps of the policy.", "call":"stop [ask not achieved : too many steps.]"}
 		else:
-			action = get_action(policy_objective, policy_description, observation, url, top_policy["actions"], guidance_text, relevant_policies, is_root, self.current_plan, step_nb=self.steps_nb)
+			action = get_action(policy_objective, policy_description, observation, url, [a for (a,_) in top_policy["actions"]], guidance_text, relevant_policies, is_root, self.site)
 		print(f"get_action feedback : {action}\n")
 		log_info["action"] = action["call"]
 		log_info["reason"] = action["reason"]

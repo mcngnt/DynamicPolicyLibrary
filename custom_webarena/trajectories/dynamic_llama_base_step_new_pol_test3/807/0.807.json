@@ -1,0 +1,1064 @@
+{
+	"created_policies": [
+		{
+			"name": "navigate_to_merge_request_page",
+			"description": "Navigate to the page where a new merge request can be created",
+			"query": "build time debug to main"
+		},
+		{
+			"name": "fill_merge_request_form",
+			"description": "Fill in the form with the required details to create a new merge request",
+			"query": "build time debug branch, main branch, assign myself as reviewer"
+		}
+	],
+	"plan": "Navigate to the merge request creation page | Fill in the merge request form",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Submit a merge request for build time debug branch to be merged into main branch, assign myself as the reviewer",
+				"action": "click [353]",
+				"steps_nb": 0,
+				"reason": "The objective is to submit a merge request for the build time debug branch to be merged into the main branch and assign myself as the reviewer. To achieve this, we first need to navigate to the merge request page. The current page seems to be the project page, and we can see various links and buttons. However, there is no direct link to create a new merge request. We can see a link 'Merge requests' which might lead us to the page where we can create a new merge request.",
+				"observation": "[67] banner ''\n\t[68] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[74] link 'Dashboard'\n\t\t[75] image ''\n\t[78] list ''\n\t\t[79] listitem ''\n\t\t\t[80] button '', hasPopup='menu', expanded=False\n\t[140] list ''\n\t\t[141] listitem ''\n\t\t\t[143] Section ''\n\t\t\t\t[145] image ''\n\t\t\t\t[146] textbox 'Search GitLab'\n\t[158] list ''\n\t\t[159] listitem ''\n\t\t\t[160] link 'Create new...'\n\t\t\t\t[161] image ''\n\t\t\t\t[162] image ''\n\t\t[180] listitem ''\n\t\t\t[181] link 'Issues'\n\t\t\t\t[182] image ''\n\t\t[184] listitem ''\n\t\t\t[185] link 'Merge requests'\n\t\t\t\t[186] image ''\n\t\t\t\t[188] image ''\n\t\t[198] listitem ''\n\t\t\t[199] link 'To-Do List'\n\t\t\t\t[200] image ''\n\t\t\t\tStaticText '5'\n\t\t[202] listitem ''\n\t\t\t[203] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[205] image ''\n\t\t\t\t[207] image ''\n\t\t[228] listitem ''\n\t\t\t[229] link 'Byte Blaze'\n\t\t\t\t[230] image 'Byte Blaze'\n\t\t\t\t[231] image ''\n[270] complementary 'Project navigation'\n\t[272] list ''\n\t\t[273] listitem 'design'\n\t\t\t[274] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[278] listitem ''\n\t\t\t[279] link 'Project information'\n\t\t\t\t[281] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[297] listitem ''\n\t\t\t[298] link 'Repository'\n\t\t\t\t[300] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[328] listitem ''\n\t\t\t[329] link 'Issues'\n\t\t\t\t[331] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[352] listitem ''\n\t\t\t[353] link 'Merge requests'\n\t\t\t\t[355] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[363] listitem ''\n\t\t\t[364] link 'CI/CD'\n\t\t\t\t[366] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[385] listitem ''\n\t\t\t[386] link 'Security & Compliance'\n\t\t\t\t[388] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[398] listitem ''\n\t\t\t[399] link 'Deployments'\n\t\t\t\t[401] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[417] listitem ''\n\t\t\t[418] link 'Packages and registries'\n\t\t\t\t[420] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[433] listitem ''\n\t\t\t[434] link 'Infrastructure'\n\t\t\t\t[436] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[449] listitem ''\n\t\t\t[450] link 'Monitor'\n\t\t\t\t[452] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[471] listitem ''\n\t\t\t[472] link 'Analytics'\n\t\t\t\t[474] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[490] listitem ''\n\t\t\t[491] link 'Wiki'\n\t\t\t\t[493] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[499] listitem ''\n\t\t\t[500] link 'Snippets'\n\t\t\t\t[502] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[520] button 'Collapse sidebar'\n\t\t[521] image ''\n\t\tStaticText 'Collapse sidebar'\n[529] alert '', live='assertive', atomic, relevant='additions text'\n\t[530] image ''\n\t[531] button 'Dismiss'\n\t\t[532] image ''\n\t[533] alert '', live='assertive', atomic, relevant='additions text'\n\t\tStaticText \"You can't push or pull repositories using SSH until you add an SSH key to your profile.\"\n\t\t[536] link 'Add SSH key'\n\t\t[537] button \"Don't show again\"\n[538] navigation 'Breadcrumbs'\n\t[544] list ''\n\t\t[545] listitem ''\n\t\t\t[546] link 'Primer'\n\t\t\t[547] image ''\n\t\t[548] listitem ''\n\t\t\t[549] link 'design'\n\t\t\t\tStaticText 'design'\n[554] main ''\n\tStaticText 'D'\n\t[562] heading 'design Public - The project can be accessed without any authentication.'\n\t\t[564] image ''\n\tStaticText 'Project ID: 180'\n\t[567] button 'Copy project ID', live='polite', relevant='additions text'\n\t\t[568] image ''\n\t[570] link 'Leave project'\n\t[574] button '', hasPopup='menu', expanded=False\n\t[632] button 'Star'\n\t\t[633] image ''\n\t\tStaticText 'Star'\n\t[635] link '21'\n\t[638] link 'Fork'\n\t\t[639] image ''\n\t\tStaticText 'Fork'\n\t[641] link '0'\n\t[642] navigation ''\n\t\t[643] list ''\n\t\t\t[644] listitem ''\n\t\t\t\t[645] link '921 Commits'\n\t\t\t\t\t[646] image ''\n\t\t\t\t\t[647] strong ''\n\t\t\t\t\t\tStaticText '921'\n\t\t\t[648] listitem ''\n\t\t\t\t[649] link '38 Branches'\n\t\t\t\t\t[650] image ''\n\t\t\t\t\t[651] strong ''\n\t\t\t\t\t\tStaticText '38'\n\t\t\t[652] listitem ''\n\t\t\t\t[653] link '0 Tags'\n\t\t\t\t\t[654] image ''\n\t\t\t\t\t[655] strong ''\n\t\t\t\t\t\tStaticText '0'\n\t\t\t[656] listitem ''\n\t\t\t\t[658] image ''\n\t\t\t\t[659] strong ''\n\t\t\t\t\tStaticText '97.8 MB'\n\t\t\t\tStaticText 'Project Storage'\n\t[664] paragraph ''\n\t\tStaticText 'Primer Design Guidelines'\n\t[674] image 'user avatar'\n\t[677] link 'Add interface guidelines for ProgressBar (#452)'\n\t[678] button 'Toggle commit description'\n\tStaticText 'Mike Perrotti authored'\n\t[681] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\tStaticText '2 years ago'\n\t[691] button 'Unverified'\n\t[692] group ''\n\t\tStaticText '260e840e'\n\t\t[695] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t[703] button 'main', hasPopup='menu', expanded=False\n\t\tStaticText 'main'\n\t[902] navigation 'Files breadcrumb'\n\t\t[903] list ''\n\t\t\t[904] listitem ''\n\t\t\t\t[905] link 'design'\n\t\t\t[906] listitem ''\n\t\t\t\t[908] button 'Add to tree', hasPopup='menu', expanded=False\n\t\t\t\t\tStaticText 'Add to tree'\n\t\t[941] Section ''\n\t\t[942] Section ''\n\t[945] link 'Find file'\n\t[948] link 'Web IDE'\n\t\tStaticText 'Web IDE'\n\t[951] button 'Download'\n\t\t[952] image ''\n\t\tStaticText 'Select Archive Format'\n\t\t[954] image ''\n\t[966] link 'Clone'\n\t\tStaticText 'Clone'\n\t\t[968] image ''\n\t[1011] list ''\n\t\t[1012] listitem ''\n\t\t\t[1013] link 'README'\n\t\t\t\t[1014] image ''\n\t\t[1015] listitem ''\n\t\t\t[1016] link 'MIT License'\n\t\t\t\t[1017] image ''\n\t\t\t\tStaticText 'MIT License'\n\t\t[1019] listitem ''\n\t\t\t[1020] link 'CONTRIBUTING'\n\t\t\t\t[1021] image ''\n\t[1025] table 'Files, directories, and submodules in the path / for commit reference main', live='polite', relevant='additions text'\n\t\t[1026] rowgroup ''\n\t\t\t[1027] row ''\n\t\t\t\t[1028] columnheader 'Name'\n\t\t\t\t[1029] columnheader 'Last commit'\n\t\t\t\t[1030] columnheader 'Last update'\n\t\t[1031] rowgroup ''\n\t\t\t[1032] row ''\n\t\t\t\t[1033] gridcell '.github'\n\t\t\t\t\t[1034] link '.github'\n\t\t\t\t\t\tStaticText '.github'\n\t\t\t\t[1038] gridcell 'Add more deploy triggers (#406)'\n\t\t\t\t\t[1039] link 'Add more deploy triggers (#406)'\n\t\t\t\t[1041] gridcell '2 years ago'\n\t\t\t\t\t[1042] time 'Feb 23, 2023 6:27pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1043] row ''\n\t\t\t\t[1044] gridcell 'content'\n\t\t\t\t\t[1045] link 'content'\n\t\t\t\t\t\tStaticText 'content'\n\t\t\t\t[1049] gridcell 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t\t[1050] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[1052] gridcell '2 years ago'\n\t\t\t\t\t[1053] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1054] row ''\n\t\t\t\t[1055] gridcell 'docs'\n\t\t\t\t\t[1056] link 'docs'\n\t\t\t\t\t\tStaticText 'docs'\n\t\t\t\t[1060] gridcell 'Introduce markdownlinting (#345)'\n\t\t\t\t\t[1061] link 'Introduce markdownlinting (#345)'\n\t\t\t\t[1063] gridcell '2 years ago'\n\t\t\t\t\t[1064] time 'Dec 22, 2022 9:13pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1065] row ''\n\t\t\t\t[1066] gridcell 'src'\n\t\t\t\t\t[1067] link 'src'\n\t\t\t\t\t\tStaticText 'src'\n\t\t\t\t[1071] gridcell 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t\t[1072] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[1074] gridcell '2 years ago'\n\t\t\t\t\t[1075] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1076] row ''\n\t\t\t\t[1077] gridcell '.eslintignore'\n\t\t\t\t\t[1078] link '.eslintignore'\n\t\t\t\t\t\t[1080] image ''\n\t\t\t\t\t\tStaticText '.eslintignore'\n\t\t\t\t[1082] gridcell 'add deployment workflows for GitHub Pages (#258)'\n\t\t\t\t\t[1083] link 'add deployment workflows for GitHub Pages (#258)'\n\t\t\t\t[1085] gridcell '3 years ago'\n\t\t\t\t\t[1086] time 'Apr 14, 2022 10:52am GMT+0200'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[1087] row ''\n\t\t\t\t[1088] gridcell '.eslintrc.json'\n\t\t\t\t\t[1089] link '.eslintrc.json'\n\t\t\t\t\t\t[1091] image ''\n\t\t\t\t\t\tStaticText '.eslintrc.json'\n\t\t\t\t[1093] gridcell 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t\t[1094] link 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t[1096] gridcell '2 years ago'\n\t\t\t\t\t[1097] time 'Aug 16, 2022 3:48pm GMT+0200'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1098] row ''\n\t\t\t\t[1099] gridcell '.gitignore'\n\t\t\t\t\t[1100] link '.gitignore'\n\t\t\t\t\t\t[1102] image ''\n\t\t\t\t\t\tStaticText '.gitignore'\n\t\t\t\t[1104] gridcell 'started work on icons section (#387)'\n\t\t\t\t\t[1105] link 'started work on icons section (#387)'\n\t\t\t\t[1107] gridcell '2 years ago'\n\t\t\t\t\t[1108] time 'Feb 8, 2023 5:04pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1109] row ''\n\t\t\t\t[1110] gridcell '.markdownlint-cli2.cjs'\n\t\t\t\t\t[1111] link '.markdownlint-cli2.cjs'\n\t\t\t\t\t\t[1113] image ''\n\t\t\t\t\t\tStaticText '.markdownlint-cli2.cjs'\n\t\t\t\t[1115] gridcell 'Create MVP React component layout (#366)'\n\t\t\t\t\t[1116] link 'Create MVP React component layout (#366)'\n\t\t\t\t[1118] gridcell '2 years ago'\n\t\t\t\t\t[1119] time 'Jan 30, 2023 5:50am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1120] row ''\n\t\t\t\t[1121] gridcell '.nvmrc'\n\t\t\t\t\t[1122] link '.nvmrc'\n\t\t\t\t\t\t[1124] image ''\n\t\t\t\t\t\tStaticText '.nvmrc'\n\t\t\t\t[1126] gridcell 'New icons guidelines (#346)'\n\t\t\t\t\t[1127] link 'New icons guidelines (#346)'\n\t\t\t\t[1129] gridcell '2 years ago'\n\t\t\t\t\t[1130] time 'Jan 5, 2023 10:58am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1131] row ''\n\t\t\t\t[1132] gridcell 'CODE_OF_CONDUCT.md'\n\t\t\t\t\t[1133] link 'CODE_OF_CONDUCT.md'\n\t\t\t\t\t\t[1135] image ''\n\t\t\t\t\t\tStaticText 'CODE_OF_CONDUCT.md'\n\t\t\t\t[1137] gridcell 'add Code of Conduct'\n\t\t\t\t\t[1138] link 'add Code of Conduct'\n\t\t\t\t[1140] gridcell '6 years ago'\n\t\t\t\t\t[1141] time 'May 29, 2019 10:40pm GMT+0200'\n\t\t\t\t\t\tStaticText '6 years ago'\n\t\t\t[1142] row ''\n\t\t\t\t[1143] gridcell 'CONTRIBUTING.md'\n\t\t\t\t\t[1144] link 'CONTRIBUTING.md'\n\t\t\t\t\t\t[1146] image ''\n\t\t\t\t\t\tStaticText 'CONTRIBUTING.md'\n\t\t\t\t[1148] gridcell 'Create CONTRIBUTING.md (#180)'\n\t\t\t\t\t[1149] link 'Create CONTRIBUTING.md (#180)'\n\t\t\t\t[1151] gridcell '3 years ago'\n\t\t\t\t\t[1152] time 'Sep 10, 2021 4:01pm GMT+0200'\n\t\t\t\t\t\tStaticText '3 years ago'\n\t\t\t[1153] row ''\n\t\t\t\t[1154] gridcell 'LICENSE'\n\t\t\t\t\t[1155] link 'LICENSE'\n\t\t\t\t\t\t[1157] image ''\n\t\t\t\t\t\tStaticText 'LICENSE'\n\t\t\t\t[1159] gridcell 'Add license'\n\t\t\t\t\t[1160] link 'Add license'\n\t\t\t\t[1162] gridcell '5 years ago'\n\t\t\t\t\t[1163] time 'Apr 17, 2020 2:06pm GMT+0200'\n\t\t\t\t\t\tStaticText '5 years ago'\n\t\t\t[1164] row ''\n\t\t\t\t[1165] gridcell 'README.md'\n\t\t\t\t\t[1166] link 'README.md'\n\t\t\t\t\t\t[1168] image ''\n\t\t\t\t\t\tStaticText 'README.md'\n\t\t\t\t[1170] gridcell 'Copy content from primer.style/cli \u2192 primer.style/design (#376)'\n\t\t\t\t\t[1171] link 'Copy content from primer.style/cli \u2192 primer.style/design (#376)'\n\t\t\t\t[1173] gridcell '2 years ago'\n\t\t\t\t\t[1174] time 'Jan 31, 2023 11:46am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1175] row ''\n\t\t\t\t[1176] gridcell 'babel-defines.js'\n\t\t\t\t\t[1177] link 'babel-defines.js'\n\t\t\t\t\t\t[1179] image ''\n\t\t\t\t\t\tStaticText 'babel-defines.js'\n\t\t\t\t[1181] gridcell 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t\t[1182] link 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t[1184] gridcell '2 years ago'\n\t\t\t\t\t[1185] time 'Aug 16, 2022 3:48pm GMT+0200'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1186] row ''\n\t\t\t\t[1187] gridcell 'gatsby-config.js'\n\t\t\t\t\t[1188] link 'gatsby-config.js'\n\t\t\t\t\t\t[1190] image ''\n\t\t\t\t\t\tStaticText 'gatsby-config.js'\n\t\t\t\t[1192] gridcell 'Docs: Move `about` page content (#386)'\n\t\t\t\t\t[1193] link 'Docs: Move `about` page content (#386)'\n\t\t\t\t[1195] gridcell '2 years ago'\n\t\t\t\t\t[1196] time 'Feb 9, 2023 2:36am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1197] row ''\n\t\t\t\t[1198] gridcell 'gatsby-node.js'\n\t\t\t\t\t[1199] link 'gatsby-node.js'\n\t\t\t\t\t\t[1201] image ''\n\t\t\t\t\t\tStaticText 'gatsby-node.js'\n\t\t\t\t[1203] gridcell 'Output a JSON file with component metadata (#425)'\n\t\t\t\t\t[1204] link 'Output a JSON file with component metadata (#425)'\n\t\t\t\t[1206] gridcell '2 years ago'\n\t\t\t\t\t[1207] time 'Mar 10, 2023 7:15pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1208] row ''\n\t\t\t\t[1209] gridcell 'package-lock.json'\n\t\t\t\t\t[1210] link 'package-lock.json'\n\t\t\t\t\t\t[1212] image ''\n\t\t\t\t\t\tStaticText 'package-lock.json'\n\t\t\t\t[1214] gridcell 'Update ActionMenu docs (#445)'\n\t\t\t\t\t[1215] link 'Update ActionMenu docs (#445)'\n\t\t\t\t[1217] gridcell '2 years ago'\n\t\t\t\t\t[1218] time 'Mar 21, 2023 8:07pm GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1219] row ''\n\t\t\t\t[1220] gridcell 'package.json'\n\t\t\t\t\t[1221] link 'package.json'\n\t\t\t\t\t\t[1223] image ''\n\t\t\t\t\t\tStaticText 'package.json'\n\t\t\t\t[1225] gridcell 'Upgrade doctocat version (#434)'\n\t\t\t\t\t[1226] link 'Upgrade doctocat version (#434)'\n\t\t\t\t[1228] gridcell '2 years ago'\n\t\t\t\t\t[1229] time 'Mar 15, 2023 6:16am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1230] row ''\n\t\t\t\t[1231] gridcell 'prettier.config.js'\n\t\t\t\t\t[1232] link 'prettier.config.js'\n\t\t\t\t\t\t[1234] SvgRoot ''\n\t\t\t\t\t\tStaticText 'prettier.config.js'\n\t\t\t\t[1236] gridcell 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t\t[1237] link 'Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 (#278)'\n\t\t\t\t[1239] gridcell '2 years ago'\n\t\t\t\t\t[1240] time 'Aug 16, 2022 3:48pm GMT+0200'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t\t\t[1241] row ''\n\t\t\t\t[1242] gridcell 'yarn.lock'\n\t\t\t\t\t[1243] link 'yarn.lock'\n\t\t\t\t\t\t[1245] image ''\n\t\t\t\t\t\tStaticText 'yarn.lock'\n\t\t\t\t[1247] gridcell 'Coverage improvements (#449)'\n\t\t\t\t\t[1248] link 'Coverage improvements (#449)'\n\t\t\t\t[1250] gridcell '2 years ago'\n\t\t\t\t\t[1251] time 'Mar 24, 2023 12:58am GMT+0100'\n\t\t\t\t\t\tStaticText '2 years ago'\n\t[1252] article ''\n\t\t[1256] link 'README.md'\n\t\t\t[1257] strong ''\n\t\t\t\tStaticText 'README.md'\n\t\t[1262] heading 'Primer Interface Guidelines'\n\t\t\t[1263] link '', hidden=True\n\t\t[1264] paragraph ''\n\t\t\tStaticText 'Documentation for UI patterns and interaction guidelines.'\n\t\t[1265] heading 'Status'\n\t\t\t[1266] link '', hidden=True\n\t\t[1267] paragraph ''\n\t\t\tStaticText 'This is currently a work in progress! Follow along on our'\n\t\t\t[1268] link 'project board'\n\t\t\tStaticText '.'\n\t\t[1269] heading 'Local development'\n\t\t\t[1270] link '', hidden=True\n\t\t[1271] list ''\n\t\t\t[1272] listitem ''\n\t\t\t\t[1273] paragraph ''\n\t\t\t\t\tStaticText 'Clone this repo, e.g. with:'\n\t\t\t\t[1276] code ''\n\t\t\t\t\tStaticText 'git clone https://github.com/primer/design'\n\t\t\t\t[1278] button ''\n\t\t\t\t\t[1279] image ''\n\t\t\t[1280] listitem ''\n\t\t\t\t[1281] paragraph ''\n\t\t\t\t\tStaticText 'In the terminal, navigate ('\n\t\t\t\t\t[1282] code ''\n\t\t\t\t\t\tStaticText 'cd'\n\t\t\t\t\tStaticText ') to the repo directory'\n\t\t\t[1283] listitem ''\n\t\t\t\t[1284] paragraph ''\n\t\t\t\t\t[1285] code ''\n\t\t\t\t\t\tStaticText 'nvm use --default'\n\t\t\t\t\tStaticText 'to use the correct node version.'\n\t\t\t[1286] listitem ''\n\t\t\t\t[1287] paragraph ''\n\t\t\t\t\t[1288] code ''\n\t\t\t\t\t\tStaticText 'yarn'\n\t\t\t\t\tStaticText 'to install dependencies'\n\t\t\t[1289] listitem ''\n\t\t\t\t[1290] paragraph ''\n\t\t\t\t\t[1291] code ''\n\t\t\t\t\t\tStaticText 'yarn start'\n\t\t\t\t\tStaticText 'to start the dev server'\n\t\t[1292] heading 'Deployment'\n\t\t\t[1293] link '', hidden=True\n\t\t[1294] paragraph ''\n\t\t\tStaticText 'We deploy this site using'\n\t\t\t[1295] link 'GitHub Pages'\n\t\t\tStaticText '. Every push to a branch other than'\n\t\t\t[1296] code ''\n\t\t\t\tStaticText 'main'\n\t\t\tStaticText 'will deploy to a URL unique to the preview environment. Merges to'\n\t\t\t[1297] code ''\n\t\t\t\tStaticText 'main'\n\t\t\tStaticText 'will automatically deploy the site to'\n\t\t\t[1298] code ''\n\t\t\t\tStaticText 'https://primer.github.io/design/'\n\t\t\tStaticText '.'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"fill_merge_request_form",
+						"Fill in the form with the required details to create a new merge request"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"extract_top_contributors",
+						"Extract the top contributors based on the commit history"
+					],
+					[
+						"configure_project_settings",
+						"Configure the project settings to match the required repository type"
+					],
+					[
+						"search_issues",
+						"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+					],
+					[
+						"create_project",
+						"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+					],
+					[
+						"populate_readme_file",
+						"Populate a README file with a list of text"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Submit a merge request for build time debug branch to be merged into main branch, assign myself as the reviewer",
+				"action": "click [577]",
+				"steps_nb": 1,
+				"reason": "To submit a merge request, we first need to navigate to the page where a new merge request can be created. We are currently in the merge requests page as indicated by the URL and the previous action 'click [353]'. The next step is to click on the link that allows us to create a new merge request. In the observation, the link 'New merge request' is identified as [577], but since we are not in the same page as the previous observation, we need to locate the correct link in the current page. The link 'New merge request' is present in the current page with the text 'New merge request'. However, its id is not provided in the observation, but it can be found as [577] in the previous observations. But based on the provided observation, the button 'New merge request' is present, so the correct action would be to click on this button.",
+				"observation": "[67] banner ''\n\t[68] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[74] link 'Dashboard'\n\t\t[75] image ''\n\t[78] list ''\n\t\t[79] listitem ''\n\t\t\t[80] button '', hasPopup='menu', expanded=False\n\t[140] list ''\n\t\t[141] listitem ''\n\t\t\t[143] Section ''\n\t\t\t\t[145] image ''\n\t\t\t\t[146] textbox 'Search GitLab'\n\t[158] list ''\n\t\t[159] listitem ''\n\t\t\t[160] link 'Create new...'\n\t\t\t\t[161] image ''\n\t\t\t\t[162] image ''\n\t\t[180] listitem ''\n\t\t\t[181] link 'Issues'\n\t\t\t\t[182] image ''\n\t\t[184] listitem ''\n\t\t\t[185] link 'Merge requests'\n\t\t\t\t[186] image ''\n\t\t\t\t[188] image ''\n\t\t[198] listitem ''\n\t\t\t[199] link 'To-Do List'\n\t\t\t\t[200] image ''\n\t\t\t\tStaticText '5'\n\t\t[202] listitem ''\n\t\t\t[203] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[205] image ''\n\t\t\t\t[207] image ''\n\t\t[228] listitem ''\n\t\t\t[229] link 'Byte Blaze'\n\t\t\t\t[230] image 'Byte Blaze'\n\t\t\t\t[231] image ''\n[270] complementary 'Project navigation'\n\t[272] list ''\n\t\t[273] listitem 'design'\n\t\t\t[274] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[278] listitem ''\n\t\t\t[279] link 'Project information'\n\t\t\t\t[281] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[297] listitem ''\n\t\t\t[298] link 'Repository'\n\t\t\t\t[300] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[328] listitem ''\n\t\t\t[329] link 'Issues'\n\t\t\t\t[331] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[352] listitem ''\n\t\t\t[353] link 'Merge requests'\n\t\t\t\t[355] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[363] listitem ''\n\t\t\t[364] link 'CI/CD'\n\t\t\t\t[366] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[385] listitem ''\n\t\t\t[386] link 'Security & Compliance'\n\t\t\t\t[388] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[398] listitem ''\n\t\t\t[399] link 'Deployments'\n\t\t\t\t[401] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[417] listitem ''\n\t\t\t[418] link 'Packages and registries'\n\t\t\t\t[420] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[433] listitem ''\n\t\t\t[434] link 'Infrastructure'\n\t\t\t\t[436] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[449] listitem ''\n\t\t\t[450] link 'Monitor'\n\t\t\t\t[452] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[471] listitem ''\n\t\t\t[472] link 'Analytics'\n\t\t\t\t[474] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[490] listitem ''\n\t\t\t[491] link 'Wiki'\n\t\t\t\t[493] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[499] listitem ''\n\t\t\t[500] link 'Snippets'\n\t\t\t\t[502] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[520] button 'Collapse sidebar'\n\t\t[521] image ''\n\t\tStaticText 'Collapse sidebar'\n[529] navigation 'Breadcrumbs'\n\t[535] list ''\n\t\t[536] listitem ''\n\t\t\t[537] link 'Primer'\n\t\t\t[538] image ''\n\t\t[539] listitem ''\n\t\t\t[540] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[542] image ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Merge requests'\n[547] main ''\n\t[550] list ''\n\t\t[551] listitem ''\n\t\t\t[552] link 'Open 16'\n\t\t\t\tStaticText 'Open'\n\t\t\t\tStaticText '16'\n\t\t[555] listitem ''\n\t\t\t[556] link 'Merged 295'\n\t\t\t\tStaticText 'Merged'\n\t\t\t\tStaticText '295'\n\t\t[559] listitem ''\n\t\t\t[560] link 'Closed 82'\n\t\t\t\tStaticText 'Closed'\n\t\t\t\tStaticText '82'\n\t\t[563] listitem ''\n\t\t\t[564] link 'All 393'\n\t\t\t\tStaticText 'All'\n\t\t\t\tStaticText '393'\n\t[568] link 'Subscribe to RSS feed'\n\t\t[569] image ''\n\t\tStaticText 'Subscribe to RSS feed'\n\t[572] group ''\n\t\t[573] button 'Export as CSV'\n\t[575] button 'Edit merge requests'\n\t\tStaticText 'Edit merge requests'\n\t[577] link 'New merge request'\n\t\tStaticText 'New merge request'\n\t[582] Section ''\n\t\t[592] button 'Recent searches'\n\t\t\tStaticText 'Recent searches'\n\t\t\t[597] image ''\n\t\t[607] list ''\n\t\t\t[608] listitem ''\n\t\t\t\t[609] textbox 'Search or filter results...'\n\t[827] group ''\n\t\t[829] button 'Created date', hasPopup='listbox'\n\t\t\tStaticText 'Created date'\n\t\t[872] link 'Sort direction'\n\t\t\t[873] image ''\n\t[874] complementary 'Bulk update', live='polite', relevant='additions text'\n\t[985] list ''\n\t\t[986] listitem ''\n\t\t\t[997] link 'Octovisuals Page'\n\t\t\tStaticText '!450'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1001] time 'Mar 23, 2023 3:46pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1002] link 'Josh Bowden'\n\t\t\t\tStaticText 'Josh Bowden'\n\t\t\t[1005] list ''\n\t\t\t\t[1006] listitem ''\n\t\t\t\t\t[1007] link '3'\n\t\t\t\t\t\t[1008] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1011] time 'Jul 15, 2025 5:51pm GMT+0200'\n\t\t\t\tStaticText '2 hours ago'\n\t\t[1012] listitem ''\n\t\t\t[1023] link 'Add NavList interface guidelines'\n\t\t\tStaticText '!448'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1027] time 'Mar 22, 2023 2:58pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1028] link 'Mike Perrotti'\n\t\t\t\tStaticText 'Mike Perrotti'\n\t\t\t[1031] list ''\n\t\t\t\t[1032] listitem ''\n\t\t\t\t\t[1033] link 'Review requested from Emily Brick'\n\t\t\t\t\t\t[1034] image ''\n\t\t\t\t[1035] listitem '1 approver'\n\t\t\t\t\t[1036] image ''\n\t\t\t\t\tStaticText 'Approved'\n\t\t\t\t[1037] listitem ''\n\t\t\t\t\t[1038] link '4'\n\t\t\t\t\t\t[1039] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1042] time 'Mar 27, 2023 10:49pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1043] listitem ''\n\t\t\t[1054] link 'Integrate Primer Bot into the docs'\n\t\t\tStaticText '!446'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1058] time 'Mar 21, 2023 8:32pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1059] link 'Cole Bemis'\n\t\t\t\tStaticText 'Cole Bemis'\n\t\t\tStaticText ''\n\t\t\t[1062] link 'status: blocked :construction:'\n\t\t\t\tStaticText 'status: blocked :construction:'\n\t\t\t[1065] list ''\n\t\t\t\t[1066] listitem ''\n\t\t\t\t\t[1067] link 'Review requested from Emily Brick'\n\t\t\t\t\t\t[1068] image ''\n\t\t\t\t[1069] listitem ''\n\t\t\t\t\t[1070] link '1'\n\t\t\t\t\t\t[1071] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1074] time 'Mar 27, 2023 10:49pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1075] listitem ''\n\t\t\t[1086] link 'Add IconButton to interface guidelines'\n\t\t\tStaticText '!444'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1090] time 'Mar 20, 2023 10:14pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1091] link 'Mike Perrotti'\n\t\t\t\tStaticText 'Mike Perrotti'\n\t\t\t[1094] list ''\n\t\t\t\t[1095] listitem ''\n\t\t\t\t\t[1096] link 'Review requested from Emily Brick'\n\t\t\t\t\t\t[1097] image ''\n\t\t\t\t[1098] listitem '1 approver'\n\t\t\t\t\t[1099] image ''\n\t\t\t\t\tStaticText 'Approved'\n\t\t\t\t[1100] listitem ''\n\t\t\t\t\t[1101] link '2'\n\t\t\t\t\t\t[1102] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1105] time 'Mar 27, 2023 10:49pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1106] listitem ''\n\t\t\t[1117] link 'Color docs'\n\t\t\tStaticText '!424'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1121] time 'Mar 10, 2023 3:08am GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1122] link 'Katie Langerman'\n\t\t\t\tStaticText 'Katie Langerman'\n\t\t\t[1125] list ''\n\t\t\t\t[1126] listitem ''\n\t\t\t\t\t[1127] link '0'\n\t\t\t\t\t\t[1128] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1131] time 'Mar 15, 2023 2:05am GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1132] listitem ''\n\t\t\t[1143] link '[WIP] starting to add figma to new docs'\n\t\t\tStaticText '9 of 11 checklist items completed'\n\t\t\tStaticText '!404'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1148] time 'Feb 23, 2023 2:43pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1149] link 'Lukas Oppermann'\n\t\t\t\tStaticText 'Lukas Oppermann'\n\t\t\tStaticText ''\n\t\t\t[1152] link 'figma'\n\t\t\t\tStaticText 'figma'\n\t\t\t[1155] list ''\n\t\t\t\t[1156] listitem ''\n\t\t\t\t\t[1157] link 'Assigned to Daniel Guillan'\n\t\t\t\t\t\t[1158] image ''\n\t\t\t\t[1159] listitem ''\n\t\t\t\t\t[1160] link 'Review requested from Cole Bemis'\n\t\t\t\t\t\t[1161] image ''\n\t\t\t\t\t[1162] link 'Review requested from Emily Brick'\n\t\t\t\t\t\t[1163] image ''\n\t\t\t\t\t[1164] link 'Review requested from Daniel Guillan'\n\t\t\t\t\t\t[1165] image ''\n\t\t\t\t\t[1166] link 'Review requested from Josep Martins'\n\t\t\t\t\t\t[1167] image ''\n\t\t\t\t[1168] listitem ''\n\t\t\t\t\t[1169] link '4'\n\t\t\t\t\t\t[1170] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1173] time 'Mar 27, 2023 10:49pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1174] listitem ''\n\t\t\t[1185] link 'Improve build time'\n\t\t\tStaticText '!390'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1189] time 'Feb 9, 2023 6:46am GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1190] link 'Cole Bemis'\n\t\t\t\tStaticText 'Cole Bemis'\n\t\t\t[1193] list ''\n\t\t\t\t[1194] listitem ''\n\t\t\t\t\t[1195] link 'Assigned to Cole Bemis'\n\t\t\t\t\t\t[1196] image ''\n\t\t\t\t[1197] listitem ''\n\t\t\t\t\t[1198] link '0'\n\t\t\t\t\t\t[1199] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1202] time 'Mar 27, 2023 10:49pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1203] listitem ''\n\t\t\t[1214] link 'Automate figma docs from json'\n\t\t\tStaticText '4 of 4 checklist items completed'\n\t\t\tStaticText '!349'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1219] time 'Jan 3, 2023 2:43pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1220] link 'Lukas Oppermann'\n\t\t\t\tStaticText 'Lukas Oppermann'\n\t\t\t[1223] list ''\n\t\t\t\t[1224] listitem ''\n\t\t\t\t\t[1225] link 'Assigned to Lukas Oppermann'\n\t\t\t\t\t\t[1226] image ''\n\t\t\t\t[1227] listitem ''\n\t\t\t\t\t[1228] link 'Review requested from Daniel Guillan'\n\t\t\t\t\t\t[1229] image ''\n\t\t\t\t\t[1230] link 'Review requested from Josep Martins'\n\t\t\t\t\t\t[1231] image ''\n\t\t\t\t[1232] listitem ''\n\t\t\t\t\t[1233] link '4'\n\t\t\t\t\t\t[1234] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1237] time 'Mar 27, 2023 10:48pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1238] listitem ''\n\t\t\t[1249] link 'Update descriptive-buttons.mdx'\n\t\t\tStaticText '!303'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1253] time 'Sep 25, 2022 2:18pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1254] link 'Mujahid Bappai'\n\t\t\t\tStaticText 'Mujahid Bappai'\n\t\t\t[1257] list ''\n\t\t\t\t[1258] listitem ''\n\t\t\t\t\t[1259] link 'Pipeline: failed'\n\t\t\t\t\t\t[1260] image ''\n\t\t\t\t[1261] listitem ''\n\t\t\t\t\t[1262] link 'Review requested from Mujahid Bappai'\n\t\t\t\t\t\t[1263] image ''\n\t\t\t\t[1264] listitem ''\n\t\t\t\t\t[1265] link '4'\n\t\t\t\t\t\t[1266] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1269] time 'Mar 27, 2023 10:48pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1270] listitem ''\n\t\t\t[1281] link '[WIP] Single page component docs prototype'\n\t\t\tStaticText '!294'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1285] time 'Sep 15, 2022 1:05am GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1286] link 'Katie Langerman'\n\t\t\t\tStaticText 'Katie Langerman'\n\t\t\t[1289] list ''\n\t\t\t\t[1290] listitem ''\n\t\t\t\t\t[1291] link 'Review requested from Katie Langerman'\n\t\t\t\t\t\t[1292] image ''\n\t\t\t\t[1293] listitem ''\n\t\t\t\t\t[1294] link '9'\n\t\t\t\t\t\t[1295] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1298] time 'Jan 31, 2023 2:23pm GMT+0100'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1299] listitem ''\n\t\t\t[1310] link 'Chore: fix variant suffix and grammar error at `/design/foundations/color`'\n\t\t\tStaticText '!204'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1314] time 'Dec 19, 2021 4:13pm GMT+0100'\n\t\t\t\tStaticText '3 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1315] link 'Matt'\n\t\t\t\tStaticText 'Matt'\n\t\t\t[1318] list ''\n\t\t\t\t[1319] listitem ''\n\t\t\t\t\t[1320] link 'Pipeline: failed'\n\t\t\t\t\t\t[1321] image ''\n\t\t\t\t[1322] listitem ''\n\t\t\t\t\t[1323] link '1'\n\t\t\t\t\t\t[1324] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1327] time 'Mar 27, 2023 10:14pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1328] listitem ''\n\t\t\t[1339] link 'Improve blankslate documentation'\n\t\t\tStaticText '!202'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1343] time 'Dec 15, 2021 8:44pm GMT+0100'\n\t\t\t\tStaticText '3 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1344] link 'Allie Thu'\n\t\t\t\tStaticText 'Allie Thu'\n\t\t\t[1347] list ''\n\t\t\t\t[1348] listitem ''\n\t\t\t\t\t[1349] link 'Review requested from Mike Perrotti'\n\t\t\t\t\t\t[1350] image ''\n\t\t\t\t\t[1351] link 'Review requested from Inayaili Le\u00f3n'\n\t\t\t\t\t\t[1352] image ''\n\t\t\t\t[1353] listitem ''\n\t\t\t\t\t[1354] link '3'\n\t\t\t\t\t\t[1355] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1358] time 'Mar 27, 2023 10:46pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1359] listitem ''\n\t\t\t[1370] link 'Button component interface guidelines'\n\t\t\tStaticText '0 of 8 checklist items completed'\n\t\t\tStaticText '!193'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1375] time 'Nov 10, 2021 8:57am GMT+0100'\n\t\t\t\tStaticText '3 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1376] link 'Pavithra Kodmad'\n\t\t\t\tStaticText 'Pavithra Kodmad'\n\t\t\t[1379] list ''\n\t\t\t\t[1380] listitem ''\n\t\t\t\t\t[1381] link 'Review requested from Pavithra Kodmad'\n\t\t\t\t\t\t[1382] image ''\n\t\t\t\t\t[1383] link 'Review requested from Inayaili Le\u00f3n'\n\t\t\t\t\t\t[1384] image ''\n\t\t\t\t[1385] listitem ''\n\t\t\t\t\t[1386] link '43'\n\t\t\t\t\t\t[1387] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1390] time 'Mar 27, 2023 10:32pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1391] listitem ''\n\t\t\t[1402] link 'Add truncated token input example'\n\t\t\tStaticText '!191'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1406] time 'Nov 3, 2021 12:10am GMT+0100'\n\t\t\t\tStaticText '3 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1407] link 'Mike Perrotti'\n\t\t\t\tStaticText 'Mike Perrotti'\n\t\t\t[1410] list ''\n\t\t\t\t[1411] listitem ''\n\t\t\t\t\t[1412] link '1'\n\t\t\t\t\t\t[1413] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1416] time 'Dec 10, 2021 7:18pm GMT+0100'\n\t\t\t\tStaticText '3 years ago'\n\t\t[1417] listitem ''\n\t\t\t[1428] link 'Danger pattern guidance'\n\t\t\tStaticText '!113'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1432] time 'Jul 28, 2020 3:04am GMT+0200'\n\t\t\t\tStaticText '4 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1433] link 'Bryn Jackson'\n\t\t\t\tStaticText 'Bryn Jackson'\n\t\t\t[1436] list ''\n\t\t\t\t[1437] listitem ''\n\t\t\t\t\t[1438] link 'Pipeline: failed'\n\t\t\t\t\t\t[1439] image ''\n\t\t\t\t[1440] listitem ''\n\t\t\t\t\t[1441] link 'Review requested from Bryn Jackson'\n\t\t\t\t\t\t[1442] image ''\n\t\t\t\t\t[1443] link 'Review requested from Inayaili Le\u00f3n'\n\t\t\t\t\t\t[1444] image ''\n\t\t\t\t[1445] listitem ''\n\t\t\t\t\t[1446] link '5'\n\t\t\t\t\t\t[1447] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1450] time 'Mar 27, 2023 10:12pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'\n\t\t[1451] listitem ''\n\t\t\t[1462] link '[WIP] Spacing doc draft'\n\t\t\tStaticText '!103'\n\t\t\tStaticText '\u00b7 created'\n\t\t\t[1466] time 'May 14, 2020 10:46am GMT+0200'\n\t\t\t\tStaticText '5 years ago'\n\t\t\tStaticText 'by'\n\t\t\t[1467] link 'Inayaili Le\u00f3n'\n\t\t\t\tStaticText 'Inayaili Le\u00f3n'\n\t\t\tStaticText ''\n\t\t\t[1470] link 'area: documentation'\n\t\t\t\tStaticText 'area: documentation'\n\t\t\t[1473] link 'status: wip'\n\t\t\t\tStaticText 'status: wip'\n\t\t\t[1476] list ''\n\t\t\t\t[1477] listitem ''\n\t\t\t\t\t[1478] link 'Assigned to Inayaili Le\u00f3n'\n\t\t\t\t\t\t[1479] image ''\n\t\t\t\t[1480] listitem ''\n\t\t\t\t\t[1481] link 'Review requested from Inayaili Le\u00f3n'\n\t\t\t\t\t\t[1482] image ''\n\t\t\t\t[1483] listitem ''\n\t\t\t\t\t[1484] link '34'\n\t\t\t\t\t\t[1485] image ''\n\t\t\tStaticText 'updated'\n\t\t\t[1488] time 'Mar 27, 2023 10:45pm GMT+0200'\n\t\t\t\tStaticText '2 years ago'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"fill_merge_request_form",
+						"Fill in the form with the required details to create a new merge request"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"extract_top_contributors",
+						"Extract the top contributors based on the commit history"
+					],
+					[
+						"configure_project_settings",
+						"Configure the project settings to match the required repository type"
+					],
+					[
+						"search_issues",
+						"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+					],
+					[
+						"create_project",
+						"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+					],
+					[
+						"populate_readme_file",
+						"Populate a README file with a list of text"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "Fill in the form with the required details to create a new merge request",
+				"objective": "Submit a merge request for build time debug branch to be merged into main branch, assign myself as the reviewer",
+				"action": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+				"steps_nb": 2,
+				"reason": "To submit a merge request for the build time debug branch to be merged into the main branch, we need to fill out the merge request form. The current page is already the new merge request page. We can use the fill_merge_request_form subroutine to fill in the required details. The source branch should be the build time debug branch, the target branch should be the main branch, and we should assign ourselves as the reviewer.",
+				"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch'\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"fill_merge_request_form",
+						"Fill in the form with the required details to create a new merge request"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"extract_top_contributors",
+						"Extract the top contributors based on the commit history"
+					],
+					[
+						"configure_project_settings",
+						"Configure the project settings to match the required repository type"
+					],
+					[
+						"search_issues",
+						"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+					],
+					[
+						"create_project",
+						"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+					],
+					[
+						"populate_readme_file",
+						"Populate a README file with a list of text"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 3,
+						"reason": "The current page is the \"New merge request\" page, and we need to select the source branch. The element with the ID [586] is the \"Select source branch\" button, which we can click to open the branch selection menu.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch'\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "type [595] [build time debug] [0]",
+						"steps_nb": 4,
+						"reason": "The current page is the \"New merge request\" page, and the source branch selection menu is open. The objective is to fill in the merge request form with the required details, including selecting the source branch \"build time debug\", target branch \"main\", and assigning myself as the reviewer. Since the branch selection menu is already open, the next step is to type the source branch name \"build time debug\" in the search box to find and select it.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=True\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches', focused\n\t\t[596] image ''\n\t\t[763] list ''\n\t\t\t[764] listitem ''\n\t\t\t\t[765] link 'a11y/context-menu-accessibility-docs'\n\t\t\t[766] listitem ''\n\t\t\t\t[767] link 'adrianmg-img-fix-pewpew'\n\t\t\t[768] listitem ''\n\t\t\t\t[769] link 'alliethu-update-accessibility-docs'\n\t\t\t[770] listitem ''\n\t\t\t\t[771] link 'autocomplete-updates'\n\t\t\t[772] listitem ''\n\t\t\t\t[773] link 'bs/format-fix'\n\t\t\t[774] listitem ''\n\t\t\t\t[775] link 'bump-doctocat'\n\t\t\t[776] listitem ''\n\t\t\t\t[777] link 'consolidated-docs-prototype'\n\t\t\t[778] listitem ''\n\t\t\t\t[779] link 'debug-build-time'\n\t\t\t[780] listitem ''\n\t\t\t\t[781] link 'dialog'\n\t\t\t[782] listitem ''\n\t\t\t\t[783] link 'dialog-component'\n\t\t\t[784] listitem ''\n\t\t\t\t[785] link 'feature/move-about'\n\t\t\t[786] listitem ''\n\t\t\t\t[787] link 'figma-docs'\n\t\t\t[788] listitem ''\n\t\t\t\t[789] link 'github/fork/TheeMattOliver/chore-spelling-subtle-color'\n\t\t\t[790] listitem ''\n\t\t\t\t[791] link 'github/fork/mbappai/patch-2'\n\t\t\t[792] listitem ''\n\t\t\t\t[793] link 'github/fork/superbryntendo/danger'\n\t\t\t[794] listitem ''\n\t\t\t\t[795] link 'layout-docs'\n\t\t\t[796] listitem ''\n\t\t\t\t[797] link 'link-docs'\n\t\t\t[798] listitem ''\n\t\t\t\t[799] link 'main'\n\t\t\t[800] listitem ''\n\t\t\t\t[801] link 'mp/buttongroup'\n\t\t\t[802] listitem ''\n\t\t\t\t[803] link 'mp/icon-button'\n\t\t\t[804] listitem ''\n\t\t\t\t[805] link 'mp/nav-list-docs'\n\t\t\t[806] listitem ''\n\t\t\t\t[807] link 'mp/save-patterns'\n\t\t\t[808] listitem ''\n\t\t\t\t[809] link 'mp/truncated-token-input'\n\t\t\t[810] listitem ''\n\t\t\t\t[811] link 'new-IA-figma'\n\t\t\t[812] listitem ''\n\t\t\t\t[813] link 'octovisuals-page'\n\t\t\t[814] listitem ''\n\t\t\t\t[815] link 'overlay'\n\t\t\t[816] listitem ''\n\t\t\t\t[817] link 'pk/button-component'\n\t\t\t[818] listitem ''\n\t\t\t\t[819] link 'primer-bot'\n\t\t\t[820] listitem ''\n\t\t\t\t[821] link 'primitive-docs'\n\t\t\t[822] listitem ''\n\t\t\t\t[823] link 'rails_components'\n\t\t\t[824] listitem ''\n\t\t\t\t[825] link 'rezrah/github-pages-deployment'\n\t\t\t[826] listitem ''\n\t\t\t\t[827] link 'sid/test'\n\t\t\t[828] listitem ''\n\t\t\t\t[829] link 'single-page-component-docs'\n\t\t\t[830] listitem ''\n\t\t\t\t[831] link 'underline-nav-interface-guidelines'\n\t\t\t[832] listitem ''\n\t\t\t\t[833] link 'update-blankslate'\n\t\t\t[834] listitem ''\n\t\t\t\t[835] link 'update-buttons-docs'\n\t\t\t[836] listitem ''\n\t\t\t\t[837] link 'users/yaili/spacing-doc'\n\t\t\t[838] listitem ''\n\t\t\t\t[839] link 'yaili-patch-1'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 5,
+						"reason": "The current goal is to fill in the merge request form, and the source branch \"build time debug\" has been typed into the search box. However, since there are \"No matching results\", we should try a different approach to find the correct branch.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=True\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches' value='build time debug', focused\n\t\t[597] image ''\n\t\t[840] list ''\n\t\t\t[841] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 6,
+						"reason": "The current webpage URL is http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new, which indicates that we are on the \"New merge request\" page. We have already clicked on the \"Select source branch\" button and typed \"build time debug\" in the search box. However, we need to select the correct source branch from the dropdown. Since the \"build time debug\" branch is not selected, we need to click on the \"Select source branch\" button again to open the branch selection menu and select the correct branch.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', focused, expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 7,
+						"reason": "The current page is the \"New merge request\" page, and the source branch search box already contains the text 'build time debug'. However, there are 'No matching results' for this branch. The correct source branch should be selected from the dropdown after typing its name in the search box. Since the 'build time debug' branch does not yield any results, we should try to find the correct branch by interacting with other similar elements.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=True\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches' value='build time debug', focused\n\t\t[597] image ''\n\t\t[840] list ''\n\t\t\t[841] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [632]",
+						"steps_nb": 8,
+						"reason": "The previous actions indicate that the \"Select source branch\" button has been clicked multiple times, but the correct source branch \"build time debug\" has not been selected. Since the \"type\" action to enter the source branch name was attempted with the ID [595] but seems to have been incorrect or unsuccessful, we should reconsider our approach to select the correct source branch. Given the current state, the correct next step is to ensure the \"build time debug\" branch is properly selected as the source branch. However, given the provided actions and the current state, it seems there was confusion in selecting the branch. Therefore, the next logical step is to correctly identify and select the target branch if not already done, and then proceed with caution, ensuring each field is filled as required for the merge request form.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', focused, expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "type [641] [build time debug] [0]",
+						"steps_nb": 9,
+						"reason": "The current page is a new merge request form and the source branch needs to be selected. The branch \"build time debug\" was previously attempted to be selected, but the correct step was not taken.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=True\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\tStaticText 'Select target branch'\n\t\t[638] button 'Close'\n\t\t\t[639] image ''\n\t\t[641] searchbox 'Search branches', focused\n\t\t[642] image ''\n\t\t[843] list ''\n\t\t\t[844] listitem ''\n\t\t\t\t[845] link 'a11y/context-menu-accessibility-docs'\n\t\t\t[846] listitem ''\n\t\t\t\t[847] link 'adrianmg-img-fix-pewpew'\n\t\t\t[848] listitem ''\n\t\t\t\t[849] link 'alliethu-update-accessibility-docs'\n\t\t\t[850] listitem ''\n\t\t\t\t[851] link 'autocomplete-updates'\n\t\t\t[852] listitem ''\n\t\t\t\t[853] link 'bs/format-fix'\n\t\t\t[854] listitem ''\n\t\t\t\t[855] link 'bump-doctocat'\n\t\t\t[856] listitem ''\n\t\t\t\t[857] link 'consolidated-docs-prototype'\n\t\t\t[858] listitem ''\n\t\t\t\t[859] link 'debug-build-time'\n\t\t\t[860] listitem ''\n\t\t\t\t[861] link 'dialog'\n\t\t\t[862] listitem ''\n\t\t\t\t[863] link 'dialog-component'\n\t\t\t[864] listitem ''\n\t\t\t\t[865] link 'feature/move-about'\n\t\t\t[866] listitem ''\n\t\t\t\t[867] link 'figma-docs'\n\t\t\t[868] listitem ''\n\t\t\t\t[869] link 'github/fork/TheeMattOliver/chore-spelling-subtle-color'\n\t\t\t[870] listitem ''\n\t\t\t\t[871] link 'github/fork/mbappai/patch-2'\n\t\t\t[872] listitem ''\n\t\t\t\t[873] link 'github/fork/superbryntendo/danger'\n\t\t\t[874] listitem ''\n\t\t\t\t[875] link 'layout-docs'\n\t\t\t[876] listitem ''\n\t\t\t\t[877] link 'link-docs'\n\t\t\t[878] listitem ''\n\t\t\t\t[879] link 'main'\n\t\t\t[880] listitem ''\n\t\t\t\t[881] link 'mp/buttongroup'\n\t\t\t[882] listitem ''\n\t\t\t\t[883] link 'mp/icon-button'\n\t\t\t[884] listitem ''\n\t\t\t\t[885] link 'mp/nav-list-docs'\n\t\t\t[886] listitem ''\n\t\t\t\t[887] link 'mp/save-patterns'\n\t\t\t[888] listitem ''\n\t\t\t\t[889] link 'mp/truncated-token-input'\n\t\t\t[890] listitem ''\n\t\t\t\t[891] link 'new-IA-figma'\n\t\t\t[892] listitem ''\n\t\t\t\t[893] link 'octovisuals-page'\n\t\t\t[894] listitem ''\n\t\t\t\t[895] link 'overlay'\n\t\t\t[896] listitem ''\n\t\t\t\t[897] link 'pk/button-component'\n\t\t\t[898] listitem ''\n\t\t\t\t[899] link 'primer-bot'\n\t\t\t[900] listitem ''\n\t\t\t\t[901] link 'primitive-docs'\n\t\t\t[902] listitem ''\n\t\t\t\t[903] link 'rails_components'\n\t\t\t[904] listitem ''\n\t\t\t\t[905] link 'rezrah/github-pages-deployment'\n\t\t\t[906] listitem ''\n\t\t\t\t[907] link 'sid/test'\n\t\t\t[908] listitem ''\n\t\t\t\t[909] link 'single-page-component-docs'\n\t\t\t[910] listitem ''\n\t\t\t\t[911] link 'underline-nav-interface-guidelines'\n\t\t\t[912] listitem ''\n\t\t\t\t[913] link 'update-blankslate'\n\t\t\t[914] listitem ''\n\t\t\t\t[915] link 'update-buttons-docs'\n\t\t\t[916] listitem ''\n\t\t\t\t[917] link 'users/yaili/spacing-doc'\n\t\t\t[918] listitem ''\n\t\t\t\t[919] link 'yaili-patch-1'\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 10,
+						"reason": "The current page is on the \"New merge request\" page, and the source branch needs to be selected. The correct source branch name is \"build time debug\". Since the search box already has the correct value 'build time debug' but no matching results are found, we should try to click on the 'Select source branch' button again to see if it updates the dropdown options.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=True\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\tStaticText 'Select target branch'\n\t\t[638] button 'Close'\n\t\t\t[639] image ''\n\t\t[641] searchbox 'Search branches' value='build time debug', focused\n\t\t[643] image ''\n\t\t[920] list ''\n\t\t\t[921] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [632]",
+						"steps_nb": 11,
+						"reason": "The current page is the \"New merge request\" page, and we need to fill in the form with the required details. The source branch is already filled with \"build time debug\", and the target branch needs to be set to \"main\". We can see the \"Select target branch\" button with id [632]. However, in our case, we should first find the button that has the label \"main\" and then click it.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=True\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches' value='build time debug', focused\n\t\t[597] image ''\n\t\t[840] list ''\n\t\t\t[841] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=False\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 12,
+						"reason": "The current webpage URL is http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new, which is the \"New merge request\" page. The \"Source branch\" is currently set to \"primer/design\" and the \"Target branch\" is set to \"main\". The search box for the source branch has the value \"build time debug\". To proceed, we need to select the correct source branch, which is \"build time debug\". Since the search box already contains the value \"build time debug\", we should click on the \"Select source branch\" button to open the branch selection menu and then select the correct branch from the dropdown. However, there are \"No matching results\" for the branch \"build time debug\", so we will try a different approach.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=True\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\tStaticText 'Select target branch'\n\t\t[638] button 'Close'\n\t\t\t[639] image ''\n\t\t[641] searchbox 'Search branches' value='build time debug', focused\n\t\t[643] image ''\n\t\t[920] list ''\n\t\t\t[921] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [586]",
+						"steps_nb": 13,
+						"reason": "The current objective is to fill in the merge request form. The form requires a source branch and a target branch. The user has already filled in the source branch by typing \"build time debug\" in the search box, but it shows \"No matching results\". However, upon inspecting the \"Select source branch\" dropdown and the \"Target branch\" section, it seems the correct source branch is not selected, and the target branch should be set to \"main\". Since the \"build time debug\" branch is not found, let's try selecting the correct branch from the dropdown list instead of searching.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', expanded=True\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches' value='build time debug', focused\n\t\t[597] image ''\n\t\t[840] list ''\n\t\t\t[841] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=False\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "type [595] [build time debug] [1]",
+						"steps_nb": 14,
+						"reason": "The current page is the \"New merge request\" page, and the source branch needs to be selected. The \"Select source branch\" button has been clicked, and the search box is available for typing the source branch name. The correct source branch name is \"build time debug\".",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'Select source branch', focused, expanded=False\n\t\t\tStaticText 'Select source branch'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=False\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [632]",
+						"steps_nb": 15,
+						"reason": "The source branch \"build time debug\" has been selected and the target branch \"main\" is also visible, but not selected. To proceed, we should click on the target branch button to select \"main\" as the target branch.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'build time debug', expanded=True\n\t\t\tStaticText 'build time debug'\n\t\t\t[588] image ''\n\t\tStaticText 'Select source branch'\n\t\t[592] button 'Close'\n\t\t\t[593] image ''\n\t\t[595] searchbox 'Search branches' value='build time debug', focused\n\t\t[597] image ''\n\t\t[840] list ''\n\t\t\t[841] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=False\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [147]",
+						"steps_nb": 16,
+						"reason": "The current objective is to fill in the merge request form, and the required details include the source branch, target branch, and reviewer. Since the source branch has already been selected as \"build time debug\" and the target branch has been set to \"main\", the next step is to assign the reviewer. The reviewer should be \"Myself\" as specified in the objective. However, the element for assigning the reviewer is not currently visible in the observation. Therefore, we need to first make the \"Assignee\" button visible and then click on it to select the reviewer.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'build time debug', expanded=False\n\t\t\tStaticText 'build time debug'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=True\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\tStaticText 'Select target branch'\n\t\t[638] button 'Close'\n\t\t\t[639] image ''\n\t\t[641] searchbox 'Search branches' value='build time debug', focused\n\t\t[643] image ''\n\t\t[920] list ''\n\t\t\t[921] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [632]",
+						"steps_nb": 17,
+						"reason": "The current webpage is the \"New merge request\" page. To fill in the form, we need to select the correct source and target branches. The source branch is \"build time debug\" and the target branch is \"main\". We can select the target branch by clicking on the \"main\" button.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[924] search 'Search GitLab'\n\t\t\t\t[927] searchbox 'Search GitLab', focused, describedby='search-input-description'\n\t\t\t\t[930] region ''\n\t\t\t\t\tStaticText 'Type for new suggestions to appear below.'\n\t\t\t\t[931] region '', live='polite', atomic, relevant='additions text'\n\t\t\t\t\tStaticText '5 default results provided. Use the up and down arrow keys to navigate search results list.'\n\t\t\t\t[935] listitem ''\n\t\t\t\t\t[936] heading 'design'\n\t\t\t\t[937] listitem ''\n\t\t\t\t\t[938] menuitem 'Issues assigned to me'\n\t\t\t\t\t\t[940] paragraph ''\n\t\t\t\t[942] listitem ''\n\t\t\t\t\t[943] menuitem \"Issues I've created\"\n\t\t\t\t\t\t[945] paragraph ''\n\t\t\t\t[947] listitem ''\n\t\t\t\t\t[948] menuitem 'Merge requests assigned to me'\n\t\t\t\t\t\t[950] paragraph ''\n\t\t\t\t[952] listitem ''\n\t\t\t\t\t[953] menuitem \"Merge requests that I'm a reviewer\"\n\t\t\t\t\t\t[955] paragraph ''\n\t\t\t\t[957] listitem ''\n\t\t\t\t\t[958] menuitem \"Merge requests I've created\"\n\t\t\t\t\t\t[960] paragraph ''\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'build time debug', expanded=False\n\t\t\tStaticText 'build time debug'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=False\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "click [680]",
+						"steps_nb": 18,
+						"reason": "The current page is the \"New merge request\" page, and we need to assign the reviewer. The \"Assignee\" and \"Reviewer\" buttons are not visible in the current observation, but we can try to find them by clicking on the \"Compare branches and continue\" button and then looking for the reviewer assignment options.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[924] search 'Search GitLab'\n\t\t\t\t[927] searchbox 'Search GitLab', describedby='search-input-description'\n\t\t\t\t[930] region ''\n\t\t\t\t\tStaticText 'Type for new suggestions to appear below.'\n\t\t\t\t[931] region '', live='polite', atomic, relevant='additions text'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'build time debug', expanded=False\n\t\t\tStaticText 'build time debug'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main', expanded=True\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\tStaticText 'Select target branch'\n\t\t[638] button 'Close'\n\t\t\t[639] image ''\n\t\t[641] searchbox 'Search branches' value='build time debug', focused\n\t\t[643] image ''\n\t\t[920] list ''\n\t\t\t[921] listitem ''\n\t\t\t\tStaticText 'No matching results'\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "fill_merge_request_form [source_branch=\"build time debug\" target_branch=\"main\" reviewer=\"Myself\"]",
+						"action": "stop [ask not achieved : too many steps.]",
+						"steps_nb": 19,
+						"reason": "This action was taken automatically beacause of the high number of steps of the policy.",
+						"observation": "[74] banner ''\n\t[75] link 'Skip to content'\n\tStaticText 'GitLab'\n\t[81] link 'Dashboard'\n\t\t[82] image ''\n\t[85] list ''\n\t\t[86] listitem ''\n\t\t\t[87] button '', hasPopup='menu', expanded=False\n\t[147] list ''\n\t\t[148] listitem ''\n\t\t\t[150] Section ''\n\t\t\t\t[152] image ''\n\t\t\t\t[153] textbox 'Search GitLab'\n\t[165] list ''\n\t\t[166] listitem ''\n\t\t\t[167] link 'Create new...'\n\t\t\t\t[168] image ''\n\t\t\t\t[169] image ''\n\t\t[187] listitem ''\n\t\t\t[188] link 'Issues'\n\t\t\t\t[189] image ''\n\t\t[191] listitem ''\n\t\t\t[192] link 'Merge requests'\n\t\t\t\t[193] image ''\n\t\t\t\t[195] image ''\n\t\t[205] listitem ''\n\t\t\t[206] link 'To-Do List'\n\t\t\t\t[207] image ''\n\t\t\t\tStaticText '5'\n\t\t[209] listitem ''\n\t\t\t[210] link 'Help'\n\t\t\t\tStaticText 'Help'\n\t\t\t\t[212] image ''\n\t\t\t\t[214] image ''\n\t\t[235] listitem ''\n\t\t\t[236] link 'Byte Blaze'\n\t\t\t\t[237] image 'Byte Blaze'\n\t\t\t\t[238] image ''\n[277] complementary 'Project navigation'\n\t[279] list ''\n\t\t[280] listitem 'design'\n\t\t\t[281] link 'design'\n\t\t\t\tStaticText 'D'\n\t\t\t\tStaticText 'design'\n\t\t[285] listitem ''\n\t\t\t[286] link 'Project information'\n\t\t\t\t[288] image ''\n\t\t\t\tStaticText 'Project information'\n\t\t[304] listitem ''\n\t\t\t[305] link 'Repository'\n\t\t\t\t[307] image ''\n\t\t\t\tStaticText 'Repository'\n\t\t[335] listitem ''\n\t\t\t[336] link 'Issues'\n\t\t\t\t[338] image ''\n\t\t\t\tStaticText 'Issues'\n\t\t\t\tStaticText '21'\n\t\t[359] listitem ''\n\t\t\t[360] link 'Merge requests'\n\t\t\t\t[362] image ''\n\t\t\t\tStaticText 'Merge requests'\n\t\t\t\tStaticText '16'\n\t\t[370] listitem ''\n\t\t\t[371] link 'CI/CD'\n\t\t\t\t[373] image ''\n\t\t\t\tStaticText 'CI/CD'\n\t\t[392] listitem ''\n\t\t\t[393] link 'Security & Compliance'\n\t\t\t\t[395] image ''\n\t\t\t\tStaticText 'Security & Compliance'\n\t\t[405] listitem ''\n\t\t\t[406] link 'Deployments'\n\t\t\t\t[408] image ''\n\t\t\t\tStaticText 'Deployments'\n\t\t[424] listitem ''\n\t\t\t[425] link 'Packages and registries'\n\t\t\t\t[427] image ''\n\t\t\t\tStaticText 'Packages and registries'\n\t\t[440] listitem ''\n\t\t\t[441] link 'Infrastructure'\n\t\t\t\t[443] image ''\n\t\t\t\tStaticText 'Infrastructure'\n\t\t[456] listitem ''\n\t\t\t[457] link 'Monitor'\n\t\t\t\t[459] image ''\n\t\t\t\tStaticText 'Monitor'\n\t\t[478] listitem ''\n\t\t\t[479] link 'Analytics'\n\t\t\t\t[481] image ''\n\t\t\t\tStaticText 'Analytics'\n\t\t[497] listitem ''\n\t\t\t[498] link 'Wiki'\n\t\t\t\t[500] image ''\n\t\t\t\tStaticText 'Wiki'\n\t\t[506] listitem ''\n\t\t\t[507] link 'Snippets'\n\t\t\t\t[509] image ''\n\t\t\t\tStaticText 'Snippets'\n\t[527] button 'Collapse sidebar'\n\t\t[528] image ''\n\t\tStaticText 'Collapse sidebar'\n[536] navigation 'Breadcrumbs'\n\t[542] list ''\n\t\t[543] listitem ''\n\t\t\t[544] link 'Primer'\n\t\t\t[545] image ''\n\t\t[546] listitem ''\n\t\t\t[547] link 'design'\n\t\t\t\tStaticText 'design'\n\t\t\t[549] image ''\n\t\t[550] listitem ''\n\t\t\t[551] link 'Merge requests'\n\t\t\t[552] image ''\n\t\t[553] listitem ''\n\t\t\t[554] link 'New'\n[557] main ''\n\t[559] heading 'New merge request'\n\t[560] Section ''\n\t\t[564] heading 'Source branch'\n\t\t[568] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[570] image ''\n\t\t[586] button 'build time debug'\n\t\t\tStaticText 'build time debug'\n\t\t\t[588] image ''\n\t\t[604] image ''\n\t\tStaticText 'Select a branch to compare'\n\t\t[607] list ''\n\t\t[610] heading 'Target branch'\n\t\t[614] button 'primer/design'\n\t\t\tStaticText 'primer/design'\n\t\t\t[616] image ''\n\t\t[632] button 'main'\n\t\t\tStaticText 'main'\n\t\t\t[634] image ''\n\t\t[653] list ''\n\t\t\t[654] listitem ''\n\t\t\t\t[656] link \"Mike Perrotti's avatar\"\n\t\t\t\t\t[657] image \"Mike Perrotti's avatar\"\n\t\t\t\t[660] link 'Add interface guidelines for ProgressBar (#452)'\n\t\t\t\t[662] button 'Toggle commit description'\n\t\t\t\t\t[663] image ''\n\t\t\t\t[665] link 'Mike Perrotti'\n\t\t\t\tStaticText 'authored'\n\t\t\t\t[666] time 'Mar 24, 2023 5:33pm GMT+0100'\n\t\t\t\t\tStaticText '2 years ago'\n\t\t\t\t[674] button 'Unverified'\n\t\t\t\tStaticText '260e840e'\n\t\t\t\t[678] button 'Copy commit SHA', live='polite', relevant='additions text'\n\t\t\t\t\t[679] image ''\n\t\t[680] alert '', live='assertive', atomic, relevant='additions text'\n\t\t\t[681] image ''\n\t\t\t[682] alert '', live='assertive', atomic, relevant='additions text'\n\t\t\t\t[683] heading 'The form contains the following error:'\n\t\t\t\t[685] list ''\n\t\t\t\t\t[686] listitem ''\n\t\t\t\t\t\tStaticText 'Source branch \"build time debug\" does not exist'\n\t\t[687] button 'Compare branches and continue'\n\t\t\tStaticText 'Compare branches and continue'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:8023/primer/design/-/merge_requests/new?merge_request%5Bsource_project_id%5D=180&merge_request%5Bsource_branch%5D=build+time+debug&merge_request%5Btarget_project_id%5D=180&merge_request%5Btarget_branch%5D=main",
+						"guidance": "* To fill in the merge request form, navigate to the \"New merge request\" page.\n* Click on the \"Select source branch\" button to open the branch selection menu, then type the correct source branch name in the search box and select it from the dropdown.\n* Set the target branch by clicking on the \"Select target branch\" button and selecting the correct branch from the dropdown.\n* Assign the required reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n* Click on the \"Compare branches and continue\" button to proceed.\n* Verify that the form is correctly filled in with the required details before submitting.\nFor example, if the query is to \"template strings branch to master, assign myself and Roshan as reviewer\", the agent should:\n- Type \"template strings\" in the search box and select the correct branch from the dropdown as the source branch.\n- Set the target branch to \"master\" by clicking on the \"Select target branch\" button and selecting \"master\" from the dropdown.\n- Assign oneself and Roshan as reviewers by clicking on the \"Assignee\" and \"Reviewer\" buttons and selecting the correct users.\n- Click on the \"Compare branches and continue\" button to proceed.\n- Verify that the form is correctly filled in with the required details before submitting.",
+						"relevant_policies": [
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"create_project",
+								"Given you are in the create new project page, this subroutine completes the act of creating a project, adding members etc. "
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							],
+							[
+								"populate_readme_file",
+								"Populate a README file with a list of text"
+							],
+							[
+								"configure_project_settings",
+								"Configure the project settings to match the required repository type"
+							],
+							[
+								"create_group",
+								"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because the source branch \"build time debug\" does not exist, and therefore the merge request form cannot be filled in as required. The error message in the CURRENT OBSERVATION clearly indicates this issue.\n\nNew Plan:\n1. Verify the existence of the source branch \"build time debug\" in the repository.\n2. If the branch does not exist, create it or select a different existing branch that is suitable for the merge request.\n3. Once the correct source branch is identified, navigate to the \"New merge request\" page and select the source branch.\n4. Select the target branch \"main\".\n5. Assign the reviewer \"Myself\".\n6. Fill in any other required details in the merge request form and submit it.\n\nNote: The previous actions indicate confusion and repetition in selecting the source branch, which ultimately led to the failure due to the non-existence of the branch. A more careful approach to verifying branch existence and selecting the correct branch is necessary to achieve the task."
+			}
+		]
+	},
+	"score": 0.0
+}

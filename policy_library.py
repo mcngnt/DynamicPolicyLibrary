@@ -101,13 +101,13 @@ class PolicyLibrary:
             for item in data["policies"]
         }
 
-        def reset(self, name):
-            # Remove usage statistics
-            if name in self.usage_stats:
-                del self.usage_stats[name]
-            # Remove policy entry
-            keys_to_delete = [key for key, (policy_name, _, _) in self.policies.items() if policy_name == name]
-            for key in keys_to_delete:
-                del self.policies[key]
+    def reset(self, name):
+        # Remove usage statistics
+        if name in self.usage_stats:
+            del self.usage_stats[name]
+        # Remove policy entry
+        keys_to_delete = [key for key, (policy_name, _, _) in self.policies.items() if policy_name == name]
+        for key in keys_to_delete:
+            del self.policies[key]
 
 

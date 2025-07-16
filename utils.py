@@ -5,7 +5,7 @@ import re
 import json
 import os
 import requests
-
+import time
 
 from api_keys import gemini_keys, saturn_key, saturn_url
 
@@ -145,13 +145,16 @@ def print_gym_call(name, arguments):
     return f"""{name}({','.join([f"'{arg}'" for arg in arguments])})"""
 
 
-def get_site_type(task_id):
+def get_site_type(task_id, rec_lv=0):
     config_file = f"custom_webarena/config_files/{task_id}.json"
     try:
         with open(config_file, 'r') as file:
             data = json.load(file)
     except:
-        return get_site_type(task_id)
+        time.sleep(1)
+        if rec_lv > 3:
+            return None
+        return get_site_type(task_id, rec_lv=rec_lv+1)
 
     sites = data.get('sites', [])
     if "wikipedia" in sites:

@@ -4,10 +4,11 @@ from collections import defaultdict
 from utils import *
 
 # name = "dynamic_llama_base_step_new_pol"
-name = "step_agent_llama_test2"
+name = "dynamic_llama_base_step_new_pol_test3"
+traj_id=1
 parent_folder = f"trajectories/{name}"
 output_folder = "experiments"
-output_file = os.path.join(output_folder, f"{name}.json")
+output_file = os.path.join(output_folder, f"{traj_id}.{name}.json")
 
 title = ""
 
@@ -28,7 +29,7 @@ for subfolder in os.listdir(parent_folder):
     # if si te == "map":
     #     continue
 
-    json_file = os.path.join(subfolder_path, f"0.{subfolder}.json")
+    json_file = os.path.join(subfolder_path, f"{traj_id}.{subfolder}.json")
     if os.path.exists(json_file):
         with open(json_file, 'r') as f:
             data = json.load(f)

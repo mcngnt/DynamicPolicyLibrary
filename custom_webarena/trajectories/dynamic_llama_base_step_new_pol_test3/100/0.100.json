@@ -1,0 +1,912 @@
+{
+	"created_policies": [
+		{
+			"name": "navigate_to_section [query]",
+			"description": "Navigate to a specific section of the website",
+			"query": "Carnegie Mellon"
+		},
+		{
+			"name": "search_nearest_place [query]",
+			"description": "Find places near a given location",
+			"query": "Starbucks near Carnegie Mellon"
+		}
+	],
+	"plan": "Find the location of Carnegie Mellon on the map | Find the nearest Starbucks to the location and calculate the walking distance",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "type [145] [Carnegie Mellon] [1]",
+				"steps_nb": 0,
+				"reason": "The objective is to find the nearest Starbucks to Carnegie Mellon and the walking distance to it. We are currently on the OpenStreetMap page. To find the nearest Starbucks, we can use the search_nearest_place subroutine. However, we first need to specify the location, which in this case is Carnegie Mellon. We can use the textbox with id 145 to search for Carnegie Mellon. After searching, we can use the search_nearest_place subroutine to find the nearest Starbucks.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "type [145] [Starbucks] [1]",
+				"steps_nb": 1,
+				"reason": "To find the nearest Starbucks to Carnegie Mellon, we need to use the search_nearest_place subroutine. However, the current webpage is an OpenStreetMap page, and we have already searched for Carnegie Mellon. Now we need to search for Starbucks near Carnegie Mellon. The id of the textbox where we can type our query is 145. We will type 'Starbucks' in the textbox and press enter.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Carnegie Mellon', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[441] heading 'Search Results'\n[443] button 'Close'\n[444] heading 'Results from OpenStreetMap Nominatim'\n\t[445] link 'OpenStreetMap Nominatim'\n[447] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Carnegie%20Mellon#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "Find places near a given location",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "search_nearest_place [Starbucks] [Carnegie Mellon]",
+				"steps_nb": 2,
+				"reason": "The current webpage is an OpenStreetMap search page. We are trying to find the nearest Starbucks to Carnegie Mellon and the walking distance to it. Since we have already searched for \"Starbucks\" and the search results are not providing useful information due to an error, let's try searching for the nearest Starbucks to Carnegie Mellon instead. This requires using the search_nearest_place subroutine.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[457] heading 'Search Results'\n[459] button 'Close'\n[460] heading 'Results from OpenStreetMap Nominatim'\n\t[461] link 'OpenStreetMap Nominatim'\n[463] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [Starbucks]",
+						"action": "click [147]",
+						"steps_nb": 3,
+						"reason": "The search bar already contains the query 'Starbucks' and is focused, so the next step is to submit the search query by clicking the 'Go' button.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[457] heading 'Search Results'\n[459] button 'Close'\n[460] heading 'Results from OpenStreetMap Nominatim'\n\t[461] link 'OpenStreetMap Nominatim'\n[463] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+						"guidance": "1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"find_directions",
+								"Find directions between two locations to answer the query"
+							],
+							[
+								"find_product",
+								"Find a product using a query"
+							],
+							[
+								"list_products",
+								"Find products that match a query"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"find_order",
+								"Find an order corresponding to a particular customer or order number. "
+							],
+							[
+								"find_image",
+								"Find an image on the current webpage based on its description"
+							],
+							[
+								"search_order",
+								"Search orders to answer a question about my orders"
+							],
+							[
+								"search_reviews",
+								"Search reviews to answer a question about reviews"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "search_nearest_place [Starbucks]",
+						"action": "type [145] [Starbucks] [1]",
+						"steps_nb": 4,
+						"reason": "The current objective is to search for the nearest Starbucks, and the map is already centered. However, an error occurred while trying to retrieve search results. To resolve this issue, we need to try searching again for Starbucks.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks'\n\t[147] button 'Go', focused\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[465] heading 'Search Results'\n[467] button 'Close'\n[468] heading 'Results from OpenStreetMap Nominatim'\n\t[469] link 'OpenStreetMap Nominatim'\n[471] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+						"guidance": "1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"find_directions",
+								"Find directions between two locations to answer the query"
+							],
+							[
+								"find_product",
+								"Find a product using a query"
+							],
+							[
+								"list_products",
+								"Find products that match a query"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"find_order",
+								"Find an order corresponding to a particular customer or order number. "
+							],
+							[
+								"find_image",
+								"Find an image on the current webpage based on its description"
+							],
+							[
+								"search_order",
+								"Search orders to answer a question about my orders"
+							],
+							[
+								"search_reviews",
+								"Search reviews to answer a question about reviews"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "search_nearest_place [Starbucks]",
+						"action": "stop [N/A]",
+						"steps_nb": 5,
+						"reason": "The search query 'Starbucks' has already been typed into the search bar and the 'Go' button has been clicked. Now, we need to find the nearest Starbucks locations from the search results.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[473] heading 'Search Results'\n[475] button 'Close'\n[476] heading 'Results from OpenStreetMap Nominatim'\n\t[477] link 'OpenStreetMap Nominatim'\n[479] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+						"guidance": "1. For searches that refer to CMU, e.g.  \"find cafes near CMU Hunt Library\"\na. You have to first center your map around a location. If you have to find cafes near CMU Hunt Library, the first step is to make sure the map is centered around Carnegie Mellon University. To do that, first search for Carnegie Mellon University and then click [] on a list of location that appears. You MUST click on the Carnegie Mellon University location to center the map. Else the map will not centered. E.g click [646]\nb. Now that your map is centered around Carnegie Mellon University, directly search for \"cafes near Hunt Library\". Do not include the word CMU in the search item.\nThe word CMU cannot be parsed by maps and will result in an invalid search.\nc. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n2. For searches that don't refer to CMU\na. No need to center the map. Directly search what is specified in OBJECTIVE, e.g. \"bars near Carnegie Music Hall\"\nb. When your search returns a list of elements, return them in a structured format like stop [A, B, C]\n3. Be sure to double check whether the OBJECTIVE has CMU or not and then choose between instruction 1 and 2. \n4. Remember that the word CMU cannot be typed in the search bar as it cannot be parsed by maps. \n5. Remember that if you want to center your map around Carnegie Mellon University, you have to click on it after you search for it. Check your PREVIOUS ACTIONS to confirm you have done so, e.g. click [646] should be in the previous actions.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"find_directions",
+								"Find directions between two locations to answer the query"
+							],
+							[
+								"find_product",
+								"Find a product using a query"
+							],
+							[
+								"list_products",
+								"Find products that match a query"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"find_order",
+								"Find an order corresponding to a particular customer or order number. "
+							],
+							[
+								"find_image",
+								"Find an image on the current webpage based on its description"
+							],
+							[
+								"search_order",
+								"Search orders to answer a question about my orders"
+							],
+							[
+								"search_reviews",
+								"Search reviews to answer a question about reviews"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because the current page does not display the nearest Starbucks locations as intended. The error message indicates a connection issue, which prevented the retrieval of search results.\n\nNew Plan:\n1. Check the internet connection to ensure it is stable.\n2. Verify that the OpenStreetMap server is available and not experiencing downtime.\n3. Refresh the page or try searching again for 'Starbucks' to see if the connection issue resolves itself.\n4. Consider using a different map service or searching for Starbucks locations through a different platform."
+			},
+			{
+				"type": "policy",
+				"description": "Find directions between two locations to answer the query",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "find_directions [Carnegie Mellon to Starbucks]",
+				"steps_nb": 6,
+				"reason": "Given that we have the search query 'Starbucks' and the location 'Carnegie Mellon', and the search_nearest_place subroutine has been executed previously but stopped with 'N/A', the next logical step is to find the directions between 'Carnegie Mellon' and the nearest 'Starbucks'. However, the search_nearest_place subroutine didn't seem to yield a useful result due to an error. Let's try again with a refined approach by using the find_directions subroutine directly with 'Carnegie Mellon' as the starting point and 'Starbucks' as the destination, assuming the nearest Starbucks is what we are aiming for.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[473] heading 'Search Results'\n[475] button 'Close'\n[476] heading 'Results from OpenStreetMap Nominatim'\n\t[477] link 'OpenStreetMap Nominatim'\n[479] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "click [149]",
+						"steps_nb": 7,
+						"reason": "The current page is displaying search results for \"Starbucks\" but the objective is to find directions from Carnegie Mellon to Starbucks. To achieve this, we need to click on the \"Find directions between two points\" link to access the directions feature.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[473] heading 'Search Results'\n[475] button 'Close'\n[476] heading 'Results from OpenStreetMap Nominatim'\n\t[477] link 'OpenStreetMap Nominatim'\n[479] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks#map=7/42.896/-73.180",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "click [158]",
+						"steps_nb": 8,
+						"reason": "The objective is to find directions between Carnegie Mellon and Starbucks. The current webpage has a \"Find directions between two points\" feature. To start, we need to click on the \"Find directions between two points\" button, but since we can't find that specific button, the first step is to locate the 'From' and 'To' fields and prepare for entering the locations.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "type [158] [Carnegie Mellon] [0]",
+						"steps_nb": 9,
+						"reason": "The objective is to find directions from Carnegie Mellon to Starbucks. The current webpage is on the OpenStreetMap directions page, and the 'From' field is already focused. The next step is to enter 'Carnegie Mellon' in the 'From' field.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "type [163] [Starbucks] [0]",
+						"steps_nb": 10,
+						"reason": "To find directions between two locations, we first need to fill in the \"To\" field. Since the objective is to find directions from Carnegie Mellon to Starbucks, we should type \"Starbucks\" into the \"To\" field.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "click [171]",
+						"steps_nb": 11,
+						"reason": "The \"Go\" button with ID [171] is the most relevant element to click to get directions between Carnegie Mellon and Starbucks, as the \"From\" and \"To\" fields have already been populated with the required information in the previous actions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks', focused\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					},
+					{
+						"type": "stop",
+						"objective": "find_directions [Carnegie Mellon to Starbucks]",
+						"action": "stop [N/A]",
+						"steps_nb": 12,
+						"reason": "The action 'click [171]' was previously performed which is the button to get the directions. Since the 'From' and 'To' fields have been filled with 'Carnegie Mellon' and 'Starbucks' respectively and the 'Go' button has been clicked, the next step would be to stop the interaction and return the response. However, since the actual directions are not provided in the observation, we would have to wait for the page to load the directions or perform another action to get the directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place [query]",
+								"Find places near a given location"
+							],
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"search_issues",
+								"Use this subroutine to find an issue on Gitlab. Any objective that requires finding an issue as an intermediate step, e.g. open latest issue, open issue with <keyword> and check for X, should call this subroutine"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							]
+						]
+					}
+				],
+				"feedback": "The task is a failure because the current page does not provide the actual directions between Carnegie Mellon and Starbucks. Although the \"From\" and \"To\" fields have been filled and the \"Go\" button has been clicked, the webpage does not display the route or provide turn-by-turn directions.\n\nNew Plan:\n1. Verify that the \"From\" and \"To\" fields are correctly filled with \"Carnegie Mellon\" and \"Starbucks\" respectively.\n2. Check if the \"Go\" button has been clicked successfully.\n3. Wait for the page to load the directions or perform another action to get the directions, such as checking for a \"Get Directions\" or \"Calculate Route\" button.\n4. If the directions are still not provided, consider using a different route-finding service or checking the webpage for any errors or issues.\n5. If the webpage provides an option to select the mode of transportation (e.g., driving, walking, cycling), ensure that the correct mode is selected."
+			},
+			{
+				"type": "page_op",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "click [167]",
+				"steps_nb": 13,
+				"reason": "The previous actions indicate that the user has already searched for the nearest Starbucks to Carnegie Mellon. However, the navigation to find the walking distance was not successful. Since we are already in the OpenStreetMap webpage with 'Carnegie Mellon' and 'Starbucks' filled in the 'From' and 'To' textboxes, we should select the 'Foot (OSRM)' option from the combobox to get the walking distance and then click the 'Go' button. The 'Foot (OSRM)' option has an id of [167].",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "click [169]",
+				"steps_nb": 14,
+				"reason": "The current page is already set to calculate the directions from Carnegie Mellon to Starbucks. The mode of transportation is set to 'Car (OSRM)' but we need to find the walking distance. We previously clicked on the 'Bicycle (OSRM)' option, but we need to select the 'Foot (OSRM)' option to get the walking distance. However, we should first select the 'Foot (OSRM)' option from the combobox.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "click [171]",
+				"steps_nb": 15,
+				"reason": "The previous actions suggest that we have already searched for the nearest Starbucks to Carnegie Mellon and have selected the 'Foot (OSRM)' option for walking distance. Now, we need to find the walking distance to the nearest Starbucks. Since the observation does not provide the distance, we should proceed with the 'Go' button to get the directions and distance.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "Where is the nearest Starbucks to Carnegie Mellon, and what is the walking distance to it?",
+				"action": "stop [N/A]",
+				"steps_nb": 16,
+				"reason": "The previous actions have led to the current state of the webpage, where the input fields for 'From' and 'To' have been filled with 'Carnegie Mellon' and 'Starbucks' respectively. The mode of transportation has been set to 'Foot (OSRM)' and the 'Go' button has been clicked. However, the walking distance to the nearest Starbucks is not explicitly mentioned in the observation. The 'find_directions' subroutine has been used before but the result is not available. Since we are already on the page where the directions are being calculated, we should be able to see the walking distance. We need to re-evaluate the page content to find the walking distance.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Carnegie Mellon'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place [query]",
+						"Find places near a given location"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"find_subreddit",
+						"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_create_group_page",
+						"Navigate to the page where a new group can be created"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"create_group",
+						"Given you are in the create new group page, this subroutine completes the act of creating a group, adding members etc"
+					],
+					[
+						"find_image",
+						"Find an image on the current webpage based on its description"
+					]
+				]
+			}
+		]
+	},
+	"score": 0.0
+}

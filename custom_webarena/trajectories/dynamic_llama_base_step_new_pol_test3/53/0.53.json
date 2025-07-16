@@ -1,0 +1,1063 @@
+{
+	"created_policies": [
+		{
+			"name": "search_nearest_place",
+			"description": "Find places near a given location",
+			"query": "University of Pittsburgh"
+		},
+		{
+			"name": "find_directions",
+			"description": "Find directions between two locations to answer the query",
+			"query": "University of Pittsburgh to Starbucks on Craig Street"
+		}
+	],
+	"plan": "Find the location of the University of Pittsburgh and Starbucks on Craig Street on the map | Get the walking distance between the two locations",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "type [145] [Univ of Pittsburgh] [1]",
+				"steps_nb": 0,
+				"reason": "The task requires finding the walking time from the University of Pittsburgh to a Starbucks on Craig Street. The current webpage is OpenStreetMap, which provides a \"Find directions between two points\" link. To find the walking time, we need to use the find_directions subroutine. However, before using the subroutine, we need to navigate to the correct page or provide the correct input. Since we are already on a map page, we can start by typing the starting location in the search textbox. The id of the textbox is 145.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[144] link 'Where is this?'\n\t[145] textbox 'Search', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/#map=7/42.896/-75.108",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "type [145] [Starbucks on Craig Street] [1]",
+				"steps_nb": 1,
+				"reason": "To find the walking time from the Univ of Pittsburgh to Starbucks on Craig Street, we need to use the `find_directions` subroutine. However, we first need to enter the destination in the search bar. Since we already have the University of Pittsburgh in the search bar, we can proceed with typing the destination, which is \"Starbucks on Craig Street\".",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Univ of Pittsburgh', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[441] heading 'Search Results'\n[443] button 'Close'\n[444] heading 'Results from OpenStreetMap Nominatim'\n\t[445] link 'OpenStreetMap Nominatim'\n[447] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Univ%20of%20Pittsburgh#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "click [149]",
+				"steps_nb": 2,
+				"reason": "To find the walking duration between the University of Pittsburgh and Starbucks on Craig Street, we should utilize the 'Find directions between two points' option on the current webpage, which seems to be an OpenStreetMap interface. The link for this option has an id that is not explicitly mentioned but can be inferred from the observation as [149]. By clicking on this link, we should be able to input the two locations and find the walking directions between them.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks on Craig Street', focused\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[457] heading 'Search Results'\n[459] button 'Close'\n[460] heading 'Results from OpenStreetMap Nominatim'\n\t[461] link 'OpenStreetMap Nominatim'\n[463] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks%20on%20Craig%20Street#map=7/42.896/-73.180",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "click [166]",
+				"steps_nb": 3,
+				"reason": "To find the walking duration from Univ of Pittsburgh to Starbucks on Craig Street, we need to use the find_directions subroutine. However, before that, we need to make sure we are using the correct mode of transportation, which is walking. The current mode is set to 'Car (OSRM)'. We need to change it to 'Foot (OSRM)'.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "click [167]",
+				"steps_nb": 4,
+				"reason": "To find the walking time from the Univ of Pittsburgh to Starbucks on Craig Street, we need to use the find_directions subroutine. However, since we are already on a page that appears to be a mapping or directions page, and we have already typed in the 'From' and 'To' locations and selected the 'Foot' option is not yet selected but the 'Car' option is currently selected, we should first ensure the correct mode of transportation is selected. The 'Foot (OSRM)' option has an id of [167] and is currently not selected, so the next step would be to select this option to get walking directions.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', focused, hasPopup='menu', expanded=True\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "click [171]",
+				"steps_nb": 5,
+				"reason": "To find the walking time from Univ of Pittsburgh to Starbucks on Craig Street, we need to find the directions between the two locations. The find_directions subroutine can be used for this purpose. However, the current webpage is not showing the result of the directions query. Given that the 'From' and 'To' textboxes have been filled with the respective locations and the 'Foot (OSRM)' option has been selected, we should click the 'Go' button to get the walking directions. The id corresponding to the 'Go' button is 171.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', focused, hasPopup='menu', expanded=True\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				]
+			},
+			{
+				"type": "policy",
+				"description": "Find directions between two locations to answer the query",
+				"objective": "How long does it take to walk from Univ of Pittsburgh to starbucks on Craig Street?",
+				"action": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+				"steps_nb": 6,
+				"reason": "The objective is to find the walking time from Univ of Pittsburgh to Starbucks on Craig Street. The previous actions have already filled in the 'From' and 'To' textboxes and selected the 'Foot (OSRM)' option. Now, the 'Go' button has been clicked. However, the observation does not show the result of the walking time. We should use the find_directions subroutine to get the walking time.",
+				"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_directions",
+						"Find directions between two locations to answer the query"
+					],
+					[
+						"search_nearest_place",
+						"Find places near a given location"
+					],
+					[
+						"find_user_and_count_downvoted_comments",
+						"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+					],
+					[
+						"find_commits",
+						"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					],
+					[
+						"navigate_to_merge_request_page",
+						"Navigate to the page where a new merge request can be created"
+					],
+					[
+						"navigate_to_profile_page",
+						"Navigate to the user's profile page where they can update their status"
+					],
+					[
+						"search_reviews",
+						"Search reviews to answer a question about reviews"
+					],
+					[
+						"find_user",
+						"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+					],
+					[
+						"navigate_to_project_page",
+						"Navigate to a specific project page"
+					]
+				],
+				"trace": [
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "type [158] [Univ of Pittsburgh] [0]",
+						"steps_nb": 7,
+						"reason": "The objective requires finding directions between two locations. The observation shows a page with \"From\" and \"To\" textboxes and a \"Go\" button, which suggests that we need to fill in the locations and click the \"Go\" button to get the directions. The first step is to click on the \"Find directions between two points\" option, but since it's not available, we will proceed with filling the \"From\" and \"To\" fields.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "type [163] [Starbucks on Craig Street] [0]",
+						"steps_nb": 8,
+						"reason": "To find the walking time from Univ of Pittsburgh to Starbucks on Craig Street, we first need to enter the \"To\" field with the destination, which is Starbucks on Craig Street.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh', focused\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [166]",
+						"steps_nb": 9,
+						"reason": "To get the walking time from Univ of Pittsburgh to Starbucks on Craig Street, we need to select the 'Foot (OSRM)' option from the combobox and then click the 'Go' button to get the directions. Since the 'Foot (OSRM)' option is not currently selected, we first need to select it.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street', focused\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [169]",
+						"steps_nb": 10,
+						"reason": "The current webpage is on the OpenStreetMap website, and the user wants to find the walking time from the Univ of Pittsburgh to Starbucks on Craig Street. The 'From' and 'To' fields are already filled with the required locations. To get the walking time, we need to select the 'Foot (OSRM)' option from the combobox and then click the 'Go' button.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', focused, hasPopup='menu', expanded=True\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 11,
+						"reason": "To get the walking time from Univ of Pittsburgh to Starbucks on Craig Street, we have already filled in the 'From' and 'To' fields and selected the 'Foot (OSRM)' option. Now, we need to click the 'Go' button to get the directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', focused, hasPopup='menu', expanded=True\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 12,
+						"reason": "The action is selected to change the mode of transportation to walking, which is represented by the 'Foot (OSRM)' option in the combobox, and then click the 'Go' button to get the walking directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 13,
+						"reason": "The From and To fields have already been filled, and the mode of transportation has been set to 'Foot (OSRM)' which corresponds to walking. Now we need to click the 'Go' button to get the walking directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 14,
+						"reason": "The objective is to find the walking time from the University of Pittsburgh to Starbucks on Craig Street. We have already filled in the \"From\" and \"To\" fields and selected the \"Foot (OSRM)\" option. Now, we need to click the \"Go\" button to get the directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 15,
+						"reason": "The action 'click [171]' has been performed multiple times, but the directions have not been found yet. Since the mode is already set to 'Foot (OSRM)', we need to re-evaluate our approach. We should try clicking on the 'Find directions between two points' option, but it's not directly available. Instead, we can try to change the mode to 'Foot (OSRM)' again and then click 'Go' to see if it yields the desired result.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "go_back",
+						"steps_nb": 16,
+						"reason": "The user wants to find the walking time from the Univ of Pittsburgh to Starbucks on Craig Street, and the 'Go' button needs to be clicked after filling in the 'From' and 'To' fields and selecting the 'Foot' option to get the walking directions. However, the 'Go' button has been clicked multiple times already, and the walking option has been selected. The page might not have loaded the results yet, or the results might be displayed in a part of the page that is not shown in the observation. Considering this situation, the best course of action would be to try and revert to a previous state and then proceed with the 'Go' button click again to ensure that the page reloads with the correct walking directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From' value='Univ of Pittsburgh'\n\t[161] image ''\n\t[163] textbox 'To' value='Starbucks on Craig Street'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go', focused\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [149]",
+						"steps_nb": 17,
+						"reason": "The current webpage is on the OpenStreetMap search results page but does not have the \"Find directions between two points\" page open. To proceed, we need to click on the \"Find directions between two points\" link to start a new direction search.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[139] Section ''\n\t[145] textbox 'Search' value='Starbucks on Craig Street'\n\t[147] button 'Go'\n\t[149] link 'Find directions between two points'\n\t\t[150] image ''\n[465] heading 'Search Results'\n[467] button 'Close'\n[468] heading 'Results from OpenStreetMap Nominatim'\n\t[469] link 'OpenStreetMap Nominatim'\n[471] paragraph ''\n\tStaticText 'Error contacting metis.lti.cs.cmu.edu: Failed to open TCP connection to metis.lti.cs.cmu.edu:8085 (Connection refused - connect(2) for \"metis.lti.cs.cmu.edu\" port 8085)'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/search?query=Starbucks%20on%20Craig%20Street#map=7/42.896/-73.180",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [169]",
+						"steps_nb": 18,
+						"reason": "The current page is on the OpenStreetMap website and has the required fields to find directions between two points. We have already typed the From and To fields. Now, we should click on the \"Go\" button to get the directions. However, in this case, we need to verify the mode of transportation is set to walking, so we should click on the Foot (OSRM) option.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					},
+					{
+						"type": "page_op",
+						"objective": "find_directions [walking time from Univ of Pittsburgh to Starbucks on Craig Street]",
+						"action": "click [171]",
+						"steps_nb": 19,
+						"reason": "Since the previous actions already filled in the From and To fields and selected the correct mode of transportation (Foot), the next step is to click the 'Go' button to search for the directions.",
+						"observation": "[44] banner ''\n\t[45] heading 'OpenStreetMap logo OpenStreetMap'\n\t\t[46] link 'OpenStreetMap logo OpenStreetMap'\n\t\t\t[49] image 'OpenStreetMap logo'\n\t\t\tStaticText ''\n\t[51] navigation ''\n\t\t[95] link 'Edit'\n\t\t[96] button ''\n\t\t[102] link 'History'\n\t\t[103] link 'Export'\n\t[104] navigation ''\n\t\t[105] list ''\n\t\t\t[106] listitem ''\n\t\t\t\t[107] link 'GPS Traces'\n\t\t\t[108] listitem ''\n\t\t\t\t[109] link 'User Diaries'\n\t\t\t[110] listitem ''\n\t\t\t\t[111] link 'Communities'\n\t\t\t[112] listitem ''\n\t\t\t\t[113] link 'Copyright'\n\t\t\t[114] listitem ''\n\t\t\t\t[115] link 'Help'\n\t\t\t[116] listitem ''\n\t\t\t\t[117] link 'About'\n\t\t[134] link 'Log In'\n\t\t[135] link 'Sign Up'\n[151] Section ''\n\t[153] button 'Close'\n\t[156] image ''\n\t[158] textbox 'From'\n\t[161] image ''\n\t[163] textbox 'To'\n\t[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False\n\t\t[167] option 'Bicycle (OSRM)', selected=False\n\t\t[168] option 'Car (OSRM)', selected=True\n\t\t[169] option 'Foot (OSRM)', selected=False\n\t[171] button 'Go'\n\t[174] button 'Reverse Directions'\n[187] heading 'Welcome to OpenStreetMap!'\n[189] button 'Close'\n[191] paragraph ''\n\tStaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'\n[192] paragraph ''\n\tStaticText 'Hosting is supported by'\n\t[193] link 'UCL'\n\tStaticText ','\n\t[194] link 'Fastly'\n\tStaticText ','\n\t[195] link 'Bytemark Hosting'\n\tStaticText ', and other'\n\t[196] link 'partners'\n\tStaticText '.'\n[199] link 'Learn More'\n[201] link 'Start Mapping'\n[394] link 'Zoom In'\n[396] link 'Zoom Out'\n[399] button 'Show My Location'\n[402] link 'Layers'\n[405] link ''\n[408] link 'Share'\n[411] link ''\n[414] link ''\nStaticText '50 km'\nStaticText '50 mi'\nStaticText '\u00a9'\n[422] link 'OpenStreetMap contributors'\nStaticText '\u2665'\n[423] link 'Make a Donation'\nStaticText '.'\n[424] link 'Website and API terms'",
+						"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:3000/directions#map=7/42.896/-75.103",
+						"guidance": "1. First click on \"Find directions between two points\", then enter From and To Fields, and click search.\n2. If you have to find directions to social security administration in Pittsburgh, search for it in a structured format like Social Security Administration, Pittsburgh.",
+						"relevant_policies": [
+							[
+								"search_nearest_place",
+								"Find places near a given location"
+							],
+							[
+								"find_user",
+								"Navigate to the page of a user with user_name. The page contains all the posts made by the user."
+							],
+							[
+								"find_user_and_count_downvoted_comments",
+								"Navigate to the page of the user and count the comments that have more downvotes than upvotes"
+							],
+							[
+								"search_customer",
+								"Find a customer given some details about them such as their phone number. "
+							],
+							[
+								"find_commits",
+								"Given you are in a project page, this subroutine searches Gitlab for commits made to the project and retrieves information about a commit. This function returns the answer to the query."
+							],
+							[
+								"find_subreddit",
+								"Find a subreddit corresponding to the query. The query can either be the name of the subreddit or a informative description of what the subreddit may contain. The subroutine hands back control once it navigates to the subreddit by returning N/A to denote success."
+							],
+							[
+								"navigate_to_merge_request_page",
+								"Navigate to the page where a new merge request can be created"
+							],
+							[
+								"navigate_to_profile_page",
+								"Navigate to the user's profile page where they can update their status"
+							],
+							[
+								"navigate_to_project_page",
+								"Navigate to a specific project page"
+							],
+							[
+								"extract_top_contributors",
+								"Extract the top contributors based on the commit history"
+							]
+						]
+					}
+				]
+			}
+		]
+	},
+	"score": 0.0
+}
