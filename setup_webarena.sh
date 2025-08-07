@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conda activate webarena
+# conda activate webarena
 
 base_url="http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com"
 
