@@ -28,18 +28,18 @@ def main(args):
     match args.agent_type:
         case "dynamic":
              # name = "dynamic_llama_base_step"
-            name = "dynamic_llama_base_step_new_pol_test3"
-            agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True)
+            name = "base_and_shopping_llama2"
+            agent = Agent(name=name, policy_library_path=f"policies/{name}/last.json", generate_new_policies=True, improve_policies=True, default_policy_library_path="policies/working/base_and_shop_0.json")
             iter_nb = 3
             save_library = True
-            total_nb = 30
+            total_nb = 50
         case "step":
             agent = StepAgent(name="step_agent_llama_test2", policy_library_path="policies/step_policies_full.json")
             iter_nb = 1
             save_library = False
             total_nb = 100
         case "base":
-            agent = BaseAgent(name="base")
+            agent = BaseAgent(name="base_test")
             iter_nb = 1
             save_library = False
             total_nb = 50
@@ -49,7 +49,10 @@ def main(args):
 
     mandatory_ids = [int(name) for name in os.listdir(f"trajectories/{agent.name}")] if os.path.exists(f"trajectories/{agent.name}") else []
     remaining_ids = np.setdiff1d(np.arange(812), mandatory_ids)
-    random_ids = np.random.choice(remaining_ids, size=total_nb-len(mandatory_ids), replace=False)
+    # possible_ids = np.array([i for i in range(812) if get_site_type(i) == "shopping"])
+    possible_ids = np.array(range(812))
+    possible_ids = np.intersect1d(possible_ids, remaining_ids)
+    random_ids = np.random.choice(possible_ids, size=total_nb-len(mandatory_ids), replace=False)
     tasks_id = np.concatenate((mandatory_ids, random_ids))
 
     counter = 0
@@ -62,7 +65,7 @@ def main(args):
                 continue
             print(f"\n----- TASK ID : {task_id} -----\n")
             site = get_site_type(int(task_id))
-            if site == "shopping" or site == "map":
+            if site == "map":
                 continue
             objective, observation = env.load(task_id)
             agent.load(objective, observation, site)

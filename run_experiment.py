@@ -4,8 +4,8 @@ from collections import defaultdict
 from utils import *
 
 # name = "dynamic_llama_base_step_new_pol"
-name = "dynamic_llama_base_step_new_pol_test3"
-traj_id=1
+name = "base_and_shopping_llama"
+traj_id=2
 parent_folder = f"trajectories/{name}"
 output_folder = "experiments"
 output_file = os.path.join(output_folder, f"{traj_id}.{name}.json")

@@ -1,5 +1,4 @@
 from google import genai
-from openai import OpenAI
 import numpy as np
 import re
 import json
@@ -35,20 +34,20 @@ def generate_content_gemini(prompt):
 
 
 
-saturn_client = OpenAI(
-    api_key=saturn_key,
-    base_url=saturn_url
-)
+# saturn_client = OpenAI(
+#     api_key=saturn_key,
+#     base_url=saturn_url
+# )
 
 
-def generate_content_saturn(prompt):
-    response = saturn_client.chat.completions.create(
-        model="meta-llama/Llama-3.3-70B-Instruct",
-        messages=[
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return response.choices[0].message.content
+# def generate_content_saturn(prompt):
+#     response = saturn_client.chat.completions.create(
+#         model="meta-llama/Llama-3.3-70B-Instruct",
+#         messages=[
+#             {"role": "user", "content": prompt}
+#         ]
+#     )
+#     return response.choices[0].message.content
 
 
 def generate_content_bsc(prompt):

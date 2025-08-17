@@ -1,0 +1,228 @@
+{
+	"created_policies": [
+		{
+			"name": "navigate_to_section",
+			"description": "Navigate to a specific section of the website",
+			"query": "reviews"
+		},
+		{
+			"name": "extract_order_data",
+			"description": "Extract relevant data from the current webpage",
+			"query": "reviews for 2022"
+		}
+	],
+	"plan": "Identify the section of the website that contains review information | Extract the review data for the year 2022",
+	"trace": {
+		"trace": [
+			{
+				"type": "page_op",
+				"objective": "How many reviews our shop received during 2022?",
+				"action": "click [339]",
+				"steps_nb": 0,
+				"reason": "The task is to find the number of reviews our shop received during 2022. To do this, we should navigate to the 'REPORTS' section where we can find information about the shop's performance, including reviews. From the observation, we see that there is a link '[156] link '\\ue60b SALES'' which seems to be related to sales and possibly reviews. However, since reviews are more directly related to products and customer interactions, we should look for a more specific link. The link '[339] link '\\ue60a REPORTS'' seems the most promising for finding review information.",
+				"observation": "[148] link 'Magento Admin Panel'\n\t[149] image 'Magento Admin Panel'\n[150] navigation ''\n\t[151] menubar '', orientation='horizontal'\n\t\t[153] link '\\ue604 DASHBOARD'\n\t\t\tStaticText 'DASHBOARD'\n\t\t[156] link '\\ue60b SALES'\n\t\t\tStaticText 'SALES'\n\t\t[189] link '\\ue608 CATALOG'\n\t\t\tStaticText 'CATALOG'\n\t\t[207] link '\\ue603 CUSTOMERS'\n\t\t\tStaticText 'CUSTOMERS'\n\t\t[226] link '\\ue609 MARKETING'\n\t\t\tStaticText 'MARKETING'\n\t\t[293] link '\\ue602 CONTENT'\n\t\t\tStaticText 'CONTENT'\n\t\t[339] link '\\ue60a REPORTS'\n\t\t\tStaticText 'REPORTS'\n\t\t[464] link '\\ue60d STORES'\n\t\t\tStaticText 'STORES'\n\t\t[540] link '\\ue610 SYSTEM'\n\t\t\tStaticText 'SYSTEM'\n\t\t[623] link '\\ue612 FIND PARTNERS & EXTENSIONS'\n\t\t\tStaticText 'FIND PARTNERS & EXTENSIONS'\n[645] button 'System Messages: 2'\n\tStaticText 'System Messages'\n\tStaticText ':'\n\tStaticText '2'\nStaticText 'Failed to synchronize data to the Magento Business Intelligence service.'\n[651] link 'Retry Synchronization'\n[666] banner ''\n\t[669] heading 'Dashboard'\n\t[672] link '\\ue600 admin'\n\t\tStaticText 'admin'\n\t[684] link '\\ue607'\n\t\tStaticText '\\ue607'\n\t[686] Section ''\n\t\t[688] LabelText ''\n\t\t\tStaticText '\\ue60c'\n\t\t[692] textbox '\\ue60c'\n[698] main ''\n\tStaticText 'Scope:'\n\t[709] button 'All Store Views', hasPopup='menu'\n\t[720] link '\\ue633 What is this?'\n\t\tStaticText 'What is this?'\n\t[725] Section ''\n\t\t[727] button 'Reload Data'\n\t[731] Section ''\n\t\tStaticText 'Advanced Reporting'\n\t\tStaticText \"Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data.\"\n\t\t[736] link 'Go to Advanced Reporting \\ue644'\n\t\t\tStaticText 'Go to Advanced Reporting'\n\t\t\tStaticText '\\ue644'\n\tStaticText 'Chart is disabled. To enable the chart, click'\n\t[743] link 'here'\n\tStaticText '.'\n\t[746] list ''\n\t\t[747] listitem ''\n\t\t\tStaticText 'Revenue'\n\t\t\t[749] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[752] listitem ''\n\t\t\tStaticText 'Tax'\n\t\t\t[754] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[757] listitem ''\n\t\t\tStaticText 'Shipping'\n\t\t\t[759] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[762] listitem ''\n\t\t\tStaticText 'Quantity'\n\t\t\t[764] strong ''\n\t\t\t\tStaticText '0'\n\t[768] tablist '', multiselectable=False, orientation='horizontal'\n\t\t[769] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers', expanded=True, selected=True, controls='grid_tab_ordered_products_content'\n\t\t\t[770] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'\n\t\t\t\tStaticText 'Bestsellers'\n\t\t[776] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products', expanded=False, selected=False, controls='ui-id-1'\n\t\t\t[777] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'\n\t\t\t\tStaticText 'Most Viewed Products'\n\t\t[784] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers', expanded=False, selected=False, controls='ui-id-2'\n\t\t\t[785] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'\n\t\t\t\tStaticText 'New Customers'\n\t\t[792] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers', expanded=False, selected=False, controls='ui-id-3'\n\t\t\t[793] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'\n\t\t\t\tStaticText 'Customers'\n\t[802] tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'\n\t\t[804] table ''\n\t\t\t[805] rowgroup ''\n\t\t\t\t[806] row ''\n\t\t\t\t\t[807] columnheader 'Product'\n\t\t\t\t\t\tStaticText 'Product'\n\t\t\t\t\t[809] columnheader 'Price'\n\t\t\t\t\t\tStaticText 'Price'\n\t\t\t\t\t[811] columnheader 'Quantity'\n\t\t\t\t\t\tStaticText 'Quantity'\n\t\t\t[813] rowgroup ''\n\t\t\t\t[814] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/29/'\n\t\t\t\t\t[815] gridcell 'Sprite Stasis Ball 65 cm'\n\t\t\t\t\t[816] gridcell '$27.00'\n\t\t\t\t\t[817] gridcell '6'\n\t\t\t\t[818] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/33/'\n\t\t\t\t\t[819] gridcell 'Sprite Yoga Strap 6 foot'\n\t\t\t\t\t[820] gridcell '$14.00'\n\t\t\t\t\t[821] gridcell '6'\n\t\t\t\t[822] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/20/'\n\t\t\t\t\t[823] gridcell 'Quest Lumaflex\u2122 Band'\n\t\t\t\t\t[824] gridcell '$19.00'\n\t\t\t\t\t[825] gridcell '6'\n\t\t\t\t[826] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/13/'\n\t\t\t\t\t[827] gridcell 'Overnight Duffle'\n\t\t\t\t\t[828] gridcell '$45.00'\n\t\t\t\t\t[829] gridcell '5'\n\t\t\t\t[830] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/25/'\n\t\t\t\t\t[831] gridcell 'Sprite Stasis Ball 55 cm'\n\t\t\t\t\t[832] gridcell '$23.00'\n\t\t\t\t\t[833] gridcell '5'\n\tStaticText 'Lifetime Sales'\n\t[841] strong ''\n\t\tStaticText '$0.00'\n\tStaticText 'Average Order'\n\t[847] strong ''\n\t\tStaticText '$0.00'\n\tStaticText 'Last Orders'\n\t[853] table ''\n\t\t[854] rowgroup ''\n\t\t\t[855] row ''\n\t\t\t\t[856] columnheader 'Customer'\n\t\t\t\t\tStaticText 'Customer'\n\t\t\t\t[858] columnheader 'Items'\n\t\t\t\t\tStaticText 'Items'\n\t\t\t\t[860] columnheader 'Total'\n\t\t\t\t\tStaticText 'Total'\n\t\t[862] rowgroup ''\n\t\t\t[863] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/299/'\n\t\t\t\t[864] gridcell 'Sarah Miller'\n\t\t\t\t[865] gridcell '5'\n\t\t\t\t[866] gridcell '$194.40'\n\t\t\t[867] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/65/'\n\t\t\t\t[868] gridcell 'Grace Nguyen'\n\t\t\t\t[869] gridcell '4'\n\t\t\t\t[870] gridcell '$190.00'\n\t\t\t[871] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/125/'\n\t\t\t\t[872] gridcell 'Matt Baker'\n\t\t\t\t[873] gridcell '3'\n\t\t\t\t[874] gridcell '$151.40'\n\t\t\t[875] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/136/'\n\t\t\t\t[876] gridcell 'Lily Potter'\n\t\t\t\t[877] gridcell '4'\n\t\t\t\t[878] gridcell '$188.20'\n\t\t\t[879] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/230/'\n\t\t\t\t[880] gridcell 'Ava Brown'\n\t\t\t\t[881] gridcell '2'\n\t\t\t\t[882] gridcell '$83.40'\n\tStaticText 'Last Search Terms'\n\t[887] table ''\n\t\t[888] rowgroup ''\n\t\t\t[889] row ''\n\t\t\t\t[890] columnheader 'Search Term'\n\t\t\t\t\tStaticText 'Search Term'\n\t\t\t\t[892] columnheader 'Results'\n\t\t\t\t\tStaticText 'Results'\n\t\t\t\t[894] columnheader 'Uses'\n\t\t\t\t\tStaticText 'Uses'\n\t\t[896] rowgroup ''\n\t\t\t[897] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/25/'\n\t\t\t\t[898] gridcell 'tanks'\n\t\t\t\t[899] gridcell '23'\n\t\t\t\t[900] gridcell '1'\n\t\t\t[901] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/19/'\n\t\t\t\t[902] gridcell 'nike'\n\t\t\t\t[903] gridcell '0'\n\t\t\t\t[904] gridcell '3'\n\t\t\t[905] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/1/'\n\t\t\t\t[906] gridcell 'Joust Bag'\n\t\t\t\t[907] gridcell '10'\n\t\t\t\t[908] gridcell '4'\n\t\t\t[909] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/11/'\n\t\t\t\t[910] gridcell 'hollister'\n\t\t\t\t[911] gridcell '1'\n\t\t\t\t[912] gridcell '19'\n\t\t\t[913] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/13/'\n\t\t\t\t[914] gridcell 'Antonia Racer Tank'\n\t\t\t\t[915] gridcell '23'\n\t\t\t\t[916] gridcell '2'\n\tStaticText 'Top Search Terms'\n\t[921] table ''\n\t\t[922] rowgroup ''\n\t\t\t[923] row ''\n\t\t\t\t[924] columnheader 'Search Term'\n\t\t\t\t\tStaticText 'Search Term'\n\t\t\t\t[926] columnheader 'Results'\n\t\t\t\t\tStaticText 'Results'\n\t\t\t\t[928] columnheader 'Uses'\n\t\t\t\t\tStaticText 'Uses'\n\t\t[930] rowgroup ''\n\t\t\t[931] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/11/'\n\t\t\t\t[932] gridcell 'hollister'\n\t\t\t\t[933] gridcell '1'\n\t\t\t\t[934] gridcell '19'\n\t\t\t[935] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/1/'\n\t\t\t\t[936] gridcell 'Joust Bag'\n\t\t\t\t[937] gridcell '10'\n\t\t\t\t[938] gridcell '4'\n\t\t\t[939] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/13/'\n\t\t\t\t[940] gridcell 'Antonia Racer Tank'\n\t\t\t\t[941] gridcell '23'\n\t\t\t\t[942] gridcell '2'\n\t\t\t[943] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/25/'\n\t\t\t\t[944] gridcell 'tanks'\n\t\t\t\t[945] gridcell '23'\n\t\t\t\t[946] gridcell '1'\n\t\t\t[947] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/9/'\n\t\t\t\t[948] gridcell 'WP10'\n\t\t\t\t[949] gridcell '1'\n\t\t\t\t[950] gridcell '1'\n[952] contentinfo ''\n\t[955] paragraph ''\n\t\t[956] link '\\ue606'\n\t\tStaticText 'Copyright \u00a9 2025 Magento Commerce Inc. All rights reserved.'\n\t[958] paragraph ''\n\t\t[959] strong ''\n\t\t\tStaticText 'Magento'\n\t\tStaticText 'ver. 2.4.6'\n\t[960] link 'Privacy Policy'\n\tStaticText '|'\n\t[961] link 'Account Activity'\n\tStaticText '|'\n\t[962] link 'Report an Issue'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/admin/dashboard/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"Find customer reviews for a particular product using the query to specify the kind of review. "
+					],
+					[
+						"delete_reviews",
+						"Delete the reviews found for a particular customer"
+					],
+					[
+						"update_product_description",
+						"Update the product description with the provided query"
+					],
+					[
+						"find_product",
+						"Find a product using a query"
+					],
+					[
+						"find_order",
+						"Find an order corresponding to a particular customer or order number. "
+					],
+					[
+						"update_order",
+						"Update an order with new information"
+					],
+					[
+						"filter_products",
+						"Filter a list of products based on their sales performance"
+					],
+					[
+						"navigate_to_section",
+						"Navigate to a specific section of the website"
+					],
+					[
+						"set_product_stock_status",
+						"Set the stock status of a product to out of stock"
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How many reviews our shop received during 2022?",
+				"action": "click [370]",
+				"steps_nb": 1,
+				"reason": "To find the number of reviews received by the shop during 2022, we should navigate to the 'Reviews' section. The current page is the admin dashboard, and we can see that the 'Reports' tab is focused. Within the 'Reports' tab, there is a menu with various options. The 'Reviews' option is available under the 'Marketing' submenu. We can access this option by clicking on the 'Reviews' link. The id corresponding to the 'Reviews' link is 365, but it is not directly accessible. We need to access it through the menu. The 'Marketing' menu has an id of 348. However, there is another 'Reviews' link with id 370 that is directly accessible.",
+				"observation": "[148] link 'Magento Admin Panel'\n\t[149] image 'Magento Admin Panel'\n[150] navigation ''\n\t[151] menubar '', orientation='horizontal'\n\t\t[153] link '\\ue604 DASHBOARD'\n\t\t\tStaticText 'DASHBOARD'\n\t\t[156] link '\\ue60b SALES'\n\t\t\tStaticText 'SALES'\n\t\t[189] link '\\ue608 CATALOG'\n\t\t\tStaticText 'CATALOG'\n\t\t[207] link '\\ue603 CUSTOMERS'\n\t\t\tStaticText 'CUSTOMERS'\n\t\t[226] link '\\ue609 MARKETING'\n\t\t\tStaticText 'MARKETING'\n\t\t[293] link '\\ue602 CONTENT'\n\t\t\tStaticText 'CONTENT'\n\t\t[339] link '\\ue60a REPORTS', focused\n\t\t\tStaticText 'REPORTS'\n\t\t[342] strong ''\n\t\t\tStaticText 'Reports'\n\t\t[343] link '\\ue62f'\n\t\t\tStaticText '\\ue62f'\n\t\t[344] menu '', orientation='vertical'\n\t\t\t[346] menu '', orientation='vertical'\n\t\t\t\t[348] strong ''\n\t\t\t\t\tStaticText 'Marketing'\n\t\t\t\t[351] menu '', orientation='vertical'\n\t\t\t\t\t[353] link 'Products in Cart'\n\t\t\t\t\t\tStaticText 'Products in Cart'\n\t\t\t\t\t[356] link 'Search Terms'\n\t\t\t\t\t\tStaticText 'Search Terms'\n\t\t\t\t\t[359] link 'Abandoned Carts'\n\t\t\t\t\t\tStaticText 'Abandoned Carts'\n\t\t\t\t\t[362] link 'Newsletter Problem Reports'\n\t\t\t\t\t\tStaticText 'Newsletter Problem Reports'\n\t\t\t\t[365] strong ''\n\t\t\t\t\tStaticText 'Reviews'\n\t\t\t\t[368] menu '', orientation='vertical'\n\t\t\t\t\t[370] link 'By Customers'\n\t\t\t\t\t\tStaticText 'By Customers'\n\t\t\t\t\t[373] link 'By Products'\n\t\t\t\t\t\tStaticText 'By Products'\n\t\t\t[376] menu '', orientation='vertical'\n\t\t\t\t[378] strong ''\n\t\t\t\t\tStaticText 'Sales'\n\t\t\t\t[381] menu '', orientation='vertical'\n\t\t\t\t\t[383] link 'Orders'\n\t\t\t\t\t\tStaticText 'Orders'\n\t\t\t\t\t[386] link 'Tax'\n\t\t\t\t\t\tStaticText 'Tax'\n\t\t\t\t\t[389] link 'Invoiced'\n\t\t\t\t\t\tStaticText 'Invoiced'\n\t\t\t\t\t[392] link 'Shipping'\n\t\t\t\t\t\tStaticText 'Shipping'\n\t\t\t\t\t[395] link 'Refunds'\n\t\t\t\t\t\tStaticText 'Refunds'\n\t\t\t\t\t[398] link 'Coupons'\n\t\t\t\t\t\tStaticText 'Coupons'\n\t\t\t\t\t[401] link 'PayPal Settlement'\n\t\t\t\t\t\tStaticText 'PayPal Settlement'\n\t\t\t\t\t[404] link 'Braintree Settlement'\n\t\t\t\t\t\tStaticText 'Braintree Settlement'\n\t\t\t[407] menu '', orientation='vertical'\n\t\t\t\t[409] strong ''\n\t\t\t\t\tStaticText 'Customers'\n\t\t\t\t[412] menu '', orientation='vertical'\n\t\t\t\t\t[414] link 'Order Total'\n\t\t\t\t\t\tStaticText 'Order Total'\n\t\t\t\t\t[417] link 'Order Count'\n\t\t\t\t\t\tStaticText 'Order Count'\n\t\t\t\t\t[420] link 'New'\n\t\t\t\t\t\tStaticText 'New'\n\t\t\t\t[423] strong ''\n\t\t\t\t\tStaticText 'Products'\n\t\t\t\t[426] menu '', orientation='vertical'\n\t\t\t\t\t[428] link 'Views'\n\t\t\t\t\t\tStaticText 'Views'\n\t\t\t\t\t[431] link 'Bestsellers'\n\t\t\t\t\t\tStaticText 'Bestsellers'\n\t\t\t\t\t[434] link 'Low Stock'\n\t\t\t\t\t\tStaticText 'Low Stock'\n\t\t\t\t\t[437] link 'Ordered'\n\t\t\t\t\t\tStaticText 'Ordered'\n\t\t\t\t\t[440] link 'Downloads'\n\t\t\t\t\t\tStaticText 'Downloads'\n\t\t\t\t[443] strong ''\n\t\t\t\t\tStaticText 'Statistics'\n\t\t\t\t[446] menu '', orientation='vertical'\n\t\t\t\t\t[448] link 'Refresh Statistics'\n\t\t\t\t\t\tStaticText 'Refresh Statistics'\n\t\t\t[451] menu '', orientation='vertical'\n\t\t\t\t[453] strong ''\n\t\t\t\t\tStaticText 'Business Intelligence'\n\t\t\t\t[456] menu '', orientation='vertical'\n\t\t\t\t\t[458] link 'Advanced Reporting\\ue644'\n\t\t\t\t\t\tStaticText 'Advanced Reporting'\n\t\t\t\t\t\tStaticText '\\ue644'\n\t\t\t\t\t[461] link 'BI Essentials\\ue644'\n\t\t\t\t\t\tStaticText 'BI Essentials'\n\t\t\t\t\t\tStaticText '\\ue644'\n\t\t[464] link '\\ue60d STORES'\n\t\t\tStaticText 'STORES'\n\t\t[540] link '\\ue610 SYSTEM'\n\t\t\tStaticText 'SYSTEM'\n\t\t[623] link '\\ue612 FIND PARTNERS & EXTENSIONS'\n\t\t\tStaticText 'FIND PARTNERS & EXTENSIONS'\n[645] button 'System Messages: 2'\n\tStaticText 'System Messages'\n\tStaticText ':'\n\tStaticText '2'\nStaticText 'Failed to synchronize data to the Magento Business Intelligence service.'\n[651] link 'Retry Synchronization'\n[666] banner ''\n\t[669] heading 'Dashboard'\n\t[672] link '\\ue600 admin'\n\t\tStaticText 'admin'\n\t[684] link '\\ue607'\n\t\tStaticText '\\ue607'\n\t[686] Section ''\n\t\t[688] LabelText ''\n\t\t\tStaticText '\\ue60c'\n\t\t[692] textbox '\\ue60c'\n[698] main ''\n\tStaticText 'Scope:'\n\t[709] button 'All Store Views', hasPopup='menu'\n\t[720] link '\\ue633 What is this?'\n\t\tStaticText 'What is this?'\n\t[725] Section ''\n\t\t[727] button 'Reload Data'\n\t[731] Section ''\n\t\tStaticText 'Advanced Reporting'\n\t\tStaticText \"Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data.\"\n\t\t[736] link 'Go to Advanced Reporting \\ue644'\n\t\t\tStaticText 'Go to Advanced Reporting'\n\t\t\tStaticText '\\ue644'\n\tStaticText 'Chart is disabled. To enable the chart, click'\n\t[743] link 'here'\n\tStaticText '.'\n\t[746] list ''\n\t\t[747] listitem ''\n\t\t\tStaticText 'Revenue'\n\t\t\t[749] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[752] listitem ''\n\t\t\tStaticText 'Tax'\n\t\t\t[754] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[757] listitem ''\n\t\t\tStaticText 'Shipping'\n\t\t\t[759] strong ''\n\t\t\t\tStaticText '$0.00'\n\t\t[762] listitem ''\n\t\t\tStaticText 'Quantity'\n\t\t\t[764] strong ''\n\t\t\t\tStaticText '0'\n\t[768] tablist '', multiselectable=False, orientation='horizontal'\n\t\t[769] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers', expanded=True, selected=True, controls='grid_tab_ordered_products_content'\n\t\t\t[770] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'\n\t\t\t\tStaticText 'Bestsellers'\n\t\t[776] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products', expanded=False, selected=False, controls='ui-id-1'\n\t\t\t[777] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'\n\t\t\t\tStaticText 'Most Viewed Products'\n\t\t[784] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers', expanded=False, selected=False, controls='ui-id-2'\n\t\t\t[785] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'\n\t\t\t\tStaticText 'New Customers'\n\t\t[792] tab 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers', expanded=False, selected=False, controls='ui-id-3'\n\t\t\t[793] link 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'\n\t\t\t\tStaticText 'Customers'\n\t[802] tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'\n\t\t[804] table ''\n\t\t\t[805] rowgroup ''\n\t\t\t\t[806] row ''\n\t\t\t\t\t[807] columnheader 'Product'\n\t\t\t\t\t\tStaticText 'Product'\n\t\t\t\t\t[809] columnheader 'Price'\n\t\t\t\t\t\tStaticText 'Price'\n\t\t\t\t\t[811] columnheader 'Quantity'\n\t\t\t\t\t\tStaticText 'Quantity'\n\t\t\t[813] rowgroup ''\n\t\t\t\t[814] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/29/'\n\t\t\t\t\t[815] gridcell 'Sprite Stasis Ball 65 cm'\n\t\t\t\t\t[816] gridcell '$27.00'\n\t\t\t\t\t[817] gridcell '6'\n\t\t\t\t[818] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/33/'\n\t\t\t\t\t[819] gridcell 'Sprite Yoga Strap 6 foot'\n\t\t\t\t\t[820] gridcell '$14.00'\n\t\t\t\t\t[821] gridcell '6'\n\t\t\t\t[822] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/20/'\n\t\t\t\t\t[823] gridcell 'Quest Lumaflex\u2122 Band'\n\t\t\t\t\t[824] gridcell '$19.00'\n\t\t\t\t\t[825] gridcell '6'\n\t\t\t\t[826] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/13/'\n\t\t\t\t\t[827] gridcell 'Overnight Duffle'\n\t\t\t\t\t[828] gridcell '$45.00'\n\t\t\t\t\t[829] gridcell '5'\n\t\t\t\t[830] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/catalog/product/edit/id/25/'\n\t\t\t\t\t[831] gridcell 'Sprite Stasis Ball 55 cm'\n\t\t\t\t\t[832] gridcell '$23.00'\n\t\t\t\t\t[833] gridcell '5'\n\tStaticText 'Lifetime Sales'\n\t[841] strong ''\n\t\tStaticText '$0.00'\n\tStaticText 'Average Order'\n\t[847] strong ''\n\t\tStaticText '$0.00'\n\tStaticText 'Last Orders'\n\t[853] table ''\n\t\t[854] rowgroup ''\n\t\t\t[855] row ''\n\t\t\t\t[856] columnheader 'Customer'\n\t\t\t\t\tStaticText 'Customer'\n\t\t\t\t[858] columnheader 'Items'\n\t\t\t\t\tStaticText 'Items'\n\t\t\t\t[860] columnheader 'Total'\n\t\t\t\t\tStaticText 'Total'\n\t\t[862] rowgroup ''\n\t\t\t[863] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/299/'\n\t\t\t\t[864] gridcell 'Sarah Miller'\n\t\t\t\t[865] gridcell '5'\n\t\t\t\t[866] gridcell '$194.40'\n\t\t\t[867] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/65/'\n\t\t\t\t[868] gridcell 'Grace Nguyen'\n\t\t\t\t[869] gridcell '4'\n\t\t\t\t[870] gridcell '$190.00'\n\t\t\t[871] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/125/'\n\t\t\t\t[872] gridcell 'Matt Baker'\n\t\t\t\t[873] gridcell '3'\n\t\t\t\t[874] gridcell '$151.40'\n\t\t\t[875] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/136/'\n\t\t\t\t[876] gridcell 'Lily Potter'\n\t\t\t\t[877] gridcell '4'\n\t\t\t\t[878] gridcell '$188.20'\n\t\t\t[879] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/sales/order/view/order_id/230/'\n\t\t\t\t[880] gridcell 'Ava Brown'\n\t\t\t\t[881] gridcell '2'\n\t\t\t\t[882] gridcell '$83.40'\n\tStaticText 'Last Search Terms'\n\t[887] table ''\n\t\t[888] rowgroup ''\n\t\t\t[889] row ''\n\t\t\t\t[890] columnheader 'Search Term'\n\t\t\t\t\tStaticText 'Search Term'\n\t\t\t\t[892] columnheader 'Results'\n\t\t\t\t\tStaticText 'Results'\n\t\t\t\t[894] columnheader 'Uses'\n\t\t\t\t\tStaticText 'Uses'\n\t\t[896] rowgroup ''\n\t\t\t[897] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/25/'\n\t\t\t\t[898] gridcell 'tanks'\n\t\t\t\t[899] gridcell '23'\n\t\t\t\t[900] gridcell '1'\n\t\t\t[901] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/19/'\n\t\t\t\t[902] gridcell 'nike'\n\t\t\t\t[903] gridcell '0'\n\t\t\t\t[904] gridcell '3'\n\t\t\t[905] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/1/'\n\t\t\t\t[906] gridcell 'Joust Bag'\n\t\t\t\t[907] gridcell '10'\n\t\t\t\t[908] gridcell '4'\n\t\t\t[909] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/11/'\n\t\t\t\t[910] gridcell 'hollister'\n\t\t\t\t[911] gridcell '1'\n\t\t\t\t[912] gridcell '19'\n\t\t\t[913] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/13/'\n\t\t\t\t[914] gridcell 'Antonia Racer Tank'\n\t\t\t\t[915] gridcell '23'\n\t\t\t\t[916] gridcell '2'\n\tStaticText 'Top Search Terms'\n\t[921] table ''\n\t\t[922] rowgroup ''\n\t\t\t[923] row ''\n\t\t\t\t[924] columnheader 'Search Term'\n\t\t\t\t\tStaticText 'Search Term'\n\t\t\t\t[926] columnheader 'Results'\n\t\t\t\t\tStaticText 'Results'\n\t\t\t\t[928] columnheader 'Uses'\n\t\t\t\t\tStaticText 'Uses'\n\t\t[930] rowgroup ''\n\t\t\t[931] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/11/'\n\t\t\t\t[932] gridcell 'hollister'\n\t\t\t\t[933] gridcell '1'\n\t\t\t\t[934] gridcell '19'\n\t\t\t[935] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/1/'\n\t\t\t\t[936] gridcell 'Joust Bag'\n\t\t\t\t[937] gridcell '10'\n\t\t\t\t[938] gridcell '4'\n\t\t\t[939] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/13/'\n\t\t\t\t[940] gridcell 'Antonia Racer Tank'\n\t\t\t\t[941] gridcell '23'\n\t\t\t\t[942] gridcell '2'\n\t\t\t[943] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/25/'\n\t\t\t\t[944] gridcell 'tanks'\n\t\t\t\t[945] gridcell '23'\n\t\t\t\t[946] gridcell '1'\n\t\t\t[947] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/search/term/edit/id/9/'\n\t\t\t\t[948] gridcell 'WP10'\n\t\t\t\t[949] gridcell '1'\n\t\t\t\t[950] gridcell '1'\n[952] contentinfo ''\n\t[955] paragraph ''\n\t\t[956] link '\\ue606'\n\t\tStaticText 'Copyright \u00a9 2025 Magento Commerce Inc. All rights reserved.'\n\t[958] paragraph ''\n\t\t[959] strong ''\n\t\t\tStaticText 'Magento'\n\t\tStaticText 'ver. 2.4.6'\n\t[960] link 'Privacy Policy'\n\tStaticText '|'\n\t[961] link 'Account Activity'\n\tStaticText '|'\n\t[962] link 'Report an Issue'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/admin/dashboard/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"Find customer reviews for a particular product using the query to specify the kind of review. "
+					],
+					[
+						"delete_reviews",
+						"Delete the reviews found for a particular customer"
+					],
+					[
+						"update_product_description",
+						"Update the product description with the provided query"
+					],
+					[
+						"find_product",
+						"Find a product using a query"
+					],
+					[
+						"find_order",
+						"Find an order corresponding to a particular customer or order number. "
+					],
+					[
+						"update_order",
+						"Update an order with new information"
+					],
+					[
+						"filter_products",
+						"Filter a list of products based on their sales performance"
+					],
+					[
+						"navigate_to_section",
+						"Navigate to a specific section of the website"
+					],
+					[
+						"set_product_stock_status",
+						"Set the stock status of a product to out of stock"
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					]
+				]
+			},
+			{
+				"type": "page_op",
+				"objective": "How many reviews our shop received during 2022?",
+				"action": "type [671] [2022] [0]",
+				"steps_nb": 2,
+				"reason": "To find the number of reviews the shop received during 2022, we need to filter the reviews by date. The current page seems to be a report page for customer reviews, but it doesn't show the date filter directly. However, we can use the 'Search' function to filter the reviews. Before that, we need to set the date range for 2022 in the filter.",
+				"observation": "[140] link 'Magento Admin Panel'\n\t[141] image 'Magento Admin Panel'\n[142] navigation ''\n\t[143] menubar '', orientation='horizontal'\n\t\t[145] link '\\ue604 DASHBOARD'\n\t\t\tStaticText 'DASHBOARD'\n\t\t[148] link '\\ue60b SALES'\n\t\t\tStaticText 'SALES'\n\t\t[181] link '\\ue608 CATALOG'\n\t\t\tStaticText 'CATALOG'\n\t\t[199] link '\\ue603 CUSTOMERS'\n\t\t\tStaticText 'CUSTOMERS'\n\t\t[218] link '\\ue609 MARKETING'\n\t\t\tStaticText 'MARKETING'\n\t\t[285] link '\\ue602 CONTENT'\n\t\t\tStaticText 'CONTENT'\n\t\t[331] link '\\ue60a REPORTS'\n\t\t\tStaticText 'REPORTS'\n\t\t[456] link '\\ue60d STORES'\n\t\t\tStaticText 'STORES'\n\t\t[532] link '\\ue610 SYSTEM'\n\t\t\tStaticText 'SYSTEM'\n\t\t[615] link '\\ue612 FIND PARTNERS & EXTENSIONS'\n\t\t\tStaticText 'FIND PARTNERS & EXTENSIONS'\n[645] banner ''\n\t[648] heading 'Customer Reviews Report'\n\t[651] link '\\ue600 admin'\n\t\tStaticText 'admin'\n\t[663] link '\\ue607'\n\t\tStaticText '\\ue607'\n\t[665] Section ''\n\t\t[667] LabelText ''\n\t\t\tStaticText '\\ue60c'\n\t\t[671] textbox '\\ue60c'\n[677] main ''\n\t[685] LabelText ''\n\t\tStaticText 'Export to:'\n\t[686] combobox 'Export to:' value='CSV', hasPopup='menu', expanded=False\n\t\t[687] option 'CSV', selected=True\n\t\t[688] option 'Excel XML', selected=False\n\t[689] button 'Export'\n\t\tStaticText 'Export'\n\t[694] button 'Search'\n\t\tStaticText 'Search'\n\t[697] button 'Reset Filter'\n\t\tStaticText 'Reset Filter'\n\tStaticText '1'\n\tStaticText 'records found'\n\t[706] combobox 'per page' value='20', hasPopup='menu', expanded=False\n\t\t[707] option '20', selected=True\n\t\t[708] option '30', selected=False\n\t\t[709] option '50', selected=False\n\t\t[710] option '100', selected=False\n\t\t[711] option '200', selected=False\n\t[712] LabelText ''\n\t\tStaticText 'per page'\n\t[714] button '\\ue629'\n\t\tStaticText '\\ue629'\n\t[716] textbox 'of 1' value='1'\n\t[718] LabelText ''\n\t\tStaticText 'of'\n\t\tStaticText '1'\n\t[720] button '\\ue62a'\n\t\tStaticText '\\ue62a'\n\t[723] table ''\n\t\t[724] rowgroup ''\n\t\t\t[725] row ''\n\t\t\t\t[726] columnheader 'Customer'\n\t\t\t\t\tStaticText 'Customer'\n\t\t\t\t[728] columnheader '\u2191 Reviews'\n\t\t\t\t\tStaticText 'Reviews'\n\t\t\t\t[730] columnheader 'Action'\n\t\t\t\t\tStaticText 'Action'\n\t\t\t[732] row ''\n\t\t\t\t[733] gridcell ''\n\t\t\t\t\t[734] textbox ''\n\t\t\t\t[735] gridcell ''\n\t\t\t\t\t[736] textbox ''\n\t\t\t\t[737] gridcell ''\n\t\t[738] rowgroup ''\n\t\t\t[739] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/review/product/index/customerId/70/'\n\t\t\t\t[740] gridcell 'Emma Lopez'\n\t\t\t\t[741] gridcell '1'\n\t\t\t\t[742] gridcell 'Show Reviews'\n\t\t\t\t\t[743] link 'Show Reviews'\n[745] contentinfo ''\n\t[748] paragraph ''\n\t\t[749] link '\\ue606'\n\t\tStaticText 'Copyright \u00a9 2025 Magento Commerce Inc. All rights reserved.'\n\t[751] paragraph ''\n\t\t[752] strong ''\n\t\t\tStaticText 'Magento'\n\t\tStaticText 'ver. 2.4.6'\n\t[753] link 'Privacy Policy'\n\tStaticText '|'\n\t[754] link 'Account Activity'\n\tStaticText '|'\n\t[755] link 'Report an Issue'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/reports/report_review/customer/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"Find customer reviews for a particular product using the query to specify the kind of review. "
+					],
+					[
+						"delete_reviews",
+						"Delete the reviews found for a particular customer"
+					],
+					[
+						"update_product_description",
+						"Update the product description with the provided query"
+					],
+					[
+						"find_product",
+						"Find a product using a query"
+					],
+					[
+						"find_order",
+						"Find an order corresponding to a particular customer or order number. "
+					],
+					[
+						"update_order",
+						"Update an order with new information"
+					],
+					[
+						"filter_products",
+						"Filter a list of products based on their sales performance"
+					],
+					[
+						"navigate_to_section",
+						"Navigate to a specific section of the website"
+					],
+					[
+						"set_product_stock_status",
+						"Set the stock status of a product to out of stock"
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					]
+				]
+			},
+			{
+				"type": "stop",
+				"objective": "How many reviews our shop received during 2022?",
+				"action": "stop [1]",
+				"steps_nb": 3,
+				"reason": "The observation already contains a search result for reviews in the year 2022. It shows \"1 records found\" which implies there is only one review for the year 2022. The table also displays the review details, including the customer name and the number of reviews, which is 1 for Emma Lopez.",
+				"observation": "[140] link 'Magento Admin Panel'\n\t[141] image 'Magento Admin Panel'\n[142] navigation ''\n\t[143] menubar '', orientation='horizontal'\n\t\t[145] link '\\ue604 DASHBOARD'\n\t\t\tStaticText 'DASHBOARD'\n\t\t[148] link '\\ue60b SALES'\n\t\t\tStaticText 'SALES'\n\t\t[181] link '\\ue608 CATALOG'\n\t\t\tStaticText 'CATALOG'\n\t\t[199] link '\\ue603 CUSTOMERS'\n\t\t\tStaticText 'CUSTOMERS'\n\t\t[218] link '\\ue609 MARKETING'\n\t\t\tStaticText 'MARKETING'\n\t\t[285] link '\\ue602 CONTENT'\n\t\t\tStaticText 'CONTENT'\n\t\t[331] link '\\ue60a REPORTS'\n\t\t\tStaticText 'REPORTS'\n\t\t[456] link '\\ue60d STORES'\n\t\t\tStaticText 'STORES'\n\t\t[532] link '\\ue610 SYSTEM'\n\t\t\tStaticText 'SYSTEM'\n\t\t[615] link '\\ue612 FIND PARTNERS & EXTENSIONS'\n\t\t\tStaticText 'FIND PARTNERS & EXTENSIONS'\n[637] button 'System Messages: 2'\n\tStaticText 'System Messages'\n\tStaticText ':'\n\tStaticText '2'\nStaticText 'Failed to synchronize data to the Magento Business Intelligence service.'\n[770] link 'Retry Synchronization'\n[645] banner ''\n\t[648] heading 'Customer Reviews Report'\n\t[651] link '\\ue600 admin'\n\t\tStaticText 'admin'\n\t[663] link '\\ue607'\n\t\tStaticText '\\ue607'\n\t[665] Section ''\n\t\t[667] LabelText ''\n\t\t\tStaticText '\\ue60c'\n\t\t[671] textbox '\\ue60c' value='2022', focused\n\t\t[673] button 'Search'\n[677] main ''\n\t[685] LabelText ''\n\t\tStaticText 'Export to:'\n\t[686] combobox 'Export to:' value='CSV', hasPopup='menu', expanded=False\n\t\t[687] option 'CSV', selected=True\n\t\t[688] option 'Excel XML', selected=False\n\t[689] button 'Export'\n\t\tStaticText 'Export'\n\t[694] button 'Search'\n\t\tStaticText 'Search'\n\t[697] button 'Reset Filter'\n\t\tStaticText 'Reset Filter'\n\tStaticText '1'\n\tStaticText 'records found'\n\t[706] combobox 'per page' value='20', hasPopup='menu', expanded=False\n\t\t[707] option '20', selected=True\n\t\t[708] option '30', selected=False\n\t\t[709] option '50', selected=False\n\t\t[710] option '100', selected=False\n\t\t[711] option '200', selected=False\n\t[712] LabelText ''\n\t\tStaticText 'per page'\n\t[714] button '\\ue629'\n\t\tStaticText '\\ue629'\n\t[716] textbox 'of 1' value='1'\n\t[718] LabelText ''\n\t\tStaticText 'of'\n\t\tStaticText '1'\n\t[720] button '\\ue62a'\n\t\tStaticText '\\ue62a'\n\t[723] table ''\n\t\t[724] rowgroup ''\n\t\t\t[725] row ''\n\t\t\t\t[726] columnheader 'Customer'\n\t\t\t\t\tStaticText 'Customer'\n\t\t\t\t[728] columnheader '\u2191 Reviews'\n\t\t\t\t\tStaticText 'Reviews'\n\t\t\t\t[730] columnheader 'Action'\n\t\t\t\t\tStaticText 'Action'\n\t\t\t[732] row ''\n\t\t\t\t[733] gridcell ''\n\t\t\t\t\t[734] textbox ''\n\t\t\t\t[735] gridcell ''\n\t\t\t\t\t[736] textbox ''\n\t\t\t\t[737] gridcell ''\n\t\t[738] rowgroup ''\n\t\t\t[739] row 'http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/review/product/index/customerId/70/'\n\t\t\t\t[740] gridcell 'Emma Lopez'\n\t\t\t\t[741] gridcell '1'\n\t\t\t\t[742] gridcell 'Show Reviews'\n\t\t\t\t\t[743] link 'Show Reviews'\n[745] contentinfo ''\n\t[748] paragraph ''\n\t\t[749] link '\\ue606'\n\t\tStaticText 'Copyright \u00a9 2025 Magento Commerce Inc. All rights reserved.'\n\t[751] paragraph ''\n\t\t[752] strong ''\n\t\t\tStaticText 'Magento'\n\t\tStaticText 'ver. 2.4.6'\n\t[753] link 'Privacy Policy'\n\tStaticText '|'\n\t[754] link 'Account Activity'\n\tStaticText '|'\n\t[755] link 'Report an Issue'",
+				"url": "http://ec2-18-190-119-92.us-east-2.compute.amazonaws.com:7780/admin/reports/report_review/customer/",
+				"guidance": "",
+				"relevant_policies": [
+					[
+						"find_customer_review",
+						"Find customer reviews for a particular product using the query to specify the kind of review. "
+					],
+					[
+						"delete_reviews",
+						"Delete the reviews found for a particular customer"
+					],
+					[
+						"update_product_description",
+						"Update the product description with the provided query"
+					],
+					[
+						"find_product",
+						"Find a product using a query"
+					],
+					[
+						"find_order",
+						"Find an order corresponding to a particular customer or order number. "
+					],
+					[
+						"update_order",
+						"Update an order with new information"
+					],
+					[
+						"filter_products",
+						"Filter a list of products based on their sales performance"
+					],
+					[
+						"navigate_to_section",
+						"Navigate to a specific section of the website"
+					],
+					[
+						"set_product_stock_status",
+						"Set the stock status of a product to out of stock"
+					],
+					[
+						"search_customer",
+						"Find a customer given some details about them such as their phone number. "
+					]
+				]
+			}
+		]
+	},
+	"score": 0.0
+}
